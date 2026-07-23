@@ -3,46 +3,52 @@
     "city": "Birmingham",
     "lat": 52.4862,
     "lng": -1.8904,
+    "region": "West Midlands",
     "priority": "Poverty + Child Food Insecurity",
-    "stat": "14.3M UK in poverty; 7.5M food insecure",
+    "stat": "14.3M UK in poverty (21%)",
     "detail": "Birmingham has among the highest child poverty rates in England \u2014 40%+ of children in some wards."
   },
   {
     "city": "Manchester",
     "lat": 53.4808,
     "lng": -2.2426,
-    "priority": "Homelessness + Temporary Accommodation",
+    "region": "Greater Manchester",
+    "priority": "Homelessness + Temp Accommodation",
     "stat": "132,410 households in temp accommodation (record)",
-    "detail": "Greater Manchester saw rough sleeping rise 6x since 2010; onsite CHW intake is critical."
+    "detail": "Greater Manchester rough sleeping up 6x since 2010; onsite CHW intake is critical."
   },
   {
     "city": "Liverpool",
     "lat": 53.4084,
     "lng": -2.9916,
+    "region": "Liverpool City Region",
     "priority": "Mental Health + Isolation",
     "stat": "1 in 6 adults; 20% of children probable disorder",
-    "detail": "Liverpool's deprived wards show highest GP mental-health load; CHWs bridge to services."
+    "detail": "Deprived wards show highest GP mental-health load; CHWs bridge to services."
   },
   {
     "city": "Leeds",
     "lat": 53.8008,
     "lng": -1.5491,
+    "region": "West Yorkshire",
     "priority": "NHS Waiting + Cost of Living",
     "stat": "7.28M on NHS waiting list nationally",
-    "detail": "West Yorkshire has 18-week wait breaches above national avg; onsite triage reduces A&E load."
+    "detail": "West Yorkshire 18-week wait breaches above national avg; onsite triage reduces A&E load."
   },
   {
     "city": "Glasgow",
     "lat": 55.8642,
     "lng": -4.2518,
+    "region": "Scotland",
     "priority": "Life Expectancy Gap + Poverty",
     "stat": "21% UK in poverty; Scotland's gap widest in Glasgow",
-    "detail": "Glasgow's 'inverse care law' \u2014 sickest areas have fewest GPs. CHW model proven in Iran (-73% maternal mortality)."
+    "detail": "Inverse care law \u2014 sickest areas have fewest GPs. CHW model cut Iran maternal mortality 73%."
   },
   {
     "city": "London (Newham)",
     "lat": 51.5255,
     "lng": 0.0352,
+    "region": "London",
     "priority": "Digital Exclusion + Poverty",
     "stat": "2.1M offline; 25% very low digital capability",
     "detail": "Newham: 47% child poverty, highest in UK. Onsite data capture bypasses digital divide."
@@ -51,16 +57,72 @@
     "city": "Cardiff",
     "lat": 51.4816,
     "lng": -3.1791,
+    "region": "Wales",
     "priority": "Youth NEET + Education Gap",
     "stat": "1.01M 16-24 NEET (first time >1M)",
-    "detail": "Welsh valleys show NEET rates 2x UK avg; CHW early-intervention forecasting deploys before crisis."
+    "detail": "Welsh valleys NEET 2x UK avg; CHW early-intervention forecasting deploys before crisis."
   },
   {
     "city": "Belfast",
     "lat": 54.5973,
     "lng": -5.9301,
+    "region": "Northern Ireland",
     "priority": "Elderly Isolation",
     "stat": "940,000 over-65 often lonely",
-    "detail": "NI has fastest-aging population; onsite wellness checks prevent isolation-driven decline."
+    "detail": "NI fastest-aging population; onsite wellness checks prevent isolation-driven decline."
+  },
+  {
+    "city": "Bristol",
+    "lat": 51.4545,
+    "lng": -2.5879,
+    "region": "South West",
+    "priority": "Child Poverty + Food Insecurity",
+    "stat": "7.5M UK food insecure; Bristol among highest need",
+    "detail": "Bristol's deprived wards (Lawrence Weston, Hartcliffe) show child poverty above 40%. Onsite CHW nodes target these estates."
+  },
+  {
+    "city": "Bath",
+    "lat": 51.3751,
+    "lng": -2.3617,
+    "region": "B&NES",
+    "priority": "Hidden Poverty + Isolation",
+    "stat": "14.3M UK in poverty; hidden need in affluent areas",
+    "detail": "Bath's contrast \u2014 UNESCO heritage beside ward-level deprivation. CHWs surface invisible need ignored by averages."
+  },
+  {
+    "city": "Newcastle",
+    "lat": 54.9783,
+    "lng": -1.6178,
+    "region": "North East",
+    "priority": "Child Poverty + NEET",
+    "stat": "1.01M 16-24 NEET nationally; NE highest rates",
+    "detail": "North East has England's highest child poverty outside London. Onsite forecasting deploys before crisis hits."
+  },
+  {
+    "city": "Sheffield",
+    "lat": 53.3811,
+    "lng": -1.4701,
+    "region": "South Yorkshire",
+    "priority": "NHS Waiting + Deprivation",
+    "stat": "7.28M on NHS waiting list",
+    "detail": "Sheffield's north-east wards show life expectancy 10+ years below south-west. CHW ground truth exposes the gap."
+  },
+  {
+    "city": "Nottingham",
+    "lat": 52.9548,
+    "lng": -1.1581,
+    "region": "East Midlands",
+    "priority": "Poverty + Homelessness",
+    "stat": "132,410 households in temp accommodation",
+    "detail": "Nottingham has among the highest per-capita homelessness in the East Midlands. Onsite intake prevents escalation."
+  },
+  {
+    "city": "Bradford",
+    "lat": 53.796,
+    "lng": -1.7594,
+    "region": "West Yorkshire",
+    "priority": "Child Poverty + Education Gap",
+    "stat": "18% reception pupils eligible for free school meals",
+    "detail": "Bradford: 40%+ child poverty, youngest population in UK. CHW early-years intervention is highest-leverage."
   }
 ]

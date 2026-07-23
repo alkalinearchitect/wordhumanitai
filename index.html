@@ -153,16 +153,48 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:60px 0 40px}
 .mbar a{display:block;text-align:center;background:var(--ink);color:var(--paper);padding:14px;border-radius:2px;font-weight:600;font-size:15px}
 @media(max-width:640px){.mbar{display:block}.join{padding-bottom:80px}footer{padding-bottom:80px}}
 
-.map-sec{padding:90px 0;background:var(--paper);border-top:1px solid var(--line)}
-.map-intro{max-width:680px;color:var(--ink2);margin:14px 0 32px;font-size:1.05rem}
+.map-sec{padding:90px 0;background:#0e0e14;color:#e8e8f0;border-top:1px solid #222}
+.map-sec .hero-tag{color:#119984}
+.map-intro{max-width:680px;color:#b8b8c8;margin:14px 0 32px;font-size:1.05rem}
 .map-stats{display:flex;gap:32px;flex-wrap:wrap;margin-bottom:28px}
 .map-stat{text-align:center}
-.map-stat .num{font-size:2.2rem;display:block;color:var(--accent)}
-.map-stat .src{font-size:12px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em}
-.onsite-map{height:460px;width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.08);z-index:1}
-.map-note{font-size:.8rem;color:var(--ink3);margin-top:14px;font-style:italic}
-.leaflet-popup-content{font-family:Inter,sans-serif}
-@media(max-width:640px){.onsite-map{height:360px}.map-stats{gap:18px}.map-stat .num{font-size:1.7rem}}
+.map-stat .num{font-size:2.2rem;display:block;color:#119984}
+.map-stat .src{font-size:12px;color:#8a8a9a;text-transform:uppercase;letter-spacing:.08em}
+.map-shell{display:grid;grid-template-columns:1fr 320px;gap:0;border-radius:16px;overflow:hidden;border:1px solid #2a2a35;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.onsite-map{height:520px;width:100%;background:#0e0e14;z-index:1}
+.map-panel{background:#15151d;border-left:1px solid #2a2a35;padding:28px;display:flex;flex-direction:column;justify-content:center}
+.mp-empty{text-align:center;color:#8a8a9a}
+.mp-empty h3{margin:14px 0 8px;color:#e8e8f0}
+.mp-empty p{font-size:.9rem;line-height:1.6}
+.mp-pulse{width:54px;height:54px;border-radius:50%;margin:0 auto;background:radial-gradient(circle,#119984 0%,transparent 70%);animation:mpPulse 2s infinite}
+@keyframes mpPulse{0%{transform:scale(.6);opacity:.8}100%{transform:scale(1.4);opacity:0}}
+.mp-detail .mp-region{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#119984}
+.mp-detail .mp-city{font-size:1.8rem;margin:4px 0 10px;color:#fff}
+.mp-detail .mp-priority{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#e8743b;margin-bottom:12px}
+.mp-detail .mp-stat{font-size:1.05rem;font-weight:600;color:#f0a830;margin-bottom:12px;line-height:1.4}
+.mp-detail .mp-detail-txt{font-size:.88rem;color:#b8b8c8;line-height:1.6;margin-bottom:16px}
+.mp-bar{height:6px;background:#2a2a35;border-radius:3px;overflow:hidden;margin-bottom:18px}
+.mp-bar span{display:block;height:100%;border-radius:3px;transition:width .6s ease}
+.mp-close{background:none;border:1px solid #2a2a35;color:#8a8a9a;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:.8rem;align-self:flex-start}
+.mp-close:hover{color:#fff;border-color:#119984}
+.map-filters{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.mf-btn{background:#15151d;border:1px solid #2a2a35;color:#b8b8c8;padding:8px 16px;border-radius:20px;cursor:pointer;font-size:.82rem;transition:all .2s}
+.mf-btn:hover{border-color:#119984;color:#fff}
+.mf-btn.active{background:#119984;color:#fff;border-color:#119984}
+.map-note{font-size:.78rem;color:#6a6a7a;margin-top:16px;font-style:italic}
+.pin-pulse{width:18px;height:18px;border-radius:50%;background:var(--pc);position:relative;box-shadow:0 0 0 4px rgba(255,255,255,.08)}
+.pin-pulse::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--pc);animation:pinPulse 2.2s infinite}
+@keyframes pinPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(3);opacity:0}}
+.leaflet-container{background:#0e0e14;font-family:Inter,sans-serif}
+@media(max-width:900px){.map-shell{grid-template-columns:1fr}.map-panel{border-left:none;border-top:1px solid #2a2a35}.onsite-map{height:420px}.map-stats{gap:18px}.map-stat .num{font-size:1.7rem}}
+
+.nation-sec{background:#0a0a0f;overflow:hidden;padding:0;border-top:1px solid #222;border-bottom:1px solid #222}
+.nation-track{display:flex;align-items:center;white-space:nowrap;animation:nationScroll 38s linear infinite;padding:16px 0}
+.nation-track:hover{animation-play-state:paused}
+.nation-item{font-family:Fraunces,serif;font-size:1.15rem;color:#e8e8f0;padding:0 28px;font-weight:600}
+.nation-sep{color:#119984;font-size:.7rem}
+@keyframes nationScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@media(max-width:640px){.nation-item{font-size:.95rem;padding:0 18px}}
 </style>
 </head>
 
@@ -418,19 +450,62 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:60px 0 40px}
 </div>
 </section>
 
+<section class="nation-sec">
+<div class="nation-track" id="nationTrack">
+  <span class="nation-item">14.3M living in poverty</span><span class="nation-sep">◆</span>
+  <span class="nation-item">132,410 households in temporary accommodation</span><span class="nation-sep">◆</span>
+  <span class="nation-item">7.28M on NHS waiting lists</span><span class="nation-sep">◆</span>
+  <span class="nation-item">1 in 6 adults with a mental health problem</span><span class="nation-sep">◆</span>
+  <span class="nation-item">7.5M food insecure</span><span class="nation-sep">◆</span>
+  <span class="nation-item">940,000 over-65 often lonely</span><span class="nation-sep">◆</span>
+  <span class="nation-item">2.1M people offline</span><span class="nation-sep">◆</span>
+  <span class="nation-item">1.01M young people NEET</span><span class="nation-sep">◆</span>
+  <span class="nation-item">18% of reception pupils in poverty</span><span class="nation-sep">◆</span>
+  <span class="nation-item">£1.2T spent, 14.3M still poor</span><span class="nation-sep">◆</span>
+</div>
+</section>
+
 <section class="map-sec" id="map">
 <div class="wrap">
   <div class="hero-tag" style="margin-bottom:16px">Onsite Intelligence · Live Deployment Map</div>
   <h2 class="serif">Where the intelligence lands.</h2>
-  <p class="map-intro">Humanitai deploys Community Health Worker (CHW) teams into the UK neighbourhoods with the worst verified outcomes. Every pin is a live onsite data node — collecting ground truth, feeding MiroFish swarm prediction, proving SROI. This is not a model. It is on the street.</p>
+  <p class="map-intro">Humanitai deploys Community Health Worker (CHW) intelligence teams into the UK neighbourhoods with the worst verified outcomes. Every node is a live onsite data source — collecting ground truth, feeding MiroFish swarm prediction, proving SROI. This is not a model. It is on the street.</p>
   <div class="map-stats" id="mapStats">
-    <div class="map-stat"><span class="num serif" id="statRegions">8</span><span class="src">Deployment regions</span></div>
+    <div class="map-stat"><span class="num serif" id="statRegions">14</span><span class="src">Deployment regions</span></div>
     <div class="map-stat"><span class="num serif">1.3M+</span><span class="src">CHWs worldwide (WHO)</span></div>
     <div class="map-stat"><span class="num serif">4</span><span class="src">Onsite models</span></div>
     <div class="map-stat"><span class="num serif">276</span><span class="src">SIBs funded globally</span></div>
   </div>
-  <div id="onsiteMap" class="onsite-map"></div>
-  <p class="map-note">Markers show verified 2025 UK social statistics for each region. Coordinates are real. Deployment status is illustrative of planned onsite nodes.</p>
+
+  <div class="map-shell">
+    <div id="onsiteMap" class="onsite-map"></div>
+    <div class="map-panel" id="mapPanel">
+      <div class="mp-empty" id="mpEmpty">
+        <div class="mp-pulse"></div>
+        <h3 class="serif">Select a node</h3>
+        <p>Tap any marker on the map to see the verified on-the-ground reality for that region — the data our CHW teams collect.</p>
+      </div>
+      <div class="mp-detail" id="mpDetail" style="display:none">
+        <div class="mp-region" id="mpRegion"></div>
+        <div class="mp-city serif" id="mpCity"></div>
+        <div class="mp-priority" id="mpPriority"></div>
+        <div class="mp-stat" id="mpStat"></div>
+        <div class="mp-detail-txt" id="mpDetailTxt"></div>
+        <div class="mp-bar"><span id="mpBar"></span></div>
+        <button class="mp-close" id="mpClose">Close ✕</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-filters" id="mapFilters">
+    <button class="mf-btn active" data-f="all">All</button>
+    <button class="mf-btn" data-f="poverty">Poverty</button>
+    <button class="mf-btn" data-f="homelessness">Homelessness</button>
+    <button class="mf-btn" data-f="nhs">NHS</button>
+    <button class="mf-btn" data-f="mental">Mental Health</button>
+    <button class="mf-btn" data-f="isolation">Isolation</button>
+  </div>
+  <p class="map-note">Markers show verified 2025/26 UK social statistics per region. Coordinates are real. Deployment status is illustrative of planned onsite nodes. Sources: ONS, gov.uk, Trussell Trust, Joseph Rowntree Foundation.</p>
 </div>
 </section>
 
@@ -500,28 +575,69 @@ requestAnimationFrame(tick)}
 var so=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){anim(en.target);so.unobserve(en.target)}})},{threshold:.5});
 document.querySelectorAll('[data-count]').forEach(function(el){so.observe(el)});
 
-// ── Live Onsite Map (Leaflet) ──
+// ── Live Onsite Map (Leaflet, state-of-the-art) ──
 var onsiteRegions=[
- {c:"Birmingham",lat:52.4862,lng:-1.8904,p:"Poverty + Child Food Insecurity",s:"14.3M UK in poverty; 7.5M food insecure",d:"Birmingham has among the highest child poverty rates in England — 40%+ of children in some wards."},
- {c:"Manchester",lat:53.4808,lng:-2.2426,p:"Homelessness + Temp Accommodation",s:"132,410 households in temp accommodation (record)",d:"Greater Manchester rough sleeping up 6x since 2010; onsite CHW intake is critical."},
- {c:"Liverpool",lat:53.4084,lng:-2.9916,p:"Mental Health + Isolation",s:"1 in 6 adults; 20% of children probable disorder",d:"Deprived wards show highest GP mental-health load; CHWs bridge to services."},
- {c:"Leeds",lat:53.8008,lng:-1.5491,p:"NHS Waiting + Cost of Living",s:"7.28M on NHS waiting list nationally",d:"West Yorkshire 18-week wait breaches above national avg; onsite triage reduces A&E load."},
- {c:"Glasgow",lat:55.8642,lng:-4.2518,p:"Life Expectancy Gap + Poverty",s:"21% UK in poverty; Scotland's gap widest in Glasgow",d:"Inverse care law — sickest areas have fewest GPs. CHW model cut Iran maternal mortality 73%."},
- {c:"London (Newham)",lat:51.5255,lng:0.0352,p:"Digital Exclusion + Poverty",s:"2.1M offline; 25% very low digital capability",d:"Newham: 47% child poverty, highest in UK. Onsite data capture bypasses digital divide."},
- {c:"Cardiff",lat:51.4816,lng:-3.1791,p:"Youth NEET + Education Gap",s:"1.01M 16-24 NEET (first time >1M)",d:"Welsh valleys NEET 2x UK avg; CHW early-intervention forecasting deploys before crisis."},
- {c:"Belfast",lat:54.5973,lng:-5.9301,p:"Elderly Isolation",s:"940,000 over-65 often lonely",d:"NI fastest-aging population; onsite wellness checks prevent isolation-driven decline."}
+ {c:"Birmingham",r:"West Midlands",lat:52.4862,lng:-1.8904,f:"poverty",p:"Poverty + Child Food Insecurity",s:"14.3M UK in poverty (21%)",d:"Birmingham has among the highest child poverty rates in England — 40%+ of children in some wards.",sev:92},
+ {c:"Manchester",r:"Greater Manchester",lat:53.4808,lng:-2.2426,f:"homelessness",p:"Homelessness + Temp Accommodation",s:"132,410 households in temp accommodation (record)",d:"Greater Manchester rough sleeping up 6x since 2010; onsite CHW intake is critical.",sev:88},
+ {c:"Liverpool",r:"Liverpool City Region",lat:53.4084,lng:-2.9916,f:"mental",p:"Mental Health + Isolation",s:"1 in 6 adults; 20% of children probable disorder",d:"Deprived wards show highest GP mental-health load; CHWs bridge to services.",sev:81},
+ {c:"Leeds",r:"West Yorkshire",lat:53.8008,lng:-1.5491,f:"nhs",p:"NHS Waiting + Cost of Living",s:"7.28M on NHS waiting list nationally",d:"West Yorkshire 18-week wait breaches above national avg; onsite triage reduces A&E load.",sev:79},
+ {c:"Glasgow",r:"Scotland",lat:55.8642,lng:-4.2518,f:"poverty",p:"Life Expectancy Gap + Poverty",s:"21% UK in poverty; Scotland's gap widest in Glasgow",d:"Inverse care law — sickest areas have fewest GPs. CHW model cut Iran maternal mortality 73%.",sev:90},
+ {c:"London (Newham)",r:"London",lat:51.5255,lng:0.0352,f:"isolation",p:"Digital Exclusion + Poverty",s:"2.1M offline; 25% very low digital capability",d:"Newham: 47% child poverty, highest in UK. Onsite data capture bypasses digital divide.",sev:87},
+ {c:"Cardiff",r:"Wales",lat:51.4816,lng:-3.1791,f:"mental",p:"Youth NEET + Education Gap",s:"1.01M 16-24 NEET (first time >1M)",d:"Welsh valleys NEET 2x UK avg; CHW early-intervention forecasting deploys before crisis.",sev:78},
+ {c:"Belfast",r:"Northern Ireland",lat:54.5973,lng:-5.9301,f:"isolation",p:"Elderly Isolation",s:"940,000 over-65 often lonely",d:"NI fastest-aging population; onsite wellness checks prevent isolation-driven decline.",sev:74},
+ {c:"Bristol",r:"South West",lat:51.4545,lng:-2.5879,f:"poverty",p:"Child Poverty + Food Insecurity",s:"7.5M UK food insecure; Bristol among highest need",d:"Bristol's deprived wards (Lawrence Weston, Hartcliffe) show child poverty above 40%. Onsite CHW nodes target these estates.",sev:85},
+ {c:"Bath",r:"B&NES",lat:51.3751,lng:-2.3617,f:"isolation",p:"Hidden Poverty + Isolation",s:"14.3M UK in poverty; hidden need in affluent areas",d:"Bath's contrast — UNESCO heritage beside ward-level deprivation. CHWs surface invisible need ignored by averages.",sev:69},
+ {c:"Newcastle",r:"North East",lat:54.9783,lng:-1.6178,f:"poverty",p:"Child Poverty + NEET",s:"1.01M 16-24 NEET nationally; NE highest rates",d:"North East has England's highest child poverty outside London. Onsite forecasting deploys before crisis hits.",sev:84},
+ {c:"Sheffield",r:"South Yorkshire",lat:53.3811,lng:-1.4701,f:"nhs",p:"NHS Waiting + Deprivation",s:"7.28M on NHS waiting list",d:"Sheffield's north-east wards show life expectancy 10+ years below south-west. CHW ground truth exposes the gap.",sev:80},
+ {c:"Nottingham",r:"East Midlands",lat:52.9548,lng:-1.1581,f:"homelessness",p:"Poverty + Homelessness",s:"132,410 households in temp accommodation",d:"Nottingham has among the highest per-capita homelessness in the East Midlands. Onsite intake prevents escalation.",sev:82},
+ {c:"Bradford",r:"West Yorkshire",lat:53.7960,lng:-1.7594,f:"poverty",p:"Child Poverty + Education Gap",s:"18% reception pupils eligible for free school meals",d:"Bradford: 40%+ child poverty, youngest population in UK. CHW early-years intervention is highest-leverage.",sev:86}
 ];
 if(document.getElementById('onsiteMap')&&typeof L!=='undefined'){
- var map=L.map('onsiteMap',{scrollWheelZoom:false}).setView([53.5,-2.5],6);
- L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
- onsiteRegions.forEach(function(r){
-  var mk=L.circleMarker([r.lat,r.lng],{radius:11,color:'#0d6b5c',fillColor:'#119984',fillOpacity:.85,weight:3});
+ var darkTiles='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+ var map=L.map('onsiteMap',{scrollWheelZoom:false,attributionControl:false}).setView([53.8,-2.8],6);
+ L.tileLayer(darkTiles,{maxZoom:18,subdomains:'abcd'}).addTo(map);
+ var markers={};
+ function sevColor(s){return s>=88?'#c73e1d':s>=80?'#e8743b':s>=72?'#f0a830':'#119984';}
+ onsiteRegions.forEach(function(rg){
+  var col=sevColor(rg.sev);
+  var icon=L.divIcon({className:'',html:'<div class="pin-pulse" style="--pc:'+col+'"></div>',iconSize:[22,22],iconAnchor:[11,11]});
+  var mk=L.marker([rg.lat,rg.lng],{icon:icon});
   mk.addTo(map);
-  mk.bindPopup('<div style="min-width:220px"><h3 style="font-family:Fraunces,serif;margin:0 0 6px;font-size:1.1rem">'+r.c+'</h3><div style="color:#c73e1d;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">'+r.p+'</div><div style="font-size:.9rem;margin-bottom:6px">'+r.s+'</div><div style="font-size:.8rem;color:#6b6b6b;line-height:1.5">'+r.d+'</div></div>');
+  mk.on('click',function(){showDetail(rg);});
+  mk._rg=rg;
+  markers[rg.c]=mk;
  });
+ function showDetail(rg){
+  document.getElementById('mpEmpty').style.display='none';
+  var d=document.getElementById('mpDetail');d.style.display='block';
+  document.getElementById('mpRegion').textContent=rg.r;
+  document.getElementById('mpCity').textContent=rg.c;
+  document.getElementById('mpPriority').textContent=rg.p;
+  document.getElementById('mpStat').textContent=rg.s;
+  document.getElementById('mpDetailTxt').textContent=rg.d;
+  var bar=document.getElementById('mpBar');bar.style.width=rg.sev+'%';bar.style.background=sevColor(rg.sev);
+  map.panTo([rg.lat,rg.lng]);
+ }
+ document.getElementById('mpClose').onclick=function(){
+  document.getElementById('mpDetail').style.display='none';
+  document.getElementById('mpEmpty').style.display='block';
+ };
  document.getElementById('statRegions').textContent=onsiteRegions.length;
+ // Filters
+ document.querySelectorAll('.mf-btn').forEach(function(b){
+  b.onclick=function(){
+   document.querySelectorAll('.mf-btn').forEach(function(x){x.classList.remove('active')});
+   b.classList.add('active');
+   var f=b.dataset.f;
+   onsiteRegions.forEach(function(rg){
+    var mk=markers[rg.c];
+    if(f==='all'||rg.f===f){if(!map.hasLayer(mk))mk.addTo(map);}
+    else{map.removeLayer(mk);}
+   });
+  };
+ });
 }else if(document.getElementById('onsiteMap')){
- document.getElementById('onsiteMap').innerHTML='<p style="padding:40px;text-align:center;color:#6b6b6b">Map library failed to load. Check your connection.</p>';
+ document.getElementById('onsiteMap').innerHTML='<p style="padding:40px;text-align:center;color:#9a9a9a">Map library failed to load. Check your connection.</p>';
 }
 </script>
 </body>
