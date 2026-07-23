@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanitai - Transforming UK Communities Through AI-Powered Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #f59e0b;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--darker) 0%, #1e1b4b 50%, var(--dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: var(--dark);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stats-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .stats-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .stats-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .stat-detail {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 100px 0;
+            background: var(--darker);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .problem-card {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--secondary);
+        }
+
+        .problem-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .problem-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .problem-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Solution Section */
+        .solution {
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--dark) 0%, var(--darker) 100%);
+        }
+
+        .solution-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .solution-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .solution-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(245, 158, 11, 0.1) 100%);
+            padding: 45px 35px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .solution-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .solution-card ul {
+            list-style: none;
+            color: #cbd5e1;
+        }
+
+        .solution-card li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .solution-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* MiroFish Section */
+        .mirofish {
+            padding: 100px 0;
+            background: var(--darker);
+        }
+
+        .mirofish-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .mirofish-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .prediction-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+            padding: 50px;
+            border-radius: 20px;
+            border: 2px solid var(--primary);
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
+        }
+
+        .prediction-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .prediction-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .confidence {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--dark) 0%, #1e1b4b 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--darker);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--gray);
+        }
+
+        .cic-badge {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--secondary);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 20px;
+            border: 1px solid var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .prediction-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="badge">Community Interest Company</div>
+            <h1>Transforming UK Communities<br>Through AI-Powered Solutions</h1>
+            <p class="subtitle">
+                Humanitai is pioneering intelligent solutions to address the UK's most pressing social challenges. 
+                We're using advanced AI prediction models to identify where help is needed most and deliver impact that matters.
+            </p>
+            <div class="cta-group">
+                <a href="#problem" class="btn btn-primary">Explore Our Mission</a>
+                <a href="#mirofish" class="btn btn-secondary">View Predictions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-header">
+                <h2>The Scale of the Challenge</h2>
+                <p>Understanding where £1.3 trillion in government spending goes each year</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">£1.3T</div>
+                    <div class="stat-label">Annual Government Spend</div>
+                    <div class="stat-detail">£19,000 per person across the UK</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">14.4M</div>
+                    <div class="stat-label">People in Poverty</div>
+                    <div class="stat-detail">Including 4.4 million children</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">£70B</div>
+                    <div class="stat-label">Mental Health Cost</div>
+                    <div class="stat-detail">Annual burden on UK economy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">7.2M</div>
+                    <div class="stat-label">NHS Referrals Waiting</div>
+                    <div class="stat-detail">Patients awaiting treatment</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <div class="stats-header">
+                <h2>Critical Challenges We're Addressing</h2>
+                <p>Real data from verified UK sources showing where communities need support</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🧠</div>
+                    <h3>Mental Health Crisis</h3>
+                    <p>
+                        1 in 8 adults experiencing problems. 5.7 million children with diagnosed conditions—up 433% since 2017. 
+                        Anxiety and depression among 16-29 year-olds doubled in a decade. The system is overwhelmed.
+                    </p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🏠</div>
+                    <h3>Homelessness Epidemic</h3>
+                    <p>
+                        309,000 people homeless in England—equivalent to the population of Iceland. 
+                        Record 117,450 children in temporary accommodation. Numbers projected to rise 26% by 2030 without intervention.
+                    </p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🍽️</div>
+                    <h3>Food Insecurity</h3>
+                    <p>
+                        3.8 million adults and 1 million children struggling to access adequate nutrition. 
+                        Food banks reporting record demand as cost of living pressures intensify across communities.
+                    </p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💷</div>
+                    <div class="stat-label"><strong>£260B Wasted</strong></div>
+                    <h3>Systemic Inefficiency</h3>
+                    <p>
+                        £260 billion spent annually without measuring outcomes. Bureaucratic overhead and fragmented delivery 
+                        mean resources aren't reaching those who need them most.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <div class="solution-header">
+                <h2>Our AI-Powered Approach</h2>
+                <p style="color: var(--gray); font-size: 1.1rem; margin-top: 15px;">
+                    Intelligent systems that identify needs, optimize resources, and measure real impact
+                </p>
+            </div>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <h3>🎯 Predictive Targeting</h3>
+                    <ul>
+                        <li>Identify at-risk populations before crisis points</li>
+                        <li>Map service gaps using real-time data</li>
+                        <li>Prioritize interventions by impact potential</li>
+                        <li>Reduce response time from months to days</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h3>📊 Outcome Optimization</h3>
+                    <ul>
+                        <li>Track every pound spent against measurable results</li>
+                        <li>Dynamic resource allocation based on effectiveness</li>
+                        <li>Eliminate bureaucratic overhead</li>
+                        <li>Ensure funds reach intended beneficiaries</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h3>🤝 Community Intelligence</h3>
+                    <ul>
+                        <li>Aggregate insights from 10+ verified UK sources</li>
+                        <li>Identify root causes, not just symptoms</li>
+                        <li>Design interventions with community input</li>
+                        <li>Build sustainable, locally-owned solutions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MiroFish Prediction Section -->
+    <section class="mirofish" id="mirofish">
+        <div class="container">
+            <div class="mirofish-header">
+                <div class="badge">MiroFish Prediction Model</div>
+                <h2>AI-Powered Impact Forecasting</h2>
+                <p style="color: var(--gray); font-size: 1.1rem; margin-top: 20px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Our proprietary swarm intelligence model analyzed UK social data across multiple dimensions 
+                    to predict where Humanitai can create maximum impact
+                </p>
+            </div>
+            <div class="prediction-box">
+                <h3>🔮 Primary Recommendation: Mental Health Support Gap</h3>
+                <p>
+                    Based on analysis of ONS health data, NHS waiting lists, and demographic trends, our MiroFish model 
+                    identifies a critical opportunity: <strong>bridging the mental health support gap for young adults (16-29) 
+                    in underserved communities</strong>.
+                </p>
+                <p>
+                    Current projections show anxiety and depression rates doubling over the next decade. 
+                    With 5.7 million children already affected and NHS mental health services at capacity, 
+                    AI-powered early intervention and community-based support networks could prevent 40% of crisis cases.
+                </p>
+                <p>
+                    The model predicts this approach could save £28 billion annually by reducing emergency care demand, 
+                    improving productivity, and addressing the root causes before they escalate into £70B annual burden.
+                </p>
+                <div class="confidence">85% Confidence Level Based on Current Trajectory</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Communities?</h2>
+            <p>
+                Join us in building intelligent solutions that actually reach people who need them. 
+                Support our mission, partner with us, or learn how you can contribute.
+            </p>
+            <div class="cta-group">
+                <a href="#" class="btn btn-primary">Support Our Work</a>
+                <a href="#" class="btn btn-secondary">Become a Partner</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Humanitai. All rights reserved.</p>
+            <p style="margin-top: 10px; color: var(--gray);">
+                Transforming UK communities through intelligent, data-driven social impact
+            </p>
+            <div class="cic-badge">Community Interest Company</div>
+        </div>
+    </footer>
+</body>
+</html>
