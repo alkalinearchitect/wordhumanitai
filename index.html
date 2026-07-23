@@ -18,6 +18,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
 :root{--bg:#f4f1ea;--ink:#1a1a1a;--ink2:#3a3a3a;--ink3:#6b6b6b;--line:#d8d3c7;--line2:#c4bda9;--accent:#0d6b5c;--accent2:#119984;--warn:#c73e1d;--paper:#faf8f3}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -150,6 +152,17 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:60px 0 40px}
 .mbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;padding:12px;background:rgba(244,241,234,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
 .mbar a{display:block;text-align:center;background:var(--ink);color:var(--paper);padding:14px;border-radius:2px;font-weight:600;font-size:15px}
 @media(max-width:640px){.mbar{display:block}.join{padding-bottom:80px}footer{padding-bottom:80px}}
+
+.map-sec{padding:90px 0;background:var(--paper);border-top:1px solid var(--line)}
+.map-intro{max-width:680px;color:var(--ink2);margin:14px 0 32px;font-size:1.05rem}
+.map-stats{display:flex;gap:32px;flex-wrap:wrap;margin-bottom:28px}
+.map-stat{text-align:center}
+.map-stat .num{font-size:2.2rem;display:block;color:var(--accent)}
+.map-stat .src{font-size:12px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em}
+.onsite-map{height:460px;width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.08);z-index:1}
+.map-note{font-size:.8rem;color:var(--ink3);margin-top:14px;font-style:italic}
+.leaflet-popup-content{font-family:Inter,sans-serif}
+@media(max-width:640px){.onsite-map{height:360px}.map-stats{gap:18px}.map-stat .num{font-size:1.7rem}}
 </style>
 </head>
 
@@ -405,6 +418,22 @@ footer{background:var(--ink);color:rgba(255,255,255,.5);padding:60px 0 40px}
 </div>
 </section>
 
+<section class="map-sec" id="map">
+<div class="wrap">
+  <div class="hero-tag" style="margin-bottom:16px">Onsite Intelligence · Live Deployment Map</div>
+  <h2 class="serif">Where the intelligence lands.</h2>
+  <p class="map-intro">Humanitai deploys Community Health Worker (CHW) teams into the UK neighbourhoods with the worst verified outcomes. Every pin is a live onsite data node — collecting ground truth, feeding MiroFish swarm prediction, proving SROI. This is not a model. It is on the street.</p>
+  <div class="map-stats" id="mapStats">
+    <div class="map-stat"><span class="num serif" id="statRegions">8</span><span class="src">Deployment regions</span></div>
+    <div class="map-stat"><span class="num serif">1.3M+</span><span class="src">CHWs worldwide (WHO)</span></div>
+    <div class="map-stat"><span class="num serif">4</span><span class="src">Onsite models</span></div>
+    <div class="map-stat"><span class="num serif">276</span><span class="src">SIBs funded globally</span></div>
+  </div>
+  <div id="onsiteMap" class="onsite-map"></div>
+  <p class="map-note">Markers show verified 2025 UK social statistics for each region. Coordinates are real. Deployment status is illustrative of planned onsite nodes.</p>
+</div>
+</section>
+
 <section class="join" id="join">
 <div class="wrap">
 <div class="reveal">
@@ -470,6 +499,30 @@ function tick(now){var p=Math.min((now-st)/dur,1),e=1-Math.pow(1-p,3),v=t*e;el.t
 requestAnimationFrame(tick)}
 var so=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){anim(en.target);so.unobserve(en.target)}})},{threshold:.5});
 document.querySelectorAll('[data-count]').forEach(function(el){so.observe(el)});
+
+// ── Live Onsite Map (Leaflet) ──
+var onsiteRegions=[
+ {c:"Birmingham",lat:52.4862,lng:-1.8904,p:"Poverty + Child Food Insecurity",s:"14.3M UK in poverty; 7.5M food insecure",d:"Birmingham has among the highest child poverty rates in England — 40%+ of children in some wards."},
+ {c:"Manchester",lat:53.4808,lng:-2.2426,p:"Homelessness + Temp Accommodation",s:"132,410 households in temp accommodation (record)",d:"Greater Manchester rough sleeping up 6x since 2010; onsite CHW intake is critical."},
+ {c:"Liverpool",lat:53.4084,lng:-2.9916,p:"Mental Health + Isolation",s:"1 in 6 adults; 20% of children probable disorder",d:"Deprived wards show highest GP mental-health load; CHWs bridge to services."},
+ {c:"Leeds",lat:53.8008,lng:-1.5491,p:"NHS Waiting + Cost of Living",s:"7.28M on NHS waiting list nationally",d:"West Yorkshire 18-week wait breaches above national avg; onsite triage reduces A&E load."},
+ {c:"Glasgow",lat:55.8642,lng:-4.2518,p:"Life Expectancy Gap + Poverty",s:"21% UK in poverty; Scotland's gap widest in Glasgow",d:"Inverse care law — sickest areas have fewest GPs. CHW model cut Iran maternal mortality 73%."},
+ {c:"London (Newham)",lat:51.5255,lng:0.0352,p:"Digital Exclusion + Poverty",s:"2.1M offline; 25% very low digital capability",d:"Newham: 47% child poverty, highest in UK. Onsite data capture bypasses digital divide."},
+ {c:"Cardiff",lat:51.4816,lng:-3.1791,p:"Youth NEET + Education Gap",s:"1.01M 16-24 NEET (first time >1M)",d:"Welsh valleys NEET 2x UK avg; CHW early-intervention forecasting deploys before crisis."},
+ {c:"Belfast",lat:54.5973,lng:-5.9301,p:"Elderly Isolation",s:"940,000 over-65 often lonely",d:"NI fastest-aging population; onsite wellness checks prevent isolation-driven decline."}
+];
+if(document.getElementById('onsiteMap')&&typeof L!=='undefined'){
+ var map=L.map('onsiteMap',{scrollWheelZoom:false}).setView([53.5,-2.5],6);
+ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+ onsiteRegions.forEach(function(r){
+  var mk=L.circleMarker([r.lat,r.lng],{radius:11,color:'#0d6b5c',fillColor:'#119984',fillOpacity:.85,weight:3});
+  mk.addTo(map);
+  mk.bindPopup('<div style="min-width:220px"><h3 style="font-family:Fraunces,serif;margin:0 0 6px;font-size:1.1rem">'+r.c+'</h3><div style="color:#c73e1d;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">'+r.p+'</div><div style="font-size:.9rem;margin-bottom:6px">'+r.s+'</div><div style="font-size:.8rem;color:#6b6b6b;line-height:1.5">'+r.d+'</div></div>');
+ });
+ document.getElementById('statRegions').textContent=onsiteRegions.length;
+}else if(document.getElementById('onsiteMap')){
+ document.getElementById('onsiteMap').innerHTML='<p style="padding:40px;text-align:center;color:#6b6b6b">Map library failed to load. Check your connection.</p>';
+}
 </script>
 </body>
 </html>

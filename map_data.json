@@ -1,0 +1,66 @@
+[
+  {
+    "city": "Birmingham",
+    "lat": 52.4862,
+    "lng": -1.8904,
+    "priority": "Poverty + Child Food Insecurity",
+    "stat": "14.3M UK in poverty; 7.5M food insecure",
+    "detail": "Birmingham has among the highest child poverty rates in England \u2014 40%+ of children in some wards."
+  },
+  {
+    "city": "Manchester",
+    "lat": 53.4808,
+    "lng": -2.2426,
+    "priority": "Homelessness + Temporary Accommodation",
+    "stat": "132,410 households in temp accommodation (record)",
+    "detail": "Greater Manchester saw rough sleeping rise 6x since 2010; onsite CHW intake is critical."
+  },
+  {
+    "city": "Liverpool",
+    "lat": 53.4084,
+    "lng": -2.9916,
+    "priority": "Mental Health + Isolation",
+    "stat": "1 in 6 adults; 20% of children probable disorder",
+    "detail": "Liverpool's deprived wards show highest GP mental-health load; CHWs bridge to services."
+  },
+  {
+    "city": "Leeds",
+    "lat": 53.8008,
+    "lng": -1.5491,
+    "priority": "NHS Waiting + Cost of Living",
+    "stat": "7.28M on NHS waiting list nationally",
+    "detail": "West Yorkshire has 18-week wait breaches above national avg; onsite triage reduces A&E load."
+  },
+  {
+    "city": "Glasgow",
+    "lat": 55.8642,
+    "lng": -4.2518,
+    "priority": "Life Expectancy Gap + Poverty",
+    "stat": "21% UK in poverty; Scotland's gap widest in Glasgow",
+    "detail": "Glasgow's 'inverse care law' \u2014 sickest areas have fewest GPs. CHW model proven in Iran (-73% maternal mortality)."
+  },
+  {
+    "city": "London (Newham)",
+    "lat": 51.5255,
+    "lng": 0.0352,
+    "priority": "Digital Exclusion + Poverty",
+    "stat": "2.1M offline; 25% very low digital capability",
+    "detail": "Newham: 47% child poverty, highest in UK. Onsite data capture bypasses digital divide."
+  },
+  {
+    "city": "Cardiff",
+    "lat": 51.4816,
+    "lng": -3.1791,
+    "priority": "Youth NEET + Education Gap",
+    "stat": "1.01M 16-24 NEET (first time >1M)",
+    "detail": "Welsh valleys show NEET rates 2x UK avg; CHW early-intervention forecasting deploys before crisis."
+  },
+  {
+    "city": "Belfast",
+    "lat": 54.5973,
+    "lng": -5.9301,
+    "priority": "Elderly Isolation",
+    "stat": "940,000 over-65 often lonely",
+    "detail": "NI has fastest-aging population; onsite wellness checks prevent isolation-driven decline."
+  }
+]
