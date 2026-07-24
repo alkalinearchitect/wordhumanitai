@@ -27,8 +27,9 @@
       <a href="#act2" class="text-sm font-medium text-white/50 no-underline transition-colors hover:text-white">Approach</a>
       <a href="#data" class="text-sm font-medium text-white/50 no-underline transition-colors hover:text-white">Intelligence</a>
       <a href="#faq" class="text-sm font-medium text-white/50 no-underline transition-colors hover:text-white">FAQ</a>
-      <a href="#join" class="btn-primary" style="background:var(--color-brand);color:var(--color-ink);padding:10px 20px;border-radius:8px;font-weight:600;font-size:.78rem">Back the work</a>
+      <a href="#join" class="btn-primary" style="background:var(--color-brand);color:var(--color-ink);padding:10px 20px;border-radius:8px;font-weight:600;font-size:.78rem">Fund it</a>
     </div>
+    <a href="#join" class="md:hidden text-sm font-semibold" style="color:var(--color-brand)">Fund it →</a>
   </div>
 </nav>
 
@@ -38,7 +39,7 @@
     <div class="hf-fallback" id="hf-fallback"></div>
     <canvas id="hf-canvas" aria-hidden="true"></canvas>
     <div class="hf-overlay">
-      <div class="kicker kicker-light reveal-word" style="pointer-events:auto"><span data-w>The OSINT lens</span></div>
+      <div class="kicker kicker-light reveal-word" style="pointer-events:auto"><span data-w>Field intelligence · UK</span></div>
       <h1 class="display reveal" style="margin:14px 0 22px;max-width:18ch">
         <span class="reveal-word"><span data-w="AI">AI</span></span>
         <span class="reveal-word"><span data-w="predicts">predicts</span></span>
@@ -49,14 +50,15 @@
         <span class="reveal-word"><span data-w="stop">stop</span></span>
         <span class="reveal-word"><span data-w="it.">it.</span></span>
       </h1>
-      <p class="lede lede-light rv" style="max-width:560px">We use open-source intelligence and multi-agent AI to forecast where UK poverty, homelessness and NHS waits will hit next — then trained community teams intervene before people reach crisis.</p>
+      <p class="lede lede-light rv" style="max-width:560px">Public data, read properly, says where poverty, homelessness and NHS waits break next. We put trained neighbours there first.</p>
       <div class="flex gap-3 flex-wrap rv" style="margin-top:28px;pointer-events:auto">
-        <a href="#join" class="btn btn-primary">Back the work <span class="arr">&rarr;</span></a>
+        <a href="#join" class="btn btn-primary">Fund it <span class="arr">&rarr;</span></a>
         <a href="#data" class="btn btn-ghost">See the intelligence</a>
       </div>
     </div>
     <div class="hf-progress"><i id="hf-bar"></i></div>
-    <div class="hf-hint">Scroll to resolve</div>
+    <div class="hf-hint">Noise</div>
+    <div class="hf-hud" id="hf-hud" aria-hidden="true"><span class="hf-hud-k">Forecast · Middlesbrough</span><span class="hf-hud-v">Child poverty 47% · risk rising · confidence 0.81</span></div>
   </div>
 </section>
 
@@ -72,7 +74,7 @@
       <div class="idx-row rv"><div class="idx-num">01</div><div><h3>Mental health</h3><p>One in six adults every week. One in five children aged 8–16 with a probable disorder — up from 12% in 2017. The wait is the illness.</p></div><div class="idx-stat"><span class="v">20%</span><span class="k">of children, probable disorder</span></div></div>
       <div class="idx-row rv"><div class="idx-num">02</div><div><h3>Homelessness</h3><p>132,410 households in temporary accommodation. 354,000 people homeless. 161,500 of them children.</p></div><div class="idx-stat"><span class="v">354K</span><span class="k">people without a home</span></div></div>
       <div class="idx-row rv"><div class="idx-num">03</div><div><h3>Food insecurity</h3><p>2.89 million emergency food parcels. 13.9% of UK households food insecure. Parents skip meals so children eat.</p></div><div class="idx-stat"><span class="v">2.89M</span><span class="k">emergency food parcels</span></div></div>
-      <div class="idx-row rv"><div class="idx-num">04</div><div><h3>Cost of living</h3><p>88% name cost as the top issue. Prices up 20.8% since 2021. 2.35 million households "living on empty."</p></div><div class="idx-stat"><span class="v">88%</span><span class="k">say cost is the top issue</span></div></div>
+      <div class="idx-row rv"><div class="idx-num">04</div><div><h3>Cost of living</h3><p>Prices up 20.8% since 2021. 2.35 million households "living on empty" — one missed bill from the edge.</p></div><div class="idx-stat"><span class="v">2.35M</span><span class="k">households living on empty</span></div></div>
       <div class="idx-row rv"><div class="idx-num">05</div><div><h3>Youth disconnection</h3><p>1.01 million 16–24 year-olds not in education, employment or training — first time above one million since 2013.</p></div><div class="idx-stat"><span class="v">1.01M</span><span class="k">young people, NEET</span></div></div>
       <div class="idx-row rv"><div class="idx-num">06</div><div><h3>Chronic loneliness</h3><p>3.8 million people lonely often or always. 940,000 over-65s. Every crisis deepens the fragmentation.</p></div><div class="idx-stat"><span class="v">3.8M</span><span class="k">chronically lonely</span></div></div>
     </div>
@@ -82,7 +84,7 @@
 <!-- pull quote -->
 <section class="bg-paper">
   <div class="max-w-[1000px] mx-auto px-6 py-32 text-center">
-    <p class="rv serif" style="font-style:italic;font-weight:400;font-size:clamp(1.5rem,3.6vw,2.9rem);line-height:1.32;color:var(--color-text-on-light)">Britain spends <b style="font-style:normal;font-weight:500;color:var(--color-brand-deep)">£5,284</b> per person on welfare and <b style="font-style:normal;font-weight:500;color:var(--color-brand-deep)">£291</b> on housing. That gap is why <b style="font-style:normal;font-weight:500;color:var(--color-brand-deep)">354,000</b> people are homeless. We believe public data beats good intentions.</p>
+    <p class="rv serif" style="font-style:italic;font-weight:400;font-size:clamp(1.5rem,3.6vw,2.9rem);line-height:1.32;color:var(--color-text-on-light)">Britain spends <b style="font-style:normal;font-weight:500;color:var(--color-brand-deep)">£1.2 trillion</b> a year on public services — and <b style="font-style:normal;font-weight:500;color:var(--color-brand-deep)">354,000</b> people are still homeless. The data is there. We are what closes the gap.</p>
     <cite class="block mt-6 text-xs font-semibold tracking-[.14em] uppercase" style="color:var(--color-text-light-dim);font-style:normal">Humanitai</cite>
   </div>
 </section>
@@ -120,8 +122,8 @@
   <div class="max-w-[1240px] mx-auto px-6 py-32">
     <div style="max-width:680px">
       <p class="kicker kicker-light rv">Act three · The proof</p>
-      <h2 class="h2 rv" style="margin:18px 0 14px">Eighteen regions, ranked by severity.</h2>
-      <p class="lede lede-light rv">Each bar is a composite of five verified dimensions. Click any region for the full intelligence picture.</p>
+      <h2 class="h2 rv" style="margin:18px 0 14px">Eighteen places. Where crisis hits next.</h2>
+      <p class="lede lede-light rv">Five published dimensions per place, composited into a risk score. Click any place for the forecast and its sources.</p>
     </div>
     <div class="legend rv" style="display:flex;gap:20px;flex-wrap:wrap;margin:24px 0 28px">
       <span style="display:inline-flex;align-items:center;gap:8px;font-size:.74rem;color:rgba(231,239,235,.45)"><i style="width:10px;height:10px;border-radius:3px;background:var(--color-alert);display:inline-block"></i>Poverty</span>
@@ -161,10 +163,10 @@
       <h2 class="h2 rv" style="margin-top:8px">What we're seeing on the street.</h2>
     </div>
     <div class="notes">
-      <blockquote class="note rv"><p>£1.2 trillion flows through Whitehall every year. 14.3 million people still live in poverty. We don't need another report. We need people on the street.</p><cite>— @humanarchitect</cite></blockquote>
-      <blockquote class="note rv"><p>Bradford West: 40.5% of children in poverty after housing costs. Over four in ten. The youngest population in England. This is where OSINT changes the trajectory.</p><cite>— @humanarchitect</cite></blockquote>
-      <blockquote class="note rv"><p>Nottingham: 1,589 patients waiting 52+ weeks for NHS treatment. We deploy community triage to pull the pressure off A&E before the crisis hits.</p><cite>— @humanarchitect</cite></blockquote>
-      <blockquote class="note rv"><p>276 Social Impact Bonds prove outcomes beat promises. Humanitai is the measurement layer that makes them pay.</p><cite>— @humanarchitect</cite></blockquote>
+      <blockquote class="note rv"><p>£1.2 trillion flows through Whitehall every year. 14.3 million people still live in poverty. We don't need another report. We need people on the street.</p><cite>Field brief · Whitehall spend</cite></blockquote>
+      <blockquote class="note rv"><p>Bradford West: 40.5% of children in poverty after housing costs. Over four in ten. The youngest population in England. This is where OSINT changes the trajectory.</p><cite>Field brief · Bradford West</cite></blockquote>
+      <blockquote class="note rv"><p>Nottingham: 1,589 patients waiting 52+ weeks for NHS treatment. We deploy community triage to pull the pressure off A&E before the crisis hits.</p><cite>Field brief · Nottingham RTT</cite></blockquote>
+      <blockquote class="note rv"><p>276 Social Impact Bonds prove outcomes beat promises. Humanitai is the measurement layer that makes them pay.</p><cite>Field brief · SIB market</cite></blockquote>
     </div>
   </div>
 </section>
@@ -178,9 +180,9 @@
       <p class="lede lede-ink rv" style="margin:0 auto">Money, time, or reach. Whatever you've got, there's a role for you.</p>
     </div>
     <div class="inv-cols rv">
-      <div class="inv-col"><h3>Back it</h3><p>Fund direct intervention. Every pound is asset-locked and tracked against outcomes.</p><a href="#join">Fund a session &rarr;</a></div>
-      <div class="inv-col"><h3>Build it</h3><p>Data scientists, community workers, designers. Help us find the cracks.</p><a href="#join">Join the team &rarr;</a></div>
-      <div class="inv-col"><h3>Bring us in</h3><p>Councils, NHS trusts, funders. Deploy OSINT-driven intervention in your community.</p><a href="#join">Start a partnership &rarr;</a></div>
+      <div class="inv-col"><h3>Back it</h3><p>Fund direct intervention. Every pound is asset-locked and tracked against outcomes.</p><a href="mailto:hello@humanitai.uk?subject=Back%20it">Fund a session &rarr;</a></div>
+      <div class="inv-col"><h3>Build it</h3><p>Data scientists, community workers, designers. Help us find the cracks.</p><a href="mailto:hello@humanitai.uk?subject=Build%20it">Join the team &rarr;</a></div>
+      <div class="inv-col"><h3>Bring us in</h3><p>Councils, NHS trusts, funders. Deploy OSINT-driven intervention in your community.</p><a href="mailto:hello@humanitai.uk?subject=Partnership">Start a partnership &rarr;</a></div>
     </div>
   </div>
 </section>
@@ -222,7 +224,7 @@ if(!REDUCE && window.Lenis){
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click',function(e){
       var id=a.getAttribute('href');
-      if(id && id.length>1 && document.querySelector(id)){ e.preventDefault(); lenis.scrollTo(document.querySelector(id),{offset:-70}); }
+      if(id && id.length>1 && document.querySelector(id)){ e.preventDefault(); lenis.scrollTo(document.querySelector(id),{offset:-88}); }
     });
   });
 }
@@ -278,9 +280,11 @@ var list=document.getElementById('vl'),av='all';
 function render(f){av=f;var rows=data.slice().sort(function(a,b){return comp(b.d)-comp(a.d);});
 list.innerHTML='';rows.forEach(function(r,i){var c=comp(r.d);var segs=seg(r.d);var bars=segs.map(function(s){var dim=f==='all'||f===s.key;return'<span style="width:'+(dim?s.w:Math.max(2,s.w*0.12))+'%;background:'+COLORS[s.key]+';opacity:'+(dim?1:0.22)+'"></span>';}).join('');
 var row=document.createElement('div');row.className='viz-row rv';row.style.transitionDelay=(i*0.03)+'s';
-row.innerHTML='<div><div class="viz-city">'+r.c+'</div><div class="viz-reg">'+r.r+'</div></div><div class="viz-bar">'+bars+'</div><div class="viz-sev">'+c+'<small>severity</small></div>';
+row.innerHTML='<div><div class="viz-city">'+r.c+'</div><div class="viz-reg">'+r.r+'</div></div><div class="viz-bar">'+bars+'</div><div class="viz-sev">'+c+'<small>'+(c>=85?'▲ rising':(c>=75?'→ holding':'▽ watch'))+'</small></div>';
 row.onclick=function(){openModal(r,c);};list.appendChild(row);});
-requestAnimationFrame(function(){list.querySelectorAll('.rv').forEach(function(el,i){setTimeout(function(){el.classList.add('in');},i*30+80);});});}
+requestAnimationFrame(function(){list.querySelectorAll('.rv').forEach(function(el,i){setTimeout(function(){el.classList.add('in');
+  var bar=el.querySelector('.viz-bar'); if(bar){requestAnimationFrame(function(){requestAnimationFrame(function(){bar.querySelectorAll('span').forEach(function(s){s.style.width=s.dataset.w+'%';});});});}
+},i*30+80);});});}
 function openModal(r,c){document.getElementById('mR').textContent=r.r;document.getElementById('mC').textContent=r.c;document.getElementById('mP').textContent=r.p;document.getElementById('mS').textContent=r.s;document.getElementById('mD').textContent=r.desc;
 var segs=seg(r.d);document.getElementById('mB').innerHTML=segs.map(function(s){return'<span style="width:'+s.w+'%;background:'+COLORS[s.key]+'"></span>';}).join('');
 document.getElementById('mSrc').textContent=r.src;document.getElementById('md').classList.add('open');document.body.style.overflow='hidden';if(lenis)lenis.stop();}
@@ -307,7 +311,7 @@ render('all');
   function init(){
     if(typeof THREE==='undefined'){cv.style.display='none';return;}
     var stage=document.querySelector('.hf-stage');
-    var scrollP=0,targetP=0,ticking=false,rafId=0,running=true,bar=document.getElementById('hf-bar');
+    var scrollP=0,targetP=0,ticking=false,rafId=0,running=true,bar=document.getElementById('hf-bar'),hud=document.getElementById('hf-hud'),hint=document.querySelector('.hf-hint'),ready=false;
     function compute(){var r=stage.getBoundingClientRect();var total=r.height-window.innerHeight;targetP=Math.min(1,Math.max(0,(-r.top)/total));if(bar)bar.style.width=(targetP*100)+'%';ticking=false;}
     window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(compute);}},{passive:true});
     compute();
@@ -320,12 +324,33 @@ render('all');
     function size(){renderer.setSize(cv.clientWidth,cv.clientHeight,false);cam.aspect=cv.clientWidth/cv.clientHeight;cam.updateProjectionMatrix();}
     size();window.addEventListener('resize',size);
 
-    var N=60,pts=[],pos=new Float32Array(N*3);
-    for(var i=0;i<N;i++){var x=(Math.random()-.5)*22,y=(Math.random()-.5)*14,z=(Math.random()-.5)*30-10;pos[i*3]=x;pos[i*3+1]=y;pos[i*3+2]=z;pts.push({x:x,y:y,z:z,vx:(Math.random()-.5)*.02,vy:(Math.random()-.5)*.02});}
+    function easeInOut(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;}
+    // UK city lat/lng projection (Middlesbrough last = the forecast anchor)
+    var CITIES=[[52.49,-1.89],[53.48,-2.24],[53.41,-2.99],[53.80,-1.55],[55.86,-4.25],
+      [51.53,0.03],[53.79,-1.75],[51.45,-2.59],[54.97,-1.61],[53.74,-0.33],
+      [52.95,-1.15],[53.38,-1.47],[51.51,-0.03],[52.63,-1.13],[53.49,-2.29],
+      [51.88,-0.42],[54.57,-1.23],[53.82,-3.05]];
+    function proj(lat,lng){return{x:(lng+2.2)*1.9,y:(lat-53.6)*2.1,z:-6};}
+
+    var N=60,pts=[],pos=new Float32Array(N*3),targets=[];
+    for(var i=0;i<N;i++){
+      var x=(Math.random()-.5)*22,y=(Math.random()-.5)*14,z=(Math.random()-.5)*30-10;
+      pos[i*3]=x;pos[i*3+1]=y;pos[i*3+2]=z;
+      pts.push({x:x,y:y,z:z,vx:(Math.random()-.5)*.02,vy:(Math.random()-.5)*.02,mb:(i%CITIES.length)===17});
+      var c=CITIES[i%CITIES.length],p=proj(c[0],c[1]);
+      targets.push({x:p.x+(Math.random()-.5)*1.4,y:p.y+(Math.random()-.5)*1.4,z:p.z+(Math.random()-.5)*2});
+    }
     var geo=new THREE.BufferGeometry();
     geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
     var mat=new THREE.PointsMaterial({color:0x00E5C4,size:0.16,transparent:true,opacity:0.85,sizeAttenuation:true});
     var cloud=new THREE.Points(geo,mat);scene.add(cloud);
+
+    // Middlesbrough amber lock cluster
+    var mbp=proj(54.57,-1.23);var mbPos=new Float32Array(5*3);
+    for(var m=0;m<5;m++){mbPos[m*3]=mbp.x+(Math.random()-.5)*1.2;mbPos[m*3+1]=mbp.y+(Math.random()-.5)*1.2;mbPos[m*3+2]=mbp.z+(Math.random()-.5)*1.5;}
+    var mbGeo=new THREE.BufferGeometry();mbGeo.setAttribute('position',new THREE.BufferAttribute(mbPos,3));
+    var mbMat=new THREE.PointsMaterial({color:0xFFB22E,size:0.22,transparent:true,opacity:0,sizeAttenuation:true});
+    var mbCloud=new THREE.Points(mbGeo,mbMat);scene.add(mbCloud);
 
     var links=[];
     for(var a=0;a<N;a++)for(var b=a+1;b<N;b++){var dx=pts[a].x-pts[b].x,dy=pts[a].y-pts[b].y,dz=pts[a].z-pts[b].z;if(Math.sqrt(dx*dx+dy*dy+dz*dz)<9)links.push(a,b);}
@@ -337,24 +362,34 @@ render('all');
     function loop(){
       if(!running)return;
       scrollP+=(targetP-scrollP)*0.08;
+      var settle=easeInOut(Math.min(1,Math.max(0,(scrollP-0.40)/0.35)));
+      var lock=Math.min(1,Math.max(0,(scrollP-0.75)/0.25));
       var speed=0.004+scrollP*0.14;
       var arr=geo.attributes.position.array;
       for(var i=0;i<N;i++){
-        pts[i].x+=pts[i].vx*speed*60;pts[i].y+=pts[i].vy*speed*60;
+        pts[i].x+=pts[i].vx*speed*60*(1-settle);pts[i].y+=pts[i].vy*speed*60*(1-settle);
         if(Math.abs(pts[i].x)>11)pts[i].vx*=-1;if(Math.abs(pts[i].y)>7)pts[i].vy*=-1;
-        arr[i*3]=pts[i].x;arr[i*3+1]=pts[i].y;arr[i*3+2]=pts[i].z;
+        arr[i*3]=pts[i].x+(targets[i].x-pts[i].x)*settle;
+        arr[i*3+1]=pts[i].y+(targets[i].y-pts[i].y)*settle;
+        arr[i*3+2]=pts[i].z+(targets[i].z-pts[i].z)*settle;
       }
       geo.attributes.position.needsUpdate=true;
       var la=lgeo.attributes.position.array;
       for(var k=0;k<links.length;k++){var id=links[k];la[k*3]=pts[id].x;la[k*3+1]=pts[id].y;la[k*3+2]=pts[id].z;}
       lgeo.attributes.position.needsUpdate=true;
-      cam.position.z=8-scrollP*5;cam.fov=62+scrollP*22;cam.updateProjectionMatrix();
-      cloud.rotation.z=scrollP*0.6;mat.size=0.16+scrollP*0.10;lmat.opacity=0.12+scrollP*0.25;
+      cam.position.z=8-scrollP*5;cam.fov=62+scrollP*22;
+      cam.position.x+=(mbp.x*lock*0.7-cam.position.x)*0.06;
+      cam.position.y+=(mbp.y*lock*0.5-cam.position.y)*0.06;
+      cam.updateProjectionMatrix();
+      cloud.rotation.z=scrollP*0.6;mat.size=0.16+scrollP*0.10;lmat.opacity=0.06+settle*0.30;
+      mbMat.opacity=lock;
+      if(hud)hud.classList.toggle('on',lock>0.4);
+      if(hint)hint.textContent=scrollP<0.4?'Noise':(scrollP<0.75?'Signal':'Prediction');
       renderer.render(scene,cam);
+      if(!ready){ready=true;}
       rafId=requestAnimationFrame(loop);
     }
     document.addEventListener('visibilitychange',function(){running=!document.hidden;if(running){cancelAnimationFrame(rafId);loop();}});
-    // pause render when hero scrolled away (battery/mobile)
     var heroIO=new IntersectionObserver(function(e){running=e[0].isIntersecting;if(running){cancelAnimationFrame(rafId);loop();}},{threshold:0});
     heroIO.observe(stage);
     loop();
