@@ -98,7 +98,10 @@ def load():
     recs=[]
     for p in (DATA1,DATA2):
         with open(p) as f: recs+=json.load(f)
-    # ensure 'ageing' + 'mental' well represented: tag mental/ageing records present
+    # REAL live LA-level mental-health data (ONS wellbeing CSV) — primary domain
+    live=os.path.join(ROOT,"prediction","uk_live_ons.json")
+    if os.path.exists(live):
+        recs+=json.load(open(live)).get("records",[])
     return recs
 
 def escalation_signal(text):
@@ -136,13 +139,18 @@ def spatial(g):
         from esda.getisord import G_Local
     except Exception as e:
         return g,f"spatial skipped ({e})"
-    pts=g[["lng","lat"]].values
-    if len(g)<5: return g,"spatial skipped (n<5)"
+    geo = g[(g["lat"].abs()>0.01) & (g["lng"].abs()>0.01)]
+    if len(geo)<5: return g,"spatial skipped (insufficient geocoded points)"
+    pts=geo[["lng","lat"]].values
+    if pts.std(axis=0).max() < 0.01: return g,"spatial skipped (no coordinates)"
     w=KNN.from_array(pts,k=4)
-    gi=G_Local(g["wsev"].values.astype(float),w,star=True)
-    g=g.copy(); g["gi_star"]=gi.Zs
-    g["hotspot"]=np.where(g["gi_star"]>1.96,"HOT",np.where(g["gi_star"]<-1.96,"COLD","ns"))
-    return g,f"Gi* KNN k=4 (n={len(g)})"
+    gi=G_Local(geo["wsev"].values.astype(float),w,star=True)
+    gg=geo.copy(); gg["gi_star"]=gi.Zs
+    gg["hotspot"]=np.where(gg["gi_star"]>1.96,"HOT",np.where(gg["gi_star"]<-1.96,"COLD","ns"))
+    # merge hotspot back
+    g=g.copy(); g["hotspot"]="ns"
+    g.loc[gg.index,"hotspot"]=gg["hotspot"].values
+    return g,f"Gi* KNN k=4 (n={len(geo)} geocoded)"
 
 def dominant_pressure(df,g):
     pres=df.groupby("place")["pressure"].apply(lambda s:Counter(s).most_common(1)[0][0] if len(s) else "mental").to_dict()
