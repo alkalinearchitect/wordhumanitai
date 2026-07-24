@@ -4,361 +4,334 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Humanitai — We Fix What Britain Breaks</title>
 <meta name="description" content="UK CIC using Open-Source Intelligence (OSINT) and AI to solve Britain's hardest social problems.">
-<meta property="og:title" content="Humanitai — We Fix What Britain Breaks">
+<meta property="og:url" content="https://alkalinearchitect.github.io/wordhumanitai/">
 <meta property="og:image" content="https://alkalinearchitect.github.io/wordhumanitai/og-image.jpg">
 <meta name="theme-color" content="#0d6b5c">
-<link rel="canonical" href="https://alkalinearchitect.github.io/wordhumanitai/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230d6b5c'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-weight='800' font-size='20' fill='white' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="preconnect" href="https://unpkg.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* ═══════ RESET ═══════ */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:0}body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#0f0f17;color:#1a1a1a;-webkit-font-smoothing:antialiased;overflow-x:hidden}.serif{font-family:Fraunces,Georgia,serif;letter-spacing:-.03em;line-height:1.05}
-img{max-width:100%}
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
 
-/* ═══════ SPLASH ═══════ */
-#splash{position:fixed;inset:0;z-index:1000;background:#fff;display:flex;align-items:flex-end;justify-content:flex-start;transition:opacity .7s;padding:24px 32px}
-#splash.exiting{opacity:0;pointer-events:none}
-#splash-num{font-family:Fraunces,Georgia,serif;font-size:clamp(4rem,12vw,9rem);font-weight:800;color:#1a1a1a;line-height:1;letter-spacing:-.04em}
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:Inter,-apple-system,system-ui,sans-serif;background:#fff;color:#1a1a1a;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:16px;line-height:1.6}
+
+/* ═══════ TYPOGRAPHY ═══════ */
+.serif{font-family:Fraunces,Georgia,serif;letter-spacing:-.03em;line-height:1.05}
+h1,h2,h3{font-weight:600;line-height:1.05;letter-spacing:-.03em}
+h1{font-size:clamp(3rem,8vw,7rem);font-weight:700;letter-spacing:-.045em;line-height:.85}
+h2{font-size:clamp(2rem,5vw,4rem);font-weight:600;letter-spacing:-.04em}
+h3{font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:600;letter-spacing:-.03em}
+.subtitle{font-size:1.05rem;line-height:1.6;color:#5a5a5a;max-width:560px}
+.caption{font-size:13px;color:#8a8a8a;font-weight:500;text-transform:uppercase;letter-spacing:.08em}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#0d6b5c;text-transform:uppercase;letter-spacing:.06em;margin-bottom:20px}
+.tag::before{content:"";width:20px;height:1.5px;background:#0d6b5c}
+
+/* ═══════ LAYOUT ═══════ */
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+@media(max-width:768px){.wrap{padding:0 20px}}
+.section{padding:120px 0}
+@media(max-width:768px){.section{padding:80px 0}}
+.section-dark{background:#0a0a0f;color:rgba(255,255,255,.85)}
+.section-dark h2{color:#fff}
+.section-cream{background:#f8f6f1}
+.section-white{background:#fff}
 
 /* ═══════ NAV ═══════ */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);transition:background .3s}
-.brand{font-family:Fraunces,serif;font-weight:800;font-size:22px;letter-spacing:-.03em;color:#1a1a1a;line-height:1}.brand-sub{font-size:8px;font-weight:500;color:#6b6b6b;letter-spacing:.05em;text-transform:uppercase;margin-top:1px}
-.nav-right{display:flex;align-items:center;gap:12px}
-.nav-btn{display:none}@media(min-width:768px){.nav-btn{display:inline-flex;padding:10px 24px;background:#1a1a1a;color:#fff;border-radius:9999px;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:background .2s}.nav-btn:hover{background:#333}}
-.nav-emergency{font-size:12px;font-weight:600;color:#1a1a1a;display:none}@media(min-width:768px){.nav-emergency{display:block}}
-.hamb{width:40px;height:40px;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;background:none;border:none}
-.hamb span{position:absolute;height:2px;width:24px;background:#1a1a1a;border-radius:2px;transition:all .4s cubic-bezier(.76,0,.24,1)}
-.hamb span:nth-child(1){transform:translateY(-8px)}.hamb span:nth-child(2){opacity:1;transform:scaleX(1)}.hamb span:nth-child(3){transform:translateY(8px)}
-.hamb.open span:nth-child(1){transform:rotate(45deg) translateY(0)}.hamb.open span:nth-child(2){opacity:0;transform:scaleX(0)}.hamb.open span:nth-child(3){transform:rotate(-45deg) translateY(0)}
-
-/* Mobile overlay */
-#mobileOverlay{position:fixed;inset:0;z-index:99;pointer-events:none}
-#mobileOverlay.open{pointer-events:auto}
-#mobileBackdrop{position:absolute;inset:0;background:rgba(0,0,0,.15);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);opacity:0;transition:opacity .4s}
-#mobileOverlay.open #mobileBackdrop{opacity:1}
-#mobilePanel{position:absolute;top:0;right:0;height:100%;width:85%;max-width:360px;background:#fff;box-shadow:-10px 0 40px rgba(0,0,0,.1);transform:translateX(100%);transition:transform .5s cubic-bezier(.76,0,.24,1)}
-#mobileOverlay.open #mobilePanel{transform:translateX(0)}
-#mobileLinks{display:flex;flex-direction:column;justify-content:center;height:100%;padding:0 32px}
-.mob-link{font-family:Fraunces,serif;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;color:#1a1a1a;padding:4px 0;transition:color .3s;cursor:pointer;border:none;background:none;text-align:left;transform:translateX(24px);opacity:0;transition:transform .5s cubic-bezier(.76,0,.24,1),opacity .5s cubic-bezier(.76,0,.24,1),color .3s}
-.mob-link:hover{color:#999}
-#mobileOverlay.open .mob-link{transform:translateX(0);opacity:1}
-#mobileOverlay.open .mob-link:nth-child(1){transition-delay:.1s}#mobileOverlay.open .mob-link:nth-child(2){transition-delay:.16s}#mobileOverlay.open .mob-link:nth-child(3){transition-delay:.22s}#mobileOverlay.open .mob-link:nth-child(4){transition-delay:.28s}#mobileOverlay.open .mob-link:nth-child(5){transition-delay:.34s}
-.mob-cta{margin-top:24px;padding-top:24px;border-top:1px solid #e0dbcf;transform:translateX(24px);opacity:0;transition:transform .5s cubic-bezier(.76,0,.24,1) .45s,opacity .5s cubic-bezier(.76,0,.24,1) .45s}
-#mobileOverlay.open .mob-cta{transform:translateX(0);opacity:1}
-.mob-cta .emergency{font-size:12px;font-weight:600;color:#1a1a1a;margin-bottom:8px}
-.mob-cta button{width:100%;padding:14px;background:#1a1a1a;color:#fff;border-radius:9999px;font-size:13px;font-weight:600;border:none;cursor:pointer}
-
-/* ═══════ SECTIONS - TILED LAYOUT ═══════ */
-.section-wrap{background:#0f0f17}
-.section-tiled{display:flex;flex-direction:column;gap:6px;padding:0 12px 6px}
-.section-tiled:first-child{padding-top:64px}
-.section-tiled:last-child{padding-bottom:6px}
-@media(min-width:768px){.section-tiled{gap:8px;padding:0 20px 8px}.section-tiled:first-child{padding-top:72px}.section-tiled:last-child{padding-bottom:8px}}
-
-/* ═══════ CARDS ═══════ */
-.card{background:#fff;border-radius:12px;overflow:hidden;position:relative}
-@media(min-width:768px){.card{border-radius:16px}}
-
-/* ═══════ REVEAL ═══════ */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
-.reveal.vis{opacity:1;transform:translateY(0)}
-.d0{transition-delay:0s}.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}.d5{transition-delay:.6s}
-@supports(animation-timeline:scroll()){
-  .reveal{animation:fadeUp auto linear both;animation-timeline:view();animation-range:entry 10% cover 40%}
-  .d1{animation-range:entry 12% cover 42%}.d2{animation-range:entry 14% cover 44%}.d3{animation-range:entry 16% cover 46%}.d4{animation-range:entry 18% cover 48%}.d5{animation-range:entry 20% cover 50%}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;transition:background .3s,border .3s}
+nav.scrolled{background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 32px}
+.brand{font-family:Fraunces,serif;font-weight:700;font-size:20px;letter-spacing:-.03em;color:#1a1a1a}
+.brand em{font-style:normal;color:#0d6b5c}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:14px;font-weight:500;color:#5a5a5a;transition:color .2s;position:relative}
+.nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:#0d6b5c;transition:width .3s}
+.nav-links a:hover{color:#1a1a1a}.nav-links a:hover::after{width:100%}
+.nav-cta{padding:10px 24px;background:#1a1a1a;color:#fff!important;border-radius:6px;font-weight:600;font-size:13px;transition:background .2s}.nav-cta:hover{background:#333!important}
+.nav-cta::after{display:none!important}
+@media(max-width:768px){.nav-links{display:none}}
 
 /* ═══════ HERO ═══════ */
-.hero-grid{display:grid;grid-template-rows:auto 1fr;gap:6px;min-height:calc(100vh - 64px)}
-@media(min-width:768px){.hero-grid{min-height:calc(100vh - 72px);gap:8px}}
-.hero-bars{display:flex;gap:6px}
-@media(min-width:768px){.hero-bars{gap:8px}}
-.hero-bar{flex:1;display:flex;align-items:center;justify-content:center;border-radius:12px;font-family:Fraunces,serif;font-weight:800;font-size:clamp(1rem,3vw,2rem);color:#1a1a1a;padding:14px;min-height:56px;background:#fff;overflow:hidden;position:relative}
-@media(min-width:768px){.hero-bar{border-radius:16px;min-height:80px;padding:20px}}
-.hero-main{flex:1;border-radius:12px;overflow:hidden;position:relative;min-height:300px;background:#fff}
-@media(min-width:768px){.hero-main{border-radius:16px;min-height:0}}
-.hero-main h1{font-family:Fraunces,serif;font-size:clamp(2.8rem,11vw,11rem);font-weight:800;line-height:.79;letter-spacing:-.04em;color:#1a1a1a}
-.hero-tagline{position:absolute;top:16px;left:16px;z-index:10;font-size:clamp(.7rem,.9vw,.85rem);font-weight:600;color:#1a1a1a;line-height:1.3;max-width:clamp(160px,20vw,280px)}
-@media(min-width:768px){.hero-tagline{top:28px;left:28px}}
-.hero-heading{position:absolute;bottom:20px;left:12px;z-index:10}
-@media(min-width:768px){.hero-heading{bottom:32px;left:16px}}
-.hero-cta{position:absolute;bottom:20px;right:16px;z-index:10}
-@media(min-width:768px){.hero-cta{bottom:40px;right:32px}}
-.hero-cta span{font-size:clamp(.7rem,.9vw,.9rem);font-weight:700;color:#fff}
-.hero-canvas{position:absolute;inset:0;z-index:0;pointer-events:none}
-.hero-fallback{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse at 30% 50%,rgba(13,107,92,.08),transparent 60%)}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:#0a0a0f;padding:80px 0}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.3;pointer-events:none}
+.hero-fallback{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 30% 40%,rgba(13,107,92,.12),transparent)}
+.hero .wrap{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:0 32px}
+.hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:end}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+.hero-label{font-size:13px;font-weight:500;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.06em;margin-bottom:32px}
+.hero h1{color:#fff;margin-bottom:24px}
+.hero h1 em{font-style:italic;font-weight:400;background:linear-gradient(135deg,#119984,#0d6b5c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1.1rem;line-height:1.7;color:rgba(255,255,255,.55);margin-bottom:40px;max-width:480px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{padding:14px 32px;background:#119984;color:#fff;border-radius:6px;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:background .2s,transform .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:#0f8a78;transform:translateY(-1px)}
+.btn-secondary{padding:14px 32px;background:transparent;color:rgba(255,255,255,.8);border-radius:6px;font-size:14px;font-weight:600;border:1.5px solid rgba(255,255,255,.15);cursor:pointer;transition:border-color .2s,color .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-secondary:hover{border-color:#119984;color:#fff}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;padding-top:40px;border-top:1px solid rgba(255,255,255,.06)}
+.hero-stat{text-align:left}.hero-stat .num{font-family:Fraunces,serif;font-size:2.2rem;font-weight:600;color:#119984;display:block;letter-spacing:-.03em;line-height:1}
+.hero-stat .label{font-size:12px;color:rgba(255,255,255,.35);margin-top:4px;display:block}
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.2);font-size:10px;letter-spacing:.15em;text-transform:uppercase}
+.scroll-hint-line{width:1px;height:24px;background:linear-gradient(180deg,rgba(255,255,255,.3),transparent)}
 
-/* ═══════ WHY: MANIFESTO CARD ═══════ */
-.why-card{padding:clamp(32px,5vw,56px) clamp(24px,4vw,48px);text-align:center;background:#fff}
-.why-card blockquote{max-width:680px;margin:0 auto}
-.why-card blockquote p{font-family:Fraunces,serif;font-size:clamp(1.3rem,2.8vw,2rem);font-weight:500;line-height:1.2;color:#1a1a1a;font-style:italic}
-.why-card cite{display:block;margin-top:16px;font-size:13px;font-style:normal;color:#6b6b6b}
+/* ═══════ REVEAL ═══════ */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.vis{opacity:1;transform:translateY(0)}
 
-/* ═══════ CRACKS GRID ═══════ */
-.cracks-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
-@media(min-width:768px){.cracks-grid{grid-template-columns:repeat(3,1fr);gap:8px}}
-.crack-card{padding:20px;background:#fff;border-radius:12px;display:flex;flex-direction:column}
-@media(min-width:768px){.crack-card{padding:24px;border-radius:16px}}
-.crack-num{font-family:Fraunces,serif;font-size:2rem;font-weight:800;color:#ddd;line-height:1;margin-bottom:4px}
-.crack-card h3{font-family:Fraunces,serif;font-size:1.05rem;font-weight:700;margin-bottom:4px}
-.crack-card p{font-size:.85rem;color:#3a3a3a;line-height:1.55;margin-bottom:8px;flex:1}
-.crack-stat{font-family:Fraunces,serif;font-size:1.1rem;font-weight:800;color:#c73e1d}
-.crack-src{font-size:10px;color:#6b6b6b}
+/* ═══════ QUOTE ═══════ */
+.quote-section{text-align:center;padding:80px 0}
+.quote-section blockquote{max-width:720px;margin:0 auto}
+.quote-section blockquote p{font-family:Fraunces,serif;font-size:clamp(1.3rem,3vw,2rem);font-weight:400;line-height:1.3;color:#1a1a1a;font-style:italic}
+.quote-section cite{display:block;margin-top:16px;font-size:13px;font-style:normal;color:#8a8a8a}
 
-/* ═══════ HOW: STICKY STACK ═══════ */
-.model-stack{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:6px}
-@media(min-width:768px){.model-stack{gap:8px}}
-.model-card{position:sticky;top:72px;background:rgba(18,18,26,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px 28px;transition:transform .3s,box-shadow .3s}
-@media(min-width:768px){.model-card{top:80px;padding:28px 32px;border-radius:16px}}
-.model-card:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
-.model-card:nth-child(2){top:88px}@media(min-width:768px){.model-card:nth-child(2){top:96px}}
-.model-card:nth-child(3){top:104px}@media(min-width:768px){.model-card:nth-child(3){top:112px}}
-.model-card:nth-child(4){top:120px}@media(min-width:768px){.model-card:nth-child(4){top:128px}}
-.model-step{font-size:10px;font-weight:700;color:#119984;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:2px}
-.model-card h3{font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:4px;font-family:Fraunces,serif}
-.model-card p{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.6;max-width:560px}
+/* ═══════ PROBLEMS ═══════ */
+.problems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;background:#e0dbcf}
+@media(max-width:768px){.problems-grid{grid-template-columns:1fr}}
+.prob-item{background:#fff;padding:40px 36px;transition:background .3s;position:relative}
+.prob-item:hover{background:#faf8f3}
+.prob-num{font-family:Fraunces,serif;font-size:3rem;font-weight:400;color:#e0dbcf;line-height:1;margin-bottom:8px}
+.prob-item h3{font-size:1.1rem;font-weight:600;margin-bottom:6px}
+.prob-item p{font-size:.9rem;color:#5a5a5a;line-height:1.6;margin-bottom:8px}
+.prob-stat{font-family:Fraunces,serif;font-size:1.2rem;font-weight:600;color:#c73e1d}
+
+/* ═══════ MODELS ═══════ */
+.models-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+@media(max-width:900px){.models-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.models-grid{grid-template-columns:1fr}}
+.model-item{text-align:center;padding:0 8px}
+.model-icon{width:48px;height:48px;border-radius:12px;background:rgba(17,153,132,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.2rem}
+.model-item .step{font-size:11px;font-weight:600;color:#119984;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;display:block}
+.model-item h3{font-size:1.1rem;color:#fff;margin-bottom:8px}
+.model-item p{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.6}
 
 /* ═══════ LOCK ═══════ */
-.lock-card{background:linear-gradient(135deg,#0d6b5c,#074a3f);color:#fff;text-align:center;padding:clamp(40px,6vw,64px) clamp(24px,4vw,48px);position:relative;overflow:hidden}
-.lock-card::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M24 20c-2.2 0-4 1.8-4 4v2h-2v8h12v-8h-2v-2c0-2.2-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2v2h-4v-2c0-1.1.9-2 2-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;opacity:.12}
-.lock-card .wrap{position:relative;z-index:1}.lock-card h2{font-family:Fraunces,serif;font-size:clamp(1.4rem,3.5vw,2.6rem);font-weight:800;margin-bottom:10px}
-.lock-card p{font-size:.95rem;color:rgba(255,255,255,.8);max-width:520px;margin:0 auto}
+.lock-section{background:linear-gradient(135deg,#0d6b5c,#074a3f);color:#fff;text-align:center;padding:100px 0;position:relative;overflow:hidden}
+.lock-section::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M24 20c-2.2 0-4 1.8-4 4v2h-2v8h12v-8h-2v-2c0-2.2-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2v2h-4v-2c0-1.1.9-2 2-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.1}
+.lock-section .wrap{position:relative;z-index:1}
+.lock-section h2{margin-bottom:12px}
+.lock-section p{font-size:1rem;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto}
 
 /* ═══════ FORECAST ═══════ */
-.forecast-card{padding:clamp(28px,4vw,40px);background:#fff;border-radius:12px}
-@media(min-width:768px){.forecast-card{border-radius:16px;padding:40px}}
-.forecast-card h3{font-family:Fraunces,serif;font-size:1.35rem;font-weight:700;margin-bottom:8px}
-.forecast-card p{color:#3a3a3a;font-size:.9rem;line-height:1.7;margin-bottom:10px}
-.forecast-target{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:20px;background:rgba(199,62,29,.08);border:1px solid rgba(199,62,29,.12);font-size:11px;font-weight:600;color:#c73e1d;margin-bottom:12px}
-.forecast-meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;padding-top:16px;border-top:1px solid #e0dbcf}
-.fm-item{text-align:center}.fm-item .num{font-family:Fraunces,serif;font-size:1.3rem;font-weight:800;color:#0d6b5c;display:block}
-.fm-item .lbl{font-size:11px;color:#6b6b6b;text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+.forecast-section{padding:120px 0;position:relative}
+.forecast-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:48px}
+@media(max-width:768px){.forecast-grid{grid-template-columns:1fr;gap:32px}}
+.forecast-target{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;background:rgba(199,62,29,.08);border:1px solid rgba(199,62,29,.12);font-size:12px;font-weight:600;color:#c73e1d;margin-bottom:16px}
+.forecast-right{background:#f8f6f1;border-radius:16px;padding:40px;position:sticky;top:100px}
+@media(max-width:768px){.forecast-right{position:static}}
+.forecast-right h3{font-size:1.3rem;margin-bottom:12px}
+.forecast-right p{font-size:.9rem;color:#5a5a5a;line-height:1.7;margin-bottom:10px}
+.fm-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;padding-top:20px;border-top:1px solid #e0dbcf}
+.fm-item{text-align:center}.fm-item .num{font-family:Fraunces,serif;font-size:1.4rem;font-weight:600;color:#0d6b5c;display:block}
+.fm-item .lbl{font-size:11px;color:#8a8a8a;text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+
+/* ═══════ OSINT USE CASES ═══════ */
+.usecases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:48px;background:#e0dbcf}
+@media(max-width:768px){.usecases-grid{grid-template-columns:1fr}}
+.uc-item{background:#f8f6f1;padding:36px 32px;transition:background .3s}
+.uc-item:hover{background:#fff}
+.uc-item .num{font-family:Fraunces,serif;font-size:2.5rem;font-weight:400;color:#d8d3c7;line-height:1;margin-bottom:6px}
+.uc-item h3{font-size:1.05rem;margin-bottom:4px}
+.uc-item p{font-size:.85rem;color:#5a5a5a;line-height:1.6}
 
 /* ═══════ TICKER ═══════ */
-.ticker{background:#0f0f17;overflow:hidden;border-top:1px solid #1a1a1f;border-bottom:1px solid #1a1a1f}.ticker-track{display:flex;white-space:nowrap;padding:10px 0}
-.ti{font-family:Fraunces,serif;font-size:.95rem;color:rgba(255,255,255,.55);padding:0 16px;font-weight:500}
-.ts{color:#119984;font-size:.45rem;opacity:.4}.ts::before{content:"◆"}@media(max-width:640px){.ti{font-size:.82rem;padding:0 12px}}
+.ticker-bar{background:#0a0a0f;overflow:hidden;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04)}
+.ticker-track{display:flex;white-space:nowrap;padding:14px 0}
+.ti{font-family:Fraunces,serif;font-size:.95rem;color:rgba(255,255,255,.5);padding:0 20px;font-weight:400}
+.ts{color:#119984;font-size:.45rem;padding:0 4px}
 
 /* ═══════ MAP ═══════ */
-.map-shell{display:grid;grid-template-columns:1fr 280px;border-radius:12px;overflow:hidden;border:1px solid #1a1a1f}
-@media(min-width:768px){.map-shell{border-radius:16px}}
-.onsite-map{height:440px;width:100%;background:#0f0f17;z-index:1;min-height:440px}
-.map-panel{background:#12121a;border-left:1px solid #1a1a1f;padding:20px;display:flex;flex-direction:column;overflow-y:auto;max-height:440px}
-.mp-empty{text-align:center;color:#5a5a6a;padding:40px 16px}.mp-empty .mp-icon{font-size:2rem;margin-bottom:8px;opacity:.4}.mp-empty h3{margin:6px 0 4px;color:rgba(255,255,255,.5);font-size:1rem}.mp-empty p{font-size:.8rem;line-height:1.5}
-.mp-detail .mp-region{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#119984;margin-bottom:2px}
-.mp-detail .mp-city{font-size:1.4rem;margin:0 0 4px;color:#fff}.mp-detail .mp-priority{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#e8743b;margin-bottom:6px}
-.mp-detail .mp-stat{font-size:.9rem;font-weight:600;color:#f0a830;margin-bottom:6px;line-height:1.4}
+.map-section{background:#0a0a0f;padding:120px 0}
+.map-section h2{color:#fff}.map-section .subtitle{color:rgba(255,255,255,.4)}
+.map-shell{display:grid;grid-template-columns:1fr 300px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.06);margin-top:48px}
+.onsite-map{height:480px;width:100%;background:#0a0a0f;min-height:480px}
+.map-panel{background:#0e0e15;border-left:1px solid rgba(255,255,255,.06);padding:24px;display:flex;flex-direction:column;max-height:480px;overflow-y:auto}
+.mp-empty{text-align:center;color:#5a5a6a;padding:60px 20px}.mp-empty h3{color:rgba(255,255,255,.4);font-size:1.1rem}.mp-empty p{font-size:.82rem;line-height:1.5;margin-top:4px}
+.mp-detail .mp-region{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#119984}.mp-detail .mp-city{font-size:1.5rem;color:#fff;margin:2px 0 6px}
+.mp-detail .mp-priority{font-size:.7rem;font-weight:600;text-transform:uppercase;color:#e8743b;margin-bottom:6px}
+.mp-detail .mp-stat{font-size:.9rem;font-weight:600;color:#f0a830;margin-bottom:6px}
 .mp-detail .mp-detail-txt{font-size:.8rem;color:#6a6a7a;line-height:1.6;margin-bottom:10px}
-.mp-bar{height:4px;background:#1a1a1f;border-radius:2px;overflow:hidden;margin-bottom:10px}.mp-bar span{display:block;height:100%;border-radius:2px;transition:width .6s}
-.mp-close{background:none;border:1px solid #1a1a1f;color:#5a5a6a;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:.72rem;align-self:flex-start;min-height:36px;transition:color .2s,border-color .2s}
+.mp-bar{height:3px;background:#1a1a1f;border-radius:2px;overflow:hidden;margin-bottom:10px}.mp-bar span{display:block;height:100%;border-radius:2px;transition:width .6s}
+.mp-close{padding:6px 12px;background:none;border:1px solid #1a1a1f;color:#5a5a6a;border-radius:6px;cursor:pointer;font-size:.72rem}
 .mp-close:hover{color:#fff;border-color:#119984}
-.map-filters{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
-.mf-btn{background:#12121a;border:1px solid #1a1a1f;color:#6a6a7a;padding:5px 12px;border-radius:16px;cursor:pointer;font-size:.75rem;transition:all .2s;min-height:32px}
+.map-filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;justify-content:center}
+.mf-btn{padding:6px 16px;background:#0e0e15;border:1px solid rgba(255,255,255,.06);color:#6a6a7a;border-radius:16px;cursor:pointer;font-size:.78rem;transition:all .2s}
 .mf-btn:hover{border-color:#119984;color:#fff}.mf-btn.active{background:#119984;color:#fff;border-color:#119984}
 .map-marker{width:26px;height:26px;display:flex;align-items:center;justify-content:center;cursor:pointer}
 .map-marker-inner{width:12px;height:12px;border-radius:50%;box-shadow:0 0 0 3px rgba(255,255,255,.12),0 2px 8px rgba(0,0,0,.5);transition:transform .2s}
-.leaflet-container{background:#0f0f17;font-family:Inter,sans-serif}
-@media(max-width:900px){.map-shell{grid-template-columns:1fr}.map-panel{border-left:none;border-top:1px solid #1a1a1f;max-height:180px}.onsite-map{height:340px;min-height:340px}}
+.leaflet-container{background:#0a0a0f;font-family:Inter,sans-serif}
+@media(max-width:900px){.map-shell{grid-template-columns:1fr}.map-panel{border-left:none;border-top:1px solid rgba(255,255,255,.06);max-height:200px}.onsite-map{height:360px;min-height:360px}}
 
 /* ═══════ EVIDENCE ═══════ */
-.evidence-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
-@media(min-width:768px){.evidence-grid{grid-template-columns:repeat(2,1fr);gap:8px}}
-.evidence-card{padding:20px 24px;background:#fff;border-radius:12px}
-@media(min-width:768px){.evidence-card{border-radius:16px;padding:24px 28px}}
-.evidence-card p{font-size:.9rem;line-height:1.6;color:#1a1a1a;margin-bottom:10px;font-style:italic}
-.evidence-card cite{font-size:.78rem;color:#0d6b5c;font-style:normal;font-weight:600}
+.evidence-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+@media(max-width:768px){.evidence-grid{grid-template-columns:1fr}}
+.evidence-card{background:#fff;border:1px solid #e0dbcf;border-radius:12px;padding:32px;transition:box-shadow .3s}
+.evidence-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.04)}
+.evidence-card p{font-size:.95rem;line-height:1.6;color:#1a1a1a;margin-bottom:12px;font-style:italic}
+.evidence-card cite{font-size:.8rem;color:#0d6b5c;font-style:normal;font-weight:600}
 
 /* ═══════ JOIN ═══════ */
-.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:780px;margin:0 auto}
-@media(min-width:768px){.join-grid{gap:8px}}
-@media(max-width:640px){.join-grid{grid-template-columns:1fr}}
-.join-card{padding:28px 24px;background:#fff;border-radius:12px;text-align:left;transition:all .3s;cursor:default}
-@media(min-width:768px){.join-card{border-radius:16px;padding:32px 28px}}
-.join-card:hover{background:#1a1a1a;color:#fff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
-.join-card:hover p{color:rgba(255,255,255,.7)}.join-card:hover a{color:#119984}
-.join-card h3{font-family:Fraunces,serif;font-size:1.1rem;font-weight:700;margin-bottom:4px}
-.join-card p{font-size:.82rem;color:#3a3a3a;margin-bottom:12px;transition:color .3s}
-.join-card a{font-size:12px;font-weight:600;color:#0d6b5c;border-bottom:1.5px solid #0d6b5c;padding-bottom:2px;transition:color .3s,border-color .3s}
+.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:800px;margin:48px auto 0}
+@media(max-width:768px){.join-grid{grid-template-columns:1fr}}
+.join-card{padding:40px 32px;border:1px solid #e0dbcf;border-radius:12px;text-align:center;transition:all .3s;background:#fff}
+.join-card:hover{background:#1a1a1a;color:#fff;border-color:#1a1a1a;transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.join-card:hover p{color:rgba(255,255,255,.6)}.join-card:hover a{color:#119984}
+.join-card h3{font-size:1.15rem;margin-bottom:6px}
+.join-card p{font-size:.85rem;color:#5a5a5a;margin-bottom:16px;transition:color .3s}
+.join-card a{font-size:13px;font-weight:600;color:#0d6b5c;padding-bottom:2px;border-bottom:1.5px solid #0d6b5c;transition:color .3s,border-color .3s}
 
 /* ═══════ FAQ ═══════ */
-.faq-card{max-width:640px;margin:0 auto;padding:clamp(28px,4vw,40px);background:#fff;border-radius:12px}
-@media(min-width:768px){.faq-card{border-radius:16px}}
-.faq-item{border-bottom:1px solid #e0dbcf;padding:12px 0}
+.faq-list{max-width:680px;margin:48px auto 0}
+.faq-item{border-bottom:1px solid #e0dbcf;padding:16px 0}
 .faq-item:last-child{border-bottom:none}
-.faq-item summary{font-size:.9rem;font-weight:600;cursor:pointer;list-style:none;position:relative;padding-right:24px;color:#1a1a1a;min-height:44px;display:flex;align-items:center}
+.faq-item summary{font-size:.95rem;font-weight:600;cursor:pointer;list-style:none;position:relative;padding-right:28px;color:#1a1a1a;min-height:44px;display:flex;align-items:center}
 .faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:1.1rem;color:#0d6b5c;font-weight:600}
+.faq-item summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:1.2rem;color:#0d6b5c;font-weight:400;transition:transform .3s}
 .faq-item[open] summary::after{content:"–"}
-.faq-body{margin-top:6px;font-size:.85rem;line-height:1.7;color:#3a3a3a}
+.faq-body{margin-top:8px;font-size:.9rem;line-height:1.7;color:#5a5a5a}
 
 /* ═══════ FOOTER ═══════ */
-footer{background:#0f0f17;color:rgba(255,255,255,.3);padding:40px 20px;border-top:1px solid #1a1a1f}
-.foot-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:28px}
-@media(max-width:640px){.foot-inner{grid-template-columns:1fr;gap:20px}}
-.fb .brand{color:#fff;font-size:18px}.fb p{font-size:.8rem;max-width:260px;line-height:1.5;margin-top:6px}
-.fc h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.4);margin-bottom:10px}
-.fc a{display:block;font-size:.82rem;padding:3px 0;color:rgba(255,255,255,.25);transition:color .2s}
+footer{background:#0a0a0f;color:rgba(255,255,255,.35);padding:80px 0 48px}
+.foot-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+@media(max-width:640px){.foot-inner{grid-template-columns:1fr;gap:32px}}
+.fb .brand{color:#fff;font-size:18px;margin-bottom:8px;display:inline-block}
+.fb p{font-size:.82rem;line-height:1.6}
+.fc h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-bottom:12px}
+.fc a{display:block;font-size:.85rem;padding:4px 0;color:rgba(255,255,255,.25);transition:color .2s}
 .fc a:hover{color:#fff}
-.ft{border-top:1px solid rgba(255,255,255,.05);padding-top:16px;font-size:11px;text-align:center;max-width:1120px;margin:0 auto}
+.foot-base{border-top:1px solid rgba(255,255,255,.04);padding-top:24px;font-size:11px;text-align:center;max-width:1200px;margin:0 auto;padding-left:32px;padding-right:32px}
 
-/* ═══════ MOBILE BAR ═══════ */
-.mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;padding:8px 12px;background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid #ddd}
-.mobile-cta a{display:block;text-align:center;background:#1a1a1a;color:#fff;padding:14px;border-radius:9999px;font-weight:600;font-size:14px}
-@media(max-width:640px){.mobile-cta{display:block}}
-
-/* ═══════ UTILITY ═══════ */
-.wrap{max-width:1120px;margin:0 auto;padding:0}.tc{text-align:center}.tag{font-size:11px;font-weight:600;color:#0d6b5c;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;display:flex;align-items:center;gap:8px;justify-content:center}
-.tag::before,.tag::after{content:"";width:16px;height:1.5px;background:#0d6b5c}
-.tag.light{color:#119984}.tag.light::before,.tag.light::after{background:#119984}
-h2.section-h{font-family:Fraunces,serif;font-size:clamp(1.5rem,3.5vw,2.4rem);font-weight:800;margin-bottom:4px;line-height:1.05}
-p.section-desc{color:#3a3a3a;font-size:.95rem;max-width:520px;margin:0 auto 16px}
-@media(min-width:768px){p.section-desc{margin-bottom:20px}}
-.stats-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
-.stat-item{text-align:center}.stat-item .num{font-family:Fraunces,serif;font-size:1.4rem;font-weight:800;color:#119984;display:block}
-.stat-item .lbl{font-size:10px;color:#5a5a6a;text-transform:uppercase;letter-spacing:.08em}
-
-/* A11Y */
-a:focus-visible,button:focus-visible,.mf-btn:focus-visible,.mp-close:focus-visible{outline:2px solid #119984;outline-offset:2px;border-radius:3px}
-@media(prefers-reduced-motion:reduce){.reveal,.mob-link,.mob-cta{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}}
+/* ═══════ A11Y ═══════ */
+a:focus-visible,button:focus-visible,.mf-btn:focus-visible,.mp-close:focus-visible{outline:2px solid #119984;outline-offset:2px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 
-<!-- ═══════ SPLASH ═══════ -->
-<div id="splash"><div id="splash-num">0</div></div>
-
-<!-- ═══════ MOBILE OVERLAY ═══════ -->
-<div id="mobileOverlay"><div id="mobileBackdrop"></div><div id="mobilePanel">
-<div id="mobileLinks">
-<button class="mob-link" data-href="#why">Why</button>
-<button class="mob-link" data-href="#how">How</button>
-<button class="mob-link" data-href="#map">Map</button>
-<button class="mob-link" data-href="#faq">FAQ</button>
-<button class="mob-link" data-href="#join">Join</button>
-<div class="mob-cta"><div class="emergency">Asset-locked CIC</div><button onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">Back the Work</button></div>
-</div></div></div>
-
 <!-- ═══════ NAV ═══════ -->
-<nav>
-<a href="#" class="brand">H<span style="color:#0d6b5c">.</span>umanitai<div class="brand-sub">Community Interest Company</div></a>
-<div class="nav-right">
-<span class="nav-emergency">Asset-locked · Outcome-tracked</span>
-<button class="nav-btn" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">Back the Work</button>
-<button class="hamb" id="hamb" aria-label="Menu"><span></span><span></span><span></span></button>
+<nav id="nav"><div class="nav-inner">
+<a href="#" class="brand"><em>H</em>umanitai</a>
+<div class="nav-links">
+<a href="#problems">The cracks</a>
+<a href="#approach">The approach</a>
+<a href="#map">The map</a>
+<a href="#faq">FAQ</a>
+<a href="#join" class="nav-cta">Back the work</a>
 </div>
-</nav>
+</div></nav>
 
 <!-- ═══════ HERO ═══════ -->
-<div class="section-wrap sec-dark"><div class="section-tiled hero-grid">
-<div class="hero-bars">
-<div class="hero-bar reveal d1">🇬🇧 Open-Source Intelligence</div>
-<div class="hero-bar reveal d2">Community Interest Company</div>
-</div>
-<div class="hero-main reveal d3">
-<canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+<section class="hero" id="hero">
+<canvas id="hero-canvas" aria-hidden="true"></canvas>
 <div class="hero-fallback"></div>
-<div class="hero-tagline">Open-Source Intelligence (OSINT)<br>for UK social impact.</div>
-<div class="hero-heading">
-<h1>We fix what<br><em style="font-style:italic;background:linear-gradient(135deg,#119984,#0d6b5c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Britain</em> breaks.</h1>
+<div class="wrap"><div class="hero-grid">
+<div>
+<p class="hero-label">Humanitai — Community Interest Company</p>
+<h1>We fix what<br><em>Britain</em> breaks.</h1>
+<p>We use Open-Source Intelligence (OSINT) and AI to find the cracks in Britain's social systems — before people fall through them. Trained community teams on the ground. Public data at scale. Outcomes that can't be ignored.</p>
+<div class="hero-actions">
+<a href="#join" class="btn-primary">Back the work →</a>
+<a href="#map" class="btn-secondary">See the map</a>
 </div>
-<div class="hero-cta"><a href="#map" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#1a1a1a;color:#fff;border-radius:9999px;font-size:clamp(.75rem,1vw,1rem);font-weight:700;text-decoration:none;transition:transform .2s">Live Map →</a></div>
+</div>
+<div>
+<div class="hero-stats">
+<div><span class="num" data-target="14.3" data-suffix="M">0</span><span class="label">people still in poverty</span></div>
+<div><span class="num" data-target="354" data-suffix="K">0</span><span class="label">people homeless</span></div>
+<div><span class="num" data-target="7.6" data-suffix="M">0</span><span class="label">on NHS waiting list</span></div>
+</div>
 </div>
 </div></div>
+<div class="scroll-hint">Scroll<div class="scroll-hint-line"></div></div>
+</section>
 
-<!-- ═══════ WHY ═══════ -->
-<div class="section-wrap" id="why"><div class="section-tiled">
-<div class="card reveal"><div class="why-card">
-<blockquote><p>"Britain spends £5,284 per person on welfare and £291 per person on housing. That math is why 354,000 people are homeless. <strong>We believe ground truth beats good intentions.</strong>"</p><cite>— Humanitai Manifesto</cite></blockquote>
-</div></div>
-
-<div class="card reveal d1"><div style="padding:clamp(24px,4vw,36px)">
-<div class="tag">The Cracks</div>
-<h2 class="section-h" style="text-align:center">Six places the system breaks.</h2>
-<p class="section-desc" style="text-align:center">£1.2 trillion flows through Whitehall every year. These are the cracks people fall through.</p>
-<div class="cracks-grid">
-<div class="crack-card"><div class="crack-num">01</div><h3>Mental Health</h3><p>1 in 6 adults weekly. 20% of children aged 8-16 with probable disorder — up from 12% in 2017.</p><span class="crack-stat">20%</span><span class="crack-src">Commons Library</span></div>
-<div class="crack-card"><div class="crack-num">02</div><h3>Homelessness</h3><p>132,410 households in temporary accommodation. 354,000 people homeless. 161,500 children.</p><span class="crack-stat">354K</span><span class="crack-src">Shelter, Dec 2024</span></div>
-<div class="crack-card"><div class="crack-num">03</div><h3>Food Insecurity</h3><p>2.89M emergency food parcels. 13.9% of UK households food insecure. Parents skip meals so kids eat.</p><span class="crack-stat">2.89M</span><span class="crack-src">Trussell Trust</span></div>
-<div class="crack-card"><div class="crack-num">04</div><h3>Cost of Living</h3><p>88% say cost is top issue. Prices up 20.8% since 2021. 2.35 million "living on empty."</p><span class="crack-stat">88%</span><span class="crack-src">ONS</span></div>
-<div class="crack-card"><div class="crack-num">05</div><h3>Youth NEET</h3><p>1.01M 16-24 year olds NEET — first time above 1M since 2013. 61% economically inactive.</p><span class="crack-stat">1.01M</span><span class="crack-src">ONS/Commons Library</span></div>
-<div class="crack-card"><div class="crack-num">06</div><h3>Loneliness</h3><p>3.8M people feel lonely often or always. 940,000 over-65s often lonely. Social fragmentation.</p><span class="crack-stat">3.8M</span><span class="crack-src">ONS Loneliness 2023</span></div>
+<!-- ═══════ QUOTE ═══════ -->
+<section class="quote-section section-cream">
+<div class="wrap reveal">
+<blockquote>
+<p>"Britain spends £5,284 per person on welfare and £291 per person on housing. That math is why 354,000 people are homeless. We believe public data beats good intentions."</p>
+<cite>— Humanitai</cite>
+</blockquote>
 </div>
-</div></div>
-</div></div>
+</section>
 
-<!-- ═══════ HOW ═══════ -->
-<div class="section-wrap sec-dark" id="how"><div class="section-tiled">
-<div class="card" style="background:#12121a;padding:clamp(28px,4vw,40px);text-align:center">
-<div class="tag light" style="justify-content:center">The Approach</div>
-<h2 class="section-h" style="color:#fff;text-align:center">Four models. One pipeline. Fundable outcomes.</h2>
-<p class="section-desc" style="color:rgba(255,255,255,.5);text-align:center">Humanitai combines four proven models into a single system. Every pound tracked. Every outcome verified.</p>
-<div class="stats-row">
-<div class="stat-item"><span class="num">12+</span><span class="lbl">Data Sources</span></div>
-<div class="stat-item"><span class="num">7</span><span class="lbl">Dimensions</span></div>
-<div class="stat-item"><span class="num">5</span><span class="lbl">Agent Clusters</span></div>
-<div class="stat-item"><span class="num">85%</span><span class="lbl">Confidence</span></div>
-</div>
-<div class="model-stack">
-<div class="model-card"><span class="model-step">Model 1 — Ground Truth</span><h3>Community Health Worker Intelligence</h3><p>Trained community liaisons in UK neighbourhoods collect real-time needs assessments, photo evidence, and location-stamped reports. 1.3M+ CHWs worldwide proven to cut infant mortality 42% (Brazil) and maternal mortality 73% (Iran).</p></div>
-<div class="model-card"><span class="model-step">Model 2 — Prediction</span><h3>Human Architect Technology</h3><p>Seven dimensions across 12+ open-source data sources. Five agent clusters analyse public datasets — ONS, NHS, Trussell Trust, JRF, gov.uk — cross-referencing to predict where intervention prevents crisis. Confidence-scored forecasts.</p></div>
-<div class="model-card"><span class="model-step">Model 3 — Funding</span><h3>Social Impact Bonds</h3><p>Investors fund interventions upfront. Government pays back only if outcomes are achieved. $745M deployed globally across 276 SIBs. UK pioneered this model at Peterborough Prison in 2010.</p></div>
-<div class="model-card"><span class="model-step">Model 4 — Proof</span><h3>SROI Outcome Measurement</h3><p>UK-government-recognised 8-principle framework. Social outcomes converted to monetary value. "For every £1 invested, £X social value returned." Every pound tracked. Every outcome verified.</p></div>
+<!-- ═══════ PROBLEMS ═══════ -->
+<section class="section section-white" id="problems">
+<div class="wrap">
+<p class="tag reveal">The cracks</p>
+<h2 class="reveal" style="max-width:600px;margin-bottom:8px">Six places the system breaks.</h2>
+<p class="subtitle reveal" style="margin-bottom:0">£1.2 trillion flows through Whitehall every year. These are the cracks people fall through.</p>
+<div class="problems-grid reveal">
+<div class="prob-item"><div class="prob-num">01</div><h3>Mental health</h3><p>1 in 6 adults weekly. 20% of children aged 8-16 with probable disorder — up from 12% in 2017.</p><span class="prob-stat">20%</span></div>
+<div class="prob-item"><div class="prob-num">02</div><h3>Homelessness</h3><p>132,410 households in temporary accommodation. 354,000 people homeless. 161,500 children.</p><span class="prob-stat">354K</span></div>
+<div class="prob-item"><div class="prob-num">03</div><h3>Food insecurity</h3><p>2.89M emergency food parcels. 13.9% of UK households food insecure. Parents skip meals so children eat.</p><span class="prob-stat">2.89M</span></div>
+<div class="prob-item"><div class="prob-num">04</div><h3>Cost of living</h3><p>88% say cost of living is a top issue. Prices up 20.8% since 2021. 2.35 million "living on empty."</p><span class="prob-stat">88%</span></div>
+<div class="prob-item"><div class="prob-num">05</div><h3>Youth disconnection</h3><p>1.01M 16-24 year olds NEET — first time above 1M since 2013. 61% economically inactive.</p><span class="prob-stat">1.01M</span></div>
+<div class="prob-item"><div class="prob-num">06</div><h3>Chronic loneliness</h3><p>3.8M people lonely often or always. 940,000 over-65s often lonely. Social fragmentation deepens crisis.</p><span class="prob-stat">3.8M</span></div>
 </div>
 </div>
+</section>
 
-<div class="lock-card card reveal"><div class="wrap">
+<!-- ═══════ APPROACH ═══════ -->
+<section class="section section-dark" id="approach">
+<div class="wrap">
+<p class="tag reveal" style="color:#119984">The approach</p>
+<h2 class="reveal" style="margin-bottom:8px">Four models. One pipeline.</h2>
+<p class="subtitle reveal" style="color:rgba(255,255,255,.4);margin-bottom:0">Humanitai combines four proven models into a single system. Every pound tracked. Every outcome verified.</p>
+<div class="models-grid reveal">
+<div class="model-item"><span class="step">Model 1</span><div class="model-icon">👥</div><h3>CHW Intelligence</h3><p>Trained community liaisons collect real-time ground truth: needs assessments, photo evidence, location-stamped reports.</p></div>
+<div class="model-item"><span class="step">Model 2</span><div class="model-icon">🧠</div><h3>Human Architect Technology</h3><p>OSINT + AI across 12+ public datasets. Five agent clusters cross-reference ONS, NHS, JRF, Trussell Trust data to predict crisis before it hits.</p></div>
+<div class="model-item"><span class="step">Model 3</span><div class="model-icon">💰</div><h3>Social Impact Bonds</h3><p>Investors fund upfront. Government pays back only on outcomes. $745M deployed globally across 276 SIBs.</p></div>
+<div class="model-item"><span class="step">Model 4</span><div class="model-icon">📊</div><h3>SROI Measurement</h3><p>UK-government-recognised framework. Social outcomes converted to monetary value. Every pound tracked.</p></div>
+</div>
+</div>
+</section>
+
+<section class="lock-section reveal"><div class="wrap">
 <h2 class="serif">Profit can't leave.<br>That's not a promise — it's the law.</h2>
-<p>Humanitai is a registered Community Interest Company. Our assets are legally locked. Every pound must serve the community first.</p>
-</div></div>
+<p>Humanitai is a registered Community Interest Company. Our assets are legally locked. Every pound we generate must serve the community first.</p>
+</div></section>
 
-<div class="card reveal d1" style="padding:clamp(28px,4vw,40px);background:#fff">
-<span class="forecast-target" style="display:inline-flex">🎯 Primary Target</span>
-<h3 class="serif" style="font-size:1.35rem;font-weight:700;margin-bottom:6px">Mental Health Gap, Ages 16-29</h3>
-<p style="color:#3a3a3a;font-size:.9rem;line-height:1.7">Our Human Architect Technology analysed open-source UK social data across seven dimensions — ONS health data, NHS waiting lists, JRF poverty figures, demographic trajectories — using web-based public data intelligence techniques. It found one clear target: the mental health support gap for young adults in underserved communities.</p>
-<p style="color:#3a3a3a;font-size:.9rem;line-height:1.7">Anxiety and depression rates have doubled in a decade. With 20% of children already affected and NHS services at capacity, early intervention is the highest-leverage investment available. Every pound invested returns an estimated multiple in social value.</p>
-<div class="forecast-meta">
-<div class="fm-item"><span class="num">12+</span><span class="lbl">Sources</span></div>
-<div class="fm-item"><span class="num">7</span><span class="lbl">Dimensions</span></div>
-<div class="fm-item"><span class="num">5</span><span class="lbl">Clusters</span></div>
-<div class="fm-item"><span class="num">85%</span><span class="lbl">Confidence</span></div>
+<!-- ═══════ FORECAST + USE CASES ═══════ -->
+<section class="forecast-section section-white">
+<div class="wrap">
+<p class="tag reveal">The forecast</p>
+<h2 class="reveal" style="margin-bottom:8px">Where our intelligence points.</h2>
+<p class="subtitle reveal" style="margin-bottom:0">Our Human Architect Technology analysed open-source UK social data across seven dimensions — and found one clear target.</p>
+<div class="forecast-grid">
+<div class="reveal">
+<span class="forecast-target">🎯 Primary target</span>
+<h3 style="font-size:clamp(1.4rem,3vw,2rem);margin-bottom:8px">Mental health gap, ages 16-29</h3>
+<p style="color:#5a5a5a;font-size:.95rem;line-height:1.7">Anxiety and depression rates have doubled in a decade. With 20% of children already affected and NHS services at capacity, early intervention is the highest-leverage investment available.</p>
+<p style="color:#5a5a5a;font-size:.95rem;line-height:1.7">Our OSINT-driven analysis cross-referenced ONS health data, NHS waiting lists, JRF poverty figures, and demographic trajectories across 18 UK regions. The signal is unambiguous.</p>
+</div>
+<div class="forecast-right reveal">
+<h3 class="serif">OSINT use cases</h3>
+<p>We apply open-source intelligence techniques — public API mining, web-based data gathering, browser automation — to UK social data. Six live applications:</p>
+<div style="display:flex;flex-direction:column;gap:10px;margin-top:16px">
+<div style="display:flex;gap:12px;align-items:start"><span style="font-family:Fraunces,serif;font-weight:600;color:#0d6b5c;font-size:1.1rem">01</span><div><strong style="font-size:.9rem">NHS waiting lists</strong><p style="font-size:.8rem;color:#5a5a5a;margin:0">Public RTT data cross-referenced with local demographics to find trusts with longest 52+ week waits.</p></div></div>
+<div style="display:flex;gap:12px;align-items:start"><span style="font-family:Fraunces,serif;font-weight:600;color:#0d6b5c;font-size:1.1rem">02</span><div><strong style="font-size:.9rem">Food bank demand</strong><p style="font-size:.8rem;color:#5a5a5a;margin:0">Trussell Trust open data + Universal Credit claimant stats to predict demand spikes.</p></div></div>
+<div style="display:flex;gap:12px;align-items:start"><span style="font-family:Fraunces,serif;font-weight:600;color:#0d6b5c;font-size:1.1rem">03</span><div><strong style="font-size:.9rem">Child poverty</strong><p style="font-size:.8rem;color:#5a5a5a;margin:0">End Child Poverty + ONS datasets at LSOA level to find wards where child poverty exceeds 40%.</p></div></div>
+<div style="display:flex;gap:12px;align-items:start"><span style="font-family:Fraunces,serif;font-weight:600;color:#0d6b5c;font-size:1.1rem">04</span><div><strong style="font-size:.9rem">Life expectancy gaps</strong><p style="font-size:.8rem;color:#5a5a5a;margin:0">ONS data analysed for widest within-city gaps — where isolation and deprivation intersect.</p></div></div>
+</div>
+<div class="fm-row"><div class="fm-item"><span class="num">12+</span><span class="lbl">Datasets</span></div><div class="fm-item"><span class="num">7</span><span class="lbl">Dimensions</span></div><div class="fm-item"><span class="num">5</span><span class="lbl">Clusters</span></div><div class="fm-item"><span class="num">85%</span><span class="lbl">Confidence</span></div></div>
 </div>
 </div>
-</div></div>
-
-<div class="card reveal d2" style="padding:clamp(28px,4vw,40px)">
-<div class="tag" style="justify-content:center">OSINT Use Cases</div>
-<h2 class="section-h" style="text-align:center">Public data + AI for social impact.</h2>
-<p class="section-desc" style="text-align:center">We apply open-source intelligence techniques — web search, public API mining, browser-based data gathering — to UK social data. Here's how.</p>
-<div class="cracks-grid">
-<div class="crack-card"><div class="crack-num">01</div><h3>NHS Waiting Lists</h3><p>Public NHS England RTT data scraped and cross-referenced with local demographics to identify trusts with the longest 52+ week waits relative to population need.</p></div>
-<div class="crack-card"><div class="crack-num">02</div><h3>Food Bank Demand</h3><p>Trussell Trust open data analysed for regional food parcel distribution trends, cross-referenced with Universal Credit claimant data from gov.uk to predict demand spikes.</p></div>
-<div class="crack-card"><div class="crack-num">03</div><h3>Child Poverty Mapping</h3><p>End Child Poverty Coalition and ONS datasets combined at LSOA level to identify neighbourhoods where child poverty exceeds 40%, down to individual wards.</p></div>
-<div class="crack-card"><div class="crack-num">04</div><h3>Homelessness Tracking</h3><p>MHCLG statutory homelessness data and Shelter open statistics correlated with local housing costs to predict temporary accommodation pressure points.</p></div>
-<div class="crack-card"><div class="crack-num">05</div><h3>Life Expectancy Gaps</h3><p>ONS life expectancy data by local authority analysed to find the widest within-city gaps, identifying communities where isolation and deprivation intersect.</p></div>
-<div class="crack-card"><div class="crack-num">06</div><h3>NEET Risk Forecasting</h3><p>DfE and ONS education/employment data processed through AI clustering to predict which postcodes face rising youth disconnection before official statistics catch up.</p></div>
 </div>
-</div>
+</section>
 
 <!-- ═══════ TICKER ═══════ -->
-<div class="ticker"><div class="ticker-track" id="tickerTrack"></div></div>
+<div class="ticker-bar"><div class="ticker-track" id="tickerTrack"></div></div>
 
 <!-- ═══════ MAP ═══════ -->
-<div class="section-wrap sec-dark" id="map"><div class="section-tiled">
-<div class="card" style="background:#12121a;padding:clamp(24px,3vw,32px);text-align:center">
-<div class="tag light" style="justify-content:center">Live Deployment Map</div>
-<h2 class="section-h" style="color:#fff">Where the intelligence lands.</h2>
-<p style="color:rgba(255,255,255,.5);font-size:.9rem;max-width:500px;margin:0 auto 16px">Every marker is a planned intelligence node in a neighbourhood with verified, concentrated need. Real data from ONS, JRF, and Trussell Trust.</p>
-<div class="stats-row"><div class="stat-item"><span class="num" id="statRegions">0</span><span class="lbl">Regions</span></div></div>
-<div class="map-shell">
-<div id="onsiteMap" class="onsite-map"><div class="map-loading" style="display:flex;align-items:center;justify-content:center;height:440px;color:#5a5a6a;font-size:.8rem">Loading deployment map…</div></div>
+<section class="map-section" id="map">
+<div class="wrap">
+<p class="tag reveal" style="color:#119984">Live deployment map</p>
+<h2 class="reveal" style="margin-bottom:8px">Where the intelligence lands.</h2>
+<p class="subtitle reveal" style="margin-bottom:0">Every marker is a node where OSINT analysis has identified concentrated, verified need. 18 regions across the UK.</p>
+<div class="map-shell reveal">
+<div id="onsiteMap" class="onsite-map"><div class="map-loading" style="display:flex;align-items:center;justify-content:center;height:480px;color:#5a5a6a;font-size:.85rem">Loading map…</div></div>
 <div class="map-panel" id="mapPanel">
-<div class="mp-empty" id="mpEmpty"><div class="mp-icon">📍</div><h3 class="serif">Select a node</h3><p>Tap any marker to see verified data for that region.</p></div>
+<div class="mp-empty" id="mpEmpty"><h3 class="serif">Select a region</h3><p>Click any marker for verified on-the-ground data.</p></div>
 <div class="mp-detail" id="mpDetail" style="display:none">
 <div class="mp-region" id="mpRegion"></div><div class="mp-city serif" id="mpCity"></div>
 <div class="mp-priority" id="mpPriority"></div><div class="mp-stat" id="mpStat"></div>
@@ -366,158 +339,145 @@ a:focus-visible,button:focus-visible,.mf-btn:focus-visible,.mp-close:focus-visib
 <div class="mp-bar"><span id="mpBar"></span></div>
 <button class="mp-close" id="mpClose">Close ✕</button>
 </div></div></div>
-<div class="map-filters" style="justify-content:center">
+<div class="map-filters reveal">
 <button class="mf-btn active" data-f="all">All</button>
 <button class="mf-btn" data-f="poverty">Poverty</button>
 <button class="mf-btn" data-f="homelessness">Homelessness</button>
 <button class="mf-btn" data-f="nhs">NHS</button>
-<button class="mf-btn" data-f="mental">Mental Health</button>
+<button class="mf-btn" data-f="mental">Mental health</button>
 <button class="mf-btn" data-f="isolation">Isolation</button>
 </div>
-<p style="font-size:.7rem;color:#4a4a5a;margin-top:10px;font-style:italic;text-align:center">Sources: ONS, gov.uk, Trussell Trust, JRF</p>
+<p style="font-size:.7rem;color:rgba(255,255,255,.2);margin-top:12px;text-align:center;font-style:italic">Data: ONS, gov.uk, Trussell Trust, JRF</p>
 </div>
-</div></div>
+</section>
 
 <!-- ═══════ EVIDENCE ═══════ -->
-<div class="section-wrap"><div class="section-tiled">
-<div class="card" style="padding:clamp(24px,4vw,36px);text-align:center">
-<div class="tag" style="justify-content:center">From the Field</div>
-<h2 class="section-h" style="text-align:center">What we're seeing on the street.</h2>
-<p class="section-desc" style="text-align:center">Ground truth from the neighbourhoods the system forgot.</p>
-<div class="evidence-grid">
+<section class="section section-cream">
+<div class="wrap">
+<p class="tag reveal">From the field</p>
+<h2 class="reveal" style="margin-bottom:8px">What we're seeing on the street.</h2>
+<p class="subtitle reveal" style="margin-bottom:0">Ground truth from the neighbourhoods the system forgot.</p>
+<div class="evidence-grid reveal">
 <blockquote class="evidence-card"><p>"£1.2 trillion flows through the UK system every year. 14.3 million people still live in poverty. We don't need another report. We need people on the street."</p><cite>— @humanarchitect</cite></blockquote>
 <blockquote class="evidence-card"><p>"Bradford West: 40.5% of children in poverty after housing costs. Over 4 in 10. The youngest population in England. This is where OSINT changes the trajectory."</p><cite>— @humanarchitect</cite></blockquote>
 <blockquote class="evidence-card"><p>"Nottingham: 1,589 patients waiting 52+ weeks for NHS treatment. We deploy CHW triage to pull the pressure off A&E before the crisis hits."</p><cite>— @humanarchitect</cite></blockquote>
-<blockquote class="evidence-card"><p>"276 Social Impact Bonds worldwide prove outcomes beat promises. Humanitai is the measurement layer that makes the repayment trigger real."</p><cite>— @humanarchitect</cite></blockquote>
+<blockquote class="evidence-card"><p>"276 Social Impact Bonds worldwide prove outcomes beat promises. Humanitai is the measurement layer."</p><cite>— @humanarchitect</cite></blockquote>
 </div>
 </div>
-</div></div>
+</section>
 
 <!-- ═══════ JOIN ═══════ -->
-<div class="section-wrap" id="join"><div class="section-tiled">
-<div class="card" style="padding:clamp(28px,4vw,44px);text-align:center">
-<div class="tag" style="justify-content:center">Get Involved</div>
-<h2 class="section-h" style="text-align:center">Three ways in.</h2>
-<p class="section-desc" style="text-align:center">Money, time, or reach. Whatever you've got, there's a role for you.</p>
-<div class="join-grid">
+<section class="section section-white" id="join">
+<div class="wrap" style="text-align:center">
+<p class="tag reveal" style="justify-content:center">Get involved</p>
+<h2 class="reveal">Three ways in.</h2>
+<p class="subtitle reveal" style="margin:8px auto 0;text-align:center">Money, time, or reach. Whatever you've got, there's a role for you.</p>
+<div class="join-grid reveal">
 <div class="join-card"><h3>Back it</h3><p>Fund direct intervention. Every pound is asset-locked and tracked against outcomes.</p><a href="#">Fund a session →</a></div>
 <div class="join-card"><h3>Build it</h3><p>Data scientists, community workers, designers. Help us find the cracks.</p><a href="#">Join the crew →</a></div>
-<div class="join-card"><h3>Bring us in</h3><p>Councils, NHS trusts, funders. Deploy AI-driven intervention in your community.</p><a href="#">Start a partnership →</a></div>
+<div class="join-card"><h3>Bring us in</h3><p>Councils, NHS trusts, funders. Deploy OSINT-driven intervention in your community.</p><a href="#">Start a partnership →</a></div>
 </div>
 </div>
-</div></div>
+</section>
 
 <!-- ═══════ FAQ ═══════ -->
-<div class="section-wrap" id="faq"><div class="section-tiled">
-<div class="faq-card" style="text-align:center">
-<div class="tag" style="justify-content:center;margin-bottom:8px">Straight Answers</div>
-<h2 class="section-h" style="text-align:center;margin-bottom:4px">What people ask before they back us.</h2>
-<div class="faq-list" style="text-align:left;margin-top:16px">
-<details class="faq-item"><summary>What exactly does Humanitai do?</summary><div class="faq-body">We deploy trained CHW intelligence teams into UK neighbourhoods with the worst verified outcomes. They collect real ground-truth data — needs assessments, intake forms, photo evidence — which feeds our Human Architect Technology (open-source intelligence + AI) to predict where crisis will hit next.</div></details>
+<section class="section section-cream" id="faq">
+<div class="wrap" style="text-align:center">
+<p class="tag reveal" style="justify-content:center">Straight answers</p>
+<h2 class="reveal" style="margin-bottom:4px">What people ask before they back us.</h2>
+<div class="faq-list reveal">
+<details class="faq-item"><summary>What exactly does Humanitai do?</summary><div class="faq-body">We deploy trained CHW intelligence teams into UK neighbourhoods with the worst verified outcomes. They collect real ground-truth data — needs assessments, intake forms, photo evidence — which feeds our Human Architect Technology (OSINT + AI) to predict where crisis will hit next.</div></details>
 <details class="faq-item"><summary>Why not just give the data to the council?</summary><div class="faq-body">Because the data already exists and still nothing changes. Humanitai adds the measurement + outcome layer that Social Impact Bonds require. Funders pay only when verified outcomes are achieved.</div></details>
 <details class="faq-item"><summary>Is this another charity asking for donations?</summary><div class="faq-body">No. We are a Community Interest Company — asset-locked, dividend-capped. Built to be funded through Social Impact Bonds: investors fund interventions, government repays only on proven outcomes.</div></details>
 <details class="faq-item"><summary>How do you prove the outcomes are real?</summary><div class="faq-body">SROI — the UK-government-recognised 8-principle framework from Social Value UK. Every pound tracked. Every outcome verified.</div></details>
 <details class="faq-item"><summary>Where do you operate?</summary><div class="faq-body">Currently mapping 18 UK regions — from Glasgow to Newham, Bristol to Blackpool. See the live deployment map above.</div></details>
 </div>
 </div>
-</div></div>
+</section>
 
-<!-- ═══════ FOOTER ═══════ -->
 <footer><div class="foot-inner">
-<div class="fb"><a href="#" class="brand" style="font-family:Fraunces,serif;font-weight:800;color:#fff;font-size:18px">H<span style="color:#0d6b5c">.</span>umanitai</a><p>A UK Community Interest Company using data to solve Britain's hardest social problems. Asset-locked. Outcome-tracked.</p></div>
-<div class="fc"><h4>Navigate</h4><a href="#why">Why</a><a href="#how">How</a><a href="#map">Map</a><a href="#join">Join</a></div>
-<div class="fc"><h4>Get In</h4><a href="#join">Back It</a><a href="#join">Build It</a><a href="#join">Bring Us In</a></div>
-</div><div class="ft"><strong>Humanitai CIC</strong> — Regulated by the Office of the Regulator of Community Interest Companies</div></footer>
-
-<div class="mobile-cta"><a href="#join">Back the Work</a></div>
+<div class="fb"><a href="#" class="brand"><em style="font-style:normal;color:#119984">H</em>umanitai</a><p>A UK Community Interest Company using Open-Source Intelligence and AI to solve Britain's hardest social problems. Asset-locked. Outcome-tracked.</p></div>
+<div class="fc"><h4>Navigate</h4><a href="#problems">The cracks</a><a href="#approach">The approach</a><a href="#map">The map</a><a href="#join">Get involved</a></div>
+<div class="fc"><h4>Get in</h4><a href="#join">Back it</a><a href="#join">Build it</a><a href="#join">Bring us in</a></div>
+</div><div class="foot-base"><strong>Humanitai CIC</strong> — Regulated by the Office of the Regulator of Community Interest Companies</div></footer>
 
 <script>
-// ═══════ SPLASH ═══════
-(function(){
-  var el=document.getElementById('splash-num'),splash=document.getElementById('splash'),val=0;
-  var iv=setInterval(function(){val++;el.textContent=val;if(val>=100){clearInterval(iv);setTimeout(function(){splash.classList.add('exiting');setTimeout(function(){splash.remove();},800);},200);}},20);
-})();
-
-// ═══════ MOBILE MENU ═══════
-(function(){
-  var hamb=document.getElementById('hamb'),overlay=document.getElementById('mobileOverlay');
-  hamb.onclick=function(){this.classList.toggle('open');overlay.classList.toggle('open');document.body.style.overflow=overlay.classList.contains('open')?'hidden':'';};
-  document.getElementById('mobileBackdrop').onclick=function(){hamb.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';};
-  document.querySelectorAll('.mob-link').forEach(function(l){l.onclick=function(){var id=this.dataset.href;if(id==='#')window.scrollTo({top:0,behavior:'smooth'});else document.querySelector(id)?.scrollIntoView({behavior:'smooth'});hamb.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';};});
-})();
-
-// ═══════ SCROLL NAV ═══════
+// Nav scroll
 window.addEventListener('scroll',function(){
-  var sc=window.scrollY;
-  document.querySelectorAll('nav a,.nav-btn').forEach(function(l){if(l.getAttribute||l.tagName==='BUTTON'){}});
-  // Check if scrolled past hero
-  var hero=document.querySelector('.hero-grid');
-  if(hero&&sc>hero.offsetTop+hero.offsetHeight-100)document.querySelector('nav').style.background='rgba(255,255,255,.95)';else document.querySelector('nav').style.background='rgba(255,255,255,.85)';
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>30);
 },{passive:true});
 
-// ═══════ REVEAL OBSERVER ═══════
+// Reveal
+var ro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('vis');ro.unobserve(en.target);}});},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
+
+// Hero counters
 (function(){
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){entry.target.classList.add('vis');obs.unobserve(entry.target);}
-    });
-  },{threshold:.08});
-  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+  var done=false;
+  var io=new IntersectionObserver(function(e){
+    if(e[0].isIntersecting&&!done){
+      done=true;
+      document.querySelectorAll('.hero-stat .num[data-target]').forEach(function(el){
+        var t=parseFloat(el.dataset.target),sfx=el.dataset.suffix||'',dur=1800,st=performance.now(),dec=t%1!==0?1:0;
+        (function tick(now){var p=Math.min((now-st)/dur,1),e=1-Math.pow(1-p,3),v=(t*e).toFixed(dec);el.textContent=v+sfx;if(p<1)requestAnimationFrame(tick);})(performance.now());
+      });
+      io.unobserve(e[0].target);
+    }
+  },{threshold:.3});
+  var hs=document.querySelector('.hero-stats');if(hs)io.observe(hs);
 })();
 
-// ═══════ TICKER ═══════
+// Ticker
 (function(){
-  var items=["14.3M living in poverty","132,410 households in temp accommodation","7.28M on NHS waiting lists","1 in 6 adults with mental health problem","2.6M Trussell food parcels","940,000 over-65 often lonely","2.1M people offline","1.01M young people NEET","47% child poverty Middlesbrough","Blackpool: lowest life expectancy 73.1yrs","3.8M people lonely often or always","£1.2T spent, 14.3M still poor"];
+  var items=["14.3M living in poverty","132,410 households in temp accommodation","7.28M on NHS waiting lists","1 in 6 adults with mental health problem","2.6M Trussell food parcels","940,000 over-65 often lonely","47% child poverty Middlesbrough","Blackpool: life expectancy 73.1yrs","3.8M lonely often or always","£1.2T spent, 14.3M still poor"];
   var t=document.getElementById('tickerTrack');
-  function add(){items.forEach(function(s){var sp=document.createElement('span');sp.className='ti';sp.textContent=s;t.appendChild(sp);var se=document.createElement('span');se.className='ts';t.appendChild(se);});}
+  function add(){items.forEach(function(s){var sp=document.createElement('span');sp.className='ti';sp.textContent=s;t.appendChild(sp);var se=document.createElement('span');se.className='ts';se.textContent='◆';t.appendChild(se);});}
   add();add();
-  if(!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)){
+  if(!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)){
     var w=0,id=setInterval(function(){var hw=t.scrollWidth/2;w-=0.7;if(Math.abs(w)>=hw)w=0;t.style.transform='translateX('+w+'px)';},20);
     t.addEventListener('mouseenter',function(){clearInterval(id);});
     t.addEventListener('mouseleave',function(){clearInterval(id);id=setInterval(function(){var hw=t.scrollWidth/2;w-=0.7;if(Math.abs(w)>=hw)w=0;t.style.transform='translateX('+w+'px)';},20);});
   }
 })();
 
-// ═══════ THREE.JS HERO ═══════
+// Three.js
 (function(){
-  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
   var cv=document.getElementById('hero-canvas');if(!cv)return;
-  var io=new IntersectionObserver(function(e){
-    if(e[0].isIntersecting){
-      io.disconnect();
-      var s=document.createElement('script');
-      s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-      s.onload=function(){
-        if(typeof THREE==='undefined'){cv.style.display='none';return;}
-        var scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.1,100);
-        cam.position.z=16;
-        var renderer=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.3));
-        var N=35,pts=[],g=new THREE.BufferGeometry(),p=new Float32Array(N*3);
-        for(var i=0;i<N;i++){var x=(Math.random()-.5)*24,y=(Math.random()-.5)*16,z=(Math.random()-.5)*10;p[i*3]=x;p[i*3+1]=y;p[i*3+2]=z;pts.push({x,y,z,vx:(Math.random()-.5)*.003,vy:(Math.random()-.5)*.003});}
-        g.setAttribute('position',new THREE.BufferAttribute(p,3));
-        var pm=new THREE.PointsMaterial({color:0x119984,size:0.12,transparent:true,opacity:0.5});
-        var points=new THREE.Points(g,pm);scene.add(points);
-        var li=[];for(var a=0;a<N;a++)for(var b=a+1;b<N;b++){var dx=pts[a].x-pts[b].x,dy=pts[a].y-pts[b].y,dz=pts[a].z-pts[b].z;if(Math.sqrt(dx*dx+dy*dy+dz*dz)<5.5)li.push(a,b);}
-        var lg=new THREE.BufferGeometry();lg.setAttribute('position',new THREE.BufferAttribute(new Float32Array(li.length*3),3));
-        scene.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:0x0d6b5c,transparent:true,opacity:0.08})));
-        function rs(){renderer.setSize(cv.clientWidth||window.innerWidth,cv.clientHeight||window.innerHeight,false);cam.aspect=(cv.clientWidth||window.innerWidth)/(cv.clientHeight||window.innerHeight);cam.updateProjectionMatrix();}
-        rs();window.addEventListener('resize',rs);
-        var raf,running=true;document.addEventListener('visibilitychange',function(){running=!document.hidden;if(running)loop();});
-        function loop(){
-          if(!running)return;
-          var arr=g.attributes.position.array;for(var i=0;i<N;i++){pts[i].x+=pts[i].vx;pts[i].y+=pts[i].vy;if(Math.abs(pts[i].x)>12)pts[i].vx*=-1;if(Math.abs(pts[i].y)>8)pts[i].vy*=-1;arr[i*3]=pts[i].x;arr[i*3+1]=pts[i].y;}
-          g.attributes.position.needsUpdate=true;var la=lg.attributes.position.array;for(var k=0;k<li.length;k++){var id=li[k];la[k*3]=pts[id].x;la[k*3+1]=pts[id].y;la[k*3+2]=pts[id].z;}
-          lg.attributes.position.needsUpdate=true;points.rotation.y+=0.0004;renderer.render(scene,cam);raf=requestAnimationFrame(loop);
-        }
-        loop();
-      };
-      s.onerror=function(){cv.style.display='none'};document.head.appendChild(s);
-    }
-  },{threshold:.1});io.observe(cv);
+  var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){
+    io.disconnect();
+    var s=document.createElement('script');
+    s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+    s.onload=function(){
+      if(typeof THREE==='undefined'){cv.style.display='none';return;}
+      var scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.1,100);
+      cam.position.z=16;
+      var renderer=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.3));
+      var N=35,pts=[],g=new THREE.BufferGeometry(),p=new Float32Array(N*3);
+      for(var i=0;i<N;i++){var x=(Math.random()-.5)*24,y=(Math.random()-.5)*16,z=(Math.random()-.5)*10;p[i*3]=x;p[i*3+1]=y;p[i*3+2]=z;pts.push({x,y,z,vx:(Math.random()-.5)*.003,vy:(Math.random()-.5)*.003});}
+      g.setAttribute('position',new THREE.BufferAttribute(p,3));
+      var pm=new THREE.PointsMaterial({color:0x119984,size:0.12,transparent:true,opacity:0.5});
+      var points=new THREE.Points(g,pm);scene.add(points);
+      var li=[];for(var a=0;a<N;a++)for(var b=a+1;b<N;b++){var dx=pts[a].x-pts[b].x,dy=pts[a].y-pts[b].y,dz=pts[a].z-pts[b].z;if(Math.sqrt(dx*dx+dy*dy+dz*dz)<5.5)li.push(a,b);}
+      var lg=new THREE.BufferGeometry();lg.setAttribute('position',new THREE.BufferAttribute(new Float32Array(li.length*3),3));
+      scene.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:0x0d6b5c,transparent:true,opacity:0.08})));
+      function rs(){renderer.setSize(cv.clientWidth||window.innerWidth,cv.clientHeight||window.innerHeight,false);cam.aspect=(cv.clientWidth||window.innerWidth)/(cv.clientHeight||window.innerHeight);cam.updateProjectionMatrix();}
+      rs();window.addEventListener('resize',rs);
+      var raf,running=true;document.addEventListener('visibilitychange',function(){running=!document.hidden;if(running)loop();});
+      function loop(){
+        if(!running)return;
+        var arr=g.attributes.position.array;for(var i=0;i<N;i++){pts[i].x+=pts[i].vx;pts[i].y+=pts[i].vy;if(Math.abs(pts[i].x)>12)pts[i].vx*=-1;if(Math.abs(pts[i].y)>8)pts[i].vy*=-1;arr[i*3]=pts[i].x;arr[i*3+1]=pts[i].y;}
+        g.attributes.position.needsUpdate=true;var la=lg.attributes.position.array;for(var k=0;k<li.length;k++){var id=li[k];la[k*3]=pts[id].x;la[k*3+1]=pts[id].y;la[k*3+2]=pts[id].z;}
+        lg.attributes.position.needsUpdate=true;points.rotation.y+=0.0004;renderer.render(scene,cam);raf=requestAnimationFrame(loop);
+      }
+      loop();
+    };
+    s.onerror=function(){cv.style.display='none'};document.head.appendChild(s);
+  }},{threshold:.1});io.observe(cv);
 })();
 
-// ═══════ MAP ═══════
+// Map
 (function(){
   var el=document.getElementById('onsiteMap');if(!el)return;
   var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){
@@ -527,19 +487,19 @@ window.addEventListener('scroll',function(){
     ls.onload=function(){
       if(typeof L==='undefined'){el.innerHTML='<p style="padding:40px;text-align:center;color:#5a5a6a">Map failed to load.</p>';return;}
       var regions=[
-        {c:"Birmingham",r:"West Midlands",lat:52.4862,lng:-1.8904,f:"poverty",p:"Child Poverty + Food Insecurity",s:"40%+ of children in poverty in worst wards",d:"Birmingham has among the highest child poverty rates in England. OSINT-driven CHW nodes target these estates.",sev:92},
-        {c:"Manchester",r:"Greater Manchester",lat:53.4808,lng:-2.2426,f:"homelessness",p:"Homelessness + Temp Accommodation",s:"132,410 households in temp accommodation (record UK)",d:"Greater Manchester rough sleeping up 6x since 2010.",sev:88},
-        {c:"Liverpool",r:"Liverpool City Region",lat:53.4084,lng:-2.9916,f:"mental",p:"Mental Health + Isolation",s:"1 in 6 adults; 20% children probable disorder",d:"Deprived wards show highest GP mental-health load.",sev:81},
-        {c:"Leeds",r:"West Yorkshire",lat:53.8008,lng:-1.5491,f:"nhs",p:"NHS Waiting + Cost of Living",s:"7.28M on NHS waiting list nationally",d:"West Yorkshire 18-week wait breaches above national avg.",sev:79},
-        {c:"Glasgow",r:"Scotland",lat:55.8642,lng:-4.2518,f:"poverty",p:"Life Expectancy Gap + Poverty",s:"Lowest female life expectancy in UK (78.0yrs)",d:"Glasgow has highest drug-death rate in Europe.",sev:90},
-        {c:"London (Newham)",r:"London",lat:51.5255,lng:0.0352,f:"isolation",p:"Digital Exclusion + Poverty",s:"2.1M offline; 47% child poverty Newham",d:"Newham: highest child poverty in UK.",sev:87},
-        {c:"Cardiff",r:"Wales",lat:51.4816,lng:-3.1791,f:"mental",p:"Youth NEET + Education Gap",s:"1.01M 16-24 NEET nationally",d:"Welsh valleys NEET 2x UK avg.",sev:78},
-        {c:"Belfast",r:"Northern Ireland",lat:54.5973,lng:-5.9301,f:"isolation",p:"Elderly Isolation",s:"940,000 over-65 often lonely",d:"NI fastest-aging population.",sev:74},
-        {c:"Bristol",r:"South West",lat:51.4545,lng:-2.5879,f:"poverty",p:"Child Poverty + Income Deprivation",s:"37% children in income-deprived families",d:"Bristol: 30 LSOAs in England's worst 10%.",sev:85},
-        {c:"Newcastle",r:"North East",lat:54.9783,lng:-1.6178,f:"poverty",p:"Child Poverty + NHS Waiting",s:"35.3% children in poverty; 579 waiting 52+ wks",d:"North East has highest child poverty outside London.",sev:84},
-        {c:"Sheffield",r:"South Yorkshire",lat:53.3811,lng:-1.4701,f:"nhs",p:"Child Poverty + NHS Waiting",s:"Up to 43.3% children in poverty",d:"Life expectancy gap 10+ yrs across Sheffield.",sev:80},
-        {c:"Nottingham",r:"East Midlands",lat:52.9548,lng:-1.1581,f:"homelessness",p:"Homelessness + NHS Waiting",s:"2,941 homeless households; 1,589 waiting 52+ wks",d:"Nottingham — one of weakest NHS trust performances.",sev:82},
-        {c:"Bradford",r:"West Yorkshire",lat:53.796,lng:-1.7594,f:"poverty",p:"Child Poverty + Education Gap",s:"40.5% children in poverty (Bradford West)",d:"Youngest population in UK. Over 4 in 10 children in poverty.",sev:86},
+        {c:"Birmingham",r:"West Midlands",lat:52.4862,lng:-1.8904,f:"poverty",p:"Child poverty + food insecurity",s:"40%+ of children in poverty in worst wards",d:"Birmingham has among the highest child poverty rates in England. OSINT-driven CHW nodes target these estates.",sev:92},
+        {c:"Manchester",r:"Greater Manchester",lat:53.4808,lng:-2.2426,f:"homelessness",p:"Homelessness + temp accommodation",s:"132,410 households in temp accommodation (record UK)",d:"Greater Manchester rough sleeping up 6x since 2010.",sev:88},
+        {c:"Liverpool",r:"Liverpool City Region",lat:53.4084,lng:-2.9916,f:"mental",p:"Mental health + isolation",s:"1 in 6 adults; 20% children probable disorder",d:"Deprived wards show highest GP mental-health load.",sev:81},
+        {c:"Leeds",r:"West Yorkshire",lat:53.8008,lng:-1.5491,f:"nhs",p:"NHS waiting + cost of living",s:"7.28M on NHS waiting list nationally",d:"West Yorkshire 18-week wait breaches above national avg.",sev:79},
+        {c:"Glasgow",r:"Scotland",lat:55.8642,lng:-4.2518,f:"poverty",p:"Life expectancy gap + poverty",s:"Lowest female life expectancy in UK (78.0yrs)",d:"Glasgow has highest drug-death rate in Europe.",sev:90},
+        {c:"London (Newham)",r:"London",lat:51.5255,lng:0.0352,f:"isolation",p:"Digital exclusion + poverty",s:"2.1M offline; 47% child poverty Newham",d:"Newham: highest child poverty in UK.",sev:87},
+        {c:"Cardiff",r:"Wales",lat:51.4816,lng:-3.1791,f:"mental",p:"Youth NEET + education gap",s:"1.01M 16-24 NEET nationally",d:"Welsh valleys NEET 2x UK avg.",sev:78},
+        {c:"Belfast",r:"Northern Ireland",lat:54.5973,lng:-5.9301,f:"isolation",p:"Elderly isolation",s:"940,000 over-65 often lonely",d:"NI fastest-aging population.",sev:74},
+        {c:"Bristol",r:"South West",lat:51.4545,lng:-2.5879,f:"poverty",p:"Child poverty + income deprivation",s:"37% children in income-deprived families",d:"Bristol: 30 LSOAs in England's worst 10%.",sev:85},
+        {c:"Newcastle",r:"North East",lat:54.9783,lng:-1.6178,f:"poverty",p:"Child poverty + NHS waiting",s:"35.3% children in poverty; 579 waiting 52+ wks",d:"North East has highest child poverty outside London.",sev:84},
+        {c:"Sheffield",r:"South Yorkshire",lat:53.3811,lng:-1.4701,f:"nhs",p:"Child poverty + NHS waiting",s:"Up to 43.3% children in poverty",d:"Life expectancy gap 10+ yrs across Sheffield.",sev:80},
+        {c:"Nottingham",r:"East Midlands",lat:52.9548,lng:-1.1581,f:"homelessness",p:"Homelessness + NHS waiting",s:"2,941 homeless households; 1,589 waiting 52+ wks",d:"Nottingham — one of weakest NHS trust performances.",sev:82},
+        {c:"Bradford",r:"West Yorkshire",lat:53.796,lng:-1.7594,f:"poverty",p:"Child poverty + education gap",s:"40.5% children in poverty (Bradford West)",d:"Youngest population in UK. Over 4 in 10 children in poverty.",sev:86},
         {c:"Blackpool",r:"North West",lat:53.8175,lng:-3.0357,f:"isolation",p:"Lowest life expectancy in England",s:"Male life expectancy 73.1yrs",d:"ONS: lowest male life expectancy in England.",sev:88},
         {c:"Middlesbrough",r:"North East",lat:54.5742,lng:-1.2348,f:"poverty",p:"Highest child poverty in England",s:"~47% of children in relative poverty",d:"End Child Poverty: highest child poverty rates in England.",sev:90},
         {c:"Kingston upon Hull",r:"Yorkshire",lat:53.7457,lng:-0.3367,f:"poverty",p:"Child poverty in Hull",s:"~39% of children in relative poverty",d:"Hull: one of the highest child poverty rates in Yorkshire.",sev:84},
@@ -564,7 +524,6 @@ window.addEventListener('scroll',function(){
         map.panTo([r.lat,r.lng],{animate:true,duration:.4});
       }
       document.getElementById('mpClose').onclick=function(){document.getElementById('mpDetail').style.display='none';document.getElementById('mpEmpty').style.display='block';};
-      document.getElementById('statRegions').textContent=regions.length;
       document.querySelectorAll('.mf-btn').forEach(function(b){
         b.onclick=function(){
           document.querySelectorAll('.mf-btn').forEach(function(x){x.classList.remove('active');});
@@ -579,9 +538,6 @@ window.addEventListener('scroll',function(){
     document.body.appendChild(ls);
   }},{threshold:.1});io.observe(el);
 })();
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"NGO","name":"Humanitai","description":"UK CIC — OSINT and AI for social impact","url":"https://alkalinearchitect.github.io/wordhumanitai/"}
 </script>
 </body>
 </html>
