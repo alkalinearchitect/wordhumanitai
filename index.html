@@ -8,19 +8,19 @@
 <meta name="theme-color" content="#FBF9F4">
 <meta property="og:title" content="HumanitAI — Britain's data, in our hands.">
 <meta property="og:description" content="We forecast where community pressure breaks next, then put trained teams on the ground before harm lands.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230BA894'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-weight='800' font-size='20' fill='white' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300BCA3'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-weight='800' font-size='20' fill='white' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>document.documentElement.className+=' js';</script>
 <style>
 /* ═══════ TOKENS ═══════ */
 :root{
-  --ink:#0B0B0D; --ink-2:#16161A; --dim:#6B665B; --dim-2:#9A948A;
-  --ivory:#FBF9F4; --ivory-2:#F4F0E6; --paper:#FFFFFF;
-  --teal:#0BA894; --teal-deep:#007A68; --teal-bright:#10D6BD;
-  --amber:#E07A0A; --amber-bright:#FFB22E; --vermillion:#CF2E22;
-  --hair:#E7E1D3; --hair-2:#D8D1C0;
+  --ink:#070709; --ink-2:#131318; --dim:#5A554A; --dim-2:#8A8478;
+  --ivory:#FBF9F4; --ivory-2:#F1EBDF; --paper:#FFFFFF;
+  --teal:#00BCA3; --teal-deep:#007A68; --teal-bright:#16E6C8;
+  --amber:#FF7A00; --amber-bright:#FFB22E; --vermillion:#E11D0E;
+  --hair:#E4DDCC; --hair-2:#D2CAB6;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
@@ -30,8 +30,8 @@ a{color:inherit;text-decoration:none}
 ::selection{background:var(--teal);color:#fff}
 h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.025em;line-height:1.02;color:var(--ink)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
-.kicker{font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-deep);display:inline-flex;align-items:center;gap:12px}
-.kicker::before{content:"";width:26px;height:1.5px;background:var(--teal)}
+.kicker{font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-deep);display:inline-flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:26px;height:2px;background:var(--teal)}
 .lede{font-size:1.18rem;line-height:1.6;color:var(--dim);max-width:560px;margin-top:22px;font-weight:400}
 /* ═══════ NAV ═══════ */
 #nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,border-color .3s;background:rgba(251,249,244,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent}
@@ -40,19 +40,20 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.025
 .brand{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:21px;letter-spacing:-.03em}
 .brand b{color:var(--teal)}
 .nav-links{display:flex;gap:30px;align-items:center}
-.nav-links a{font-size:13px;font-weight:500;color:var(--dim);transition:color .2s}
+.nav-links a{font-size:13px;font-weight:600;color:var(--dim);transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
-.nav-cta{background:var(--teal);color:#04130F;border-radius:999px;padding:9px 18px;font-weight:600;font-size:13px;transition:background .2s}
+.nav-cta{background:var(--teal);color:#04130F;border-radius:999px;padding:9px 18px;font-weight:700;font-size:13px;transition:background .2s}
 .nav-cta:hover{background:var(--teal-deep);color:#fff}
 /* ═══════ HERO ═══════ */
 .hero{min-height:92vh;display:flex;align-items:center;padding:140px 0 90px;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(820px 460px at 76% 42%,rgba(11,168,148,.14),transparent 62%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(820px 460px at 76% 42%,rgba(0,188,163,.20),transparent 60%);pointer-events:none}
 .hero .wrap{position:relative;z-index:2;width:100%}
-.hero h1{font-size:clamp(3rem,8.5vw,6.6rem);font-weight:600;line-height:.98;margin-bottom:26px}
-.hero h1 .accent{color:var(--teal)}
+.hero h1{font-size:clamp(3rem,8.5vw,6.6rem);font-weight:700;line-height:.98;margin-bottom:26px}
+.hero h1 .accent{color:var(--teal);position:relative}
+.hero h1 .accent::after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:.14em;background:var(--vermillion);opacity:.9;border-radius:2px}
 .hero-sub{font-size:1.22rem;line-height:1.6;color:var(--dim);max-width:560px;margin-bottom:36px;font-weight:400}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:Inter,sans-serif;font-size:14px;font-weight:600;line-height:1;cursor:pointer;border-radius:999px;padding:15px 26px;min-height:52px;transition:background .22s,color .22s,border-color .22s,transform .22s;border:1.5px solid transparent}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:Inter,sans-serif;font-size:14px;font-weight:700;line-height:1;cursor:pointer;border-radius:999px;padding:15px 26px;min-height:52px;transition:background .22s,color .22s,border-color .22s,transform .22s;border:1.5px solid transparent}
 .btn .arr{transition:transform .22s}
 .btn:hover .arr{transform:translateX(4px)}
 .btn-primary{background:var(--teal);color:#04130F}
@@ -60,53 +61,33 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.025
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
 .btn-ghost:hover{border-color:var(--teal);color:var(--teal-deep)}
 .hero-figures{display:flex;gap:48px;margin-top:64px;flex-wrap:wrap}
-.figure .n{font-family:Fraunces,Georgia,serif;font-size:2.6rem;font-weight:700;color:var(--ink);line-height:1;letter-spacing:-.02em}
+.figure .n{font-family:Fraunces,Georgia,serif;font-size:2.6rem;font-weight:800;color:var(--ink);line-height:1;letter-spacing:-.02em}
+.figure .n .u{color:var(--vermillion)}
 .figure .l{font-size:11px;color:var(--dim-2);text-transform:uppercase;letter-spacing:.12em;margin-top:8px}
 .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--dim-2);letter-spacing:.18em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
 .scroll-hint i{width:1px;height:34px;background:var(--hair-2)}
 /* ═══════ SECTION ═══════ */
 .section{padding:108px 0;border-top:1px solid var(--hair)}
 .sec-tint{background:var(--ivory-2)}
-.statement{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:clamp(1.7rem,4vw,2.9rem);line-height:1.22;letter-spacing:-.02em;max-width:860px}
+.statement{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.7rem,4vw,2.9rem);line-height:1.22;letter-spacing:-.02em;max-width:860px}
 .statement .hl{color:var(--teal-deep)}
-/* ═══════ ADVERT ═══════ */
-.adv-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;margin-top:8px}
-@media(max-width:880px){.adv-grid{grid-template-columns:1fr;gap:36px}}
-.adv-vid-wrap{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--hair);background:var(--ink);box-shadow:0 24px 60px -30px rgba(11,168,148,.55);aspect-ratio:16/9}
-.adv-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.adv-cap{position:absolute;left:0;right:0;bottom:0;padding:24px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,transparent,rgba(6,7,10,.82) 46%)}
-.adv-cap-line{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(1.15rem,2.4vw,1.7rem);line-height:1.12;color:#fff;opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s ease}
-.adv-cap-line.show{opacity:1;transform:none}
-.adv-cap-line .accent{color:var(--teal-bright)}
-.adv-cap-beat{font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--amber-bright);opacity:0;transition:opacity .45s ease}
-.adv-cap-beat.show{opacity:.9}
-.adv-prog{position:absolute;left:24px;right:24px;bottom:9px;height:2px;background:rgba(255,255,255,.18);overflow:hidden}
-.adv-prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal-bright),var(--amber-bright))}
-.adv-play{position:absolute;top:14px;right:14px;z-index:3;display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:#04130F;background:var(--teal-bright);border:none;border-radius:999px;padding:7px 13px;cursor:pointer;opacity:.92;transition:opacity .2s,transform .2s}
-.adv-play:hover{opacity:1;transform:translateY(-1px)}
-.adv-copy .flow{margin-top:30px;border-top:1px solid var(--hair)}
-.adv-copy .flow-row{display:grid;grid-template-columns:30px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--hair);align-items:baseline}
-.adv-copy .flow-n{font-family:Fraunces,Georgia,serif;font-size:1rem;color:var(--dim-2)}
-.adv-copy .flow-row h3{font-size:1.12rem;margin-bottom:4px}
-.adv-copy .flow-row p{font-size:.94rem;color:var(--dim);line-height:1.55}
-.adv-quote{font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.15rem;line-height:1.4;color:var(--dim);max-width:540px;margin-top:30px}
 /* ═══════ DARK DASHBOARD ═══════ */
 #data{background:var(--ink);color:#F4F1EA;border-top:1px solid var(--ink)}
 #data .kicker{color:var(--teal-bright)}
 #data h2{color:#fff}
 #data .lede{color:#B8B2A6}
 #data .viz-filters{display:flex;flex-wrap:wrap;gap:9px;margin:30px 0 22px}
-#data .viz-filters button{appearance:none;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#C9C4B8;padding:.5rem 1rem;border-radius:999px;font-size:.8rem;cursor:pointer;transition:border-color .2s,color .2s}
+#data .viz-filters button{appearance:none;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#C9C4B8;padding:.5rem 1rem;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
 #data .viz-filters button:hover{border-color:var(--teal-bright);color:#fff}
-#data .viz-filters button.active{background:var(--teal);color:#04130F;border-color:var(--teal)}
+#data .viz-filters button.active{background:var(--teal);color:#04130F;border-color:var(--teal);font-weight:700}
 #data .viz-list{border-top:1px solid rgba(255,255,255,.12)}
 #data .viz-row{display:grid;grid-template-columns:1fr 200px 64px;gap:20px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);transition:background .25s}
-#data .viz-row:hover{background:rgba(11,168,148,.10)}
-#data .viz-city{font-family:Fraunces,Georgia,serif;font-size:1.15rem;color:#fff}
+#data .viz-row:hover{background:rgba(0,188,163,.14)}
+#data .viz-city{font-family:Fraunces,Georgia,serif;font-size:1.15rem;color:#fff;font-weight:600}
 #data .viz-reg{font-size:.78rem;color:#9A958A;margin-top:2px}
 #data .viz-bar{height:8px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden;display:flex;gap:2px}
 #data .viz-bar span{height:100%;border-radius:2px}
-#data .viz-sev{font-family:Fraunces,Georgia,serif;font-size:1.5rem;color:#fff;text-align:right}
+#data .viz-sev{font-family:Fraunces,Georgia,serif;font-size:1.5rem;color:#fff;text-align:right;font-weight:700}
 #data .viz-sev small{display:block;font-family:Inter,sans-serif;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#9A958A}
 #data .src-note{font-size:11px;color:#9A958A;margin-top:18px;letter-spacing:.02em}
 /* ═══════ CLOSING ═══════ */
@@ -118,8 +99,8 @@ footer{background:var(--ivory-2);border-top:1px solid var(--hair);padding:56px 0
 .foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
 .foot-brand .brand{margin-bottom:12px;display:inline-block}
 .foot-brand p{font-size:.86rem;color:var(--dim);max-width:300px;line-height:1.6}
-.foot-col h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--dim-2);margin-bottom:12px}
-.foot-col a{display:block;font-size:.86rem;color:var(--dim);padding:4px 0;transition:color .2s}
+.foot-col h4{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--dim-2);margin-bottom:12px}
+.foot-col a{display:block;font-size:.86rem;color:var(--dim);padding:4px 0;transition:color .2s;font-weight:500}
 .foot-col a:hover{color:var(--teal-deep)}
 .foot-trust{border-top:1px solid var(--hair);margin-top:28px;padding-top:16px;font-size:11px;color:var(--dim-2);letter-spacing:.02em}
 /* ═══════ REVEAL ═══════ */
@@ -133,9 +114,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
 
 <nav id="nav"><div class="nav-inner">
   <a href="#top" class="brand">Humanit<b>AI</b></a>
-  <button class="hamb" id="hamb" aria-label="Menu" style="display:none"><span></span><span></span><span></span></button>
   <div class="nav-links" id="navLinks">
-    <a href="#how">How it works</a>
     <a href="#data">Intelligence</a>
     <a href="#join" class="nav-cta">Back the work</a>
   </div>
@@ -148,45 +127,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
     <p class="hero-sub">We forecast where community pressure breaks next — then put trained teams on the ground before harm lands.</p>
     <div class="hero-actions">
       <a href="#join" class="btn btn-primary">Fund the forecast <span class="arr">&rarr;</span></a>
-      <a href="#how" class="btn btn-ghost">See how it works</a>
+      <a href="#data" class="btn btn-ghost">See the intelligence</a>
     </div>
     <div class="hero-figures">
       <div class="figure"><div class="n">18</div><div class="l">Places forecast</div></div>
       <div class="figure"><div class="n">0.81</div><div class="l">Model confidence</div></div>
-      <div class="figure"><div class="n">14.3M</div><div class="l">People in poverty</div></div>
+      <div class="figure"><div class="n">14.3<span class="u">M</span></div><div class="l">People in poverty</div></div>
     </div>
   </div>
   <div class="scroll-hint">Scroll<i></i></div>
-</section>
-
-<!-- ═══════ HOW IT WORKS (advert + copy) ═══════ -->
-<section class="section" id="how">
-  <div class="wrap">
-    <p class="kicker">The model</p>
-    <div class="adv-grid">
-      <div class="adv-vid-wrap" id="advWrap">
-        <button class="adv-play" id="advPlay" aria-label="Play the HumanitAI film"><span class="arr">&#9654;</span> Play the film</button>
-        <video class="adv-vid" id="advVid" playsinline preload="metadata" muted poster="og-image.jpg">
-          <source src="advert.mp4" type="video/mp4">
-        </video>
-        <div class="adv-cap">
-          <span class="adv-cap-beat" id="advBeat"></span>
-          <span class="adv-cap-line" id="advLine"></span>
-        </div>
-        <div class="adv-prog"><i id="advBar"></i></div>
-      </div>
-      <div class="adv-copy">
-        <h2 class="statement" style="font-size:clamp(1.7rem,4vw,2.6rem)">We arrive <span class="hl">before</span> the system breaks.</h2>
-        <div class="flow">
-          <div class="flow-row rv"><div class="flow-n">01</div><div><h3>Read the open signals</h3><p>Open-source intelligence across 18 UK places — welfare, referrals, evictions — before it makes the news.</p></div></div>
-          <div class="flow-row rv"><div class="flow-n">02</div><div><h3>Forecast the break</h3><p>Our multi-agent AI scores where poverty, homelessness and NHS waits will fracture next. Confidence 0.81.</p></div></div>
-          <div class="flow-row rv"><div class="flow-n">03</div><div><h3>Trained teams go first</h3><p>Community health workers on the street ahead of the surge — already in Middlesbrough, where 47% of children live in poverty.</p></div></div>
-          <div class="flow-row rv"><div class="flow-n">04</div><div><h3>Paid only for what works</h3><p>Measured by SROI, funded through Social Impact Bonds — government repays once help is proven.</p></div></div>
-        </div>
-        <p class="adv-quote">We don't ask the system to move faster. We move to where it will break.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- ═══════ INTELLIGENCE (dark band) ═══════ -->
@@ -194,7 +143,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
   <div class="wrap">
     <p class="kicker">The intelligence</p>
     <h2 class="statement" style="font-size:clamp(1.7rem,4vw,2.6rem)">18 places. One forecast window.</h2>
-    <p class="lede">Highest severity first. Click any place for the on-the-ground picture.</p>
+    <p class="lede">Highest severity first. Click any pressure to filter.</p>
     <div class="viz-filters" id="vf">
       <button data-f="all" class="active">All</button>
       <button data-f="poverty">Poverty</button>
@@ -231,7 +180,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
       </div>
       <div class="foot-col">
         <h4>Navigate</h4>
-        <a href="#how">How it works</a>
         <a href="#data">Intelligence</a>
         <a href="#join">Get involved</a>
       </div>
@@ -258,32 +206,9 @@ if(!REDUCE && window.Lenis){
 window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>30);},{passive:true});
 var ro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');ro.unobserve(en.target);}});},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
-// ═══════ Advert caption sync ═══════
-(function(){
-  var vid=document.getElementById('advVid'),beatEl=document.getElementById('advBeat'),lineEl=document.getElementById('advLine'),barEl=document.getElementById('advBar'),playBtn=document.getElementById('advPlay'),wrap=document.getElementById('advWrap');
-  if(!vid)return;
-  var BEATS=[
-    {t0:0.0,t1:2.0,beat:'00 · The noise',line:'Britain drowns in <span class="accent">data noise</span>'},
-    {t0:2.0,t1:5.0,beat:'01 · The signal',line:'Our AI finds the <span class="accent">signal</span>'},
-    {t0:5.0,t1:7.5,beat:'02 · The forecast',line:'We forecast where <span class="accent">crisis lands</span>'},
-    {t0:7.5,t1:10.5,beat:'03 · The deploy',line:'Trained teams deploy <span class="accent">on the ground</span>'},
-    {t0:10.5,t1:14.0,beat:'04 · The measure',line:'Measured by <span class="accent">outcomes</span>, not promises'}
-  ];
-  var cur=-1;
-  function setBeat(i){ if(i===cur)return; cur=i; if(i<0){beatEl.classList.remove('show');lineEl.classList.remove('show');return;} var b=BEATS[i]; beatEl.textContent=b.beat; lineEl.innerHTML=b.line; beatEl.classList.add('show'); lineEl.classList.add('show'); }
-  function onTime(){ var t=vid.currentTime,dur=vid.duration||14,shown=-1; for(var i=0;i<BEATS.length;i++){if(t>=BEATS[i].t0&&t<BEATS[i].t1){shown=i;break;}} setBeat(shown); barEl.style.width=(Math.min(1,t/dur)*100)+'%'; }
-  vid.addEventListener('timeupdate',onTime);
-  vid.addEventListener('play',function(){playBtn.style.opacity=0;playBtn.style.pointerEvents='none';});
-  vid.addEventListener('pause',function(){playBtn.style.opacity=.92;playBtn.style.pointerEvents='auto';});
-  vid.addEventListener('ended',function(){playBtn.style.opacity=.92;playBtn.style.pointerEvents='auto';cur=-2;setBeat(-1);barEl.style.width='0%';});
-  playBtn.addEventListener('click',function(){vid.currentTime=0;vid.muted=false;var p=vid.play();if(p&&p.catch)p.catch(function(){vid.muted=true;vid.play();});});
-  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)setBeat(0);});},{threshold:.5});io.observe(wrap);} else {setBeat(0);}
-})();
-</script>
-<script>
 // dashboard data + render
 var DIMS=['poverty','homelessness','nhs','mental','isolation'];
-var COLORS={'poverty':'#CF2E22','homelessness':'#E07A0A','nhs':'#FFB22E','mental':'#0BA894','isolation':'#007A68'};
+var COLORS={'poverty':'#E11D0E','homelessness':'#FF7A00','nhs':'#FFB22E','mental':'#00BCA3','isolation':'#007A68'};
 var data=[
 {id:'Birmingham',r:'West Midlands',d:{poverty:95,homelessness:70,nhs:75,mental:65,isolation:60},p:'Highest child poverty in England',s:'40%+ of children in poverty'},
 {id:'Middlesbrough',r:'North East',d:{poverty:97,homelessness:72,nhs:78,mental:66,isolation:62},p:'Worst child poverty in England',s:'~47% of children in poverty'},
