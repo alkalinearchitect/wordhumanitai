@@ -75,8 +75,8 @@ def main():
         sys.exit(1)
 
     bundle = build_scenario_bundle(recs)
-    base = os.environ.get("MIROFISH_BASE_URL", "https://api.openai.com/v1")
-    model = os.environ.get("MIROFISH_MODEL", "gpt-4o-mini")
+    base = os.environ.get("MIROFISH_BASE_URL", "http://127.0.0.1:11434/v1")
+    model = os.environ.get("MIROFISH_MODEL", "qwen2.5:3b")
 
     print("MIROFISH ADAPTER: key present. Dispatching scenario bundle:")
     print(json.dumps(bundle, indent=2)[:800])
