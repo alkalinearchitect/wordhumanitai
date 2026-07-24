@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>HumanitAI — We forecast where Britain breaks next.</title>
+<title>HumanitAI — We forecast the towns about to tip.</title>
 <meta name="description" content="HumanitAI is an AI-forecasting and community-health organisation that predicts where UK towns tip into crisis — then runs the teams and venues that stop it. A UK Community Interest Company.">
 <meta name="theme-color" content="#FBF9F4">
-<meta property="og:title" content="HumanitAI — We forecast where Britain breaks next.">
+<meta property="og:title" content="HumanitAI — We forecast the towns about to tip.">
 <meta property="og:description" content="AI-forecasting + Community Health Worker teams + a warm 4th Space venue. We arrive before the crisis.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300BCA3'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-weight='800' font-size='20' fill='white' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,8 +24,8 @@
   --violet:#6C5CE7; /* distinct 5th severity hue (was confusable amber-bright) */
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%;font-optical-sizing:auto}
-body{background:var(--ivory);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;font-feature-settings:"ss01","cv01";position:relative}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%;font-optical-sizing:auto;overflow-x:hidden}
+body{background:var(--ivory);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;font-feature-settings:"ss01","cv01";position:relative;overflow-x:hidden}
 img,svg{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--teal-deep);color:#fff}
@@ -113,8 +113,6 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.03e
 .fourth-row .area span{display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:6px}
 .fourth-row .body{font-size:1.02rem;line-height:1.62;color:var(--ink);max-width:64ch}
 .fourth-row .body b{font-weight:700}
-.fourth-row .voice{display:block;font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:500;font-size:1.32rem;line-height:1.32;color:var(--teal-deep);margin-top:16px;padding-top:16px;border-top:1px solid var(--hair-2);letter-spacing:-.01em}
-.fourth-row.feat .voice{color:var(--vermillion)}
 /* impact stats — proof, differentiated from hero context */
 .fourth-stats{display:flex;gap:48px;flex-wrap:wrap;margin-top:44px;padding-top:36px;border-top:1px solid var(--hair)}
 .figure.impact .n{font-family:Fraunces,Georgia,serif;font-size:3.4rem;font-weight:900;color:var(--ink);line-height:1;letter-spacing:-.03em}
@@ -178,24 +176,39 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
 
 /* ═══════ RESPONSIVE ═══════ */
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;gap:30px;padding:130px 0 80px}
-  .fourth-head{grid-template-columns:1fr}
-  .fourth-visual{height:260px;order:-1}
+  .hero{grid-template-columns:1fr;gap:34px;padding:128px 0 72px;min-height:auto}
+  .hero h1{font-size:clamp(2.6rem,9vw,4.4rem)}
+  .fourth-head{grid-template-columns:1fr;gap:28px}
+  .fourth-visual{height:240px;order:-1}
 }
 @media(max-width:700px){
   #data .viz-top{flex-wrap:wrap;gap:4px}
+  .cta-grid{gap:14px}
 }
 @media(max-width:640px){
-  .section{padding:64px 0}
-  .section.air{padding:80px 0}
-  .section.tight{padding:56px 0}
-  .nav-links a{display:none}
-  .nav-links .nav-cta{display:inline-flex}
-  .fourth-row{grid-template-columns:1fr;gap:10px}
-  .fourth-row.feat{margin:0;padding:24px 18px}
-  .fourth-row .voice{font-size:1.18rem}
-  .cta{padding:90px 0}
+  .wrap{padding:0 20px}
+  .section{padding:60px 0}
+  .section.air{padding:76px 0}
+  .section.tight{padding:52px 0}
+  /* keep section nav reachable on phones; drop the standalone CTA chip instead */
+  .nav-links{gap:18px}
+  .nav-links a{display:inline-flex;font-size:12px}
+  .nav-cta{display:none}
+  .fourth-row{grid-template-columns:1fr;gap:8px}
+  .fourth-row.feat{margin:0;padding:22px 16px}
+  .fourth-stats{gap:28px;margin-top:32px}
+  .figure.impact .n{font-size:2.6rem}
+  .cta{padding:84px 0}
+  .cta-actions{flex-direction:column}
+  .cta-actions .btn{width:100%;justify-content:center}
+  .hero-actions .btn{width:100%;justify-content:center}
   .scroll-hint{display:none}
+}
+@media(max-width:380px){
+  .hero h1{font-size:2.3rem}
+  .wrap{padding:0 16px}
+  .figure.impact .n{font-size:2.3rem}
+  .cta h2{font-size:2.1rem}
 }
 </style>
 </head>
@@ -216,9 +229,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
   <div class="wrap" style="display:contents">
     <div class="hero-copy">
       <p class="kicker rv">AI forecasting · community health</p>
-      <h1 class="rv">We forecast where Britain <span class="em">breaks</span> next — and we're on the ground before it does.</h1>
-      <p class="hero-stakes rv">14.3M in poverty. 7M stuck on NHS waits. We've already mapped the 18 towns where both hit hardest.</p>
-      <p class="hero-sub rv">Our OSINT and AI models flag the towns about to tip. Local Community Health Worker teams and a warm 4th Space venue meet people there — before crisis, before the ambulance, before the headlines.</p>
+      <h1 class="rv">We forecast the towns about to <span class="em">tip</span> — and we're on the ground before they do.</h1>
+      <p class="hero-stakes rv">14.3M in poverty. 7M waiting on the NHS. We've mapped the 18 towns where both hit hardest — and we move before the ambulance does.</p>
+      <p class="hero-sub rv">Our OSINT and AI read the open data and flag the towns about to tip. Community Health Worker teams and a warm 4th Space meet people there — before the crisis, before the waiting list, before the headline.</p>
       <div class="hero-actions rv">
         <a href="#join" class="btn btn-primary">Fund the forecast <span class="arr">&rarr;</span></a>
         <a href="#data" class="btn btn-ghost">See the intelligence</a>
@@ -239,7 +252,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
     <div class="fourth-head">
       <div>
         <p class="kicker num rv"><span class="num">02</span>The 4th Space</p>
-        <h2 class="statement rv" style="margin-top:14px">A sauna and cold-plunge venue where lonely people actually show up — and stop being lonely.</h2>
+        <h2 class="statement rv" style="margin-top:14px">The 4th Space: a sauna and cold-plunge venue where lonely people show up — and stop being lonely.</h2>
       </div>
       <div class="fourth-visual rv">
         <div class="temp"></div>
@@ -247,38 +260,28 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
         <div class="lbl">Contrast therapy · connection by design</div>
       </div>
     </div>
-    <p class="lede measure rv">The 4th Space is our delivery layer — the physical, social room that turns a prediction into a person's presence. Where the model says pressure is breaking, the 4th Space is the front door our teams already trust.</p>
+    <p class="lede measure rv">The 4th Space is where the forecast becomes human — a warm room, on a schedule, that lonely people actually return to. It's our answer to the loneliness the model flags first.</p>
 
     <div class="fourth-grid">
       <div class="fourth-row feat rv">
         <div class="area"><span>Mental health</span>From crisis to company</div>
-        <div class="body">In <b>Spelthorne, Adur and Glasgow</b> — our highest-anxiety flags — the 4th Space turns a lonely week into a warm hour with people who expect you. No referral, no waiting list, no clinical form. Just warmth, on a schedule.
-          <span class="voice">"I am not a case file. I am someone the room expects on Tuesday."</span>
-        </div>
+        <div class="body">In <b>Spelthorne, Adur and Glasgow</b> — our three highest-anxiety flags — the 4th Space is the one appointment with no referral and no waiting list. A warm hour, every week, with people who expect you.</div>
       </div>
       <div class="fourth-row rv">
         <div class="area"><span>Ageing</span>From isolation to ritual</div>
-        <div class="body">Older people are the quietest pressure in the data and the loneliest in the room. A regular contrast-therapy circle gives the week a shape — a reason to leave the flat, a face that's expecting you.
-          <span class="voice">"The circle remembers my name before my GP does."</span>
-        </div>
+        <div class="body">Older people are the loneliest in the data and the quietest in the room. A regular circle gives the week a shape — a reason to leave the flat, a face that's expecting you.</div>
       </div>
       <div class="fourth-row rv">
         <div class="area"><span>Poverty</span>From scarcity to dignity</div>
-        <div class="body">When money is thin, public warmth is a luxury. A subsidised 4th Space restores it as a right — sitting beside debt advice and cost-of-living support, but asking for nothing in return.
-          <span class="voice">"Warmth isn't a handout. It's something that's mine."</span>
-        </div>
+        <div class="body">When money is thin, warmth is a luxury. A subsidised 4th Space restores it as a right — beside debt advice and cost-of-living support, asking nothing in return.</div>
       </div>
       <div class="fourth-row rv">
         <div class="area"><span>Homelessness</span>From the street to steadiness</div>
-        <div class="body">Under the 2026 Rough Sleeping Strategy, prevention is the brief. The 4th Space is the steady, repeated contact that keeps someone off the pavement — a place that is theirs, not a waiting room.
-          <span class="voice">"First place all week that didn't want me to leave by lunchtime."</span>
-        </div>
+        <div class="body">Under the 2026 Rough Sleeping Strategy, prevention is the brief. The 4th Space is the steady contact that keeps someone off the pavement — a place that is theirs, not a waiting room.</div>
       </div>
       <div class="fourth-row rv">
         <div class="area"><span>NHS strain</span>From queue to community</div>
-        <div class="body">Every avoided lonely evening is a call to the GP that never had to happen. The 4th Space is neighbourhood health delivered by presence, not a prescription.
-          <span class="voice">"The appointment I kept was the one with the sauna."</span>
-        </div>
+        <div class="body">Every lonely evening we fill is a call to the GP that never had to happen. Neighbourhood health, delivered by presence — not a prescription.</div>
       </div>
     </div>
 
@@ -306,7 +309,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
 <section class="cta" id="join">
   <div class="wrap">
     <p class="kicker num rv"><span class="num">04</span>Get involved</p>
-    <h2 class="rv">Britain can't wait for the crisis. Pick where you start.</h2>
+    <h2 class="rv">We've mapped the 18 towns. Here's where you start.</h2>
     <div class="cta-grid rv">
       <div class="cta-card"><span class="step">Step 01</span><b>Fund it</b><span>Back the forecast and a 4th Space site from £5k — we report every outcome, every quarter.</span></div>
       <div class="cta-card"><span class="step">Step 02</span><b>Build it</b><span>Bring the model or the venue to your town; we onboard your team and your data.</span></div>
