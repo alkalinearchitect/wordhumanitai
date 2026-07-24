@@ -10,21 +10,21 @@
   --color-ink:        #03100d;
   --color-ink-2:      #061913;
   --color-ink-3:      #0a221b;
-  --color-bone:       #f3efe6;
+  --color-bone:       #F4F2EA;
   --color-bone-2:     #e9e3d6;
   --color-paper:      #ffffff;
 
-  --color-brand:      #14e0b0;   /* electric teal — primary */
+  --color-brand:      #00E5C4;   /* electric teal — primary (stronger) */
   --color-brand-deep: #0b8f74;
   --color-brand-glow: #20f3c4;
 
-  --color-amber:      #ffb020;   /* confident gold accent */
+  --color-amber:      #FFB22E;   /* confident gold accent (stronger) */
   --color-amber-deep: #e2920a;
 
-  --color-alert:      #ff5436;   /* vermillion — hard stats */
+  --color-alert:      #FF4438;   /* vermillion — hard stats (stronger) */
   --color-alert-deep: #d83a1f;
 
-  --color-text-on-dark:   #e7efeb;
+  --color-text-on-dark:   #EAF1EE;
   --color-text-dim:       #8fa59c;
   --color-text-on-light:  #16231f;
   --color-text-light-dim: #5d6f68;
@@ -51,9 +51,9 @@
 .kicker-light { color:var(--color-brand); } .kicker-light::before { background:var(--color-brand); }
 .kicker-cream { color:var(--color-text-light-dim); } .kicker-cream::before { background:var(--color-bone-2); }
 
-.display { font-family:var(--font-display); font-weight:500; line-height:.92; letter-spacing:-.045em; font-size:clamp(3.2rem,10vw,8.5rem); }
+.display { font-family:var(--font-display); font-weight:500; line-height:.9; letter-spacing:-.045em; font-size:clamp(3.5rem,11vw,9rem); }
 .display em { font-style:italic; font-weight:400; }
-.h2 { font-family:var(--font-display); font-weight:500; line-height:1.02; letter-spacing:-.03em; font-size:clamp(2rem,5.5vw,4.25rem); }
+.h2 { font-family:var(--font-display); font-weight:500; line-height:1.0; letter-spacing:-.035em; font-size:clamp(2.25rem,6vw,4.5rem); }
 .h3 { font-family:var(--font-display); font-weight:500; line-height:1.05; letter-spacing:-.02em; font-size:clamp(1.3rem,2.4vw,1.9rem); }
 .lede { font-size:clamp(1.05rem,1.6vw,1.3rem); line-height:1.7; color:var(--color-text-dim); font-weight:300; max-width:620px; }
 .lede-light { color:var(--color-text-dim); }
