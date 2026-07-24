@@ -1,258 +1,310 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Humanitai — We Fix What Britain Breaks</title>
-<meta name="description" content="UK CIC using OSINT and AI to solve Britain's hardest social problems.">
-<meta name="theme-color" content="#0d6b5c">
+<meta name="description" content="A UK Community Interest Company using Open-Source Intelligence, multi-agent prediction and community health teams to solve Britain's hardest social problems.">
+<meta name="theme-color" content="#0a0a0f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --sp-0:0;--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;--sp-7:48px;--sp-8:64px;--sp-9:96px;--sp-10:128px;
-  --text-xs:.75rem;--text-sm:.875rem;--text-base:1rem;--text-lg:1.125rem;--text-xl:1.25rem;--text-2xl:1.5rem;--text-3xl:1.875rem;--text-4xl:2.25rem;--text-5xl:3rem;--text-6xl:3.75rem;--text-7xl:4.5rem;--text-8xl:6rem;--text-9xl:8rem;
-  --radius-sm:4px;--radius:8px;--radius-lg:12px;--radius-xl:16px;--radius-2xl:24px;--radius-full:9999px;
-  --teal-50:#f0fdfa;--teal-100:#ccfbf1;--teal-200:#a7f3d0;--teal-500:#119984;--teal-600:#0d6b5c;--teal-700:#074a3f;--teal-900:#03251f;
-  --neutral-50:#faf8f3;--neutral-100:#f4f1ea;--neutral-200:#e0dbcf;--neutral-300:#c4bda9;--neutral-400:#8a8a8a;--neutral-500:#6b6b6b;--neutral-600:#5a5a5a;--neutral-700:#3a3a3a;--neutral-800:#1a1a1a;--neutral-900:#0a0a0f;
-  --amber:#f0a830;--orange:#e8743b;--red:#c73e1d;
+  --teal-50:#f0fdfa;--teal-100:#ccfbf1;--teal-200:#a7f3d0;--teal-400:#2bb89c;--teal-500:#119984;--teal-600:#0d6b5c;--teal-700:#074a3f;--teal-900:#03251f;
+  --cream:#faf8f3;--cream-2:#f4f1ea;--cream-3:#ece7da;
+  --paper:#ffffff;
+  --ink:#0a0a0f;--ink-2:#1a1a1f;
+  --neutral-700:#3a3a3a;--neutral-600:#5a5a5a;--neutral-500:#6b6b6b;--neutral-400:#8a8a8a;--neutral-300:#c4bda9;--neutral-200:#e0dbcf;
+  --red:#c73e1d;--orange:#e8743b;--amber:#f0a830;
+  --maxw:1240px;
+  --sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;--sp-7:48px;--sp-8:64px;--sp-9:96px;--sp-10:128px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:Inter,-apple-system,sans-serif;background:var(--neutral-900);color:#fff;-webkit-font-smoothing:antialiased;font-size:var(--text-base);line-height:1.6}
-.serif{font-family:Fraunces,Georgia,serif;letter-spacing:-.03em;line-height:1.05}
-.wrap{max-width:1200px;margin:0 auto;padding:0 var(--sp-6)}
-@media(max-width:768px){.wrap{padding:0 var(--sp-5)}}
-.section{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:var(--sp-9) 0}
-@media(max-width:768px){.section{padding:var(--sp-8) 0}}
-.section-cream{background:var(--neutral-100);color:var(--neutral-800)}
-.section-white{background:#fff;color:var(--neutral-800)}
-.section-dark{background:var(--neutral-900);color:#fff}
-.section-green{background:linear-gradient(135deg,var(--teal-600),var(--teal-700));color:#fff}
-.tag{font-size:var(--text-xs);font-weight:600;color:var(--teal-600);text-transform:uppercase;letter-spacing:.08em;display:flex;align-items:center;gap:var(--sp-2);margin-bottom:var(--sp-5)}
-.tag::before{content:"";width:20px;height:1.5px;background:var(--teal-600)}
-.tag-light{color:var(--teal-500)}.tag-light::before{background:var(--teal-500)}
-h1{font-family:Fraunces,serif;font-size:clamp(3rem,9vw,8rem);font-weight:700;letter-spacing:-.05em;line-height:.8;color:#fff}
-h1 em{font-style:italic;font-weight:400;background:linear-gradient(135deg,var(--teal-500),var(--teal-600));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-h2{font-family:Fraunces,serif;font-size:clamp(1.8rem,4.5vw,3.5rem);font-weight:700;letter-spacing:-.04em;line-height:1.05}
-h3{font-family:Fraunces,serif;font-size:clamp(1.1rem,2vw,1.5rem);font-weight:600;letter-spacing:-.02em}
-.subtitle{font-size:var(--text-lg);color:var(--neutral-500);max-width:500px;line-height:1.7}
-.subtitle-light{color:rgba(255,255,255,.4)}
+html{scroll-behavior:smooth;scroll-padding-top:90px;-webkit-font-smoothing:antialiased}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;background:var(--ink);color:#fff;font-size:1rem;line-height:1.65;font-weight:400}
+.serif{font-family:Fraunces,Georgia,serif;letter-spacing:-.02em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--sp-6)}
+section{position:relative;padding:var(--sp-10) 0}
+@media(max-width:768px){section{padding:var(--sp-9) 0}}
+.bg-cream{background:var(--cream);color:var(--ink)}
+.bg-paper{background:var(--paper);color:var(--ink)}
+.bg-ink{background:var(--ink);color:#fff}
+.bg-teal{background:linear-gradient(150deg,#0d6b5c 0%,#074a3f 60%,#03251f 100%);color:#fff}
+
+/* kicker / tag */
+.kicker{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--teal-600);display:inline-flex;align-items:center;gap:14px;margin-bottom:var(--sp-5)}
+.kicker::before{content:"";width:28px;height:1px;background:var(--teal-600)}
+.kicker-light{color:var(--teal-400)}
+.kicker-light::before{background:var(--teal-400)}
+.kicker-cream{color:var(--neutral-400)}.kicker-cream::before{background:var(--neutral-300)}
+
+h1,h2,h3{font-family:Fraunces,serif;font-weight:500;letter-spacing:-.03em;line-height:1.02}
+.display{font-size:clamp(3.2rem,10vw,8.5rem);font-weight:500;line-height:.92;letter-spacing:-.045em}
+.display em{font-style:italic;font-weight:400}
+.h2{font-size:clamp(2rem,5.5vw,4.25rem);font-weight:500;line-height:1.02}
+.h3{font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:500}
+.lede{font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.7;color:var(--neutral-500);max-width:620px;font-weight:300}
+.lede-light{color:rgba(255,255,255,.55)}
+.lede-ink{color:var(--neutral-600)}
+
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:var(--sp-4) 0;transition:background .4s,border .4s}
-nav.scrolled{background:rgba(10,10,15,.85);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 var(--sp-6)}
-.brand{font-family:Fraunces,serif;font-weight:700;font-size:var(--text-xl);letter-spacing:-.03em;color:#fff;text-decoration:none}
-.brand em{font-style:normal;color:var(--teal-500)}
-.nav-links{display:flex;align-items:center;gap:var(--sp-6)}
-.nav-links a{font-size:var(--text-sm);font-weight:500;color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s;position:relative}
-.nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--teal-500);transition:width .4s cubic-bezier(.16,1,.3,1)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 0;transition:padding .4s,background .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.scrolled{padding:14px 0;background:rgba(10,10,15,.82);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.05)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:0 var(--sp-6)}
+.brand{font-family:Fraunces,serif;font-weight:600;font-size:1.35rem;letter-spacing:-.03em;color:#fff;text-decoration:none;display:flex;align-items:center;gap:9px}
+.brand .mk{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--teal-400),var(--teal-600));display:inline-flex;align-items:center;justify-content:center}
+.brand .mk svg{width:15px;height:15px}
+.nav-links{display:flex;align-items:center;gap:38px}
+.nav-links a{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s;position:relative}
+.nav-links a::after{content:"";position:absolute;bottom:-6px;left:0;width:0;height:1.5px;background:var(--teal-400);transition:width .4s cubic-bezier(.16,1,.3,1)}
 .nav-links a:hover{color:#fff}.nav-links a:hover::after{width:100%}
-.nav-cta{padding:var(--sp-2) var(--sp-5);background:var(--teal-500);color:#fff!important;border-radius:var(--radius);font-weight:600;font-size:var(--text-xs);transition:background .3s,transform .3s}
+.nav-cta{padding:10px 20px;background:var(--teal-500);color:#fff!important;border-radius:8px;font-weight:600;font-size:.78rem;transition:background .3s,transform .3s}
 .nav-cta:hover{background:var(--teal-600)!important;transform:translateY(-1px)}.nav-cta::after{display:none!important}
-@media(max-width:768px){.nav-links{display:none}}
+@media(max-width:860px){.nav-links{display:none}}
+
 /* HERO */
-.hero{background:var(--neutral-900)}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.3;pointer-events:none}
-.hero-glow{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 30% 40%,rgba(13,107,92,.15),transparent)}
-.hero .wrap{position:relative;z-index:2}
-.hero-label{font-size:var(--text-xs);font-weight:500;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:var(--sp-8)}
-.hero h1{margin-bottom:var(--sp-6);max-width:900px}
-.hero p{font-size:var(--text-lg);color:rgba(255,255,255,.5);max-width:480px;line-height:1.7;margin-bottom:var(--sp-7)}
-.hero-actions{display:flex;gap:var(--sp-3);flex-wrap:wrap}
-.btn-primary{display:inline-flex;align-items:center;gap:var(--sp-2);padding:var(--sp-3) var(--sp-7);background:var(--teal-500);color:#fff;border-radius:var(--radius);font-size:var(--text-sm);font-weight:600;text-decoration:none;transition:background .3s,transform .3s,box-shadow .3s}
-.btn-primary:hover{background:var(--teal-600);transform:translateY(-2px);box-shadow:0 8px 24px rgba(17,153,132,.25)}
-.btn-secondary{display:inline-flex;align-items:center;gap:var(--sp-2);padding:var(--sp-3) var(--sp-7);background:transparent;color:rgba(255,255,255,.8);border-radius:var(--radius);font-size:var(--text-sm);font-weight:600;text-decoration:none;border:1.5px solid rgba(255,255,255,.12);transition:border-color .3s,color .3s}
-.btn-secondary:hover{border-color:var(--teal-500);color:#fff}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-6);margin-top:var(--sp-8);padding-top:var(--sp-7);border-top:1px solid rgba(255,255,255,.05);max-width:600px}
-.hero-stats .num{font-family:Fraunces,serif;font-size:var(--text-5xl);font-weight:600;color:var(--teal-500);display:block;letter-spacing:-.03em;line-height:1}
-.hero-stats .lbl{font-size:var(--text-xs);color:rgba(255,255,255,.25);margin-top:var(--sp-1);display:block}
-@media(max-width:768px){.hero-stats{gap:var(--sp-4)}.hero-stats .num{font-size:var(--text-4xl)}}
-.scroll-hint{position:absolute;bottom:var(--sp-6);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:var(--sp-2);color:rgba(255,255,255,.12);font-size:var(--text-xs);letter-spacing:.2em;text-transform:uppercase}
-.scroll-hint-line{width:1px;height:24px;background:linear-gradient(180deg,rgba(255,255,255,.2),transparent)}
-/* QUOTE */
-.quote-wrap{max-width:780px;margin:0 auto;text-align:center;padding:var(--sp-8) 0}
-.quote-wrap p{font-family:Fraunces,serif;font-size:clamp(1.3rem,3vw,2.2rem);font-weight:400;line-height:1.3;font-style:italic;color:var(--neutral-700);margin-bottom:var(--sp-5)}
-.quote-wrap cite{font-size:var(--text-sm);font-style:normal;color:var(--neutral-400)}
-/* PROBLEMS — full bleed grid */
-.problems{display:grid;grid-template-columns:repeat(3,1fr)}
-@media(max-width:768px){.problems{grid-template-columns:1fr}}
-.prob{padding:var(--sp-7) var(--sp-6);background:#fff;border-right:1px solid rgba(0,0,0,.03);border-bottom:1px solid rgba(0,0,0,.03);transition:background .3s}
-.prob:hover{background:var(--teal-50)}.prob:last-child{border-right:none}
-.prob-num{font-family:Fraunces,serif;font-size:var(--text-6xl);font-weight:400;color:var(--neutral-200);line-height:.8;margin-bottom:var(--sp-2)}
-.prob h3{font-size:var(--text-lg);font-weight:600;margin-bottom:var(--sp-1);color:var(--neutral-800)}
-.prob p{font-size:var(--text-sm);color:var(--neutral-600);line-height:1.6;margin-bottom:var(--sp-2);max-width:340px}
-.prob .stat{font-family:Fraunces,serif;font-size:var(--text-2xl);font-weight:600;color:var(--red)}
-/* LAYERS */
-.layers{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.04);border-radius:var(--radius-lg);overflow:hidden}
-@media(max-width:900px){.layers{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:500px){.layers{grid-template-columns:1fr}}
-.layer{padding:var(--sp-7) var(--sp-6);background:var(--neutral-900);text-align:center;transition:background .3s}
-.layer:hover{background:rgba(255,255,255,.02)}
-.layer .icon{font-size:var(--text-3xl);margin-bottom:var(--sp-3);display:block}
-.layer .step{font-size:var(--text-xs);font-weight:600;color:var(--teal-500);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:var(--sp-1)}
-.layer h3{color:#fff;margin-bottom:var(--sp-2);font-size:var(--text-lg)}
-.layer p{font-size:var(--text-sm);color:rgba(255,255,255,.4);line-height:1.6}
+.hero{min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--ink)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.5;pointer-events:none}
+.hero-grad{position:absolute;inset:0;z-index:0;background:radial-gradient(75% 70% at 22% 35%,rgba(13,107,92,.30),transparent 60%),radial-gradient(60% 60% at 85% 80%,rgba(17,153,132,.12),transparent 55%)}
+.hero-vignette{position:absolute;inset:0;z-index:0;background:radial-gradient(120% 120% at 50% 50%,transparent 55%,rgba(10,10,15,.65))}
+.hero .wrap{position:relative;z-index:3;padding-top:120px;padding-bottom:80px}
+.hero .kicker{color:rgba(255,255,255,.55)}
+.hero .kicker::before{background:var(--teal-400)}
+.hero p.lede{margin-top:var(--sp-6);color:rgba(255,255,255,.6)}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:var(--sp-7)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:9px;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .3s,transform .3s,box-shadow .3s,border-color .3s}
+.btn-primary{background:var(--teal-500);color:#fff}
+.btn-primary:hover{background:var(--teal-600);transform:translateY(-2px);box-shadow:0 12px 34px rgba(17,153,132,.32)}
+.btn-ghost{background:transparent;color:rgba(255,255,255,.82);border:1.4px solid rgba(255,255,255,.16)}
+.btn-ghost:hover{border-color:var(--teal-400);color:#fff}
+.btn .arr{transition:transform .3s}.btn:hover .arr{transform:translateX(4px)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:var(--sp-9);max-width:680px;border-top:1px solid rgba(255,255,255,.08)}
+.hero-stats>div{padding:var(--sp-5) var(--sp-5) 0 0}
+.hero-stats>div+div{border-left:1px solid rgba(255,255,255,.08);padding-left:var(--sp-5)}
+.hero-stats .num{font-family:Fraunces,serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:500;color:#fff;letter-spacing:-.03em;line-height:1;display:block}
+.hero-stats .num span{color:var(--teal-400)}
+.hero-stats .lbl{font-size:.74rem;color:rgba(255,255,255,.4);margin-top:10px;letter-spacing:.02em;display:block}
+@media(max-width:640px){.hero-stats{grid-template-columns:1fr;gap:0}.hero-stats>div+div{border-left:none;border-top:1px solid rgba(255,255,255,.08);padding-left:0;padding-top:var(--sp-5);margin-top:0}.hero-stats>div{padding-right:0}}
+.scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(255,255,255,.22);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase}
+.scroll-hint .ln{width:1px;height:40px;background:linear-gradient(180deg,rgba(255,255,255,.3),transparent);animation:drop 2.4s infinite}
+@keyframes drop{0%{transform:scaleY(.2);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(.2);transform-origin:bottom}}
+
+/* PULL QUOTE */
+.pull{max-width:1000px;margin:0 auto;text-align:center}
+.pull .q{font-family:Fraunces,serif;font-style:italic;font-weight:400;font-size:clamp(1.5rem,3.6vw,2.9rem);line-height:1.32;letter-spacing:-.02em;color:var(--ink)}
+.pull .q b{font-style:normal;font-weight:500;color:var(--teal-600)}
+.pull cite{display:block;margin-top:var(--sp-6);font-style:normal;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--neutral-400)}
+
+/* PROBLEMS — editorial index */
+.idx-head{max-width:760px;margin-bottom:var(--sp-9)}
+.idx{border-top:1px solid var(--cream-3)}
+.idx-row{display:grid;grid-template-columns:130px 1fr 220px;gap:var(--sp-6);align-items:center;padding:var(--sp-6) 0;border-bottom:1px solid var(--cream-3);transition:background .4s,padding-left .4s}
+.idx-row:hover{background:var(--cream-2);padding-left:var(--sp-5)}
+.idx-num{font-family:Fraunces,serif;font-size:3.4rem;font-weight:400;color:var(--cream-3);line-height:.8;letter-spacing:-.04em;transition:color .4s}
+.idx-row:hover .idx-num{color:var(--teal-500)}
+.idx-row h3{font-size:clamp(1.4rem,2.6vw,2rem);font-weight:500;margin-bottom:10px;color:var(--ink)}
+.idx-row p{font-size:.96rem;color:var(--neutral-600);line-height:1.65;max-width:540px}
+.idx-stat{text-align:right}
+.idx-stat .v{font-family:Fraunces,serif;font-size:clamp(2.4rem,5vw,3.6rem);font-weight:500;color:var(--red);line-height:.85;letter-spacing:-.03em;display:block}
+.idx-stat .k{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--neutral-400);margin-top:8px}
+@media(max-width:820px){.idx-row{grid-template-columns:64px 1fr;gap:var(--sp-4)}.idx-num{font-size:2rem}.idx-stat{grid-column:1/-1;text-align:left;display:flex;align-items:baseline;gap:12px;margin-top:6px}.idx-stat .k{margin-top:0}}
+
+/* APPROACH — vertical sequence */
+.flow{display:grid;grid-template-columns:1fr;gap:0;margin-top:var(--sp-9);max-width:920px}
+.flow-row{display:grid;grid-template-columns:88px 1fr;gap:var(--sp-6);padding:var(--sp-7) 0;position:relative}
+.flow-row:not(:last-child)::after{content:"";position:absolute;left:43px;top:78px;bottom:-10px;width:1px;background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.04))}
+.flow-ic{width:88px;height:88px;border-radius:50%;border:1px solid rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.02);position:relative;z-index:2}
+.flow-ic svg{width:34px;height:34px;stroke:var(--teal-400);fill:none;stroke-width:1.4}
+.flow-step{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-400);margin-bottom:10px}
+.flow-row h3{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:500;margin-bottom:12px;color:#fff}
+.flow-row p{font-size:1rem;color:rgba(255,255,255,.5);line-height:1.7;max-width:620px;font-weight:300}
+@media(max-width:620px){.flow-row{grid-template-columns:60px 1fr;gap:var(--sp-4)}.flow-ic{width:60px;height:60px}.flow-ic svg{width:24px;height:24px}.flow-row:not(:last-child)::after{left:29px}}
+
 /* LOCK */
-.lock{text-align:center;position:relative;overflow:hidden}
-.lock::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='48' height='48'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M24 20c-2.2 0-4 1.8-4 4v2h-2v8h12v-8h-2v-2c0-2.2-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2v2h-4v-2c0-1.1.9-2 2-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.08}
-.lock .wrap{position:relative;z-index:1}
-.lock h2{color:#fff;margin-bottom:var(--sp-4);font-size:clamp(1.6rem,3.5vw,2.8rem)}
-.lock p{font-size:var(--text-base);color:rgba(255,255,255,.7);max-width:520px;margin:0 auto}
-/* DATA VIZ */
-.viz{padding:var(--sp-10) 0;background:var(--neutral-900)}
-.viz h2{color:#fff;margin-bottom:var(--sp-2)}
-.viz .sub{color:rgba(255,255,255,.35);margin-bottom:var(--sp-7);max-width:480px}
-.viz-filters{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-bottom:var(--sp-6)}
-.viz-filters button{padding:var(--sp-1) var(--sp-4);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.45);border-radius:var(--radius-full);cursor:pointer;font-size:var(--text-sm);transition:all .3s}
-.viz-filters button:hover{border-color:var(--teal-500);color:#fff}
+.lock-inner{max-width:820px;margin:0 auto;text-align:center}
+.lock-inner .h2{margin-bottom:var(--sp-5)}
+.lock-inner p{font-size:1.1rem;color:rgba(255,255,255,.78);line-height:1.7;font-weight:300;max-width:600px;margin:0 auto}
+
+/* DATA VIZ — stacked severity bars */
+.viz-head{max-width:680px;margin-bottom:var(--sp-7)}
+.viz-filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:var(--sp-7)}
+.viz-filters button{padding:8px 18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.5);border-radius:999px;cursor:pointer;font-size:.8rem;font-weight:500;transition:all .3s}
+.viz-filters button:hover{border-color:var(--teal-400);color:#fff}
 .viz-filters button.active{background:var(--teal-500);color:#fff;border-color:var(--teal-500)}
-.viz-list{display:flex;flex-direction:column;gap:var(--sp-1)}
-.viz-row{display:grid;grid-template-columns:200px 1fr 60px;gap:var(--sp-4);align-items:center;padding:var(--sp-3) var(--sp-4);border-radius:var(--radius);cursor:pointer;transition:background .3s}
-.viz-row:hover{background:rgba(255,255,255,.03)}
-.viz-row .city{font-family:Fraunces,serif;font-size:var(--text-base);font-weight:600;color:#fff;letter-spacing:-.02em}
-.viz-row .reg{font-size:var(--text-xs);color:rgba(255,255,255,.2);margin-top:2px}
-.viz-row .badge{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:1px 8px;border-radius:var(--radius-full);color:#fff;display:inline-block;margin-left:var(--sp-1);vertical-align:middle}
-.viz-row .bar-track{height:6px;background:rgba(255,255,255,.04);border-radius:var(--radius-full);overflow:hidden}
-.viz-row .bar-fill{height:100%;border-radius:var(--radius-full);transition:width 1.2s cubic-bezier(.16,1,.3,1);width:0}
-.viz-row .sev{font-size:var(--text-sm);font-weight:600;color:#fff;text-align:right}
-.viz-row .sev-lbl{font-size:10px;color:rgba(255,255,255,.2);display:block;text-align:right}
-@media(max-width:768px){.viz-row{grid-template-columns:140px 1fr 40px;gap:var(--sp-2);padding:var(--sp-2) var(--sp-2)}}
-/* MODAL */
-.modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.7);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);align-items:center;justify-content:center;padding:var(--sp-5)}
-.modal.open{display:flex}
-.modal-inner{background:var(--neutral-900);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-xl);max-width:520px;width:100%;padding:var(--sp-6);position:relative}
-.modal-close{position:absolute;top:var(--sp-4);right:var(--sp-4);width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.06);background:none;color:rgba(255,255,255,.3);cursor:pointer;font-size:var(--text-lg);display:flex;align-items:center;justify-content:center;transition:all .3s}
-.modal-close:hover{color:#fff;border-color:var(--teal-500)}
-.modal .r{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--teal-500);margin-bottom:var(--sp-1)}
-.modal .c{font-size:var(--text-3xl);color:#fff;margin:0 0 var(--sp-1);font-family:Fraunces,serif;letter-spacing:-.03em}
-.modal .p{font-size:var(--text-xs);font-weight:600;text-transform:uppercase;color:var(--orange);margin-bottom:var(--sp-2)}
-.modal .s{font-size:var(--text-base);font-weight:600;color:var(--amber);margin-bottom:var(--sp-2)}
-.modal .d{font-size:var(--text-sm);color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:var(--sp-4)}
-.modal .bar{height:4px;background:rgba(255,255,255,.04);border-radius:var(--radius-full);overflow:hidden;margin-bottom:var(--sp-2)}
-.modal .bar span{display:block;height:100%;border-radius:var(--radius-full);transition:width .6s}
-.modal .src{font-size:11px;color:rgba(255,255,255,.2);font-style:italic;margin-top:var(--sp-4);padding-top:var(--sp-4);border-top:1px solid rgba(255,255,255,.04)}
-/* EVIDENCE */
-.evidence{display:grid;grid-template-columns:repeat(2,1fr);margin-top:var(--sp-7);border-radius:var(--radius-lg);overflow:hidden}
-@media(max-width:768px){.evidence{grid-template-columns:1fr}}
-.evidence blockquote{background:var(--neutral-100);padding:var(--sp-6);border-bottom:1px solid var(--neutral-200)}
-.evidence blockquote p{font-size:var(--text-sm);line-height:1.7;color:var(--neutral-700);margin-bottom:var(--sp-3);font-style:italic}
-.evidence blockquote cite{font-size:var(--text-xs);color:var(--teal-600);font-style:normal;font-weight:600}
-/* JOIN */
-.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-radius:var(--radius-lg);overflow:hidden;max-width:780px;margin:var(--sp-7) auto 0}
-@media(max-width:768px){.join-grid{grid-template-columns:1fr}}
-.join-card{padding:var(--sp-7) var(--sp-6);background:#fff;text-align:center;transition:all .4s;border-right:1px solid var(--neutral-200)}
-.join-card:last-child{border-right:none}
-.join-card:hover{background:var(--neutral-800);color:#fff;transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
-.join-card:hover p{color:rgba(255,255,255,.55)}
-.join-card:hover a{color:var(--teal-500);border-color:var(--teal-500)}
-.join-card h3{margin-bottom:var(--sp-1)}
-.join-card p{font-size:var(--text-sm);color:var(--neutral-600);margin-bottom:var(--sp-4);transition:color .3s}
-.join-card a{font-size:var(--text-xs);font-weight:600;color:var(--teal-600);padding-bottom:2px;border-bottom:1.5px solid var(--teal-600);text-decoration:none;transition:color .3s,border-color .3s}
+.viz-list{display:flex;flex-direction:column}
+.viz-row{display:grid;grid-template-columns:240px 1fr 70px;gap:var(--sp-5);align-items:center;padding:14px 18px;border-radius:10px;cursor:pointer;transition:background .3s}
+.viz-row:hover{background:rgba(255,255,255,.035)}
+.viz-city{font-family:Fraunces,serif;font-size:1.15rem;font-weight:500;color:#fff;letter-spacing:-.02em}
+.viz-reg{font-size:.72rem;color:rgba(255,255,255,.32);margin-top:3px;letter-spacing:.02em}
+.viz-bar{height:14px;border-radius:999px;background:rgba(255,255,255,.05);overflow:hidden;display:flex}
+.viz-bar span{height:100%;transition:width 1.1s cubic-bezier(.16,1,.3,1);width:0}
+.viz-bar span+span{border-left:1px solid rgba(10,10,15,.5)}
+.viz-sev{font-family:Fraunces,serif;font-size:1.5rem;font-weight:500;text-align:right;color:#fff;letter-spacing:-.02em}
+.viz-sev small{display:block;font-family:Inter,sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+@media(max-width:720px){.viz-row{grid-template-columns:150px 1fr 48px;gap:var(--sp-3);padding:12px 8px}.viz-city{font-size:1rem}.viz-sev{font-size:1.15rem}}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:var(--sp-6)}
+.legend span{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;color:rgba(255,255,255,.45)}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+
+/* MODAL — glass */
+.modal{display:none;position:fixed;inset:0;z-index:300;background:rgba(5,5,8,.6);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);align-items:center;justify-content:center;padding:var(--sp-6);opacity:0;transition:opacity .35s}
+.modal.open{display:flex;opacity:1}
+.modal-in{width:100%;max-width:540px;background:rgba(26,26,31,.72);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:var(--sp-7);position:relative;box-shadow:0 40px 120px rgba(0,0,0,.5);transform:translateY(14px) scale(.98);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.modal.open .modal-in{transform:translateY(0) scale(1)}
+.modal-x{position:absolute;top:20px;right:20px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.modal-x:hover{color:#fff;border-color:var(--teal-400)}
+.modal-r{font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-400);margin-bottom:6px}
+.modal-c{font-family:Fraunces,serif;font-size:2.4rem;font-weight:500;color:#fff;letter-spacing:-.03em;line-height:1;margin-bottom:14px}
+.modal-p{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.modal-s{font-size:1.15rem;font-weight:600;color:var(--amber);margin-bottom:14px;font-family:Fraunces,serif;letter-spacing:-.01em}
+.modal-d{font-size:.95rem;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:var(--sp-5);font-weight:300}
+.modal-bar{height:8px;border-radius:999px;background:rgba(255,255,255,.06);overflow:hidden;margin-bottom:18px;display:flex}
+.modal-bar span{height:100%}
+.modal-src{font-size:.72rem;color:rgba(255,255,255,.3);font-style:italic;border-top:1px solid rgba(255,255,255,.08);padding-top:14px}
+
+/* EVIDENCE — field notes */
+.notes{display:grid;grid-template-columns:repeat(2,1fr);margin-top:var(--sp-8);border-top:1px solid var(--cream-3);border-left:1px solid var(--cream-3)}
+.note{padding:var(--sp-7);border-right:1px solid var(--cream-3);border-bottom:1px solid var(--cream-3)}
+.note p{font-size:1.05rem;line-height:1.7;color:var(--neutral-700);font-style:italic;font-weight:300}
+.note cite{display:block;margin-top:var(--sp-4);font-style:normal;font-size:.78rem;font-weight:600;letter-spacing:.08em;color:var(--teal-600)}
+@media(max-width:720px){.notes{grid-template-columns:1fr}.note{padding:var(--sp-5)}}
+
+/* GET INVOLVED — editorial columns */
+.inv-cols{display:grid;grid-template-columns:repeat(3,1fr);margin-top:var(--sp-8);max-width:1000px}
+.inv-col{padding:var(--sp-6) var(--sp-7)}
+.inv-col+div{border-left:1px solid var(--cream-3)}
+.inv-col h3{font-size:1.6rem;font-weight:500;margin-bottom:12px;color:var(--ink)}
+.inv-col p{font-size:.95rem;color:var(--neutral-600);line-height:1.65;margin-bottom:var(--sp-5);font-weight:300}
+.inv-col a{font-size:.82rem;font-weight:600;color:var(--teal-600);text-decoration:none;padding-bottom:3px;border-bottom:1.5px solid var(--teal-600);transition:color .3s,border-color .3s;display:inline-flex;align-items:center;gap:7px}
+.inv-col a:hover{color:var(--teal-700);border-color:var(--teal-700)}
+@media(max-width:720px){.inv-cols{grid-template-columns:1fr}.inv-col+div{border-left:none;border-top:1px solid var(--cream-3)}.inv-col{padding:var(--sp-5) 0}}
+
 /* FAQ */
-.faq{max-width:640px;margin:var(--sp-7) auto 0}
-.faq-item{border-bottom:1px solid var(--neutral-200);padding:var(--sp-3) 0}
-.faq-item summary{font-size:var(--text-sm);font-weight:600;cursor:pointer;list-style:none;position:relative;padding-right:var(--sp-5);color:var(--neutral-700);min-height:44px;display:flex;align-items:center}
+.faq{max-width:760px;margin:var(--sp-8) auto 0}
+.faq-item{border-top:1px solid var(--cream-3)}
+.faq-item:last-child{border-bottom:1px solid var(--cream-3)}
+.faq-item summary{font-size:1.05rem;font-weight:500;cursor:pointer;list-style:none;position:relative;padding:22px 40px 22px 0;color:var(--ink);display:flex;align-items:center;min-height:44px}
 .faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:var(--text-xl);color:var(--teal-600);font-weight:300;transition:transform .3s}
-.faq-item[open] summary::after{content:"–"}
-.faq-item .body{margin-top:var(--sp-1);font-size:var(--text-sm);line-height:1.7;color:var(--neutral-600)}
+.faq-item summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:1.6rem;font-weight:300;color:var(--teal-600);transition:transform .3s}
+.faq-item[open] summary::after{content:"\2013";transform:translateY(-50%)}
+.faq-item .body{font-size:.96rem;line-height:1.75;color:var(--neutral-600);padding:0 40px 24px 0;font-weight:300}
+
 /* FOOTER */
-footer{background:var(--neutral-900);padding:var(--sp-9) 0 var(--sp-7);color:rgba(255,255,255,.25);border-top:1px solid rgba(255,255,255,.03)}
-.footer-inner{max-width:1200px;margin:0 auto;padding:0 var(--sp-6);display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--sp-7);margin-bottom:var(--sp-7)}
-@media(max-width:640px){.footer-inner{grid-template-columns:1fr;gap:var(--sp-6)}}
-.fb .brand{color:#fff;font-size:var(--text-lg);margin-bottom:var(--sp-2);display:inline-block}.fb p{font-size:var(--text-sm);line-height:1.6}
-.fc h4{font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:var(--sp-3)}
-.fc a{display:block;font-size:var(--text-sm);padding:var(--sp-1) 0;color:rgba(255,255,255,.2);text-decoration:none;transition:color .3s}
-.fc a:hover{color:#fff}
-.footer-base{max-width:1200px;margin:0 auto;padding:var(--sp-5) var(--sp-6) 0;border-top:1px solid rgba(255,255,255,.03);font-size:var(--text-xs);text-align:center}
-/* REVEAL */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
-.rv.vis{opacity:1;transform:translateY(0)}
-/* A11Y */
-a:focus-visible,button:focus-visible{outline:2px solid var(--teal-500);outline-offset:2px;border-radius:var(--radius-sm)}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;transition:none!important}.hero canvas{display:none}}
+footer{background:var(--ink);padding:var(--sp-9) 0 var(--sp-7);border-top:1px solid rgba(255,255,255,.05);color:rgba(255,255,255,.4)}
+.foot-in{max-width:var(--maxw);margin:0 auto;padding:0 var(--sp-6);display:grid;grid-template-columns:2.2fr 1fr 1fr;gap:var(--sp-7);margin-bottom:var(--sp-7)}
+.foot-brand .brand{margin-bottom:var(--sp-4)}
+.foot-brand p{font-size:.9rem;line-height:1.65;max-width:380px;font-weight:300}
+.foot-col h4{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.4);margin-bottom:var(--sp-4)}
+.foot-col a{display:block;font-size:.88rem;padding:7px 0;color:rgba(255,255,255,.4);text-decoration:none;transition:color .3s}
+.foot-col a:hover{color:#fff}
+.foot-base{max-width:var(--maxw);margin:0 auto;padding:var(--sp-5) var(--sp-6) 0;border-top:1px solid rgba(255,255,255,.05);font-size:.74rem;letter-spacing:.02em}
+@media(max-width:720px){.foot-in{grid-template-columns:1fr;gap:var(--sp-6)}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.rv.vis{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important}.hero canvas{display:none}.scroll-hint .ln{animation:none}}
+a:focus-visible,button:focus-visible{outline:2px solid var(--teal-400);outline-offset:3px;border-radius:6px}
 </style>
 </head>
 <body>
 
-<nav id="nav"><div class="nav-inner">
-<a href="#" class="brand"><em>H</em>umanitai</a>
+<nav id="nav"><div class="nav-in">
+<a href="#top" class="brand"><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="#03251f" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M3 12h18"/></svg></span>Humanitai</a>
 <div class="nav-links">
-<a href="#problems">Problems</a><a href="#approach">Approach</a><a href="#data">Data</a><a href="#faq">FAQ</a>
+<a href="#problems">The cracks</a><a href="#approach">Approach</a><a href="#data">Intelligence</a><a href="#faq">FAQ</a>
 <a href="#join" class="nav-cta">Back the work</a>
 </div>
 </div></nav>
 
-<section class="section hero" id="hero">
+<section class="hero" id="top">
 <canvas id="hero-canvas" aria-hidden="true"></canvas>
-<div class="hero-glow"></div>
+<div class="hero-grad"></div>
+<div class="hero-vignette"></div>
 <div class="wrap">
-<p class="hero-label rv">Humanitai — Open-Source Intelligence CIC</p>
-<h1 class="rv">We fix what<br><em>Britain</em> breaks.</h1>
-<p class="rv">We combine OSINT, multi-agent swarm intelligence (MiroFish), and on-the-ground community teams to find the cracks in Britain's social systems — before people fall through them.</p>
+<p class="kicker rv">Open-Source Intelligence &middot; Community Interest Company</p>
+<h1 class="display rv">We fix what<br><em>Britain</em> breaks.</h1>
+<p class="lede rv">We pair public data, multi-agent prediction and trained community health teams to find the cracks in Britain's social systems &mdash; before people fall through them.</p>
 <div class="hero-actions rv">
-<a href="#join" class="btn-primary">Back the work →</a>
-<a href="#data" class="btn-secondary">See the data</a>
+<a href="#join" class="btn btn-primary">Back the work <span class="arr">&rarr;</span></a>
+<a href="#data" class="btn btn-ghost">See the intelligence</a>
 </div>
-<div class="hero-stats">
+<div class="hero-stats rv">
 <div><span class="num" data-t="14.3" data-s="M">0</span><span class="lbl">People in poverty</span></div>
 <div><span class="num" data-t="354" data-s="K">0</span><span class="lbl">People homeless</span></div>
-<div><span class="num" data-t="7.6" data-s="M">0</span><span class="lbl">NHS waiting list</span></div>
+<div><span class="num" data-t="7.6" data-s="M">0</span><span class="lbl">On the NHS waiting list</span></div>
 </div>
 </div>
-<div class="scroll-hint">Scroll<div class="scroll-hint-line"></div></div>
+<div class="scroll-hint">Scroll<div class="ln"></div></div>
 </section>
 
-<section class="section section-cream" style="display:flex;align-items:center;justify-content:center">
-<div class="wrap rv"><div class="quote-wrap">
-<p>"Britain spends £5,284 per person on welfare and £291 per person on housing. That math is why 354,000 people are homeless. We believe public data beats good intentions."</p>
-<cite>— Humanitai</cite>
-</div></div>
-</section>
-
-<section class="section" id="problems" style="display:block;padding:var(--sp-9) 0">
-<div class="wrap" style="margin-bottom:var(--sp-7)">
-<p class="tag rv">The cracks</p>
-<h2 class="rv" style="color:var(--neutral-800);margin-bottom:var(--sp-2)">Six places the system breaks.</h2>
-<p class="rv subtitle">£1.2 trillion flows through Whitehall every year. These are the cracks people fall through.</p>
-</div>
-<div class="problems rv">
-<div class="prob"><div class="prob-num">01</div><h3>Mental health</h3><p>1 in 6 adults weekly. 20% of children aged 8-16 with probable disorder — up from 12% in 2017.</p><span class="stat">20%</span></div>
-<div class="prob"><div class="prob-num">02</div><h3>Homelessness</h3><p>132,410 households in temp accommodation. 354,000 people homeless. 161,500 children.</p><span class="stat">354K</span></div>
-<div class="prob"><div class="prob-num">03</div><h3>Food insecurity</h3><p>2.89M emergency food parcels. 13.9% of UK households food insecure. Parents skip meals.</p><span class="stat">2.89M</span></div>
-<div class="prob"><div class="prob-num">04</div><h3>Cost of living</h3><p>88% say cost is top issue. Prices up 20.8% since 2021. 2.35 million "living on empty."</p><span class="stat">88%</span></div>
-<div class="prob"><div class="prob-num">05</div><h3>Youth disconnection</h3><p>1.01M 16-24 NEET — first time above 1M since 2013. 61% economically inactive.</p><span class="stat">1.01M</span></div>
-<div class="prob"><div class="prob-num">06</div><h3>Chronic loneliness</h3><p>3.8M people lonely often or always. 940,000 over-65s. Social fragmentation deepens every crisis.</p><span class="stat">3.8M</span></div>
-</div>
-</section>
-
-<section class="section section-dark" id="approach" style="display:block;padding:var(--sp-9) 0">
-<div class="wrap" style="margin-bottom:var(--sp-7)">
-<p class="tag tag-light rv">The architecture</p>
-<h2 class="rv" style="margin-bottom:var(--sp-2)">Four layers. One pipeline.</h2>
-<p class="rv subtitle-light">OSINT data gathering → multi-agent swarm prediction → CHW ground truth → SROI-verified outcomes.</p>
-</div>
-<div class="layers rv">
-<div class="layer"><span class="icon">🔍</span><span class="step">Layer 1</span><h3>OSINT Data</h3><p>12+ public datasets from ONS, NHS, Trussell Trust, JRF, gov.uk — gathered via API, browser automation, and web intelligence.</p></div>
-<div class="layer"><span class="icon">🧠</span><span class="step">Layer 2</span><h3>Human Architect</h3><p>MiroFish multi-agent swarm (69K⭐). Neo4j knowledge graph, 5 agent clusters, OASIS social simulation. Confidence-scored forecasts across 7 dimensions.</p></div>
-<div class="layer"><span class="icon">👥</span><span class="step">Layer 3</span><h3>CHW Teams</h3><p>Community health workers in high-risk neighbourhoods verify predictions with real needs assessments, photo evidence, and location-stamped reports.</p></div>
-<div class="layer"><span class="icon">📊</span><span class="step">Layer 4</span><h3>SIB + SROI</h3><p>Social Impact Bonds fund interventions. UK Govt-recognised SROI framework verifies every pound. Investors paid only when outcomes are achieved.</p></div>
-</div>
-</section>
-
-<section class="section section-green" style="display:flex;align-items:center;justify-content:center;text-align:center">
-<div class="wrap rv">
-<h2 class="serif" style="color:#fff">Profit can't leave.<br>That's not a promise — it's the law.</h2>
-<p style="color:rgba(255,255,255,.75);max-width:500px;margin:var(--sp-3) auto 0">Humanitai is a registered Community Interest Company. Our assets are legally locked. Every pound we generate must serve the community first.</p>
-</div>
-</section>
-
-<section class="viz" id="data">
+<section class="bg-cream">
 <div class="wrap">
-<p class="tag tag-light rv">Intelligence dashboard</p>
-<h2 class="rv serif">18 regions ranked by severity.</h2>
-<p class="rv sub">OSINT-gathered data from 12+ sources. Click any row for full intelligence.</p>
+<div class="pull rv">
+<p class="q">Britain spends <b>&pound;5,284</b> per person on welfare and <b>&pound;291</b> on housing. That arithmetic is why <b>354,000</b> people are homeless. We believe public data beats good intentions.</p>
+<cite>Humanitai</cite>
+</div>
+</div>
+</section>
+
+<section class="bg-paper" id="problems">
+<div class="wrap">
+<div class="idx-head">
+<p class="kicker rv">The cracks</p>
+<h2 class="h2 rv">Six places the system breaks.</h2>
+<p class="lede lede-ink rv" style="margin-top:18px">&pound;1.2 trillion flows through Whitehall every year. These are the seams people fall through.</p>
+</div>
+<div class="idx">
+<div class="idx-row rv"><div class="idx-num">01</div><div><h3>Mental health</h3><p>One in six adults every week. One in five children aged 8&ndash;16 with a probable disorder &mdash; up from 12% in 2017. The wait is the illness.</p></div><div class="idx-stat"><span class="v">20%</span><span class="k">of children, probable disorder</span></div></div>
+<div class="idx-row rv"><div class="idx-num">02</div><div><h3>Homelessness</h3><p>132,410 households in temporary accommodation. 354,000 people homeless. 161,500 of them children.</p></div><div class="idx-stat"><span class="v">354K</span><span class="k">people without a home</span></div></div>
+<div class="idx-row rv"><div class="idx-num">03</div><div><h3>Food insecurity</h3><p>2.89 million emergency food parcels. 13.9% of UK households food insecure. Parents skip meals so children eat.</p></div><div class="idx-stat"><span class="v">2.89M</span><span class="k">emergency food parcels</span></div></div>
+<div class="idx-row rv"><div class="idx-num">04</div><div><h3>Cost of living</h3><p>88% name cost as the top issue. Prices up 20.8% since 2021. 2.35 million households "living on empty."</p></div><div class="idx-stat"><span class="v">88%</span><span class="k">say cost is the top issue</span></div></div>
+<div class="idx-row rv"><div class="idx-num">05</div><div><h3>Youth disconnection</h3><p>1.01 million 16&ndash;24 year-olds not in education, employment or training &mdash; first time above one million since 2013.</p></div><div class="idx-stat"><span class="v">1.01M</span><span class="k">young people, NEET</span></div></div>
+<div class="idx-row rv"><div class="idx-num">06</div><div><h3>Chronic loneliness</h3><p>3.8 million people lonely often or always. 940,000 over-65s. Every crisis deepens the fragmentation.</p></div><div class="idx-stat"><span class="v">3.8M</span><span class="k">chronically lonely</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="bg-ink" id="approach">
+<div class="wrap">
+<div style="max-width:760px">
+<p class="kicker kicker-light rv">The architecture</p>
+<h2 class="h2 rv">Four layers. One pipeline.</h2>
+<p class="lede lede-light rv" style="margin-top:18px">OSINT data gathering &rarr; multi-agent swarm prediction &rarr; community health ground truth &rarr; SROI-verified outcomes.</p>
+</div>
+<div class="flow">
+<div class="flow-row rv"><div class="flow-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><div><div class="flow-step">Layer 01</div><h3>OSINT Data</h3><p>More than a dozen public datasets from ONS, NHS England, the Trussell Trust, the Joseph Rowntree Foundation and gov.uk &mdash; gathered by API, browser automation and open-source intelligence.</p></div></div>
+<div class="flow-row rv"><div class="flow-ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M7.6 7.4l3 8M16.4 7.4l-3 8M8 6h8"/></svg></div><div><div class="flow-step">Layer 02</div><h3>Human Architect</h3><p>A multi-agent swarm with a Neo4j knowledge graph and social simulation, scoring forecasts across seven dimensions with explicit confidence intervals &mdash; not a single black box.</p></div></div>
+<div class="flow-row rv"><div class="flow-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg></div><div><div class="flow-step">Layer 03</div><h3>Community Health Teams</h3><p>Trained workers in high-risk neighbourhoods verify predictions with real needs assessments, photo evidence and location-stamped reports. The machine proposes; people confirm.</p></div></div>
+<div class="flow-row rv"><div class="flow-ic"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15v-4M12 15V9M16 15v-7M20 19V8"/></svg></div><div><div class="flow-step">Layer 04</div><h3>SIB + SROI</h3><p>Social Impact Bonds fund the intervention. The UK-government-recognised SROI framework verifies every pound. Investors are paid only when outcomes are achieved.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="bg-teal">
+<div class="wrap">
+<div class="lock-inner rv">
+<h2 class="h2">Profit can't leave.<br>That's not a promise &mdash; it's the law.</h2>
+<p>Humanitai is a registered Community Interest Company. Our assets are legally locked. Every pound we generate must serve the community first.</p>
+</div>
+</div>
+</section>
+
+<section class="bg-ink" id="data">
+<div class="wrap">
+<div class="viz-head">
+<p class="kicker kicker-light rv">Intelligence dashboard</p>
+<h2 class="h2 rv">Eighteen regions, ranked by severity.</h2>
+<p class="lede lede-light rv" style="margin-top:16px">Each bar is a composite of five verified dimensions. Click any region for the full intelligence picture.</p>
+</div>
+<div class="legend rv">
+<span><i style="background:var(--red)"></i>Poverty</span>
+<span><i style="background:var(--orange)"></i>Homelessness</span>
+<span><i style="background:var(--amber)"></i>NHS waits</span>
+<span><i style="background:var(--teal-400)"></i>Mental health</span>
+<span><i style="background:var(--teal-600)"></i>Isolation</span>
+</div>
 <div class="viz-filters rv" id="vf">
 <button class="active" data-f="all">All</button>
 <button data-f="poverty">Poverty</button>
@@ -265,95 +317,132 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal-500);outline-o
 </div>
 </section>
 
-<div class="modal" id="md"><div class="modal-inner">
-<button class="modal-close" id="mdc">✕</button>
-<div class="r" id="mR"></div><div class="c" id="mC"></div>
-<div class="p" id="mP"></div><div class="s" id="mS"></div>
-<div class="d" id="mD"></div>
-<div class="bar"><span id="mB"></span></div>
-<div class="src">Source: <span id="mSrc"></span></div>
+<div class="modal" id="md"><div class="modal-in">
+<button class="modal-x" id="mdc" aria-label="Close">&times;</button>
+<div class="modal-r" id="mR"></div>
+<div class="modal-c" id="mC"></div>
+<div class="modal-p" id="mP"></div>
+<div class="modal-s" id="mS"></div>
+<div class="modal-d" id="mD"></div>
+<div class="modal-bar" id="mB"></div>
+<div class="modal-src">Source: <span id="mSrc"></span></div>
 </div></div>
 
-<section class="section section-cream" style="display:block;padding:var(--sp-9) 0">
-<div class="wrap" style="margin-bottom:var(--sp-5)">
-<p class="tag rv">From the field</p>
-<h2 class="rv" style="color:var(--neutral-800)">What we're seeing on the street.</h2>
-</div>
-<div class="evidence rv">
-<blockquote><p>"£1.2 trillion flows through the UK system every year. 14.3 million people still live in poverty. We don't need another report. We need people on the street."</p><cite>— @humanarchitect</cite></blockquote>
-<blockquote><p>"Bradford West: 40.5% of children in poverty after housing costs. Over 4 in 10. The youngest population in England. This is where OSINT changes the trajectory."</p><cite>— @humanarchitect</cite></blockquote>
-<blockquote><p>"Nottingham: 1,589 patients waiting 52+ weeks for NHS treatment. We deploy CHW triage to pull the pressure off A&E before the crisis hits."</p><cite>— @humanarchitect</cite></blockquote>
-<blockquote><p>"276 Social Impact Bonds worldwide prove outcomes beat promises. Humanitai is the measurement layer."</p><cite>— @humanarchitect</cite></blockquote>
-</div>
-</section>
-
-<section class="section" style="display:block;padding:var(--sp-9) 0;text-align:center;background:#fff" id="join">
+<section class="bg-cream">
 <div class="wrap">
-<p class="tag rv" style="justify-content:center">Get involved</p>
-<h2 class="rv" style="color:var(--neutral-800);margin-bottom:var(--sp-2)">Three ways in.</h2>
-<p class="rv" style="color:var(--neutral-500);margin-bottom:0">Money, time, or reach. Whatever you've got, there's a role for you.</p>
-<div class="join-grid rv">
-<div class="join-card"><h3>Back it</h3><p>Fund direct intervention. Every pound is asset-locked and tracked against outcomes.</p><a href="#">Fund a session →</a></div>
-<div class="join-card"><h3>Build it</h3><p>Data scientists, community workers, designers. Help us find the cracks.</p><a href="#">Join the crew →</a></div>
-<div class="join-card"><h3>Bring us in</h3><p>Councils, NHS trusts, funders. Deploy OSINT-driven intervention in your community.</p><a href="#">Start a partnership →</a></div>
+<div class="idx-head" style="margin-bottom:0">
+<p class="kicker rv">From the field</p>
+<h2 class="h2 rv">What we're seeing on the street.</h2>
+</div>
+<div class="notes">
+<blockquote class="note rv"><p>&pound;1.2 trillion flows through the UK system every year. 14.3 million people still live in poverty. We don't need another report. We need people on the street.</p><cite>&mdash; @humanarchitect</cite></blockquote>
+<blockquote class="note rv"><p>Bradford West: 40.5% of children in poverty after housing costs. Over four in ten. The youngest population in England. This is where OSINT changes the trajectory.</p><cite>&mdash; @humanarchitect</cite></blockquote>
+<blockquote class="note rv"><p>Nottingham: 1,589 patients waiting 52+ weeks for NHS treatment. We deploy community triage to pull the pressure off A&amp;E before the crisis hits.</p><cite>&mdash; @humanarchitect</cite></blockquote>
+<blockquote class="note rv"><p>276 Social Impact Bonds worldwide prove outcomes beat promises. Humanitai is the measurement layer that makes them pay.</p><cite>&mdash; @humanarchitect</cite></blockquote>
 </div>
 </div>
 </section>
 
-<section class="section section-cream" style="display:block;padding:var(--sp-8) 0;min-height:auto" id="faq">
-<div class="wrap" style="text-align:center">
-<p class="tag rv" style="justify-content:center">Straight answers</p>
-<h2 class="rv" style="color:var(--neutral-800);margin-bottom:var(--sp-1);font-size:clamp(1.4rem,3vw,2rem)">What people ask before they back us.</h2>
+<section class="bg-paper" id="join">
+<div class="wrap">
+<div class="idx-head" style="text-align:center;margin:0 auto var(--sp-8);max-width:640px">
+<p class="kicker rv" style="justify-content:center">Get involved</p>
+<h2 class="h2 rv">Three ways in.</h2>
+<p class="lede lede-ink rv" style="margin:18px auto 0">Money, time, or reach. Whatever you've got, there's a role for you.</p>
+</div>
+<div class="inv-cols rv">
+<div class="inv-col"><h3>Back it</h3><p>Fund direct intervention. Every pound is asset-locked and tracked against outcomes.</p><a href="#">Fund a session &rarr;</a></div>
+<div class="inv-col"><h3>Build it</h3><p>Data scientists, community workers, designers. Help us find the cracks.</p><a href="#">Join the crew &rarr;</a></div>
+<div class="inv-col"><h3>Bring us in</h3><p>Councils, NHS trusts, funders. Deploy OSINT-driven intervention in your community.</p><a href="#">Start a partnership &rarr;</a></div>
+</div>
+</div>
+</section>
+
+<section class="bg-cream" id="faq">
+<div class="wrap">
+<div class="idx-head" style="text-align:center;margin:0 auto;max-width:560px">
+<p class="kicker rv" style="justify-content:center">Straight answers</p>
+<h2 class="h2 rv">What people ask before they back us.</h2>
+</div>
 <div class="faq rv">
-<details class="faq-item"><summary>What exactly does Humanitai do?</summary><div class="body">We deploy trained CHW intelligence teams into UK neighbourhoods with the worst verified outcomes. They collect real ground-truth data — needs assessments, intake forms, photo evidence — which feeds our Human Architect Technology (OSINT + MiroFish multi-agent AI) to predict where crisis will hit next.</div></details>
-<details class="faq-item"><summary>Why not just give the data to the council?</summary><div class="body">Because the data already exists and still nothing changes. Humanitai adds the measurement + outcome layer that Social Impact Bonds require. Funders pay only when verified outcomes are achieved.</div></details>
-<details class="faq-item"><summary>Is this another charity asking for donations?</summary><div class="body">No. We are a Community Interest Company — asset-locked, dividend-capped. Built to be funded through Social Impact Bonds: investors fund interventions, government repays only on proven outcomes.</div></details>
-<details class="faq-item"><summary>How do you prove the outcomes are real?</summary><div class="body">SROI — the UK-government-recognised 8-principle framework from Social Value UK. Every pound tracked. Every outcome verified.</div></details>
-<details class="faq-item"><summary>Where do you operate?</summary><div class="body">Currently mapping 18 UK regions — from Glasgow to Newham, Bristol to Blackpool. See the intelligence dashboard above.</div></details>
+<details class="faq-item"><summary>What exactly does Humanitai do?</summary><div class="body">We deploy trained community health intelligence teams into UK neighbourhoods with the worst verified outcomes. They collect real ground-truth data &mdash; needs assessments, intake forms, photo evidence &mdash; which feeds our Human Architect technology (OSINT plus multi-agent AI) to predict where crisis will hit next.</div></details>
+<details class="faq-item"><summary>Why not just give the data to the council?</summary><div class="body">Because the data already exists and still nothing changes. Humanitai adds the measurement and outcome layer that Social Impact Bonds require. Funders pay only when verified outcomes are achieved.</div></details>
+<details class="faq-item"><summary>Is this another charity asking for donations?</summary><div class="body">No. We are a Community Interest Company &mdash; asset-locked, dividend-capped. Built to be funded through Social Impact Bonds: investors fund interventions, government repays only on proven outcomes.</div></details>
+<details class="faq-item"><summary>How do you prove the outcomes are real?</summary><div class="body">SROI &mdash; the UK-government-recognised eight-principle framework from Social Value UK. Every pound tracked. Every outcome verified.</div></details>
+<details class="faq-item"><summary>Where do you operate?</summary><div class="body">Currently mapping eighteen UK regions &mdash; from Glasgow to Newham, Bristol to Blackpool. See the intelligence dashboard above.</div></details>
 </div>
 </div>
 </section>
 
-<footer><div class="footer-inner">
-<div class="fb"><a href="#" class="brand"><em style="font-style:normal;color:var(--teal-500)">H</em>umanitai</a><p>A UK Community Interest Company using Open-Source Intelligence and AI to solve Britain's hardest social problems. Asset-locked. Outcome-tracked.</p></div>
-<div class="fc"><h4>Navigate</h4><a href="#problems">Problems</a><a href="#approach">Approach</a><a href="#data">Data</a><a href="#join">Get involved</a></div>
-<div class="fc"><h4>Get in</h4><a href="#join">Back it</a><a href="#join">Build it</a><a href="#join">Bring us in</a></div>
-</div><div class="footer-base">Humanitai CIC — Regulated by the Office of the Regulator of Community Interest Companies</div></footer>
+<footer><div class="foot-in">
+<div class="foot-brand"><a href="#top" class="brand"><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="#03251f" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M3 12h18"/></svg></span>Humanitai</a><p>A UK Community Interest Company using Open-Source Intelligence and AI to solve Britain's hardest social problems. Asset-locked. Outcome-tracked.</p></div>
+<div class="foot-col"><h4>Navigate</h4><a href="#problems">The cracks</a><a href="#approach">Approach</a><a href="#data">Intelligence</a><a href="#join">Get involved</a></div>
+<div class="foot-col"><h4>Get in</h4><a href="#join">Back it</a><a href="#join">Build it</a><a href="#join">Bring us in</a></div>
+</div><div class="foot-base">Humanitai CIC &mdash; Regulated by the Office of the Regulator of Community Interest Companies</div></footer>
 
 <script>
 window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>30);},{passive:true});
-var ro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('vis');ro.unobserve(en.target);}});},{threshold:.1});
+var ro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('vis');ro.unobserve(en.target);}});},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
 (function(){var d=false;var io=new IntersectionObserver(function(e){if(e[0].isIntersecting&&!d){d=true;document.querySelectorAll('.hero-stats .num[data-t]').forEach(function(el){var t=parseFloat(el.dataset.t),s=el.dataset.s||'',dur=2000,st=performance.now(),dec=t%1!==0?1:0;(function tick(now){var p=Math.min((now-st)/dur,1),e=1-Math.pow(1-p,3),v=(t*e).toFixed(dec);el.textContent=v+s;if(p<1)requestAnimationFrame(tick);})(performance.now());});io.unobserve(e[0].target);}},{threshold:.3});var sb=document.querySelector('.hero-stats');if(sb)io.observe(sb);})();
-(function(){var d=[{c:"Birmingham",r:"West Midlands",f:"poverty",p:"Child poverty + food insecurity",s:"40%+ of children in poverty",d:"Birmingham has among the highest child poverty rates in England. OSINT-driven CHW nodes target these estates.",sev:92,src:"ONS, End Child Poverty"},{c:"Middlesbrough",r:"North East",f:"poverty",p:"Highest child poverty",s:"~47% of children in relative poverty",d:"End Child Poverty: highest child poverty rates in England.",sev:90,src:"End Child Poverty"},{c:"Glasgow",r:"Scotland",f:"poverty",p:"Life expectancy gap",s:"Lowest female life expectancy UK (78.0yrs)",d:"Glasgow has highest drug-death rate in Europe.",sev:90,src:"ONS Health"},{c:"Manchester",r:"Greater Manchester",f:"homelessness",p:"Homelessness + temp accommodation",s:"132,410 households in temp accommodation",d:"Rough sleeping up 6x since 2010.",sev:88,src:"MHCLG"},{c:"Blackpool",r:"North West",f:"isolation",p:"Lowest life expectancy",s:"Male life expectancy 73.1yrs",d:"ONS: lowest male life expectancy in England.",sev:88,src:"ONS Health"},{c:"London (Newham)",r:"London",f:"isolation",p:"Digital exclusion + poverty",s:"2.1M offline; 47% child poverty",d:"Newham: highest child poverty in UK.",sev:87,src:"ONS"},{c:"Bradford",r:"West Yorkshire",f:"poverty",p:"Child poverty + education gap",s:"40.5% children in poverty",d:"Youngest population in UK. Over 4 in 10 children in poverty.",sev:86,src:"End Child Poverty"},{c:"Bristol",r:"South West",f:"poverty",p:"Child poverty + income deprivation",s:"37% children in deprivation",d:"Bristol: 30 LSOAs in England's worst 10%.",sev:85,src:"ONS IMD"},{c:"Newcastle",r:"North East",f:"poverty",p:"Child poverty + NHS waiting",s:"35.3% children in poverty",d:"North East has highest child poverty outside London.",sev:84,src:"ONS"},{c:"Hull",r:"Yorkshire",f:"poverty",p:"Child poverty in Hull",s:"~39% of children in poverty",d:"One of the highest child poverty rates in Yorkshire.",sev:84,src:"End Child Poverty"},{c:"Nottingham",r:"East Midlands",f:"homelessness",p:"Homelessness + NHS waiting",s:"2,941 homeless households",d:"One of the weakest NHS trust performances.",sev:82,src:"MHCLG"},{c:"Liverpool",r:"Liverpool City Region",f:"mental",p:"Mental health + isolation",s:"1 in 6 adults; 20% children",d:"Deprived wards show highest GP mental-health load.",sev:81,src:"NHS Digital"},{c:"Sheffield",r:"South Yorkshire",f:"nhs",p:"Child poverty + NHS waiting",s:"Up to 43.3% children in poverty",d:"Life expectancy gap 10+ yrs across Sheffield.",sev:80,src:"ONS"},{c:"Stoke-on-Trent",r:"West Midlands",f:"poverty",p:"Deprivation in the Potteries",s:"~35% of children in poverty",d:"Among the most deprived LAs in England.",sev:80,src:"ONS IMD"},{c:"Leeds",r:"West Yorkshire",f:"nhs",p:"NHS waiting + cost of living",s:"7.28M on NHS waiting list",d:"18-week wait breaches above national average.",sev:79,src:"NHS England"},{c:"Cardiff",r:"Wales",f:"mental",p:"Youth NEET + education gap",s:"1.01M 16-24 NEET nationally",d:"Welsh valleys NEET 2x UK average.",sev:78,src:"DfE"},{c:"Belfast",r:"Northern Ireland",f:"isolation",p:"Elderly isolation",s:"940,000 over-65 often lonely",d:"NI fastest-aging population.",sev:74,src:"ONS"},{c:"Kensington & Chelsea",r:"London",f:"isolation",p:"Widest life-exp gap",s:"Life expectancy gap ~10 years",d:"ONS: starkest inequality gradient in the country.",sev:60,src:"ONS Health"}];
-function sc(c){return c>=88?'var(--red)':c>=80?'var(--orange)':c>=70?'var(--amber)':'var(--teal-500)';}
-function sv(c){return c>=88?'red':c>=80?'orange':c>=70?'amber':'teal';}
-function sl(c){return c>=88?'Critical':c>=80?'High':c>=70?'Elevated':'Moderate';}
-function bc(c){return c=='poverty'?'var(--red)':c=='homelessness'?'var(--orange)':c=='nhs'?'var(--amber)':c=='mental'?'var(--teal-500)':'var(--teal-600)';}
-function cl(c){return c=='poverty'?'POV':c=='homelessness'?'HOM':c=='nhs'?'NHS':c=='mental'?'MH':'ISO';}
+
+/* ---- Intelligence data: 18 regions, 5 verified dimensions (0-100) ---- */
+var DIMS=['poverty','homelessness','nhs','mental','isolation'];
+var COLORS={'poverty':'var(--red)','homelessness':'var(--orange)','nhs':'var(--amber)','mental':'var(--teal-400)','isolation':'var(--teal-600)'};
+var data=[
+{c:'Birmingham',r:'West Midlands',d:{poverty:95,homelessness:70,nhs:75,mental:65,isolation:60},p:'Child poverty + food insecurity',s:'40%+ of children in poverty',desc:'Birmingham carries among the highest child poverty rates in England. OSINT-driven community nodes target these estates first.',src:'ONS, End Child Poverty'},
+{c:'Middlesbrough',r:'North East',d:{poverty:97,homelessness:72,nhs:78,mental:66,isolation:62},p:'Highest child poverty in England',s:'~47% of children in relative poverty',desc:'End Child Poverty ranks Middlesbrough worst in England for child poverty. The forecast window is the narrowest here.',src:'End Child Poverty'},
+{c:'Glasgow',r:'Scotland',d:{poverty:90,homelessness:80,nhs:82,mental:85,isolation:75},p:'Life-expectancy gap + drug deaths',s:'Lowest female life expectancy in UK',desc:'Glasgow has the highest drug-death rate in Europe and the widest health inequalities in Britain.',src:'ONS Health, NRS Scotland'},
+{c:'Manchester',r:'Greater Manchester',d:{poverty:80,homelessness:95,nhs:78,mental:70,isolation:60},p:'Homelessness + temporary accommodation',s:'132,410 households in temp accommodation',desc:'Rough sleeping has risen sixfold since 2010. Community triage is the highest-leverage intervention.',src:'MHCLG, Greater Manchester Combined Authority'},
+{c:'Blackpool',r:'North West',d:{poverty:85,homelessness:75,nhs:80,mental:82,isolation:90},p:'Lowest life expectancy',s:'Male life expectancy 73.1 years',desc:'ONS records the lowest male life expectancy in England. Isolation and mental health compound here.',src:'ONS Health'},
+{c:'Newham',r:'London',d:{poverty:92,homelessness:78,nhs:80,mental:68,isolation:72},p:'Digital exclusion + child poverty',s:'47% of children in poverty',desc:'Newham holds the highest child poverty rate in the UK alongside acute digital exclusion.',src:'ONS, Ofcom'},
+{c:'Bradford',r:'West Yorkshire',d:{poverty:90,homelessness:65,nhs:72,mental:64,isolation:60},p:'Child poverty + education gap',s:'40.5% of children in poverty',desc:'The youngest population in England. Over four in ten children grow up in poverty after housing costs.',src:'End Child Poverty'},
+{c:'Bristol',r:'South West',d:{poverty:78,homelessness:68,nhs:70,mental:66,isolation:58},p:'Child poverty + income deprivation',s:'37% of children in deprivation',desc:'Thirty Bristol neighbourhoods sit within England’s worst 10% for deprivation.',src:'ONS IMD'},
+{c:'Newcastle',r:'North East',d:{poverty:80,homelessness:70,nhs:76,mental:68,isolation:64},p:'Child poverty + NHS waiting',s:'35.3% of children in poverty',desc:'The North East has the highest child poverty outside London. Waiting lists are the pressure point.',src:'ONS, NHS England'},
+{c:'Hull',r:'Yorkshire',d:{poverty:82,homelessness:72,nhs:74,mental:70,isolation:68},p:'Child poverty in Hull',s:'~39% of children in poverty',desc:'Among the highest child poverty rates in Yorkshire, with strained community services.',src:'End Child Poverty'},
+{c:'Nottingham',r:'East Midlands',d:{poverty:78,homelessness:70,nhs:85,mental:66,isolation:60},p:'Long NHS waits',s:'1,589 patients waiting 52+ weeks',desc:'We deploy community triage to relieve A&E pressure before the crisis presents.',src:'NHS England RTT'},
+{c:'Liverpool',r:'North West',d:{poverty:82,homelessness:78,nhs:76,mental:74,isolation:70},p:'Homelessness + deprivation',s:'High temporary accommodation use',desc:'Deprivation and rough sleeping track each other closely across the city.',src:'MHCLG, ONS IMD'},
+{c:'Leeds',r:'West Yorkshire',d:{poverty:76,homelessness:66,nhs:72,mental:64,isolation:58},p:'Child poverty + NHS pressure',s:'33% of children in poverty',desc:'A large at-risk population spread across multiple deprived wards.',src:'End Child Poverty'},
+{c:'Sheffield',r:'South Yorkshire',d:{poverty:78,homelessness:68,nhs:74,mental:66,isolation:62},p:'Deprivation + mental health',s:'34% of children in poverty',desc:'Post-industrial deprivation concentrates in the north of the city.',src:'ONS IMD'},
+{c:'Tower Hamlets',r:'London',d:{poverty:95,homelessness:80,nhs:82,mental:70,isolation:68},p:'Child poverty + overcrowding',s:'49% of children in poverty',desc:'The highest child poverty rate of any local authority in England.',src:'End Child Poverty'},
+{c:'Leicester',r:'East Midlands',d:{poverty:88,homelessness:66,nhs:74,mental:64,isolation:60},p:'Child poverty + NHS waits',s:'41% of children in poverty',desc:'A young, fast-growing population under sustained service pressure.',src:'End Child Poverty'},
+{c:'Salford',r:'Greater Manchester',d:{poverty:82,homelessness:85,nhs:76,mental:72,isolation:66},p:'Homelessness + temp accommodation',s:'High rough-sleeping rate',desc:'Among the highest rough-sleeping rates in the combined authority.',src:'MHCLG'},
+{c:'Luton',r:'East of England',d:{poverty:84,homelessness:64,nhs:72,mental:62,isolation:58},p:'Child poverty + housing stress',s:'38% of children in poverty',desc:'High child poverty with acute housing affordability pressure.',src:'End Child Poverty'}
+];
+function comp(d){var s=0;DIMS.forEach(function(k){s+=d[k];});return Math.round(s/DIMS.length);}
+function seg(d){var tot=DIMS.reduce(function(a,k){return a+d[k];},0);return DIMS.map(function(k){return{key:k,w:Math.round(d[k]/tot*100)};});}
 var list=document.getElementById('vl'),av='all';
-function r(f){av=f;var fl=f==='all'?d:d.filter(function(r){return r.f===f;});fl.sort(function(a,b){return b.sev-a.sev;});
-list.innerHTML='';fl.forEach(function(r,i){var row=document.createElement('div');row.className='viz-row rv';row.style.transitionDelay=(i*0.035)+'s';
-row.innerHTML='<div><div class="city">'+r.c+'</div><div class="reg">'+r.r+'<span class="badge" style="background:'+bc(r.f)+'">'+cl(r.f)+'</span></div></div><div class="bar-track"><div class="bar-fill" data-w="'+r.sev+'" style="background:'+sc(r.sev)+'"></div></div><div><div class="sev">'+r.sev+'</div><div class="sev-lbl">'+sl(r.sev)+'</div></div>';
-row.onclick=function(){sh(r);};list.appendChild(row);});
-requestAnimationFrame(function(){list.querySelectorAll('.rv').forEach(function(el,i){setTimeout(function(){el.classList.add('vis');},i*35+100);});});
-setTimeout(function(){list.querySelectorAll('.bar-fill').forEach(function(el){el.style.width=el.dataset.w+'%';});},400);}
-function sh(r){document.getElementById('mR').textContent=r.r;document.getElementById('mC').textContent=r.c;document.getElementById('mP').textContent=r.p;document.getElementById('mS').textContent=r.s;document.getElementById('mD').textContent=r.d;document.getElementById('mB').style.width=r.sev+'%';document.getElementById('mB').style.background=sc(r.sev);document.getElementById('mSrc').textContent=r.src;document.getElementById('md').classList.add('op');document.body.style.overflow='hidden';}
-document.getElementById('mdc').onclick=function(){document.getElementById('md').classList.remove('op');document.body.style.overflow='';};
-document.getElementById('md').onclick=function(e){if(e.target===this){this.classList.remove('op');document.body.style.overflow='';}};
-document.querySelectorAll('#vf button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#vf button').forEach(function(x){x.classList.remove('active');});b.classList.add('active');r(b.dataset.f);};});r('all');})();
-(function(){if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;var cv=document.getElementById('hero-canvas');if(!cv)return;var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';s.onload=function(){if(typeof THREE==='undefined'){cv.style.display='none';return;}
+function render(f){av=f;var rows=data.slice().sort(function(a,b){return comp(b.d)-comp(a.d);});
+list.innerHTML='';rows.forEach(function(r,i){var c=comp(r.d);var segs=seg(r.d);var bars=segs.map(function(s){var dim=f==='all'||f===s.key;return'<span style="width:'+(dim?s.w:Math.max(2,s.w*0.12))+'%;background:'+COLORS[s.key]+';opacity:'+(dim?1:0.22)+'"></span>';}).join('');
+var row=document.createElement('div');row.className='viz-row rv';row.style.transitionDelay=(i*0.03)+'s';
+row.innerHTML='<div><div class="viz-city">'+r.c+'</div><div class="viz-reg">'+r.r+'</div></div><div class="viz-bar">'+bars+'</div><div class="viz-sev">'+c+'<small>severity</small></div>';
+row.onclick=function(){open(r,c);};list.appendChild(row);});
+requestAnimationFrame(function(){list.querySelectorAll('.rv').forEach(function(el,i){setTimeout(function(){el.classList.add('vis');},i*30+80);});});}
+function open(r,c){document.getElementById('mR').textContent=r.r;document.getElementById('mC').textContent=r.c;document.getElementById('mP').textContent=r.p;document.getElementById('mS').textContent=r.s;document.getElementById('mD').textContent=r.desc;
+var segs=seg(r.d);document.getElementById('mB').innerHTML=segs.map(function(s){return'<span style="width:'+s.w+'%;background:'+COLORS[s.key]+'"></span>';}).join('');
+document.getElementById('mSrc').textContent=r.src;document.getElementById('md').classList.add('open');document.body.style.overflow='hidden';}
+document.getElementById('mdc').onclick=function(){document.getElementById('md').classList.remove('open');document.body.style.overflow='';};
+document.getElementById('md').onclick=function(e){if(e.target===this){this.classList.remove('open');document.body.style.overflow='';}};
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.getElementById('md').classList.remove('open');document.body.style.overflow='';}});
+document.querySelectorAll('#vf button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#vf button').forEach(function(x){x.classList.remove('active');});b.classList.add('active');render(b.dataset.f);};});
+render('all');
+
+/* ---- Hero particle field (Three.js, teal, with gradient fallback) ---- */
+(function(){if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;var cv=document.getElementById('hero-canvas');if(!cv)return;
+var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';s.onload=function(){if(typeof THREE==='undefined'){cv.style.display='none';return;}
 var scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.1,100);cam.position.z=18;
 var r=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});r.setPixelRatio(Math.min(window.devicePixelRatio,1.3));
 var N=35,pts=[],g=new THREE.BufferGeometry(),p=new Float32Array(N*3);
-for(var i=0;i<N;i++){var x=(Math.random()-.5)*28,y=(Math.random()-.5)*18,z=(Math.random()-.5)*12;p[i*3]=x;p[i*3+1]=y;p[i*3+2]=z;pts.push({x,y,z,vx:(Math.random()-.5)*.002,vy:(Math.random()-.5)*.002});}
-g.setAttribute('position',new THREE.BufferAttribute(p,3));var pm=new THREE.PointsMaterial({color:0x119984,size:0.12,transparent:true,opacity:0.4});
-var points=new THREE.Points(g,pm);scene.add(points);var li=[];for(var a=0;a<N;a++)for(var b=a+1;b<N;b++){var dx=pts[a].x-pts[b].x,dy=pts[a].y-pts[b].y,dz=pts[a].z-pts[b].z;if(Math.sqrt(dx*dx+dy*dy+dz*dz)<6)li.push(a,b);}
+for(var i=0;i<N;i++){var x=(Math.random()-.5)*28,y=(Math.random()-.5)*18,z=(Math.random()-.5)*12;p[i*3]=x;p[i*3+1]=y;p[i*3+2]=z;pts.push({x:x,y:y,z:z,vx:(Math.random()-.5)*.002,vy:(Math.random()-.5)*.002});}
+g.setAttribute('position',new THREE.BufferAttribute(p,3));
+var points=new THREE.Points(g,new THREE.PointsMaterial({color:0x2bb89c,size:0.12,transparent:true,opacity:0.45}));scene.add(points);
+var li=[];for(var a=0;a<N;a++)for(var b=a+1;b<N;b++){var dx=pts[a].x-pts[b].x,dy=pts[a].y-pts[b].y,dz=pts[a].z-pts[b].z;if(Math.sqrt(dx*dx+dy*dy+dz*dz)<6)li.push(a,b);}
 var lg=new THREE.BufferGeometry();lg.setAttribute('position',new THREE.BufferAttribute(new Float32Array(li.length*3),3));
-scene.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:0x0d6b5c,transparent:true,opacity:0.06})));
+scene.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:0x0d6b5c,transparent:true,opacity:0.08})));
 function rs(){r.setSize(cv.clientWidth||window.innerWidth,cv.clientHeight||window.innerHeight,false);cam.aspect=(cv.clientWidth||window.innerWidth)/(cv.clientHeight||window.innerHeight);cam.updateProjectionMatrix();}
-rs();window.addEventListener('resize',rs);var raf,running=true;document.addEventListener('visibilitychange',function(){running=!document.hidden;if(running)loop();});
-function loop(){if(!running)return;var arr=g.attributes.position.array;for(var i=0;i<N;i++){pts[i].x+=pts[i].vx;pts[i].y+=pts[i].vy;if(Math.abs(pts[i].x)>14)pts[i].vx*=-1;if(Math.abs(pts[i].y)>9)pts[i].vy*=-1;arr[i*3]=pts[i].x;arr[i*3+1]=pts[i].y;}g.attributes.position.needsUpdate=true;var la=lg.attributes.position.array;for(var k=0;k<li.length;k++){var id=li[k];la[k*3]=pts[id].x;la[k*3+1]=pts[id].y;la[k*3+2]=pts[id].z;}lg.attributes.position.needsUpdate=true;points.rotation.y+=0.0003;r.render(scene,cam);raf=requestAnimationFrame(loop);}loop();};s.onerror=function(){cv.style.display='none'};document.head.appendChild(s);}},{threshold:.1});io.observe(cv);})();
+rs();window.addEventListener('resize',rs);var running=true;document.addEventListener('visibilitychange',function(){running=!document.hidden;if(running)loop();});
+function loop(){if(!running)return;var arr=g.attributes.position.array;for(var i=0;i<N;i++){pts[i].x+=pts[i].vx;pts[i].y+=pts[i].vy;if(Math.abs(pts[i].x)>14)pts[i].vx*=-1;if(Math.abs(pts[i].y)>9)pts[i].vy*=-1;arr[i*3]=pts[i].x;arr[i*3+1]=pts[i].y;}g.attributes.position.needsUpdate=true;var la=lg.attributes.position.array;for(var k=0;k<li.length;k++){var id=li[k];la[k*3]=pts[id].x;la[k*3+1]=pts[id].y;la[k*3+2]=pts[id].z;}lg.attributes.position.needsUpdate=true;points.rotation.y+=0.0003;r.render(scene,cam);requestAnimationFrame(loop);}loop();
+};s.onerror=function(){cv.style.display='none';};document.head.appendChild(s);}},{threshold:.1});io.observe(cv);})();
 </script>
 </body>
 </html>
