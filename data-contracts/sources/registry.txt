@@ -1,0 +1,88 @@
+# HumanitAI Source Registry
+
+Every data source must be registered before ingestion. Fields follow the
+blueprint 5.4 source-registry schema. Live ONS/Nomis/Fingertips/Police.uk
+endpoints were verified working from this environment (see
+uk-data-scraping-research.md).
+
+- source_id: ons_population_estimates
+  owner: data_steward
+  url: https://api.beta.ons.gov.uk/v1
+  purpose: neighbourhood denominators and trend context
+  lawful_basis: public/open statistical data
+  contains_personal_data: false
+  geography: LSOA/MSOA/local_authority
+  refresh: release_triggered
+  quality_checks: [schema, null_rate, revision, geography_match]
+  retention: versioned_indefinitely
+  status: approved
+
+- source_id: nomis_labour_market
+  owner: data_steward
+  url: https://www.nomisweb.co.uk/api/v01/dataset/NM_1_1.data.csv
+  purpose: claimant count, census and small-area indicators
+  lawful_basis: public/open statistical data (no auth for bulk CSV)
+  contains_personal_data: false
+  geography: LSOA/MSOA/local_authority
+  refresh: monthly / quarterly
+  quality_checks: [schema, null_rate, geography_match]
+  retention: versioned_indefinitely
+  status: approved
+
+- source_id: fingertips_public_health
+  owner: data_steward
+  url: https://fingertips.phe.org.uk/api
+  purpose: public-health outcomes, risk factors and inequalities
+  lawful_basis: public/open statistical data (JSON/CSV)
+  contains_personal_data: false
+  geography: local_authority / MSOA
+  refresh: indicator-dependent
+  quality_checks: [schema, revision]
+  retention: versioned_indefinitely
+  status: approved
+
+- source_id: police_uk
+  owner: data_steward
+  url: https://data.police.uk/docs/api
+  purpose: recorded street crime and neighbourhood data
+  lawful_basis: public/open policing data
+  contains_personal_data: false
+  geography: neighbourhood / LSOA
+  refresh: monthly
+  quality_checks: [schema, freshness]
+  retention: versioned_indefinitely
+  status: approved
+
+- source_id: trussell_trust_open
+  owner: data_steward
+  purpose: emergency food parcel distribution (aggregate)
+  lawful_basis: published organisational statistics
+  contains_personal_data: false
+  geography: UK / region
+  refresh: annual
+  quality_checks: [provenance, null_rate]
+  retention: versioned_indefinitely
+  status: approved
+
+- source_id: jrf_uk_poverty
+  owner: data_steward
+  purpose: UK poverty rates and child poverty by local authority
+  lawful_basis: published research statistics
+  contains_personal_data: false
+  geography: local_authority
+  refresh: annual
+  quality_checks: [provenance, null_rate]
+  retention: versioned_indefinitely
+  status: approved
+
+# Tier D - Public web intelligence (terms-compliant, aggregate only)
+- source_id: council_consultations
+  owner: data_steward
+  purpose: council consultations, meeting papers, public notices (aggregate discourse)
+  lawful_basis: public web, terms-compliant collection
+  contains_personal_data: false
+  geography: local_authority
+  refresh: weekly
+  quality_checks: [terms_compliance, aggregate_only]
+  retention: 12 months
+  status: approved
