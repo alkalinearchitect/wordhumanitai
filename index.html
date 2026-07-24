@@ -71,6 +71,17 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.025
 .sec-tint{background:var(--ivory-2)}
 .statement{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.7rem,4vw,2.9rem);line-height:1.22;letter-spacing:-.02em;max-width:860px}
 .statement .hl{color:var(--teal-deep)}
+/* ═══════ 4TH SPACE ═══════ */
+.fourth-grid{margin-top:46px;display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--hair)}
+.fourth-row{display:grid;grid-template-columns:200px 1fr;gap:28px;padding:26px 0;border-bottom:1px solid var(--hair);align-items:baseline}
+.fourth-row .area{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.18rem;letter-spacing:-.01em}
+.fourth-row .area span{display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:6px}
+.fourth-row .body{font-size:1.02rem;line-height:1.62;color:var(--ink)}
+.fourth-row .body b{font-weight:700}
+.fourth-row .body .shift{display:block;margin-top:8px;color:var(--dim);font-size:.95rem}
+.fourth-stats{display:flex;gap:44px;flex-wrap:wrap;margin-top:38px}
+.fourth-stats .figure .n{color:var(--teal-deep)}
+@media(max-width:640px){.fourth-row{grid-template-columns:1fr;gap:10px}}
 /* ═══════ DARK DASHBOARD ═══════ */
 #data{background:var(--ink);color:#F4F1EA;border-top:1px solid var(--ink)}
 #data .kicker{color:var(--teal-bright)}
@@ -116,6 +127,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
   <a href="#top" class="brand">Humanit<b>AI</b></a>
   <div class="nav-links" id="navLinks">
     <a href="#data">Intelligence</a>
+    <a href="#fourth-space">4th Space</a>
     <a href="#join" class="nav-cta">Back the work</a>
   </div>
 </div></nav>
@@ -157,6 +169,49 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
   </div>
 </section>
 
+<!-- ═══════ 4TH SPACE ═══════ -->
+<section class="section" id="fourth-space">
+  <div class="wrap">
+    <p class="kicker">The 4th Space</p>
+    <h2 class="statement">We don't only forecast the cold.<br>We build the <span class="hl">warm room.</span></h2>
+    <p class="lede">The 4th Space is a physical, social venue — sauna, cold plunge, contrast therapy — that combats loneliness by bringing people together. It is the delivery layer that turns our predictions into human presence. Where the model says pressure is breaking, the 4th Space is the front door our teams already trust.</p>
+
+    <div class="fourth-grid">
+      <div class="fourth-row">
+        <div class="area"><span>Mental health</span>From crisis to company</div>
+        <div class="body">Our forecast flags the places carrying the heaviest anxiety — <b>Spelthorne, Adur, Glasgow</b> sit highest in the live data. The 4th Space meets that weight before it becomes a crisis: a warm, non-clinical room where asking for nothing is allowed.
+          <span class="shift">It helps the area think: <b>“I am not a case file — I am someone who got warm with other people today.”</b></span></div>
+      </div>
+      <div class="fourth-row">
+        <div class="area"><span>Ageing</span>From isolation to ritual</div>
+        <div class="body">Older people are the quietest pressure in the data and the loneliest in the room. A regular contrast-therapy circle gives the week a shape — a reason to leave the flat, a face that expects you.
+          <span class="shift">It helps the area think: <b>“I still belong to something that happens on a schedule.”</b></span></div>
+      </div>
+      <div class="fourth-row">
+        <div class="area"><span>Poverty</span>From scarcity to dignity</div>
+        <div class="body">When money is thin, public warmth is a luxury. A subsidised 4th Space restores it as a right. It sits beside debt advice and cost-of-living support, but it asks for nothing in return.
+          <span class="shift">It helps the area think: <b>“I am cared for, not managed.”</b></span></div>
+      </div>
+      <div class="fourth-row">
+        <div class="area"><span>Homelessness</span>From the street to steadiness</div>
+        <div class="body">Under the 2026 Rough Sleeping Strategy, prevention is the brief. The 4th Space is the steady, repeated contact that keeps someone off the pavement — a place that is theirs, not a waiting room.
+          <span class="shift">It helps the area think: <b>“There is a warm address I can name.”</b></span></div>
+      </div>
+      <div class="fourth-row">
+        <div class="area"><span>NHS strain</span>From queue to community</div>
+        <div class="body">Every avoided lonely evening is a call to the GP that never had to happen. The 4th Space is neighbourhood health delivered by presence, not a prescription.
+          <span class="shift">It helps the area think: <b>“My wellbeing is held by people, not just a service.”</b></span></div>
+      </div>
+    </div>
+
+    <div class="fourth-stats">
+      <div class="figure"><div class="n">60</div><div class="l">Members held per site</div></div>
+      <div class="figure"><div class="n">~48</div><div class="l">Expected loneliness reduced / site</div></div>
+      <div class="figure"><div class="n">£3.20</div><div class="l">Social value per £1 invested (proxy)</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════ CLOSING CTA ═══════ -->
 <section class="section sec-tint cta" id="join">
   <div class="wrap">
@@ -181,6 +236,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
       <div class="foot-col">
         <h4>Navigate</h4>
         <a href="#data">Intelligence</a>
+        <a href="#fourth-space">4th Space</a>
         <a href="#join">Get involved</a>
       </div>
       <div class="foot-col">
