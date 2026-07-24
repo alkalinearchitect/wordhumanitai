@@ -1,22 +1,6 @@
 {
   "composite": [
     {
-      "place": "Manchester",
-      "sev": 84.5,
-      "region": "North West England",
-      "lat": 53.4808,
-      "lng": -2.2426,
-      "n": 2,
-      "esc": 3.0,
-      "trajectory": 1.2,
-      "risk": 95.2,
-      "tier": "Critical",
-      "rank": 1,
-      "gi_star": 0.6377743722974079,
-      "hotspot": "ns",
-      "pressure_dominant": "poverty"
-    },
-    {
       "place": "Middlesbrough",
       "sev": 90.0,
       "region": "North East England",
@@ -27,8 +11,24 @@
       "trajectory": 1.02,
       "risk": 93.6,
       "tier": "Critical",
-      "rank": 2,
+      "rank": 1,
       "gi_star": 0.21706706706262605,
+      "hotspot": "ns",
+      "pressure_dominant": "poverty"
+    },
+    {
+      "place": "Manchester",
+      "sev": 84.5,
+      "region": "North West England",
+      "lat": 53.4808,
+      "lng": -2.2426,
+      "n": 2,
+      "esc": 2.0,
+      "trajectory": 1.085,
+      "risk": 91.7,
+      "tier": "Critical",
+      "rank": 2,
+      "gi_star": 0.6377743722974079,
       "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
@@ -387,20 +387,20 @@
   ],
   "trends": [
     {
-      "place": "Manchester",
-      "base": 95.2,
-      "h1": 97.7,
-      "h2": 100,
-      "h3": 100,
-      "band_pm": 6.5,
-      "driver": "news-elevated:poverty"
-    },
-    {
       "place": "Middlesbrough",
       "base": 93.6,
       "h1": 96.1,
       "h2": 98.6,
       "h3": 100,
+      "band_pm": 6.5,
+      "driver": "news-elevated:poverty"
+    },
+    {
+      "place": "Manchester",
+      "base": 91.7,
+      "h1": 94.2,
+      "h2": 96.7,
+      "h3": 99.2,
       "band_pm": 6.5,
       "driver": "news-elevated:poverty"
     },
@@ -743,7 +743,7 @@
         "hh": 5.2
       },
       {
-        "place": "Manchester",
+        "place": "Middlesbrough",
         "tier": "Critical",
         "pressure": "poverty",
         "intervention": "Debt advice + money guidance (CHW-delivered)",
@@ -753,7 +753,7 @@
         "hh": 6.3
       },
       {
-        "place": "Middlesbrough",
+        "place": "Manchester",
         "tier": "Critical",
         "pressure": "poverty",
         "intervention": "Debt advice + money guidance (CHW-delivered)",
@@ -793,7 +793,7 @@
         "hh": 6.3
       },
       {
-        "place": "Manchester",
+        "place": "Middlesbrough",
         "tier": "Critical",
         "pressure": "poverty",
         "intervention": "Targeted child-poverty cash / cost-of-living support",
@@ -803,7 +803,7 @@
         "hh": 8.1
       },
       {
-        "place": "Middlesbrough",
+        "place": "Manchester",
         "tier": "Critical",
         "pressure": "poverty",
         "intervention": "Targeted child-poverty cash / cost-of-living support",
@@ -1291,71 +1291,6 @@
   },
   "interventions": [
     {
-      "place": "Manchester",
-      "region": "North West England",
-      "risk": 95.2,
-      "tier": "Critical",
-      "hotspot": "ns",
-      "pressures": [
-        "homelessness",
-        "poverty"
-      ],
-      "interventions": [
-        {
-          "pressure": "poverty",
-          "label": "Poverty / low income",
-          "intervention": "Targeted child-poverty cash / cost-of-living support",
-          "expected_gain": 0.9,
-          "cost": 1100,
-          "est_households_helped": 7.3
-        },
-        {
-          "pressure": "poverty",
-          "label": "Poverty / low income",
-          "intervention": "Debt advice + money guidance (CHW-delivered)",
-          "expected_gain": 0.7,
-          "cost": 650,
-          "est_households_helped": 4.4
-        },
-        {
-          "pressure": "poverty",
-          "label": "Poverty / low income",
-          "intervention": "Living-wage / employment access programme",
-          "expected_gain": 0.5,
-          "cost": 1400,
-          "est_households_helped": 2.2
-        },
-        {
-          "pressure": "homelessness",
-          "label": "Homelessness",
-          "intervention": "Preventive tenancy sustainment (pre-Section-21 reach)",
-          "expected_gain": 0.85,
-          "cost": 950,
-          "est_households_helped": 5.1
-        },
-        {
-          "pressure": "homelessness",
-          "label": "Homelessness",
-          "intervention": "Rapid rehousing + TA diversion",
-          "expected_gain": 0.8,
-          "cost": 1300,
-          "est_households_helped": 4.5
-        },
-        {
-          "pressure": "homelessness",
-          "label": "Homelessness",
-          "intervention": "Rent arrears mediation with landlord",
-          "expected_gain": 0.6,
-          "cost": 700,
-          "est_households_helped": 2.5
-        }
-      ],
-      "est_total_households": 26.0,
-      "est_cost": 6100,
-      "equity_note": "Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.",
-      "stop_condition": "Review at week 8; stop expansion if completion <35% or access gap widens in Manchester. Escalate to safeguarding lead if self-harm risk indicated."
-    },
-    {
       "place": "Middlesbrough",
       "region": "North East England",
       "risk": 93.6,
@@ -1394,6 +1329,71 @@
       "est_cost": 3150,
       "equity_note": "Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.",
       "stop_condition": "Review at week 8; stop expansion if completion <35% or access gap widens in Middlesbrough. Escalate to safeguarding lead if self-harm risk indicated."
+    },
+    {
+      "place": "Manchester",
+      "region": "North West England",
+      "risk": 91.7,
+      "tier": "Critical",
+      "hotspot": "ns",
+      "pressures": [
+        "homelessness",
+        "poverty"
+      ],
+      "interventions": [
+        {
+          "pressure": "homelessness",
+          "label": "Homelessness",
+          "intervention": "Preventive tenancy sustainment (pre-Section-21 reach)",
+          "expected_gain": 0.85,
+          "cost": 950,
+          "est_households_helped": 5.1
+        },
+        {
+          "pressure": "homelessness",
+          "label": "Homelessness",
+          "intervention": "Rapid rehousing + TA diversion",
+          "expected_gain": 0.8,
+          "cost": 1300,
+          "est_households_helped": 4.5
+        },
+        {
+          "pressure": "homelessness",
+          "label": "Homelessness",
+          "intervention": "Rent arrears mediation with landlord",
+          "expected_gain": 0.6,
+          "cost": 700,
+          "est_households_helped": 2.5
+        },
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "intervention": "Targeted child-poverty cash / cost-of-living support",
+          "expected_gain": 0.9,
+          "cost": 1100,
+          "est_households_helped": 7.3
+        },
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "intervention": "Debt advice + money guidance (CHW-delivered)",
+          "expected_gain": 0.7,
+          "cost": 650,
+          "est_households_helped": 4.4
+        },
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "intervention": "Living-wage / employment access programme",
+          "expected_gain": 0.5,
+          "cost": 1400,
+          "est_households_helped": 2.2
+        }
+      ],
+      "est_total_households": 26.0,
+      "est_cost": 6100,
+      "equity_note": "Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.",
+      "stop_condition": "Review at week 8; stop expansion if completion <35% or access gap widens in Manchester. Escalate to safeguarding lead if self-harm risk indicated."
     },
     {
       "place": "Glasgow",
@@ -1557,7 +1557,7 @@
     }
   ],
   "news": {
-    "fetched_at": "2026-07-24T18:42:14.429177+00:00",
+    "fetched_at": "2026-07-24T18:54:07.114679+00:00",
     "n_signals": 32,
     "per_pressure_counts": {
       "poverty": 6,
@@ -1837,5 +1837,5 @@
   },
   "mirofish_synthesis": "(1) Community pressure will concentrate on inner-city areas with vulnerable families facing reduced benefits.\n(2) Three concrete interventions are: \n- Targeted assistance such as utility subsidies and emergency food supplies for vulnerable families.\n- Prevention spending on services like job training programs and affordable housing initiatives.\n- Expanding public health campaigns to include mental health support resources.",
   "spatial_note": "Gi* KNN k=4 (n=24)",
-  "generated": "2026-07-24T18:45:50.392213+00:00"
+  "generated": "2026-07-24T18:54:11.824096+00:00"
 }

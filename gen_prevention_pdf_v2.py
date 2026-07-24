@@ -48,6 +48,19 @@ news_line = ("%d live signals &middot; counts %s &middot; early-warning %s"
 miro = d.get("mirofish_synthesis") or ""
 miro_html = esc(miro).replace("\\n","<br>") if miro else "<i>run MiroFish layer</i>"
 
+# ---- 2026 UK CIC policy context (verified via GOV.UK, July 2026) ----
+POLICY_2026 = [
+ ("£2bn Rough Sleeping Strategy", "Landmark 2026 strategy (manifesto commitment to end rough sleeping): 2,400 long-term supported homes + prevention services. CICs can deliver prevention/transition support."),
+ ("Ending Homelessness in Communities Fund", "Live 2026 prospectus open to VCSE/CICs for neighbourhood homelessness prevention and support."),
+ ("Child Poverty Strategy 2025/26", "Published Dec 2025, updated July 2026. Prevention-focused; the two-child limit and benefit cap remain in place, so income-lift levers are limited and CIC prevention work fills the gap."),
+ ("NHS 10-Year Health Plan 2025/26", "Shifts to neighbourhood health, same-day community care and social prescribing — explicit role for VCSE/CIC delivery partners."),
+ ("No 10 North / regional mayors", "Prime Minister's office based in Manchester; regional mayors hold key housing and inequality briefs, opening direct CIC commissioning routes."),
+]
+policy_html=""
+for name,desc in POLICY_2026:
+    policy_html+=('<div class="prow"><span class="pname">%s</span><span class="pdesc">%s</span></div>\n'
+        %(esc(name),esc(desc)))
+
 CSS="""
 @page { size: A4; margin: 16mm 15mm; }
 body { font-family:'Helvetica Neue',Arial,sans-serif; color:#1a1a1a; font-size:10pt; line-height:1.5; }
@@ -76,6 +89,10 @@ ul { margin:3pt 0 3pt 15pt; padding:0; } li { margin:1.5pt 0; font-size:9pt; }
 .note { font-size:7.5pt; color:#6b665b; margin-top:14pt; border-top:1px solid #e7e1d3; padding-top:7pt; }
 .foot { font-size:7.5pt; color:#9a958a; }
 .news { background:#f2efe6; border-left:3px solid #00bca3; padding:7pt 10pt; font-size:9pt; margin:6pt 0; }
+.policy { margin:6pt 0; }
+.prow { padding:5pt 0; border-bottom:1px solid #e7e1d3; }
+.pname { display:block; font-weight:700; color:#007a68; font-size:9.5pt; }
+.pdesc { display:block; font-size:8.5pt; color:#3a352c; margin-top:2pt; }
 """
 
 html_doc=f"""<!DOCTYPE html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>
@@ -104,7 +121,12 @@ html_doc=f"""<!DOCTYPE html><html><head><meta charset="utf-8"><style>{CSS}</styl
 <h2>5 — Live news early-warning</h2>
 <div class="news">{news_line}</div>
 
-<h2>6 — Second-order: MiroFish agent reaction</h2>
+<h2>6 — 2026 UK CIC policy context (verified, GOV.UK)</h2>
+<div class="policy">
+{policy_html}
+</div>
+
+<h2>7 — Second-order: MiroFish agent reaction</h2>
 <div class="synth">{miro_html}</div>
 
 <div class="note">Planning priors are transparent and illustrative; trend projection is planning-only (one cross-sectional slice plus live news momentum), not a calibrated forecast. Replace with local evaluation data before any spend. No individual-level inference. Aggregate place-level only.
