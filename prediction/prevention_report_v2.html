@@ -1,0 +1,110 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+@page { size: A4; margin: 16mm 15mm; }
+body { font-family:'Helvetica Neue',Arial,sans-serif; color:#1a1a1a; font-size:10pt; line-height:1.5; }
+h1 { font-family:Georgia,serif; font-size:24pt; font-weight:700; margin:0 0 3pt; }
+.sub { color:#5c5648; font-size:9.5pt; margin-bottom:14pt; }
+.kick { font-size:8pt; letter-spacing:.18em; text-transform:uppercase; color:#007a68; font-weight:700; margin-bottom:6pt; }
+h2 { font-family:Georgia,serif; font-size:14pt; font-weight:700; margin:18pt 0 6pt; border-bottom:2px solid #00bca3; padding-bottom:3pt; }
+table { width:100%; border-collapse:collapse; margin:5pt 0; font-size:9pt; }
+th { text-align:left; background:#f2efe6; color:#007a68; font-size:7.5pt; text-transform:uppercase; letter-spacing:.05em; padding:4pt 6pt; }
+td { padding:4pt 6pt; border-bottom:1px solid #e7e1d3; }
+tr:nth-child(even) td { background:#fbf9f4; }
+.crit { color:#fff; background:#e11d0e; padding:1pt 5pt; border-radius:3pt; font-size:7.5pt; font-weight:700; }
+.prio { color:#fff; background:#ff7a00; padding:1pt 5pt; border-radius:3pt; font-size:7.5pt; font-weight:700; }
+.banner { background:#0a0a0a; color:#f4f1ea; padding:12pt 14pt; border-radius:7pt; display:flex; gap:22pt; margin:6pt 0; }
+.banner .bn { font-family:Georgia,serif; font-size:16pt; font-weight:700; color:#fff; }
+.banner .bl { font-size:7pt; text-transform:uppercase; letter-spacing:.1em; color:#9a958a; margin-top:2pt; }
+.card { border:1px solid #e7e1d3; border-radius:6pt; padding:9pt; margin:6pt 0; page-break-inside:avoid; }
+.ch { font-family:Georgia,serif; font-size:11pt; font-weight:700; }
+.ct { color:#fff; background:#e11d0e; padding:1pt 5pt; border-radius:3pt; font-size:7pt; font-weight:700; margin-right:4pt; }
+.cr { color:#5c5648; font-size:8.5pt; margin-left:4pt; }
+.cp { color:#5c5648; font-size:8.5pt; margin:3pt 0; }
+ul { margin:3pt 0 3pt 15pt; padding:0; } li { margin:1.5pt 0; font-size:9pt; }
+.cstop { font-size:8.5pt; color:#5c5648; margin-top:5pt; padding-top:5pt; border-top:1px dashed #e7e1d3; }
+.synth { background:#0a0a0a; color:#f4f1ea; border-radius:7pt; padding:12pt; margin-top:6pt; font-size:9.5pt; line-height:1.5; }
+.synth b { color:#16e6c8; }
+.note { font-size:7.5pt; color:#6b665b; margin-top:14pt; border-top:1px solid #e7e1d3; padding-top:7pt; }
+.foot { font-size:7.5pt; color:#9a958a; }
+.news { background:#f2efe6; border-left:3px solid #00bca3; padding:7pt 10pt; font-size:9pt; margin:6pt 0; }
+</style></head><body>
+<div class="kick">Prevention and Intervention System v2 · Multi-Model · Expanded</div>
+<h1>Where to act, and what to do</h1>
+<div class="sub">HumanitAI CIC. Built on the organisation's own UK pressure data (40 records, 24 places) plus a live news early-warning layer. Eight stacked models: composite risk, spatial Gi*, early-warning trajectory, trend projection, causal graph, news signals, budget optimisation, intervention systems.</div>
+
+<h2>1 — Composite risk, tier and 3-period trend</h2>
+<table><tr><th>#</th><th>Place</th><th>Risk</th><th>Tier</th><th>Projected h1/h2/h3 (±band)</th></tr><tr><td>1</td><td><b>Manchester</b></td><td>95.2</td><td class="crit">Critical</td><td>97.7/100/100 (±6.5)</td></tr>
+<tr><td>2</td><td><b>Middlesbrough</b></td><td>93.6</td><td class="crit">Critical</td><td>96.1/98.6/100 (±6.5)</td></tr>
+<tr><td>3</td><td><b>Glasgow</b></td><td>90.6</td><td class="crit">Critical</td><td>90.1/89.6/89.1 (±6.5)</td></tr>
+<tr><td>4</td><td><b>London (Newham)</b></td><td>88.7</td><td class="crit">Critical</td><td>91.2/93.7/96.2 (±6.5)</td></tr>
+<tr><td>5</td><td><b>Blackpool</b></td><td>88.0</td><td class="crit">Critical</td><td>87.5/87.0/86.5 (±6.5)</td></tr>
+<tr><td>6</td><td><b>Kingston upon Hull</b></td><td>87.6</td><td class="crit">Critical</td><td>90.1/92.6/95.1 (±6.5)</td></tr>
+<tr><td>7</td><td><b>Nottingham</b></td><td>85.6</td><td class="crit">Critical</td><td>88.1/90.6/93.1 (±6.5)</td></tr>
+<tr><td>8</td><td><b>UK (national)</b></td><td>85.0</td><td class="crit">Critical</td><td>87.5/90.0/92.5 (±6.5)</td></tr>
+<tr><td>9</td><td><b>England (national)</b></td><td>84.9</td><td class="crit">Critical</td><td>87.4/89.9/92.4 (±6.5)</td></tr>
+<tr><td>10</td><td><b>Liverpool</b></td><td>83.6</td><td class="crit">Critical</td><td>86.1/88.6/91.1 (±6.5)</td></tr>
+</table>
+
+<h2>2 — Budget optimisation (£120,000)</h2>
+<div class="banner">
+  <div><div class="bn">£54,420.0</div><div class="bl">deployed</div></div>
+  <div><div class="bn">20</div><div class="bl">places covered</div></div>
+  <div><div class="bn">~380.0</div><div class="bl">est. households helped</div></div>
+  <div><div class="bn">£65,580.0</div><div class="bl">unallocated</div></div>
+</div>
+<table><tr><th>Place</th><th>Tier</th><th>Intervention</th><th>Cost</th><th>~HH</th></tr><tr><td>Glasgow</td><td>Critical</td><td>Community navigator + befriending</td><td>£480</td><td>~7.8</td></tr>
+<tr><td>Blackpool</td><td>Critical</td><td>Community navigator + befriending</td><td>£480</td><td>~7.8</td></tr>
+<tr><td>Glasgow</td><td>Critical</td><td>Social prescribing + group activity</td><td>£460</td><td>~7.2</td></tr>
+<tr><td>Blackpool</td><td>Critical</td><td>Social prescribing + group activity</td><td>£460</td><td>~7.2</td></tr>
+<tr><td>Glasgow</td><td>Critical</td><td>Transport-to-service vouchers</td><td>£390</td><td>~5.2</td></tr>
+<tr><td>Blackpool</td><td>Critical</td><td>Transport-to-service vouchers</td><td>£390</td><td>~5.2</td></tr>
+<tr><td>Manchester</td><td>Critical</td><td>Debt advice + money guidance (CHW-delivered)</td><td>£650</td><td>~6.3</td></tr>
+<tr><td>Middlesbrough</td><td>Critical</td><td>Debt advice + money guidance (CHW-delivered)</td><td>£650</td><td>~6.3</td></tr>
+<tr><td>Kingston upon Hull</td><td>Critical</td><td>Debt advice + money guidance (CHW-delivered)</td><td>£650</td><td>~6.3</td></tr>
+<tr><td>Nottingham</td><td>Critical</td><td>Debt advice + money guidance (CHW-delivered)</td><td>£650</td><td>~6.3</td></tr>
+<tr><td>Liverpool</td><td>Critical</td><td>Debt advice + money guidance (CHW-delivered)</td><td>£650</td><td>~6.3</td></tr>
+<tr><td>Manchester</td><td>Critical</td><td>Targeted child-poverty cash / cost-of-living support</td><td>£1,100</td><td>~8.1</td></tr>
+<tr><td>Middlesbrough</td><td>Critical</td><td>Targeted child-poverty cash / cost-of-living support</td><td>£1,100</td><td>~8.1</td></tr>
+<tr><td>Kingston upon Hull</td><td>Critical</td><td>Targeted child-poverty cash / cost-of-living support</td><td>£1,100</td><td>~8.1</td></tr>
+<tr><td>Nottingham</td><td>Critical</td><td>Targeted child-poverty cash / cost-of-living support</td><td>£1,100</td><td>~8.1</td></tr>
+<tr><td>Liverpool</td><td>Critical</td><td>Targeted child-poverty cash / cost-of-living support</td><td>£1,100</td><td>~8.1</td></tr>
+<tr><td colspan="5"><i>+44 more</i></td></tr>
+</table>
+
+<h2>3 — Causal graph: lever to expected outcome</h2>
+<table><tr><th>Pressure</th><th>Lever</th><th>Expected outcome</th></tr><tr><td>poverty</td><td>cash_support</td><td>reduced_child_poverty</td></tr>
+<tr><td>poverty</td><td>debt_advice</td><td>reduced_arrears_escalation</td></tr>
+<tr><td>poverty</td><td>employment_access</td><td>sustained_income</td></tr>
+<tr><td>homelessness</td><td>tenancy_sustainment</td><td>prevented_lose_home</td></tr>
+<tr><td>homelessness</td><td>rapid_rehousing</td><td>reduced_sleep_rough</td></tr>
+<tr><td>homelessness</td><td>arrears_mediation</td><td>avoided_possession</td></tr>
+<tr><td>nhs</td><td>community_navigation</td><td>reduced_avoidable_ae</td></tr>
+<tr><td>nhs</td><td>waiting_prioritisation</td><td>faster_treatment</td></tr>
+<tr><td>nhs</td><td>social_prescribing</td><td>better_chronic_control</td></tr>
+<tr><td>mental</td><td>peer_connector</td><td>reduced_loneliness_crisis</td></tr>
+<tr><td>mental</td><td>low_intensity_cbt</td><td>reduced_symptoms</td></tr>
+<tr><td>mental</td><td>anti_isolation</td><td>increased_belonging</td></tr>
+<tr><td colspan="3"><i>+3 more lever-outcome edges</i></td></tr>
+</table>
+
+<h2>4 — Intervention systems (top-tier places)</h2>
+<div class="card"><div class="ch"><span class="ct crit">Critical</span> Manchester <span class="cr">risk 95.2</span></div><div class="cp">pressures: homelessness, poverty</div><ul><li><b>Targeted child-poverty cash / cost-of-living support</b> — gain 0.90, ~£1,100, ~7.3 hh</li><li><b>Debt advice + money guidance (CHW-delivered)</b> — gain 0.70, ~£650, ~4.4 hh</li><li><b>Living-wage / employment access programme</b> — gain 0.50, ~£1,400, ~2.2 hh</li><li><b>Preventive tenancy sustainment (pre-Section-21 reach)</b> — gain 0.85, ~£950, ~5.1 hh</li><li><b>Rapid rehousing + TA diversion</b> — gain 0.80, ~£1,300, ~4.5 hh</li><li><b>Rent arrears mediation with landlord</b> — gain 0.60, ~£700, ~2.5 hh</li></ul><div class="cstop"><b>Stop / escalate:</b> Review at week 8; stop expansion if completion &lt;35% or access gap widens in Manchester. Escalate to safeguarding lead if self-harm risk indicated.</div></div>
+<div class="card"><div class="ch"><span class="ct crit">Critical</span> Middlesbrough <span class="cr">risk 93.6</span></div><div class="cp">pressures: poverty</div><ul><li><b>Targeted child-poverty cash / cost-of-living support</b> — gain 0.90, ~£1,100, ~7.3 hh</li><li><b>Debt advice + money guidance (CHW-delivered)</b> — gain 0.70, ~£650, ~4.4 hh</li><li><b>Living-wage / employment access programme</b> — gain 0.50, ~£1,400, ~2.2 hh</li></ul><div class="cstop"><b>Stop / escalate:</b> Review at week 8; stop expansion if completion &lt;35% or access gap widens in Middlesbrough. Escalate to safeguarding lead if self-harm risk indicated.</div></div>
+<div class="card"><div class="ch"><span class="ct crit">Critical</span> Glasgow <span class="cr">risk 90.6</span></div><div class="cp">pressures: isolation</div><ul><li><b>Community navigator + befriending</b> — gain 0.60, ~£480, ~4.7 hh</li><li><b>Social prescribing + group activity</b> — gain 0.55, ~£460, ~3.9 hh</li><li><b>Transport-to-service vouchers</b> — gain 0.40, ~£390, ~2.1 hh</li></ul><div class="cstop"><b>Stop / escalate:</b> Review at week 8; stop expansion if completion &lt;35% or access gap widens in Glasgow. Escalate to safeguarding lead if self-harm risk indicated.</div></div>
+<div class="card"><div class="ch"><span class="ct crit">Critical</span> London (Newham) <span class="cr">risk 88.7</span></div><div class="cp">pressures: homelessness</div><ul><li><b>Preventive tenancy sustainment (pre-Section-21 reach)</b> — gain 0.85, ~£950, ~5.1 hh</li><li><b>Rapid rehousing + TA diversion</b> — gain 0.80, ~£1,300, ~4.5 hh</li><li><b>Rent arrears mediation with landlord</b> — gain 0.60, ~£700, ~2.5 hh</li></ul><div class="cstop"><b>Stop / escalate:</b> Review at week 8; stop expansion if completion &lt;35% or access gap widens in London (Newham). Escalate to safeguarding lead if self-harm risk indicated.</div></div>
+<div class="card"><div class="ch"><span class="ct crit">Critical</span> Blackpool <span class="cr">risk 88.0</span></div><div class="cp">pressures: isolation</div><ul><li><b>Community navigator + befriending</b> — gain 0.60, ~£480, ~4.7 hh</li><li><b>Social prescribing + group activity</b> — gain 0.55, ~£460, ~3.9 hh</li><li><b>Transport-to-service vouchers</b> — gain 0.40, ~£390, ~2.1 hh</li></ul><div class="cstop"><b>Stop / escalate:</b> Review at week 8; stop expansion if completion &lt;35% or access gap widens in Blackpool. Escalate to safeguarding lead if self-harm risk indicated.</div></div>
+<div class="card"><div class="ch"><span class="ct crit">Critical</span> Kingston upon Hull <span class="cr">risk 87.6</span></div><div class="cp">pressures: poverty</div><ul><li><b>Targeted child-poverty cash / cost-of-living support</b> — gain 0.90, ~£1,100, ~7.3 hh</li><li><b>Debt advice + money guidance (CHW-delivered)</b> — gain 0.70, ~£650, ~4.4 hh</li><li><b>Living-wage / employment access programme</b> — gain 0.50, ~£1,400, ~2.2 hh</li></ul><div class="cstop"><b>Stop / escalate:</b> Review at week 8; stop expansion if completion &lt;35% or access gap widens in Kingston upon Hull. Escalate to safeguarding lead if self-harm risk indicated.</div></div>
+
+
+<h2>5 — Live news early-warning</h2>
+<div class="news">32 live signals &middot; counts {'poverty': 6, 'homelessness': 7, 'nhs': 12, 'mental': 9, 'isolation': 1} &middot; early-warning {'poverty': 'ELEVATED', 'homelessness': 'ELEVATED', 'nhs': 'ELEVATED', 'mental': 'ELEVATED', 'isolation': 'baseline'}</div>
+
+<h2>6 — Second-order: MiroFish agent reaction</h2>
+<div class="synth">(1) Community pressure will concentrate on inner-city areas with vulnerable families facing reduced benefits.
+(2) Three concrete interventions are: 
+- Targeted assistance such as utility subsidies and emergency food supplies for vulnerable families.
+- Prevention spending on services like job training programs and affordable housing initiatives.
+- Expanding public health campaigns to include mental health support resources.</div>
+
+<div class="note">Planning priors are transparent and illustrative; trend projection is planning-only (one cross-sectional slice plus live news momentum), not a calibrated forecast. Replace with local evaluation data before any spend. No individual-level inference. Aggregate place-level only.
+<div class="foot">HumanitAI CIC · Community Intelligence Blueprint v1.0 · generated 2026-07-24</div></div>
+</body></html>
