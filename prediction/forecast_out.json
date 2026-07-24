@@ -1,0 +1,381 @@
+{
+  "composite": [
+    {
+      "place": "Middlesbrough",
+      "sev": 90.0,
+      "region": "North East England",
+      "lat": 54.5742,
+      "lng": -1.2348,
+      "n": 1,
+      "rank": 1,
+      "gi_star": 0.19573155800755543,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Blackpool",
+      "sev": 88.0,
+      "region": "North West England",
+      "lat": 53.8175,
+      "lng": -3.0357,
+      "n": 1,
+      "rank": 2,
+      "gi_star": 0.7747022169878898,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Glasgow",
+      "sev": 87.0,
+      "region": "Scotland",
+      "lat": 55.8642,
+      "lng": -4.2518,
+      "n": 1,
+      "rank": 3,
+      "gi_star": 0.05537503461838492,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Manchester",
+      "sev": 86.0,
+      "region": "North West England",
+      "lat": 53.4808,
+      "lng": -2.2426,
+      "n": 1,
+      "rank": 4,
+      "gi_star": 0.6343456935987182,
+      "hotspot": "ns"
+    },
+    {
+      "place": "UK (national)",
+      "sev": 85.0,
+      "region": "United Kingdom",
+      "lat": 54.0,
+      "lng": -2.5,
+      "n": 1,
+      "rank": 5,
+      "gi_star": 0.7747022169878898,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Birmingham",
+      "sev": 85.0,
+      "region": "West Midlands",
+      "lat": 52.4862,
+      "lng": -1.8904,
+      "n": 1,
+      "rank": 5,
+      "gi_star": 0.24397911292258376,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Kingston upon Hull",
+      "sev": 84.0,
+      "region": "Yorkshire and the Humber",
+      "lat": 53.7457,
+      "lng": -0.3367,
+      "n": 1,
+      "rank": 7,
+      "gi_star": 0.4062663430913134,
+      "hotspot": "ns"
+    },
+    {
+      "place": "London (Newham)",
+      "sev": 83.0,
+      "region": "London",
+      "lat": 51.5074,
+      "lng": 0.1278,
+      "n": 1,
+      "rank": 8,
+      "gi_star": 0.15625628580435164,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Nottingham",
+      "sev": 82.0,
+      "region": "East Midlands",
+      "lat": 52.9548,
+      "lng": -1.1581,
+      "n": 1,
+      "rank": 9,
+      "gi_star": 0.13871172038070587,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Bradford",
+      "sev": 80.0,
+      "region": "Yorkshire and the Humber",
+      "lat": 53.795,
+      "lng": -1.7594,
+      "n": 1,
+      "rank": 10,
+      "gi_star": 0.3185435159730813,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Stoke-on-Trent",
+      "sev": 80.0,
+      "region": "West Midlands",
+      "lat": 53.0027,
+      "lng": -2.1794,
+      "n": 1,
+      "rank": 10,
+      "gi_star": 0.42381090851496134,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Liverpool",
+      "sev": 80.0,
+      "region": "North West England",
+      "lat": 53.4084,
+      "lng": -2.9916,
+      "n": 1,
+      "rank": 10,
+      "gi_star": 0.7747022169878898,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Newcastle upon Tyne",
+      "sev": 74.0,
+      "region": "North East England",
+      "lat": 54.9783,
+      "lng": -1.6178,
+      "n": 1,
+      "rank": 13,
+      "gi_star": 0.4939891702095455,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Leeds",
+      "sev": 74.0,
+      "region": "Yorkshire and the Humber",
+      "lat": 53.8008,
+      "lng": -1.5491,
+      "n": 1,
+      "rank": 13,
+      "gi_star": 0.4062663430913134,
+      "hotspot": "ns"
+    },
+    {
+      "place": "England (national)",
+      "sev": 73.75,
+      "region": "England",
+      "lat": 52.3555,
+      "lng": -1.1743,
+      "n": 4,
+      "rank": 15,
+      "gi_star": 0.24397911292258376,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Scotland (national)",
+      "sev": 71.0,
+      "region": "Scotland",
+      "lat": 56.4907,
+      "lng": -4.2026,
+      "n": 2,
+      "rank": 16,
+      "gi_star": 0.05537503461838492,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Wales (national)",
+      "sev": 70.5,
+      "region": "Wales",
+      "lat": 52.1307,
+      "lng": -3.7837,
+      "n": 2,
+      "rank": 17,
+      "gi_star": -1.0236157389358729,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Sheffield",
+      "sev": 68.0,
+      "region": "Yorkshire and the Humber",
+      "lat": 53.3811,
+      "lng": -1.4701,
+      "n": 1,
+      "rank": 18,
+      "gi_star": 0.2659098197021418,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Northern Ireland (national)",
+      "sev": 66.0,
+      "region": "Northern Ireland",
+      "lat": 54.7877,
+      "lng": -6.4923,
+      "n": 1,
+      "rank": 19,
+      "gi_star": 0.05537503461838492,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Belfast",
+      "sev": 66.0,
+      "region": "Northern Ireland",
+      "lat": 54.5973,
+      "lng": -5.9301,
+      "n": 1,
+      "rank": 19,
+      "gi_star": 0.05537503461838492,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Cardiff",
+      "sev": 64.0,
+      "region": "Wales",
+      "lat": 51.4816,
+      "lng": -3.1791,
+      "n": 1,
+      "rank": 21,
+      "gi_star": -0.9358929118176397,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Bristol",
+      "sev": 62.0,
+      "region": "South West England",
+      "lat": 51.4545,
+      "lng": -2.5879,
+      "n": 1,
+      "rank": 22,
+      "gi_star": -0.9358929118176397,
+      "hotspot": "ns"
+    },
+    {
+      "place": "London (Kensington & Chelsea)",
+      "sev": 60.0,
+      "region": "London",
+      "lat": 51.4991,
+      "lng": -0.1938,
+      "n": 1,
+      "rank": 23,
+      "gi_star": 0.15625628580435164,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Bath",
+      "sev": 40.0,
+      "region": "South West England",
+      "lat": 51.3751,
+      "lng": -2.3617,
+      "n": 1,
+      "rank": 24,
+      "gi_star": -0.8788730741907913,
+      "hotspot": "ns"
+    }
+  ],
+  "trajectory": [
+    {
+      "pressure": "isolation",
+      "label": "Isolation / loneliness",
+      "worst_sev": 88.0,
+      "median_sev": 60.0,
+      "places": 5,
+      "stress_ratio": 0.46666665888888903,
+      "trajectory": "worsening"
+    },
+    {
+      "pressure": "homelessness",
+      "label": "Homelessness",
+      "worst_sev": 83.0,
+      "median_sev": 70.0,
+      "places": 5,
+      "stress_ratio": 0.18571428306122453,
+      "trajectory": "worsening"
+    },
+    {
+      "pressure": "poverty",
+      "label": "Poverty / low income",
+      "worst_sev": 90.0,
+      "median_sev": 80.0,
+      "places": 18,
+      "stress_ratio": 0.12499999843750002,
+      "trajectory": "worsening"
+    },
+    {
+      "pressure": "nhs",
+      "label": "NHS waiting",
+      "worst_sev": 82.0,
+      "median_sev": 82.0,
+      "places": 1,
+      "stress_ratio": 0.0,
+      "trajectory": "worsening"
+    }
+  ],
+  "solutions": [
+    {
+      "place": "Middlesbrough",
+      "sev": 90.0,
+      "hotspot": "ns",
+      "actions": [
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "action": "Targeted child-poverty cash support + debt advice; CHW outreach in worst wards."
+        }
+      ]
+    },
+    {
+      "place": "Blackpool",
+      "sev": 88.0,
+      "hotspot": "ns",
+      "actions": [
+        {
+          "pressure": "isolation",
+          "label": "Isolation / loneliness",
+          "action": "Community navigator + befriending; warm spaces and social prescribing."
+        }
+      ]
+    },
+    {
+      "place": "Glasgow",
+      "sev": 87.0,
+      "hotspot": "ns",
+      "actions": [
+        {
+          "pressure": "isolation",
+          "label": "Isolation / loneliness",
+          "action": "Community navigator + befriending; warm spaces and social prescribing."
+        }
+      ]
+    },
+    {
+      "place": "Manchester",
+      "sev": 86.0,
+      "hotspot": "ns",
+      "actions": [
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "action": "Targeted child-poverty cash support + debt advice; CHW outreach in worst wards."
+        }
+      ]
+    },
+    {
+      "place": "UK (national)",
+      "sev": 85.0,
+      "hotspot": "ns",
+      "actions": [
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "action": "Targeted child-poverty cash support + debt advice; CHW outreach in worst wards."
+        }
+      ]
+    },
+    {
+      "place": "Birmingham",
+      "sev": 85.0,
+      "hotspot": "ns",
+      "actions": [
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "action": "Targeted child-poverty cash support + debt advice; CHW outreach in worst wards."
+        }
+      ]
+    }
+  ],
+  "spatial_note": "spatial Gi* computed (KNN k=4, n=24)"
+}
