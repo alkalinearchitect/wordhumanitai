@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>HumanitAI — Prevention and Intervention System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Inter:wght@400;500;600" rel="stylesheet">
+<style>
+:root{--ivory:#FBF9F4;--ink:#070709;--dim:#5A554A;--teal:#00BCA3;--teal-deep:#007A68;--vermillion:#E11D0E;--amber:#FF7A00;--hair:#E4DDCC}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--ivory);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:1000px;margin:0 auto;padding:0 28px 90px}header{padding:64px 28px 30px;max-width:1000px;margin:0 auto}
+.kick{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-deep);display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.kick::before{content:"";width:26px;height:2px;background:var(--teal)}
+h1{font-family:Fraunces,serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;letter-spacing:-.02em}h1 .a{color:var(--teal)}
+.meta{color:var(--dim);font-size:.9rem;margin-top:10px}h2{font-family:Fraunces,serif;font-size:1.6rem;font-weight:600;margin:54px 0 16px}
+.rrow,.arow{display:grid;grid-template-columns:40px 1fr 70px 90px 1fr;gap:12px;align-items:center;padding:13px 0;border-top:1px solid var(--hair);font-size:.92rem}
+.arow{grid-template-columns:1.1fr 2fr 90px 70px;gap:10px}.rk{color:var(--dim);font-weight:600}.rp{font-weight:600}
+.rv{font-family:Fraunces,serif;font-size:1.2rem;font-weight:700}.rt{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-radius:999px;padding:3px 10px;text-align:center;color:#fff}
+.rt.crit{background:var(--vermillion)}.rt.prio{background:var(--amber)}.rt.watch{background:#888}.rg{color:var(--dim);font-size:.8rem}
+.banner{background:#070709;color:#F4F1EA;border-radius:16px;padding:26px;margin:24px 0;display:flex;gap:40px;flex-wrap:wrap}
+.banner div{font-family:Fraunces,serif}.banner .bn{font-size:2rem;font-weight:700;color:#fff;line-height:1}.banner .bl{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#9A958A;margin-top:6px}
+.arow .ap{font-weight:600}.arow .ai{color:var(--dim)}.arow .ac{font-weight:600}.arow .ah{color:var(--teal-deep);font-weight:600;text-align:right}
+.amore{padding:10px 0;color:var(--dim);font-size:.85rem}
+.card{border:1px solid var(--hair);border-radius:14px;padding:20px;margin:14px 0;background:#fff}.ch{font-family:Fraunces,serif;font-size:1.15rem;font-weight:700}
+.ct{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-radius:999px;padding:3px 9px;color:#fff;margin-right:8px;vertical-align:middle}.ct.crit{background:var(--vermillion)}.ct.prio{background:var(--amber)}
+.cr{color:var(--dim);font-weight:400;font-size:.85rem;margin-left:8px}.cp{color:var(--dim);font-size:.82rem;margin:6px 0 10px}
+.iv{padding:6px 0;border-top:1px solid var(--hair);font-size:.9rem}.cmeta,.cstop{font-size:.82rem;color:var(--dim);margin-top:10px;padding-top:10px;border-top:1px solid var(--hair)}
+.cstop{border-top:1px dashed var(--hair)}.synth{background:#070709;color:#F4F1EA;border-radius:16px;padding:26px;margin-top:16px;font-size:.95rem;line-height:1.6}.synth b{color:var(--teal)}
+.back{display:inline-block;margin-top:30px;color:var(--teal-deep);font-weight:600}.note{font-size:.78rem;color:var(--dim);margin-top:30px;border-top:1px solid var(--hair);padding-top:14px}
+</style></head><body>
+<header><div class="kick">Prevention and intervention system · multi-model</div>
+<h1>Where to act, <span class="a">and what to do</span></h1>
+<div class="meta">Built on HumanitAI's own UK pressure data. Six model layers: composite risk, spatial Gi*, early-warning trajectory, causal-lever scoring, budget optimisation, MiroFish agent reaction.</div></header>
+<div class="wrap">
+<h2>1 — Composite risk and tier</h2><div class="rrow"><span class="rk">1</span><span class="rp">Middlesbrough</span><span class="rv">93.6</span><span class="rt crit">Critical</span><span class="rg">North East England</span></div>
+<div class="rrow"><span class="rk">2</span><span class="rp">Glasgow</span><span class="rv">90.6</span><span class="rt crit">Critical</span><span class="rg">Scotland</span></div>
+<div class="rrow"><span class="rk">3</span><span class="rp">Manchester</span><span class="rv">89.6</span><span class="rt crit">Critical</span><span class="rg">North West England</span></div>
+<div class="rrow"><span class="rk">4</span><span class="rp">Blackpool</span><span class="rv">88.0</span><span class="rt crit">Critical</span><span class="rg">North West England</span></div>
+<div class="rrow"><span class="rk">5</span><span class="rp">Kingston upon Hull</span><span class="rv">87.6</span><span class="rt crit">Critical</span><span class="rg">Yorkshire and the Humber</span></div>
+<div class="rrow"><span class="rk">6</span><span class="rp">London (Newham)</span><span class="rv">86.6</span><span class="rt crit">Critical</span><span class="rg">London</span></div>
+<div class="rrow"><span class="rk">7</span><span class="rp">Nottingham</span><span class="rv">85.6</span><span class="rt crit">Critical</span><span class="rg">East Midlands</span></div>
+<div class="rrow"><span class="rk">8</span><span class="rp">Birmingham</span><span class="rv">85.0</span><span class="rt crit">Critical</span><span class="rg">West Midlands</span></div>
+
+<h2>2 — Budget optimisation (£120,000)</h2>
+<div class="banner">
+  <div><div class="bn">£55,320</div><div class="bl">deployed</div></div>
+  <div><div class="bn">20</div><div class="bl">places covered</div></div>
+  <div><div class="bn">~377.0</div><div class="bl">est. households helped</div></div>
+  <div><div class="bn">£64,680</div><div class="bl">unallocated</div></div>
+</div><div class="arow"><span class="ap">Glasgow</span><span class="ai">Community navigator + befriending</span><span class="ac">£480</span><span class="ah">~7.8 hh</span></div>
+<div class="arow"><span class="ap">Blackpool</span><span class="ai">Community navigator + befriending</span><span class="ac">£480</span><span class="ah">~7.8 hh</span></div>
+<div class="arow"><span class="ap">Glasgow</span><span class="ai">Social prescribing + group activity</span><span class="ac">£460</span><span class="ah">~7.2 hh</span></div>
+<div class="arow"><span class="ap">Blackpool</span><span class="ai">Social prescribing + group activity</span><span class="ac">£460</span><span class="ah">~7.2 hh</span></div>
+<div class="arow"><span class="ap">Glasgow</span><span class="ai">Transport-to-service vouchers</span><span class="ac">£390</span><span class="ah">~5.2 hh</span></div>
+<div class="arow"><span class="ap">Blackpool</span><span class="ai">Transport-to-service vouchers</span><span class="ac">£390</span><span class="ah">~5.2 hh</span></div>
+<div class="arow"><span class="ap">Middlesbrough</span><span class="ai">Debt advice + money guidance (CHW-delivered)</span><span class="ac">£650</span><span class="ah">~6.3 hh</span></div>
+<div class="arow"><span class="ap">Manchester</span><span class="ai">Debt advice + money guidance (CHW-delivered)</span><span class="ac">£650</span><span class="ah">~6.3 hh</span></div>
+<div class="arow"><span class="ap">Kingston upon Hull</span><span class="ai">Debt advice + money guidance (CHW-delivered)</span><span class="ac">£650</span><span class="ah">~6.3 hh</span></div>
+<div class="arow"><span class="ap">Nottingham</span><span class="ai">Debt advice + money guidance (CHW-delivered)</span><span class="ac">£650</span><span class="ah">~6.3 hh</span></div>
+<div class="arow"><span class="ap">Birmingham</span><span class="ai">Debt advice + money guidance (CHW-delivered)</span><span class="ac">£650</span><span class="ah">~6.3 hh</span></div>
+<div class="arow"><span class="ap">Liverpool</span><span class="ai">Debt advice + money guidance (CHW-delivered)</span><span class="ac">£650</span><span class="ah">~6.3 hh</span></div>
+<div class="arow"><span class="ap">Middlesbrough</span><span class="ai">Targeted child-poverty cash / cost-of-living support</span><span class="ac">£1,100</span><span class="ah">~8.1 hh</span></div>
+<div class="arow"><span class="ap">Manchester</span><span class="ai">Targeted child-poverty cash / cost-of-living support</span><span class="ac">£1,100</span><span class="ah">~8.1 hh</span></div>
+<div class="amore">+46 more interventions</div>
+
+<h2>3 — Intervention systems (top-tier places)</h2><div class="card"><div class="ch"><span class="ct crit">Critical</span> Middlesbrough <span class="cr">risk 93.6</span></div><div class="cp">pressures: poverty</div><div class="iv"><b>Targeted child-poverty cash / cost-of-living support</b> — gain 0.90, ~£1,100, ~8.0 hh</div><div class="iv"><b>Debt advice + money guidance (CHW-delivered)</b> — gain 0.70, ~£650, ~2.9 hh</div><div class="iv"><b>Living-wage / employment access programme</b> — gain 0.50, ~£1,400, ~3.1 hh</div><div class="cmeta"><b>Equity:</b> Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.</div><div class="cstop"><b>Stop / escalate:</b> Review at week 8; stop expansion if completion &lt;35% or access gap widens in Middlesbrough. Escalate to safeguarding lead if self-harm risk indicated in referrals.</div></div>
+<div class="card"><div class="ch"><span class="ct crit">Critical</span> Glasgow <span class="cr">risk 90.6</span></div><div class="cp">pressures: isolation</div><div class="iv"><b>Community navigator + befriending</b> — gain 0.60, ~£480, ~2.2 hh</div><div class="iv"><b>Social prescribing + group activity</b> — gain 0.55, ~£460, ~1.8 hh</div><div class="iv"><b>Transport-to-service vouchers</b> — gain 0.40, ~£390, ~0.8 hh</div><div class="cmeta"><b>Equity:</b> Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.</div><div class="cstop"><b>Stop / escalate:</b> Review at week 8; stop expansion if completion &lt;35% or access gap widens in Glasgow. Escalate to safeguarding lead if self-harm risk indicated in referrals.</div></div>
+<div class="card"><div class="ch"><span class="ct crit">Critical</span> Manchester <span class="cr">risk 89.6</span></div><div class="cp">pressures: poverty</div><div class="iv"><b>Targeted child-poverty cash / cost-of-living support</b> — gain 0.90, ~£1,100, ~8.0 hh</div><div class="iv"><b>Debt advice + money guidance (CHW-delivered)</b> — gain 0.70, ~£650, ~2.9 hh</div><div class="iv"><b>Living-wage / employment access programme</b> — gain 0.50, ~£1,400, ~3.1 hh</div><div class="cmeta"><b>Equity:</b> Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.</div><div class="cstop"><b>Stop / escalate:</b> Review at week 8; stop expansion if completion &lt;35% or access gap widens in Manchester. Escalate to safeguarding lead if self-harm risk indicated in referrals.</div></div>
+<div class="card"><div class="ch"><span class="ct crit">Critical</span> Blackpool <span class="cr">risk 88.0</span></div><div class="cp">pressures: isolation</div><div class="iv"><b>Community navigator + befriending</b> — gain 0.60, ~£480, ~2.2 hh</div><div class="iv"><b>Social prescribing + group activity</b> — gain 0.55, ~£460, ~1.8 hh</div><div class="iv"><b>Transport-to-service vouchers</b> — gain 0.40, ~£390, ~0.8 hh</div><div class="cmeta"><b>Equity:</b> Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.</div><div class="cstop"><b>Stop / escalate:</b> Review at week 8; stop expansion if completion &lt;35% or access gap widens in Blackpool. Escalate to safeguarding lead if self-harm risk indicated in referrals.</div></div>
+<div class="card"><div class="ch"><span class="ct crit">Critical</span> Kingston upon Hull <span class="cr">risk 87.6</span></div><div class="cp">pressures: poverty</div><div class="iv"><b>Targeted child-poverty cash / cost-of-living support</b> — gain 0.90, ~£1,100, ~8.0 hh</div><div class="iv"><b>Debt advice + money guidance (CHW-delivered)</b> — gain 0.70, ~£650, ~2.9 hh</div><div class="iv"><b>Living-wage / employment access programme</b> — gain 0.50, ~£1,400, ~3.1 hh</div><div class="cmeta"><b>Equity:</b> Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.</div><div class="cstop"><b>Stop / escalate:</b> Review at week 8; stop expansion if completion &lt;35% or access gap widens in Kingston upon Hull. Escalate to safeguarding lead if self-harm risk indicated in referrals.</div></div>
+<div class="card"><div class="ch"><span class="ct crit">Critical</span> London (Newham) <span class="cr">risk 86.6</span></div><div class="cp">pressures: homelessness</div><div class="iv"><b>Preventive tenancy sustainment (pre-Section-21 reach)</b> — gain 0.85, ~£950, ~4.8 hh</div><div class="iv"><b>Rapid rehousing + temporary-accommodation diversion</b> — gain 0.80, ~£1,300, ~5.8 hh</div><div class="iv"><b>Rent arrears mediation with landlord</b> — gain 0.60, ~£700, ~1.8 hh</div><div class="cmeta"><b>Equity:</b> Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.</div><div class="cstop"><b>Stop / escalate:</b> Review at week 8; stop expansion if completion &lt;35% or access gap widens in London (Newham). Escalate to safeguarding lead if self-harm risk indicated in referrals.</div></div>
+
+<h2>4 — Second-order: MiroFish agent reaction</h2><div class="synth">(1) Community pressure will concentrate on inner-city areas with vulnerable families facing reduced benefits.
+(2) Three concrete interventions are: 
+- Targeted assistance such as utility subsidies and emergency food supplies for vulnerable families.
+- Prevention spending on services like job training programs and affordable housing initiatives.
+- Expanding public health campaigns to include mental health support resources.</div>
+<div class="note">Planning priors are transparent and illustrative; replace with local evaluation data before any spend. No individual-level inference. Aggregate place-level only.</div>
+<a class="back" href="./">Back to HumanitAI</a></div></body></html>
