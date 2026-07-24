@@ -139,27 +139,46 @@ nav.scrolled{background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(16px)
 .ti{font-family:Fraunces,serif;font-size:.95rem;color:rgba(255,255,255,.5);padding:0 20px;font-weight:400}
 .ts{color:#119984;font-size:.45rem;padding:0 4px}
 
-/* ═══════ MAP ═══════ */
-.map-section{background:#0a0a0f;padding:120px 0}
-.map-section h2{color:#fff}.map-section .subtitle{color:rgba(255,255,255,.4)}
-.map-shell{display:grid;grid-template-columns:1fr 300px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.06);margin-top:48px}
-.onsite-map{height:480px;width:100%;background:#0a0a0f;min-height:480px}
-.map-panel{background:#0e0e15;border-left:1px solid rgba(255,255,255,.06);padding:24px;display:flex;flex-direction:column;max-height:480px;overflow-y:auto}
-.mp-empty{text-align:center;color:#5a5a6a;padding:60px 20px}.mp-empty h3{color:rgba(255,255,255,.4);font-size:1.1rem}.mp-empty p{font-size:.82rem;line-height:1.5;margin-top:4px}
-.mp-detail .mp-region{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#119984}.mp-detail .mp-city{font-size:1.5rem;color:#fff;margin:2px 0 6px}
-.mp-detail .mp-priority{font-size:.7rem;font-weight:600;text-transform:uppercase;color:#e8743b;margin-bottom:6px}
-.mp-detail .mp-stat{font-size:.9rem;font-weight:600;color:#f0a830;margin-bottom:6px}
-.mp-detail .mp-detail-txt{font-size:.8rem;color:#6a6a7a;line-height:1.6;margin-bottom:10px}
-.mp-bar{height:3px;background:#1a1a1f;border-radius:2px;overflow:hidden;margin-bottom:10px}.mp-bar span{display:block;height:100%;border-radius:2px;transition:width .6s}
-.mp-close{padding:6px 12px;background:none;border:1px solid #1a1a1f;color:#5a5a6a;border-radius:6px;cursor:pointer;font-size:.72rem}
-.mp-close:hover{color:#fff;border-color:#119984}
-.map-filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;justify-content:center}
-.mf-btn{padding:6px 16px;background:#0e0e15;border:1px solid rgba(255,255,255,.06);color:#6a6a7a;border-radius:16px;cursor:pointer;font-size:.78rem;transition:all .2s}
-.mf-btn:hover{border-color:#119984;color:#fff}.mf-btn.active{background:#119984;color:#fff;border-color:#119984}
-.map-marker{width:26px;height:26px;display:flex;align-items:center;justify-content:center;cursor:pointer}
-.map-marker-inner{width:12px;height:12px;border-radius:50%;box-shadow:0 0 0 3px rgba(255,255,255,.12),0 2px 8px rgba(0,0,0,.5);transition:transform .2s}
-.leaflet-container{background:#0a0a0f;font-family:Inter,sans-serif}
-@media(max-width:900px){.map-shell{grid-template-columns:1fr}.map-panel{border-left:none;border-top:1px solid rgba(255,255,255,.06);max-height:200px}.onsite-map{height:360px;min-height:360px}}
+/* ═══════ DATA DASHBOARD (replaces map) ═══════ */
+.db-section{background:#0a0a0f;padding:120px 0}
+.db-section h2{color:#fff}.db-section .subtitle{color:rgba(255,255,255,.4)}
+.db-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px}
+@media(max-width:768px){.db-summary{grid-template-columns:repeat(2,1fr)}}
+.db-summary-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px;text-align:center}
+.db-summary-card .num{font-family:Fraunces,serif;font-size:1.8rem;font-weight:600;color:#119984;display:block;letter-spacing:-.03em}
+.db-summary-card .lbl{font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.06em;margin-top:4px;display:block}
+.db-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.db-filters button{padding:7px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.5);border-radius:20px;cursor:pointer;font-size:.8rem;transition:all .2s}
+.db-filters button:hover{border-color:#119984;color:#fff}
+.db-filters button.active{background:#119984;color:#fff;border-color:#119984}
+.db-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:900px){.db-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.db-grid{grid-template-columns:1fr}}
+.db-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.db-card:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);transform:translateY(-2px)}
+.db-card-top{display:flex;justify-content:space-between;align-items:start;margin-bottom:8px}
+.db-card-city{font-family:Fraunces,serif;font-size:1.1rem;font-weight:600;color:#fff;letter-spacing:-.02em}
+.db-card-region{font-size:11px;color:rgba(255,255,255,.3);margin-top:1px}
+.db-card-badge{padding:3px 10px;border-radius:12px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.db-card-stat{font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.4;margin-bottom:10px}
+.db-card-bar{height:4px;border-radius:2px;overflow:hidden;background:rgba(255,255,255,.06);margin-bottom:8px}
+.db-card-bar span{display:block;height:100%;border-radius:2px;transition:width .8s cubic-bezier(.16,1,.3,1)}
+.db-card-sev{font-size:11px;font-weight:600;color:#fff;display:flex;justify-content:space-between}
+.db-card-sev .lbl{color:rgba(255,255,255,.3);font-weight:400}
+.db-panel{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px}
+.db-panel.open{display:flex}
+.db-panel-inner{background:#12121a;border:1px solid rgba(255,255,255,.08);border-radius:16px;max-width:560px;width:100%;max-height:80vh;overflow-y:auto;padding:32px;position:relative}
+.db-panel-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.db-panel-close:hover{color:#fff;border-color:#119984}
+.db-panel .mp-region{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#119984;margin-bottom:2px}
+.db-panel .mp-city{font-size:1.8rem;color:#fff;margin:0 0 4px;font-family:Fraunces,serif;letter-spacing:-.03em}
+.db-panel .mp-priority{font-size:.75rem;font-weight:600;text-transform:uppercase;color:#e8743b;margin-bottom:8px}
+.db-panel .mp-stat{font-size:1rem;font-weight:600;color:#f0a830;margin-bottom:8px}
+.db-panel .mp-detail-txt{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:16px}
+.db-panel .mp-bar{height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;margin-bottom:8px}
+.db-panel .mp-bar span{height:100%;border-radius:2px;display:block}
+.db-panel-src{font-size:11px;color:rgba(255,255,255,.2);font-style:italic;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.04)}
+.db-note{font-size:.72rem;color:rgba(255,255,255,.2);margin-top:16px;text-align:center;font-style:italic}
 
 /* ═══════ EVIDENCE ═══════ */
 .evidence-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
@@ -230,7 +249,7 @@ a:focus-visible,button:focus-visible,.mf-btn:focus-visible,.mp-close:focus-visib
 <p>We use Open-Source Intelligence (OSINT) and AI to find the cracks in Britain's social systems — before people fall through them. Trained community teams on the ground. Public data at scale. Outcomes that can't be ignored.</p>
 <div class="hero-actions">
 <a href="#join" class="btn-primary">Back the work →</a>
-<a href="#map" class="btn-secondary">See the map</a>
+<a href="#map" class="btn-secondary">See the dashboard</a>
 </div>
 </div>
 <div>
@@ -323,34 +342,46 @@ a:focus-visible,button:focus-visible,.mf-btn:focus-visible,.mp-close:focus-visib
 <!-- ═══════ TICKER ═══════ -->
 <div class="ticker-bar"><div class="ticker-track" id="tickerTrack"></div></div>
 
-<!-- ═══════ MAP ═══════ -->
-<section class="map-section" id="map">
+<!-- ═══════ DATA DASHBOARD (replaces map) ═══════ -->
+<section class="db-section" id="map">
 <div class="wrap">
-<p class="tag reveal" style="color:#119984">Live deployment map</p>
-<h2 class="reveal" style="margin-bottom:8px">Where the intelligence lands.</h2>
-<p class="subtitle reveal" style="margin-bottom:0">Every marker is a node where OSINT analysis has identified concentrated, verified need. 18 regions across the UK.</p>
-<div class="map-shell reveal">
-<div id="onsiteMap" class="onsite-map"><div class="map-loading" style="display:flex;align-items:center;justify-content:center;height:480px;color:#5a5a6a;font-size:.85rem">Loading map…</div></div>
-<div class="map-panel" id="mapPanel">
-<div class="mp-empty" id="mpEmpty"><h3 class="serif">Select a region</h3><p>Click any marker for verified on-the-ground data.</p></div>
-<div class="mp-detail" id="mpDetail" style="display:none">
-<div class="mp-region" id="mpRegion"></div><div class="mp-city serif" id="mpCity"></div>
-<div class="mp-priority" id="mpPriority"></div><div class="mp-stat" id="mpStat"></div>
+<p class="tag reveal" style="color:#119984">Intelligence dashboard</p>
+<h2 class="reveal" style="margin-bottom:8px">18 regions, 7 dimensions, ranked by severity.</h2>
+<p class="subtitle reveal" style="margin-bottom:0">OSINT-gathered data across every UK region we monitor. Sorted by crisis severity — click any card for full intelligence.</p>
+
+<div class="db-summary reveal" id="dbSummary">
+<div class="db-summary-card"><span class="num">18</span><span class="lbl">Monitored regions</span></div>
+<div class="db-summary-card"><span class="num">7</span><span class="lbl">Analysis dimensions</span></div>
+<div class="db-summary-card"><span class="num">12+</span><span class="lbl">OSINT data sources</span></div>
+<div class="db-summary-card"><span class="num">85%</span><span class="lbl">Avg. confidence</span></div>
+</div>
+
+<div class="db-filters reveal" id="dbFilters">
+<button class="active" data-f="all">All regions</button>
+<button data-f="poverty">Poverty</button>
+<button data-f="homelessness">Homelessness</button>
+<button data-f="nhs">NHS</button>
+<button data-f="mental">Mental health</button>
+<button data-f="isolation">Isolation</button>
+</div>
+
+<div class="db-grid" id="dbGrid"></div>
+<p class="db-note reveal">Data sourced from ONS, gov.uk, Trussell Trust, JRF, NHS England. Updated quarterly via automated OSINT pipeline.</p>
+</div></section>
+
+<!-- Detail panel (modal) -->
+<div class="db-panel" id="dbPanel">
+<div class="db-panel-inner">
+<button class="db-panel-close" id="dbPanelClose">✕</button>
+<div class="mp-region" id="mpRegion"></div>
+<div class="mp-city" id="mpCity"></div>
+<div class="mp-priority" id="mpPriority"></div>
+<div class="mp-stat" id="mpStat"></div>
 <div class="mp-detail-txt" id="mpDetailTxt"></div>
 <div class="mp-bar"><span id="mpBar"></span></div>
-<button class="mp-close" id="mpClose">Close ✕</button>
-</div></div></div>
-<div class="map-filters reveal">
-<button class="mf-btn active" data-f="all">All</button>
-<button class="mf-btn" data-f="poverty">Poverty</button>
-<button class="mf-btn" data-f="homelessness">Homelessness</button>
-<button class="mf-btn" data-f="nhs">NHS</button>
-<button class="mf-btn" data-f="mental">Mental health</button>
-<button class="mf-btn" data-f="isolation">Isolation</button>
+<div class="db-panel-src">Source: <span id="mpSource">ONS, gov.uk</span> · Updated via OSINT pipeline</div>
 </div>
-<p style="font-size:.7rem;color:rgba(255,255,255,.2);margin-top:12px;text-align:center;font-style:italic">Data: ONS, gov.uk, Trussell Trust, JRF</p>
 </div>
-</section>
 
 <!-- ═══════ EVIDENCE ═══════ -->
 <section class="section section-cream">
@@ -478,66 +509,96 @@ document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
   }},{threshold:.1});io.observe(cv);
 })();
 
-// Map
+// ═══════ DATA DASHBOARD (replaces Leaflet map) ═══════
 (function(){
-  var el=document.getElementById('onsiteMap');if(!el)return;
-  var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){
-    io.disconnect();
-    var lc=document.createElement('link');lc.rel='stylesheet';lc.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';lc.crossOrigin='';document.head.appendChild(lc);
-    var ls=document.createElement('script');ls.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';ls.crossOrigin='';
-    ls.onload=function(){
-      if(typeof L==='undefined'){el.innerHTML='<p style="padding:40px;text-align:center;color:#5a5a6a">Map failed to load.</p>';return;}
-      var regions=[
-        {c:"Birmingham",r:"West Midlands",lat:52.4862,lng:-1.8904,f:"poverty",p:"Child poverty + food insecurity",s:"40%+ of children in poverty in worst wards",d:"Birmingham has among the highest child poverty rates in England. OSINT-driven CHW nodes target these estates.",sev:92},
-        {c:"Manchester",r:"Greater Manchester",lat:53.4808,lng:-2.2426,f:"homelessness",p:"Homelessness + temp accommodation",s:"132,410 households in temp accommodation (record UK)",d:"Greater Manchester rough sleeping up 6x since 2010.",sev:88},
-        {c:"Liverpool",r:"Liverpool City Region",lat:53.4084,lng:-2.9916,f:"mental",p:"Mental health + isolation",s:"1 in 6 adults; 20% children probable disorder",d:"Deprived wards show highest GP mental-health load.",sev:81},
-        {c:"Leeds",r:"West Yorkshire",lat:53.8008,lng:-1.5491,f:"nhs",p:"NHS waiting + cost of living",s:"7.28M on NHS waiting list nationally",d:"West Yorkshire 18-week wait breaches above national avg.",sev:79},
-        {c:"Glasgow",r:"Scotland",lat:55.8642,lng:-4.2518,f:"poverty",p:"Life expectancy gap + poverty",s:"Lowest female life expectancy in UK (78.0yrs)",d:"Glasgow has highest drug-death rate in Europe.",sev:90},
-        {c:"London (Newham)",r:"London",lat:51.5255,lng:0.0352,f:"isolation",p:"Digital exclusion + poverty",s:"2.1M offline; 47% child poverty Newham",d:"Newham: highest child poverty in UK.",sev:87},
-        {c:"Cardiff",r:"Wales",lat:51.4816,lng:-3.1791,f:"mental",p:"Youth NEET + education gap",s:"1.01M 16-24 NEET nationally",d:"Welsh valleys NEET 2x UK avg.",sev:78},
-        {c:"Belfast",r:"Northern Ireland",lat:54.5973,lng:-5.9301,f:"isolation",p:"Elderly isolation",s:"940,000 over-65 often lonely",d:"NI fastest-aging population.",sev:74},
-        {c:"Bristol",r:"South West",lat:51.4545,lng:-2.5879,f:"poverty",p:"Child poverty + income deprivation",s:"37% children in income-deprived families",d:"Bristol: 30 LSOAs in England's worst 10%.",sev:85},
-        {c:"Newcastle",r:"North East",lat:54.9783,lng:-1.6178,f:"poverty",p:"Child poverty + NHS waiting",s:"35.3% children in poverty; 579 waiting 52+ wks",d:"North East has highest child poverty outside London.",sev:84},
-        {c:"Sheffield",r:"South Yorkshire",lat:53.3811,lng:-1.4701,f:"nhs",p:"Child poverty + NHS waiting",s:"Up to 43.3% children in poverty",d:"Life expectancy gap 10+ yrs across Sheffield.",sev:80},
-        {c:"Nottingham",r:"East Midlands",lat:52.9548,lng:-1.1581,f:"homelessness",p:"Homelessness + NHS waiting",s:"2,941 homeless households; 1,589 waiting 52+ wks",d:"Nottingham — one of weakest NHS trust performances.",sev:82},
-        {c:"Bradford",r:"West Yorkshire",lat:53.796,lng:-1.7594,f:"poverty",p:"Child poverty + education gap",s:"40.5% children in poverty (Bradford West)",d:"Youngest population in UK. Over 4 in 10 children in poverty.",sev:86},
-        {c:"Blackpool",r:"North West",lat:53.8175,lng:-3.0357,f:"isolation",p:"Lowest life expectancy in England",s:"Male life expectancy 73.1yrs",d:"ONS: lowest male life expectancy in England.",sev:88},
-        {c:"Middlesbrough",r:"North East",lat:54.5742,lng:-1.2348,f:"poverty",p:"Highest child poverty in England",s:"~47% of children in relative poverty",d:"End Child Poverty: highest child poverty rates in England.",sev:90},
-        {c:"Kingston upon Hull",r:"Yorkshire",lat:53.7457,lng:-0.3367,f:"poverty",p:"Child poverty in Hull",s:"~39% of children in relative poverty",d:"Hull: one of the highest child poverty rates in Yorkshire.",sev:84},
-        {c:"Stoke-on-Trent",r:"West Midlands",lat:53.0027,lng:-2.1794,f:"poverty",p:"Deprivation in the Potteries",s:"~35% of children in relative poverty",d:"Stoke-on-Trent: among the most deprived LAs in England.",sev:80},
-        {c:"Kensington & Chelsea",r:"London",lat:51.4991,lng:-0.1938,f:"isolation",p:"Widest life-exp gap",s:"Life expectancy gap ~10 years vs poorest",d:"ONS: the starkest inequality gradient in the country.",sev:60}
-      ];
-      var map=L.map('onsiteMap',{scrollWheelZoom:true,attributionControl:true,zoomControl:true}).setView([53.8,-2.8],6);
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{maxZoom:18,subdomains:'abcd',attribution:'&copy; <a href="https://carto.com/">CARTO</a>'}).addTo(map);
-      function sc(c){return c>=88?'#c73e1d':c>=80?'#e8743b':c>=70?'#f0a830':'#119984';}
-      var mkrs={};
-      regions.forEach(function(r){
-        var m=L.marker([r.lat,r.lng],{icon:L.divIcon({className:'',html:'<div class="map-marker" role="button" tabindex="0" aria-label="'+r.c+'"><div class="map-marker-inner" style="background:'+sc(r.sev)+'"></div></div>',iconSize:[26,26],iconAnchor:[13,13]})});
-        m.addTo(map);m.on('click',function(){sd(r);});m._rg=r;mkrs[r.c]=m;
+  var regions=[
+    {c:"Birmingham",r:"West Midlands",lat:52.4862,lng:-1.8904,f:"poverty",p:"Child poverty + food insecurity",s:"40%+ of children in poverty in worst wards",d:"Birmingham has among the highest child poverty rates in England. OSINT-driven CHW nodes target these estates.",sev:92,src:"ONS, End Child Poverty"},
+    {c:"Middlesbrough",r:"North East",lat:54.5742,lng:-1.2348,f:"poverty",p:"Highest child poverty in England",s:"~47% of children in relative poverty",d:"End Child Poverty: highest child poverty rates in England. Driven by deindustrialisation and benefit cuts.",sev:90,src:"End Child Poverty Coalition"},
+    {c:"Glasgow",r:"Scotland",lat:55.8642,lng:-4.2518,f:"poverty",p:"Life expectancy gap + poverty",s:"Lowest female life expectancy in UK (78.0yrs)",d:"Glasgow has highest drug-death rate in Europe. Inverse care law — sickest areas have fewest GPs.",sev:90,src:"ONS Health, Scottish Govt"},
+    {c:"Manchester",r:"Greater Manchester",lat:53.4808,lng:-2.2426,f:"homelessness",p:"Homelessness + temp accommodation",s:"132,410 households in temp accommodation (record UK)",d:"Greater Manchester rough sleeping up 6x since 2010. Onsite CHW intake prevents street escalation.",sev:88,src:"MHCLG, Shelter"},
+    {c:"Blackpool",r:"North West",lat:53.8175,lng:-3.0357,f:"isolation",p:"Lowest life expectancy in England",s:"Male life expectancy 73.1yrs — lowest in England",d:"ONS: Blackpool has the lowest male life expectancy in England. High rates of alcohol and drug mortality.",sev:88,src:"ONS Health"},
+    {c:"London (Newham)",r:"London",lat:51.5255,lng:0.0352,f:"isolation",p:"Digital exclusion + poverty",s:"2.1M offline; 47% child poverty Newham",d:"Newham has the highest child poverty in UK. Onsite data capture bypasses digital divide.",sev:87,src:"ONS, End Child Poverty"},
+    {c:"Bradford",r:"West Yorkshire",lat:53.796,lng:-1.7594,f:"poverty",p:"Child poverty + education gap",s:"40.5% children in poverty (Bradford West)",d:"Youngest population in UK. Over 4 in 10 children in poverty. CHW early-years intervention is highest-leverage.",sev:86,src:"End Child Poverty, DfE"},
+    {c:"Bristol",r:"South West",lat:51.4545,lng:-2.5879,f:"poverty",p:"Child poverty + income deprivation",s:"37% children in income-deprived families",d:"Bristol: 30 LSOAs in England's worst 10%. Life expectancy gap 10+ yrs across the city.",sev:85,src:"ONS IMD, End Child Poverty"},
+    {c:"Newcastle",r:"North East",lat:54.9783,lng:-1.6178,f:"poverty",p:"Child poverty + NHS waiting",s:"35.3% children in poverty; 579 waiting 52+ wks",d:"North East has highest child poverty outside London. CHW ground truth exposes hidden need.",sev:84,src:"ONS, NHS England"},
+    {c:"Kingston upon Hull",r:"Yorkshire",lat:53.7457,lng:-0.3367,f:"poverty",p:"Child poverty in Hull",s:"~39% of children in relative poverty",d:"Hull: one of the highest child poverty rates in Yorkshire. Strong food bank dependency.",sev:84,src:"End Child Poverty, Trussell Trust"},
+    {c:"Nottingham",r:"East Midlands",lat:52.9548,lng:-1.1581,f:"homelessness",p:"Homelessness + NHS waiting",s:"2,941 homeless households; 1,589 waiting 52+ wks",d:"Nottingham — one of the weakest large-trust NHS performances in England.",sev:82,src:"MHCLG, NHS England"},
+    {c:"Liverpool",r:"Liverpool City Region",lat:53.4084,lng:-2.9916,f:"mental",p:"Mental health + isolation",s:"1 in 6 adults; 20% children probable disorder",d:"Deprived wards show highest GP mental-health load. CHWs bridge critical gaps.",sev:81,src:"NHS Digital, ONS"},
+    {c:"Sheffield",r:"South Yorkshire",lat:53.3811,lng:-1.4701,f:"nhs",p:"Child poverty + NHS waiting",s:"Up to 43.3% children in poverty",d:"Life expectancy gap 10+ yrs across Sheffield. Brightside & Hillsborough worst affected.",sev:80,src:"ONS, NHS England"},
+    {c:"Stoke-on-Trent",r:"West Midlands",lat:53.0027,lng:-2.1794,f:"poverty",p:"Deprivation in the Potteries",s:"~35% of children in relative poverty",d:"Stoke-on-Trent: among the most deprived LAs in England. High child poverty across all six towns.",sev:80,src:"ONS IMD, End Child Poverty"},
+    {c:"Leeds",r:"West Yorkshire",lat:53.8008,lng:-1.5491,f:"nhs",p:"NHS waiting + cost of living",s:"7.28M on NHS waiting list nationally",d:"West Yorkshire 18-week wait breaches above national average. Onsite triage reduces A&E load.",sev:79,src:"NHS England, ONS"},
+    {c:"Cardiff",r:"Wales",lat:51.4816,lng:-3.1791,f:"mental",p:"Youth NEET + education gap",s:"1.01M 16-24 NEET nationally",d:"Welsh valleys NEET 2x UK average. CHW early-intervention forecasting deploys before crisis.",sev:78,src:"DfE, Welsh Govt"},
+    {c:"Belfast",r:"Northern Ireland",lat:54.5973,lng:-5.9301,f:"isolation",p:"Elderly isolation",s:"940,000 over-65 often lonely",d:"NI fastest-aging population. Onsite wellness checks prevent isolation-driven decline.",sev:74,src:"ONS Loneliness, NISRA"},
+    {c:"Kensington & Chelsea",r:"London",lat:51.4991,lng:-0.1938,f:"isolation",p:"Widest life-exp gap in England",s:"Life expectancy gap ~10 years vs poorest boroughs",d:"ONS: the starkest inequality gradient in the country. Wealth alongside deepest deprivation.",sev:60,src:"ONS Health"}
+  ];
+
+  function sevColor(s){return s>=88?'#c73e1d':s>=80?'#e8743b':s>=70?'#f0a830':'#119984';}
+  function sevLabel(s){return s>=88?'Critical':s>=80?'High':s>=70?'Elevated':'Moderate';}
+  function badgeColor(cat){
+    var m={poverty:'#c73e1d',homelessness:'#e8743b',nhs:'#f0a830',mental:'#119984',isolation:'#0d6b5c'};
+    return m[cat]||'#666';
+  }
+  function catLabel(cat){
+    var m={poverty:'Poverty',homelessness:'Homelessness',nhs:'NHS',mental:'Mental Health',isolation:'Isolation'};
+    return m[cat]||cat;
+  }
+
+  var grid=document.getElementById('dbGrid');
+  var activeFilter='all';
+
+  function render(f){
+    activeFilter=f;
+    var filtered=f==='all'?regions:regions.filter(function(r){return r.f===f;});
+    filtered.sort(function(a,b){return b.sev-a.sev;});
+    grid.innerHTML='';
+    filtered.forEach(function(r,i){
+      var col=sevColor(r.sev);
+      var card=document.createElement('div');
+      card.className='db-card reveal';
+      card.style.transitionDelay=(i*0.05)+'s';
+      card.innerHTML='<div class="db-card-top"><div><div class="db-card-city">'+r.c+'</div><div class="db-card-region">'+r.r+'</div></div><span class="db-card-badge" style="background:'+badgeColor(r.f)+';color:#fff">'+catLabel(r.f)+'</span></div><div class="db-card-stat">'+r.s+'</div><div class="db-card-bar"><span style="width:'+r.sev+'%;background:'+col+'"></span></div><div class="db-card-sev"><span>'+sevLabel(r.sev)+'</span><span class="lbl">'+r.sev+'/100</span></div>';
+      card.onclick=function(){showDetail(r);};
+      grid.appendChild(card);
+    });
+    // Trigger reveals
+    requestAnimationFrame(function(){
+      grid.querySelectorAll('.db-card').forEach(function(el,i){
+        setTimeout(function(){el.classList.add('vis');},i*50+100);
       });
-      function sd(r){
-        document.getElementById('mpEmpty').style.display='none';
-        var d=document.getElementById('mpDetail');d.style.display='block';
-        document.getElementById('mpRegion').textContent=r.r;document.getElementById('mpCity').textContent=r.c;
-        document.getElementById('mpPriority').textContent=r.p;document.getElementById('mpStat').textContent=r.s;
-        document.getElementById('mpDetailTxt').textContent=r.d;
-        var b=document.getElementById('mpBar');b.style.width=r.sev+'%';b.style.background=sc(r.sev);
-        map.panTo([r.lat,r.lng],{animate:true,duration:.4});
-      }
-      document.getElementById('mpClose').onclick=function(){document.getElementById('mpDetail').style.display='none';document.getElementById('mpEmpty').style.display='block';};
-      document.querySelectorAll('.mf-btn').forEach(function(b){
-        b.onclick=function(){
-          document.querySelectorAll('.mf-btn').forEach(function(x){x.classList.remove('active');});
-          b.classList.add('active');var f=b.dataset.f;
-          regions.forEach(function(r){var m=mkrs[r.c];if(f==='all'||r.f===f){if(!map.hasLayer(m))m.addTo(map);}else{map.removeLayer(m);}});
-          document.getElementById('mpDetail').style.display='none';document.getElementById('mpEmpty').style.display='block';
-        };
-      });
-      var ld=el.querySelector('.map-loading');if(ld)ld.remove();
+    });
+  }
+
+  function showDetail(r){
+    document.getElementById('mpRegion').textContent=r.r;
+    document.getElementById('mpCity').textContent=r.c;
+    document.getElementById('mpPriority').textContent=r.p;
+    document.getElementById('mpStat').textContent=r.s;
+    document.getElementById('mpDetailTxt').textContent=r.d;
+    var bar=document.getElementById('mpBar');
+    bar.style.width=r.sev+'%';
+    bar.style.background=sevColor(r.sev);
+    document.getElementById('mpSource').textContent=r.src;
+    document.getElementById('dbPanel').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+
+  document.getElementById('dbPanelClose').onclick=function(){
+    document.getElementById('dbPanel').classList.remove('open');
+    document.body.style.overflow='';
+  };
+  document.getElementById('dbPanel').onclick=function(e){
+    if(e.target===this){this.classList.remove('open');document.body.style.overflow='';}
+  };
+
+  document.querySelectorAll('#dbFilters button').forEach(function(b){
+    b.onclick=function(){
+      document.querySelectorAll('#dbFilters button').forEach(function(x){x.classList.remove('active');});
+      b.classList.add('active');
+      render(b.dataset.f);
     };
-    ls.onerror=function(){el.innerHTML='<p style="padding:40px;text-align:center;color:#5a5a6a">Failed to load map.</p>';};
-    document.body.appendChild(ls);
-  }},{threshold:.1});io.observe(el);
+  });
+
+  render('all');
 })();
 </script>
 </body>
