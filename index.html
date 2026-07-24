@@ -406,7 +406,13 @@ var data=[
 {id:'Luton',r:'East of England',d:{poverty:84,homelessness:64,nhs:72,mental:62,isolation:58}}
 ];
 function comp(d){var s=0;DIMS.forEach(function(k){s+=d[k];});return Math.round(s/DIMS.length);}
-function seg(d){var tot=DIMS.reduce(function(a,k){return a+d[k];},0);return DIMS.map(function(k){return{key:k,w:Math.round(d[k]/tot*100)};});}
+function seg(d){var tot=DIMS.reduce(function(a,k){return a+d[k];},0);
+  var raw=DIMS.map(function(k){return {key:k,v:d[k]/tot*100};});
+  var floor=raw.map(function(o){return {key:o.key,w:Math.floor(o.v),frac:o.v-Math.floor(o.v)};});
+  var used=floor.reduce(function(a,o){return a+o.w;},0),rem=100-used;
+  floor.sort(function(a,b){return b.frac-a.frac;});
+  for(var i=0;i<rem;i++){floor[i].w++;}
+  return DIMS.map(function(k){var o=floor.filter(function(f){return f.key===k;})[0];return {key:k,w:o.w};});}
 // hero panel top 4
 (function(){var top=data.slice().sort(function(a,b){return comp(b.d)-comp(a.d);}).slice(0,4);
  document.getElementById('hpRows').innerHTML=top.map(function(r){var c=comp(r.d);return '<div class="hp-row"><span class="hp-city">'+r.id+'</span><span class="hp-bar"><i style="width:'+c+'%\"></i></span><span class="hp-sev">'+c+'</span></div>';}).join('');})();
