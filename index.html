@@ -118,17 +118,15 @@ section{padding:100px 0}
 .crack-stat{font-size:1.2rem;font-weight:800;color:#c73e1d;display:block;font-family:Fraunces,Georgia,serif}
 .crack-src{font-size:10px;color:#6b6b6b}
 
-/* ═══════ HOW: MODELS ═══════ */
-.model-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:36px}
-@media(max-width:900px){.model-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:500px){.model-grid{grid-template-columns:1fr}}
-.model-card{text-align:center}
-.model-icon{width:48px;height:48px;border-radius:12px;background:rgba(17,153,132,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.3rem}
-.model-step{font-size:10px;font-weight:700;color:#119984;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:6px}
-.model-card h3{font-size:1.1rem;font-weight:700;margin-bottom:6px;color:#fff;font-family:Fraunces,Georgia,serif}
-.model-card p{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.6}
-.model-arrow{display:none}
-@media(min-width:901px){.model-arrow{display:block;position:absolute;right:-14px;top:32px;color:rgba(17,153,132,.3);font-size:1.4rem;pointer-events:none}}
+/* ═══════ HOW: MODELS (sticky stacking cards) ═══════ */
+.model-stack{max-width:800px;margin:36px auto 0}
+.model-card{position:sticky;top:80px;background:rgba(18,18,26,.9);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:28px 32px;margin-bottom:16px;transition:transform .3s,box-shadow .3s}
+.model-card:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.model-card:nth-child(2){top:96px}.model-card:nth-child(3){top:112px}.model-card:nth-child(4){top:128px}
+.model-card .step-num{font-size:10px;font-weight:700;color:#119984;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:4px}
+.model-card .icon{font-size:1.4rem;margin-bottom:6px;display:block}
+.model-card h3{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:4px;font-family:Fraunces,Georgia,serif}
+.model-card p{font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.6;max-width:600px}
 
 /* ═══════ LOCK ═══════ */
 .lock-banner{background:linear-gradient(135deg,#0d6b5c,#074a3f);color:#fff;text-align:center;padding:80px 0;position:relative;overflow:hidden}
@@ -248,6 +246,19 @@ a:focus-visible,button:focus-visible,.map-filter-btn:focus-visible,.mp-close:foc
   .reveal[data-reveal],.reveal-stagger[data-reveal]>*{opacity:1;transform:none}
   .scroll-hint-line{animation:none}
 }
+/* ═══════ PROGRESSIVE: scroll-driven CSS animations ═══════ */
+@supports (animation-timeline:scroll()){
+  .reveal[data-reveal]{animation:fadeUpScroll auto linear both;animation-timeline:view();animation-range:entry 10% cover 35%}
+  .reveal-stagger[data-reveal]>*{animation:fadeUpStagger auto linear both;animation-timeline:view();animation-range:entry 10% cover 40%}
+  .reveal-stagger[data-reveal]>:nth-child(1){animation-range:entry 10% cover 35%}
+  .reveal-stagger[data-reveal]>:nth-child(2){animation-range:entry 15% cover 40%}
+  .reveal-stagger[data-reveal]>:nth-child(3){animation-range:entry 20% cover 45%}
+  .reveal-stagger[data-reveal]>:nth-child(4){animation-range:entry 25% cover 50%}
+  .reveal-stagger[data-reveal]>:nth-child(5){animation-range:entry 30% cover 55%}
+  .reveal-stagger[data-reveal]>:nth-child(6){animation-range:entry 35% cover 60%}
+  @keyframes fadeUpScroll{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUpStagger{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+}
 </style>
 </head>
 <body>
@@ -321,11 +332,11 @@ a:focus-visible,button:focus-visible,.map-filter-btn:focus-visible,.mp-close:foc
 <div data-reveal class="reveal section-tag" style="color:#119984">The Approach</div>
 <h2 data-reveal class="reveal" style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:10px">Four models. One pipeline. Fundable outcomes.</h2>
 <p data-reveal class="reveal" style="color:rgba(255,255,255,.5);max-width:580px">Humanitai combines four proven models into a single system. Every pound tracked. Every outcome verified.</p>
-<div class="model-grid reveal-stagger" data-reveal>
-<div class="model-card"><span class="model-step">Model 1</span><div class="model-icon">👥</div><h3>CHW Intelligence</h3><p>Trained community liaisons collecting real-time ground truth: needs assessments, photo evidence, location-stamped reports.</p></div>
-<div class="model-card"><span class="model-step">Model 2</span><div class="model-icon">🧠</div><h3>MiroFish Swarm AI</h3><p>Seven dimensions across 12+ data sources. Five agent clusters debate to predict where intervention prevents crisis.</p></div>
-<div class="model-card"><span class="model-step">Model 3</span><div class="model-icon">💰</div><h3>Social Impact Bonds</h3><p>Investors fund upfront. Government pays back only on outcomes. $745M deployed globally across 276 SIBs.</p></div>
-<div class="model-card"><span class="model-step">Model 4</span><div class="model-icon">📊</div><h3>SROI Measurement</h3><p>UK-government-recognised framework. Social outcomes converted to monetary value. "For every £1 invested, £X returned."</p></div>
+<div class="model-stack reveal-stagger" data-reveal>
+<div class="model-card"><span class="step-num">Model 1</span><span class="icon">👥</span><h3>CHW Intelligence</h3><p>Trained community liaisons collecting real-time ground truth: needs assessments, photo evidence, location-stamped reports. 1.3M+ CHWs worldwide proven to cut infant mortality 42% (Brazil) and maternal mortality 73% (Iran).</p></div>
+<div class="model-card"><span class="step-num">Model 2</span><span class="icon">🧠</span><h3>MiroFish Swarm AI</h3><p>Seven dimensions across 12+ data sources. Five agent clusters debate from different perspectives to predict where intervention prevents crisis. Confidence-scored forecasts. Same pattern RAND Corporation identified.</p></div>
+<div class="model-card"><span class="step-num">Model 3</span><span class="icon">💰</span><h3>Social Impact Bonds</h3><p>Investors fund upfront. Government pays back only on outcomes. $745M deployed globally across 276 SIBs. UK pioneered this model at Peterborough Prison in 2010. Humanitai is the measurement layer.</p></div>
+<div class="model-card"><span class="step-num">Model 4</span><span class="icon">📊</span><h3>SROI Measurement</h3><p>UK-government-recognised 8-principle framework. Social outcomes converted to monetary value. "For every £1 invested, £X social value returned." Every pound tracked. Every outcome verified onsite.</p></div>
 </div>
 </div>
 </section>
