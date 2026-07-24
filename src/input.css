@@ -7,15 +7,15 @@
    brand + confident amber accent + vermillion alert.
    ============================================================ */
 @theme {
-  --color-ink:        #03100d;
-  --color-ink-2:      #061913;
-  --color-ink-3:      #0a221b;
-  --color-bone:       #F4F2EA;
-  --color-bone-2:     #e9e3d6;
+  --color-ink:        #000000;
+  --color-ink-2:      #0a0a0a;
+  --color-ink-3:      #141414;
+  --color-bone:       #fafafa;
+  --color-bone-2:     #ececec;
   --color-paper:      #ffffff;
 
   --color-brand:      #00E5C4;   /* electric teal — primary (stronger) */
-  --color-brand-deep: #0b8f74;
+  --color-brand-deep: #00b89c;
   --color-brand-glow: #20f3c4;
 
   --color-amber:      #FFB22E;   /* confident gold accent (stronger) */
@@ -24,10 +24,10 @@
   --color-alert:      #FF4438;   /* vermillion — hard stats (stronger) */
   --color-alert-deep: #d83a1f;
 
-  --color-text-on-dark:   #EAF1EE;
-  --color-text-dim:       #8fa59c;
-  --color-text-on-light:  #16231f;
-  --color-text-light-dim: #5d6f68;
+  --color-text-on-dark:   #f2f2f2;
+  --color-text-dim:       #9aa39f;
+  --color-text-on-light:  #0a0a0a;
+  --color-text-light-dim: #5a5a5a;
 
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -67,8 +67,8 @@
 .btn .arr { transition:transform .3s; } .btn:hover .arr { transform:translateX(4px); }
 
 /* nav */
-nav { transition:background .4s,border-color .4s,padding .4s; border-bottom:1px solid transparent; }
-nav.scrolled { background:rgba(3,16,13,.82); -webkit-backdrop-filter:blur(18px); backdrop-filter:blur(18px); border-bottom:1px solid rgba(255,255,255,.06); }
+nav { transition:background .4s,border-color .4s,padding .4s; border-bottom:1px solid transparent; background:rgba(0,0,0,.55); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); }
+nav.scrolled { background:rgba(0,0,0,.82); -webkit-backdrop-filter:blur(18px); backdrop-filter:blur(18px); border-bottom:1px solid rgba(255,255,255,.08); }
 
 /* ---------- HYPER-FRAME hero stage ---------- */
 .hf-stage { position:relative; height:200vh; }
@@ -79,6 +79,8 @@ nav.scrolled { background:rgba(3,16,13,.82); -webkit-backdrop-filter:blur(18px);
   radial-gradient(60% 60% at 82% 78%,rgba(255,176,32,.12),transparent 55%),
   var(--color-ink); }
 .hf-overlay { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; padding:0 8vw; pointer-events:none; z-index:3; }
+.hf-overlay > * { pointer-events:none; }
+.hf-overlay a, .hf-overlay button { pointer-events:auto; }
 .hf-progress { position:absolute; left:8vw; bottom:7vh; width:min(340px,58vw); height:2px; background:rgba(255,255,255,.1); z-index:3; }
 .hf-progress i { display:block; height:100%; width:0; background:linear-gradient(90deg,var(--color-brand),var(--color-amber)); }
 .hf-hint { position:absolute; right:8vw; bottom:7vh; font-size:.62rem; letter-spacing:.24em; text-transform:uppercase; color:rgba(255,255,255,.32); z-index:3; }
