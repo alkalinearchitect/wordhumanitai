@@ -265,6 +265,25 @@ footer{background:var(--color-ivory-2);border-top:1px solid var(--color-border);
 .js .reveal.in{opacity:1;transform:none}
 .js .reveal-word{display:inline-block;opacity:0;transform:translateY(.45em);transition:opacity .5s ease,transform .5s ease;transition-delay:calc(var(--i,0) * 42ms)}
 .js .reveal-word.in{opacity:1;transform:none}
+/* ═══════ ADVERT / HYPERFRAMES ═══════ */
+.adv-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center;margin-top:18px}
+@media(max-width:900px){.adv-grid{grid-template-columns:1fr;gap:36px}}
+.adv-vid-wrap{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--color-border);background:var(--color-ink);box-shadow:0 18px 50px -28px rgba(11,168,148,.5);aspect-ratio:16/9}
+.adv-vid{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
+.adv-cap{position:absolute;left:0;right:0;bottom:0;padding:22px 24px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,transparent,rgba(6,7,10,.0) 0%,rgba(6,7,10,.78) 42%);pointer-events:none}
+.adv-cap-line{font-family:Fraunces,Georgia,serif;font-weight:700;letter-spacing:-.02em;font-size:clamp(1.15rem,2.4vw,1.7rem);line-height:1.12;color:#fff;opacity:0;transition:opacity .45s ease;transform:translateY(8px)}
+.adv-cap-line.show{opacity:1;transform:none}
+.adv-cap-line .accent{color:var(--color-teal-bright)}
+.adv-cap-beat{font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--color-amber-light);opacity:0;transition:opacity .45s ease}
+.adv-cap-beat.show{opacity:.9}
+.adv-prog{position:absolute;left:24px;right:24px;bottom:8px;height:2px;background:rgba(255,255,255,.18);border-radius:2px;overflow:hidden}
+.adv-prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--color-teal-bright),var(--color-amber-light))}
+.adv-play{position:absolute;top:14px;right:14px;z-index:3;display:inline-flex;align-items:center;gap:7px;font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.04em;color:#04130F;background:var(--color-teal-bright);border:none;border-radius:30px;padding:7px 13px;cursor:pointer;opacity:.92;transition:opacity .2s,transform .2s}
+.adv-play:hover{opacity:1;transform:translateY(-1px)}
+.adv-play .ic{font-size:12px}
+.adv-copy h2{margin-bottom:6px}
+.adv-copy .lede{margin-top:14px}
+.adv-copy .flow{margin-top:30px}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js .rv,.js .reveal,.js .reveal-word{opacity:1!important;transform:none!important;transition:none!important}
@@ -282,6 +301,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   <div class="nav-links" id="navLinks">
     <a href="#act1">The cracks</a>
     <a href="#act2">Method</a>
+    <a href="#advert">How it works</a>
     <a href="#model">Model</a>
     <a href="#data">Intelligence</a>
     <a href="#agent">Agent</a>
@@ -353,6 +373,65 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
     </div>
   </div>
   <div class="scroll-hint">Scroll<div class="scroll-hint-line"></div></div>
+</section>
+
+<!-- ═══════ ADVERT: HYPERFRAMES EXPLAINER ═══════ -->
+<section class="section" id="advert">
+  <div class="wrap">
+    <p class="kicker">The HumanitAI model</p>
+    <div class="adv-grid">
+      <div class="adv-vid-wrap" id="advWrap">
+        <button class="adv-play" id="advPlay" aria-label="Play the HumanitAI film"><span class="ic">&#9654;</span> Play the film</button>
+        <video class="adv-vid" id="advVid" playsinline preload="metadata" muted poster="og-image.jpg">
+          <source src="advert.mp4" type="video/mp4">
+        </video>
+        <div class="adv-cap">
+          <span class="adv-cap-beat" id="advBeat"></span>
+          <span class="adv-cap-line" id="advLine"></span>
+        </div>
+        <div class="adv-prog"><i id="advBar"></i></div>
+      </div>
+      <div class="adv-copy">
+        <h2 class="display">We arrive before the system breaks.</h2>
+        <p class="lede">Britain spends &pound;1.2 trillion a year on public services, yet 14.3 million people remain in poverty — and the help still arrives after the harm is done.</p>
+        <div class="flow">
+          <div class="flow-row rv">
+            <div class="flow-ic">&#128225;</div>
+            <div class="flow-body">
+              <span class="flow-step">Step 01 &middot; Data intake</span>
+              <h3 class="h3">We read the open signals</h3>
+              <p>We pull open-source intelligence from across 18 UK places — welfare claims, hospital referrals, eviction filings, and local indicators — to see pressure building long before it makes the news.</p>
+            </div>
+          </div>
+          <div class="flow-row rv">
+            <div class="flow-ic">&#129302;</div>
+            <div class="flow-body">
+              <span class="flow-step">Step 02 &middot; AI prediction</span>
+              <h3 class="h3">Human Architect forecasts the break</h3>
+              <p>Our multi-agent AI, built on MiroFish, weighs those signals and scores where poverty, homelessness, and NHS waiting lists will fracture next — current confidence 0.81.</p>
+            </div>
+          </div>
+          <div class="flow-row rv">
+            <div class="flow-ic">&#129309;</div>
+            <div class="flow-body">
+              <span class="flow-step">Step 03 &middot; CHW deployment</span>
+              <h3 class="h3">Trained teams go first</h3>
+              <p>We put community health worker teams on the street in those places ahead of the surge — in Middlesbrough, where 47% of children live in poverty, they are already there.</p>
+            </div>
+          </div>
+          <div class="flow-row rv">
+            <div class="flow-ic">&#128202;</div>
+            <div class="flow-body">
+              <span class="flow-step">Step 04 &middot; Outcomes &amp; funding</span>
+              <h3 class="h3">Paid only for what works</h3>
+              <p>Every outcome is measured by social return on investment and funded through Social Impact Bonds, so government repays only once the help is proven to have worked.</p>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top:26px;font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.12rem;line-height:1.4;color:var(--color-dim);max-width:560px">We don&rsquo;t ask the system to move faster. We move to where it will break.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ═══════ ACT1: CRACKS ═══════ -->
@@ -737,6 +816,57 @@ render('all');
     sections.forEach(function(s){if(sc>=s.offsetTop-160)cur=s.getAttribute('id');});
     document.querySelectorAll('.nav-links a').forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+cur);});
   },{passive:true});
+})();
+</script>
+<script>
+// ═══════ Advert: hyperframes caption sync ═══════
+(function(){
+  var vid=document.getElementById('advVid'),
+      beatEl=document.getElementById('advBeat'),
+      lineEl=document.getElementById('advLine'),
+      barEl=document.getElementById('advBar'),
+      playBtn=document.getElementById('advPlay'),
+      wrap=document.getElementById('advWrap');
+  if(!vid)return;
+  // Beat table — single source of truth (seconds). Mirrors render_advert.py.
+  var BEATS=[
+    {t0:0.0, t1:2.0,  beat:'00 · The noise',  line:'Britain drowns in <span class="accent">data noise</span>'},
+    {t0:2.0, t1:5.0,  beat:'01 · The signal',  line:'Our AI finds the <span class="accent">signal</span>'},
+    {t0:5.0, t1:7.5,  beat:'02 · The forecast',line:'We forecast where <span class="accent">crisis lands</span>'},
+    {t0:7.5, t1:10.5, beat:'03 · The deploy',  line:'Trained teams deploy <span class="accent">on the ground</span>'},
+    {t0:10.5,t1:14.0, beat:'04 · The measure', line:'Measured by <span class="accent">outcomes</span>, not promises'}
+  ];
+  var cur=-1;
+  function setBeat(i){
+    if(i===cur)return; cur=i;
+    if(i<0){beatEl.classList.remove('show');lineEl.classList.remove('show');return;}
+    var b=BEATS[i];
+    beatEl.textContent=b.beat;
+    lineEl.innerHTML=b.line;
+    beatEl.classList.add('show');
+    lineEl.classList.add('show');
+  }
+  function onTime(){
+    var t=vid.currentTime, dur=vid.duration||14, shown=-1;
+    for(var i=0;i<BEATS.length;i++){ if(t>=BEATS[i].t0 && t<BEATS[i].t1){shown=i;break;} }
+    setBeat(shown);
+    barEl.style.width=(Math.min(1,t/dur)*100)+'%';
+  }
+  vid.addEventListener('timeupdate',onTime);
+  vid.addEventListener('play',function(){playBtn.style.opacity=0;playBtn.style.pointerEvents='none';});
+  vid.addEventListener('pause',function(){playBtn.style.opacity=.92;playBtn.style.pointerEvents='auto';});
+  vid.addEventListener('ended',function(){playBtn.style.opacity=.92;playBtn.style.pointerEvents='auto';cur=-2;setBeat(-1);barEl.style.width='0%';});
+  // Muted autoplay-prone: user taps to play with sound
+  playBtn.addEventListener('click',function(){
+    vid.currentTime=0; vid.muted=false;
+    var p=vid.play();
+    if(p&&p.catch)p.catch(function(){vid.muted=true;vid.play();});
+  });
+  // Devices with no autoplay: show first caption on view
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)setBeat(0);});},{threshold:.5});
+    io.observe(wrap);
+  } else { setBeat(0); }
 })();
 </script>
 </body>
