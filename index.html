@@ -297,6 +297,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 /* ═══════ WATER SHIMMER ═══════ */
 @keyframes shimmer{0%,100%{opacity:.5}50%{opacity:.9}}
 .water-glint{animation:shimmer 4s ease-in-out infinite}
+/* ─── scroll progress (signature) ─── */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;max-width:100%;background:linear-gradient(90deg,var(--accent),var(--gold));z-index:200;transition:width .1s linear}
+/* ─── MOBILE COLLAPSE for grids that lacked breakpoints ─── */
+@media(max-width:820px){
+  .statband .grid{grid-template-columns:repeat(2,1fr);gap:28px 0}
+  .statband .cell{padding:0 18px}
+  .statband .cell:first-child{padding-left:18px}
+  .statband .cell:nth-child(odd){border-left:0;padding-left:0}
+  .fifth-head{grid-template-columns:1fr;gap:32px}
+  .fifth-visual{height:300px}
+  .dispatch{grid-template-columns:1fr;gap:10px}
+  .pilot-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .statband .grid{grid-template-columns:1fr}
+  .statband .cell{border-left:0;padding:0}
+  .statband .cell+.cell{border-top:1px solid var(--hair-dark);padding-top:28px;margin-top:28px}
+}
 /* ═══════ HOW IT WORKS (loop) ═══════ */
 .loop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
 .loop-step{background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:var(--radius-sm);padding:24px;transition:border-color .25s,transform .25s var(--ease)}
@@ -428,6 +446,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 </head>
 <body class="bg-ink">
 <a href="#top" class="skip-link">Skip to content</a>
+<div id="progress" aria-hidden="true"></div>
 
 <!-- ═══════ LIVE TICKER ═══════ -->
 <div class="ticker" aria-label="Live UK crisis & OSINT headlines">
@@ -835,6 +854,10 @@ function navState(){
   nav.classList.toggle('scrolled',window.scrollY>30);
 }
 window.addEventListener('scroll',navState,{passive:true}); window.addEventListener('resize',navState); navState();
+// signature scroll-progress bar
+var prog=document.getElementById('progress');
+function progState(){ if(prog){ var h=document.documentElement.scrollHeight-window.innerHeight; prog.style.width=(h>0?(window.scrollY/h*100):0)+'%'; } }
+window.addEventListener('scroll',progState,{passive:true}); progState();
 // reveal + count-up + bar fill
 function countUp(el){
   var target=parseFloat(el.getAttribute('data-count'));
