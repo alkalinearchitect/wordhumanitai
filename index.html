@@ -66,8 +66,29 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.03e
 .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
 .measure{max-width:640px}
 
+/* ═══════ LIVE TICKER (very top, Sky/Nasdaq style) ═══════ */
+.ticker{position:fixed;top:0;left:0;right:0;z-index:102;height:27px;background:#0B0B0D;border-bottom:1px solid var(--hair-dark);overflow:hidden;display:flex;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px}
+.ticker .live{background:var(--accent);color:#fff;font-weight:700;font-size:9.5px;letter-spacing:.12em;padding:0 9px;height:27px;display:flex;align-items:center;gap:6px;flex-shrink:0;z-index:2}
+.ticker .live i{width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 1.4s infinite}
+.ticker .track{display:flex;align-items:center;white-space:nowrap;will-change:transform;animation:tick 60s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+.ticker .item{display:inline-flex;align-items:center;gap:8px;padding:0 22px;color:var(--on-dark);flex-shrink:0}
+.ticker .item a{color:inherit;text-decoration:none}
+.ticker .item a:hover{color:var(--accent)}
+.ticker .tag{font-weight:700;font-size:9px;letter-spacing:.08em;padding:1px 6px;border-radius:3px;flex-shrink:0}
+.ticker .sep{color:var(--hair-dark-2);padding:0 4px}
+.tag-poverty{background:rgba(224,50,43,.18);color:#FF6A5B}
+.tag-homeless{background:rgba(255,106,43,.18);color:#FF8A4D}
+.tag-nhs{background:rgba(245,184,0,.18);color:var(--gold)}
+.tag-mental{background:rgba(139,92,246,.20);color:#A78BFA}
+.tag-lonely{background:rgba(59,160,255,.18);color:#5FB0FF}
+.tag-osint{background:rgba(255,77,46,.20);color:var(--accent-bright)}
+.tag-humanitai{background:var(--accent);color:#fff}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker .track{animation:none;overflow-x:auto}}
+
 /* ═══════ STATUS STRIP ═══════ */
-.statusbar{position:fixed;top:0;left:0;right:0;z-index:101;background:var(--ink);border-bottom:1px solid var(--hair-dark);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:var(--on-dark-dim);height:30px;display:flex;align-items:center;overflow:hidden;white-space:nowrap}
+.statusbar{position:fixed;top:27px;left:0;right:0;z-index:101;background:var(--ink);border-bottom:1px solid var(--hair-dark);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:var(--on-dark-dim);height:30px;display:flex;align-items:center;overflow:hidden;white-space:nowrap}
 .statusbar .wrap{display:flex;align-items:center;gap:18px;width:100%}
 .statusbar .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(255,77,46,.22);animation:pulse 2.4s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
@@ -75,7 +96,7 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.03e
 .statusbar .sep{color:var(--hair-dark-2)}
 
 /* ═══════ NAV ═══════ */
-#nav{position:fixed;top:30px;left:0;right:0;z-index:100;transition:background .3s,border-color .3s,color .3s;background:rgba(11,11,13,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;color:var(--on-dark)}
+#nav{position:fixed;top:57px;left:0;right:0;z-index:100;transition:background .3s,border-color .3s,color .3s;background:rgba(11,11,13,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;color:var(--on-dark)}
 #nav.light{background:rgba(244,241,233,.86);color:var(--on-paper);border-bottom-color:var(--hair-light)}
 #nav.scrolled{border-bottom-color:var(--hair-dark)}
 #nav.light.scrolled{border-bottom-color:var(--hair-light)}
@@ -92,7 +113,7 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.03e
 .nav-cta:hover{background:var(--accent-deep);transform:translateY(-1px)}
 
 /* ═══════ HERO (dark, full-bleed) ═══════ */
-.hero{min-height:100vh;display:grid;align-items:center;padding:150px 0 80px;position:relative;overflow:hidden;grid-template-columns:1.12fr .88fr;gap:56px;background:var(--ink)}
+.hero{min-height:100vh;display:grid;align-items:center;padding:178px 0 80px;position:relative;overflow:hidden;grid-template-columns:1.12fr .88fr;gap:56px;background:var(--ink)}
 .hero::before{content:"";position:absolute;inset:0;background:
   radial-gradient(900px 520px at 82% 32%,rgba(255,77,46,.16),transparent 58%),
   radial-gradient(700px 500px at 8% 88%,rgba(139,92,246,.10),transparent 60%);
@@ -267,6 +288,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 </head>
 <body class="bg-ink">
 <a href="#top" class="skip-link">Skip to content</a>
+
+<!-- ═══════ LIVE TICKER (Sky/Nasdaq style) ═══════ -->
+<div class="ticker" aria-label="Live UK crisis & OSINT headlines">
+  <div class="live"><i></i>LIVE</div>
+  <div class="track" id="tickerTrack"></div>
+</div>
 
 <!-- ═══════ STATUS STRIP ═══════ -->
 <div class="statusbar"><div class="wrap">
@@ -446,6 +473,38 @@ window.addEventListener('scroll',navState,{passive:true}); window.addEventListen
 var ro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');ro.unobserve(en.target);}});},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
 window.addEventListener('load',function(){ document.querySelectorAll('.hero .rv').forEach(function(el,i){ setTimeout(function(){el.classList.add('in');},120+i*90); }); });
+
+// LIVE TICKER — Sky/Nasdaq style. Real, verifiable items (HumanitAI OSINT + BBC UK headlines pulled 2026-07-25).
+// To make it fully live: replace TICKER_ITEMS with a fetch() to your own RSS/CORS-proxy endpoint that returns the same shape.
+var TICKER_ITEMS=[
+  {tag:'HUMANITAI',cls:'tag-humanitai',t:'14.3M people in poverty across the UK — our forecast maps the 18 towns where it hits hardest',u:'#data'},
+  {tag:'NHS',cls:'tag-nhs',t:'NHS waiting list stands at 7.3M — we model the towns where delay becomes crisis',u:'#data'},
+  {tag:'HOMELESS',cls:'tag-homeless',t:'354K homeless in England tonight; gov.uk records 132,410 households in temporary accommodation (Jun 2025)',u:'https://www.gov.uk/government/statistics/statutory-homelessness-in-england-april-to-june-2025'},
+  {tag:'POVERTY',cls:'tag-poverty',t:'4.3M children growing up in poverty — End Child Poverty Coalition',u:'https://www.endchildpoverty.org.uk'},
+  {tag:'MENTAL',cls:'tag-mental',t:'1 in 6 adults experience a common mental health problem; loneliness is the hidden driver',u:'https://www.mind.org.uk'},
+  {tag:'LONELY',cls:'tag-lonely',t:'The 4th Space: a warm room, on a schedule, that lonely people return to — our answer to isolation',u:'#fourth-space'},
+  {tag:'OSINT',cls:'tag-osint',t:'Our OSINT reads the open data and flags the towns about to tip — before the ambulance does',u:'#data'},
+  {tag:'BBC',cls:'tag-nhs',t:'Heatwave conditions to return for many as UK temperatures to peak at 35C',u:'https://www.bbc.co.uk/news/uk'},
+  {tag:'BBC',cls:'tag-homeless',t:'Police declare major incident as wind change increases Cairngorms wildfire risk',u:'https://www.bbc.co.uk/news/uk'},
+  {tag:'HUMANITAI',cls:'tag-humanitai',t:'Model confidence 0.81 across 18 UK towns — updated Jul 2026',u:'#data'}
+];
+(function(){
+  var track=document.getElementById('tickerTrack'); if(!track) return;
+  function build(){
+    return TICKER_ITEMS.map(function(it){
+      var inner='<span class="tag '+it.cls+'">'+it.tag+'</span><span class="item-txt">'+it.t+'</span>';
+      var href=it.u&&it.u.charAt(0)==='#'?it.u:it.u;
+      var a=document.createElement('a'); a.href=it.u;
+      if(it.u.indexOf('http')===0){a.target='_blank';a.rel='noopener';}
+      a.innerHTML=inner;
+      var item=document.createElement('span'); item.className='item'; item.appendChild(a);
+      return item;
+    });
+  }
+  // duplicate the set so the -50% loop is seamless
+  var set=build(); var dup=build();
+  set.concat(dup).forEach(function(n){track.appendChild(n);});
+})();
 
 // dashboard
 var DIMS=['poverty','homelessness','nhs','mental','isolation'];
