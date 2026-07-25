@@ -101,7 +101,9 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.03e
 .hero-stakes{font-size:1.08rem;line-height:1.5;color:var(--on-dark);font-weight:600;max-width:520px;margin-bottom:18px;border-left:3px solid var(--accent);padding-left:16px}
 .hero-sub{font-size:1.1rem;line-height:1.6;color:var(--on-dark-dim);max-width:520px;margin-bottom:34px;font-weight:400}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:Inter,sans-serif;font-size:14px;font-weight:700;line-height:1;cursor:pointer;border-radius:999px;padding:15px 26px;min-height:52px;transition:background .22s,color .22s,border-color .22s,transform .22s;border:1.5px solid transparent}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:Inter,sans-serif;font-size:14px;font-weight:700;line-height:1;cursor:pointer;border-radius:3px;padding:15px 26px;min-height:52px;transition:background .22s,color .22s,border-color .22s,transform .22s;border:1.5px solid transparent}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--accent);color:#fff;padding:10px 16px;border-radius:3px;z-index:200;font-weight:700;font-size:13px}
+.skip-link:focus{left:12px;top:38px}
 .btn .arr{transition:transform .22s}
 .btn:hover .arr{transform:translateX(4px)}
 .btn-primary{background:var(--accent);color:#fff}
@@ -168,7 +170,7 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.03e
 #data .lede{color:var(--on-dark-dim)}
 #data .src-head{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--hair-dark);border-bottom:1px solid var(--hair-dark);padding:14px 0;margin-bottom:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-dim)}
 #data .viz-filters{display:flex;flex-wrap:wrap;gap:9px;margin:30px 0 26px}
-#data .viz-filters button{appearance:none;border:1px solid var(--hair-dark);background:rgba(255,255,255,.03);color:var(--on-dark-dim);padding:.5rem .8rem .5rem 1rem;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s,background .2s;display:inline-flex;align-items:center;gap:8px;font-family:Inter,sans-serif}
+#data .viz-filters button{appearance:none;border:1px solid var(--hair-dark);background:rgba(255,255,255,.03);color:var(--on-dark-dim);padding:.6rem 1rem .6rem 1.1rem;border-radius:3px;font-size:.8rem;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s,background .2s;display:inline-flex;align-items:center;gap:8px;font-family:Inter,sans-serif;min-height:44px}
 #data .viz-filters button i{width:9px;height:9px;border-radius:50%;display:inline-block}
 #data .viz-filters button:hover{border-color:var(--accent);color:#fff}
 #data .viz-filters button.active{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:700}
@@ -258,6 +260,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 </style>
 </head>
 <body class="bg-ink">
+<a href="#top" class="skip-link">Skip to content</a>
 
 <!-- ═══════ STATUS STRIP ═══════ -->
 <div class="statusbar"><div class="wrap">
@@ -409,7 +412,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         <a href="mailto:hello@humanitai.uk">Bring us in</a>
       </div>
     </div>
-    <div class="foot-trust"><strong>© 2026 HumanitAI CIC.</strong> Forecasts free to share with credit. Built to end the crisis, not own it. · <a href="legal.html">Legal &amp; IP</a> · hello@humanitai.uk</div>
+    <div class="foot-trust"><strong>© 2026 HumanitAI CIC.</strong> A UK Community Interest Company founded by Tyson Architect. Registered in England &amp; Wales — Companies House No. <strong>[CIC-REG-NUMBER]</strong>. Forecasts free to share with credit. Built to end the crisis, not own it. · <a href="legal.html">Legal &amp; IP</a> · hello@humanitai.uk</div>
   </div>
 </footer>
 
@@ -474,9 +477,11 @@ function seg(d){var tot=DIMS.reduce(function(a,k){return a+d[k];},0);
 (function(){var top=data.slice().sort(function(a,b){return comp(b.d)-comp(a.d);}).slice(0,4);
  document.getElementById('hpRows').innerHTML=top.map(function(r){var c=comp(r.d);return '<div class="hp-row"><span class="hp-city">'+r.id+'</span><span class="hp-bar"><i style="width:'+c+'%"></i></span><span class="hp-sev">'+c+'</span></div>';}).join('');})();
 var vf=document.getElementById('vf');
+vf.setAttribute('role','group');vf.setAttribute('aria-label','Re-rank towns by pressure');
 var filters=[['all','All',null]].concat(DIMS.map(function(k){return [k,LABEL[k],COLORS[k]];}));
-vf.innerHTML=filters.map(function(f,i){var chip=f[2]?'<i style="background:'+f[2]+'"></i>':'';return '<button data-f="'+f[0]+'"'+(i===0?' class="active"':'')+'>'+chip+f[1]+'</button>';}).join('');
+vf.innerHTML=filters.map(function(f,i){var chip=f[2]?'<i style="background:'+f[2]+'"></i>':'';return '<button type="button" data-f="'+f[0]+'" aria-pressed="'+(i===0?'true':'false')+'"'+(i===0?' class="active"':'')+'>'+chip+f[1]+'</button>';}).join('');
 var list=document.getElementById('vl'),av='all';
+list.setAttribute('aria-live','polite');list.setAttribute('aria-label','Towns ranked by severity');
 function render(f){
   av=f;
   var rows;
@@ -491,7 +496,7 @@ function render(f){
   });
   requestAnimationFrame(function(){list.querySelectorAll('.rv').forEach(function(el,i){setTimeout(function(){el.classList.add('in');},i*26+60);});});
 }
-vf.querySelectorAll('button').forEach(function(b){b.onclick=function(){vf.querySelectorAll('button').forEach(function(x){x.classList.remove('active');});b.classList.add('active');render(b.dataset.f);};});
+vf.querySelectorAll('button').forEach(function(b){b.onclick=function(){vf.querySelectorAll('button').forEach(function(x){x.classList.remove('active');x.setAttribute('aria-pressed','false');});b.classList.add('active');b.setAttribute('aria-pressed','true');render(b.dataset.f);};});
 render('all');
 </script>
 </body>
