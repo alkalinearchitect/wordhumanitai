@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#0B0B0D">
+<title>Legal &amp; IP — HumanitAI</title>
+<meta name="description" content="How HumanitAI's forecasts, data and brand may be used. Written to be understood, not to hide behind.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0B0D'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-weight='800' font-size='20' fill='%23FF4D2E' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0B0D; --ink-2:#141418; --ink-3:#1C1C22;
+  --paper:#F4F1E9; --paper-2:#EAE5D8;
+  --accent:#FF4D2E; --accent-deep:#D8341A;
+  --gold:#F5B800;
+  --on-dark:#EDE9DF; --on-dark-dim:#9A958A; --on-dark-dim2:#6F6A60;
+  --on-paper:#0B0B0D; --on-paper-dim:#56514A;
+  --hair-dark:rgba(255,255,255,.12); --hair-dark-2:rgba(255,255,255,.07);
+  --hair-light:#E2DCCF; --hair-light-2:#D6CFBE;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-optical-sizing:auto}
+body{background:var(--ink);color:var(--on-dark);font-family:Inter,system-ui,sans-serif;line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.03em;line-height:1.05}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.wrap{max-width:760px;margin:0 auto;padding:0 28px}
+.statusbar{position:fixed;top:0;left:0;right:0;z-index:101;background:var(--ink);border-bottom:1px solid var(--hair-dark);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:var(--on-dark-dim);height:30px;display:flex;align-items:center}
+.statusbar .wrap{display:flex;align-items:center;gap:18px;width:100%}
+.statusbar .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(255,77,46,.22);animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.statusbar b{color:var(--on-dark);font-weight:700}
+.statusbar .sep{color:var(--hair-dark-2)}
+#nav{position:fixed;top:30px;left:0;right:0;z-index:100;background:rgba(11,11,13,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--hair-dark);color:var(--on-dark)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:21px;letter-spacing:-.03em}
+.brand b{color:var(--accent)}
+.nav-links a{font-size:13px;font-weight:600;color:var(--on-dark-dim);margin-left:26px;transition:color .2s}
+.nav-links a:hover{color:var(--on-dark)}
+.nav-cta{background:var(--accent);color:#fff;border-radius:999px;padding:9px 18px;font-weight:700;font-size:13px;margin-left:22px}
+.hero{padding:150px 0 70px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 420px at 80% 20%,rgba(255,77,46,.14),transparent 60%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:12px;margin-bottom:22px}
+.kicker::before{content:"";width:28px;height:2px;background:var(--accent)}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:900;line-height:.98;letter-spacing:-.035em;color:#fff;margin-bottom:20px;max-width:14ch}
+.hero h1 .em{color:var(--accent);font-style:italic}
+.hero p.lede{font-size:1.12rem;color:var(--on-dark-dim);max-width:54ch;line-height:1.6}
+.circle{margin:80px 0 20px}
+.circle .ring{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.circle .ring .num{background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:6px;padding:2px 7px;line-height:1;color:var(--on-dark)}
+.circle h2{font-size:clamp(1.6rem,4vw,2.4rem);color:#fff;margin-bottom:18px;max-width:18ch}
+.circle p{font-size:1.08rem;line-height:1.7;color:var(--on-dark);max-width:62ch}
+.circle p + p{margin-top:16px}
+.divider{border:0;border-top:1px solid var(--hair-dark);margin:56px 0}
+.terms{background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:16px;padding:30px 32px;margin-top:20px}
+.terms h3{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.terms ul{list-style:none}
+.terms li{font-size:1.02rem;line-height:1.6;color:var(--on-dark);padding:12px 0;border-top:1px solid var(--hair-dark-2);display:flex;gap:14px}
+.terms li:first-child{border-top:0}
+.terms li b{color:#fff;font-family:'JetBrains Mono',monospace;font-size:.82rem;min-width:96px;flex-shrink:0;padding-top:2px}
+.terms li span{color:var(--on-dark-dim)}
+.foot-back{margin:64px 0 100px}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:Inter,sans-serif;font-size:14px;font-weight:700;border-radius:999px;padding:15px 26px;min-height:52px;background:var(--accent);color:#fff;transition:background .2s,transform .2s}
+.btn:hover{background:var(--accent-deep);transform:translateY(-1px)}
+footer{background:var(--ink);border-top:1px solid var(--hair-dark);padding:40px 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--on-dark-dim);letter-spacing:.02em}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer b{color:var(--on-dark)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+@media(max-width:640px){.wrap{padding:0 20px}.nav-links a{margin-left:16px}.nav-cta{display:none}.terms li{flex-direction:column;gap:4px}}
+</style>
+</head>
+<body class="bg-ink">
+
+<div class="statusbar"><div class="wrap">
+  <span class="dot"></span>
+  <span>LEGAL &amp; IP</span><span class="sep">/</span>
+  <span>© 2026 HUMANITAI CIC</span><span class="sep">/</span>
+  <span>WRITTEN TO BE READ</span>
+</div></div>
+
+<nav id="nav"><div class="nav-inner">
+  <a href="index.html" class="brand">Humanit<b>AI</b></a>
+  <div class="nav-links">
+    <a href="index.html#data">Intelligence</a>
+    <a href="index.html#fourth-space">4th Space</a>
+    <a href="mailto:hello@humanitai.uk" class="nav-cta">Back the work</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="kicker">Legal &amp; intellectual property</p>
+  <h1>We didn't build this to <span class="em">own</span> the problem. We built it to <span class="em">end</span> it.</h1>
+  <p class="lede">Most legal pages are written so you won't read them. This one is written so you will — because if you understand the terms, you're more likely to use the work. And that's the whole point.</p>
+</div></header>
+
+<main class="wrap">
+
+  <!-- WHY -->
+  <section class="circle">
+    <div class="ring"><span class="num">01</span>Why</div>
+    <h2>The insight exists to get ahead of the crisis — not to sit on it.</h2>
+    <p>Every map, model and forecast on this site is built to arrive before the ambulance does. If our reading of the open data helps you act sooner — a council, a clinician, a neighbour — that is the mission doing its job.</p>
+    <p>So we don't gatekeep the signal. We give it. What follows are the simple rules for doing that honourably.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HOW -->
+  <section class="circle">
+    <div class="ring"><span class="num">02</span>How</div>
+    <h2>Share the signal. Credit the source. Don't sell the silence.</h2>
+    <p>You're free to quote, screenshot and redistribute our public forecasts for non-commercial good — as long as HumanitAI is named and the analysis isn't repackaged as your own.</p>
+    <p>The towns aren't ours. The suffering isn't ours. The insight is ours to give, not to lock behind a paywall.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- WHAT -->
+  <section class="circle">
+    <div class="ring"><span class="num">03</span>What</div>
+    <h2>The terms, in plain English.</h2>
+    <div class="terms">
+      <h3>© HumanitAI CIC, 2026</h3>
+      <ul>
+        <li><b>Ours</b><span>The forecasts, writing, design and the composite severity model on this site are the intellectual property of HumanitAI CIC.</span></li>
+        <li><b>Public data</b><span>The underlying figures — ONS, MHCLG, NHS England, End Child Poverty — belong to the public. We only read them first. No copyright is claimed over source statistics.</span></li>
+        <li><b>You may</b><span>Link to us, quote us, and reuse our analysis for education, journalism, research or community action. Credit "HumanitAI" and link back where you can.</span></li>
+        <li><b>You may not</b><span>Present our forecasts as your own work, use them to mislead, or resell them without our written agreement.</span></li>
+        <li><b>Our name</b><span>"HumanitAI" and our logo are trademarks of the CIC. Don't use them in a way that implies we back or partner with you unless we do.</span></li>
+        <li><b>No guarantee</b><span>Forecasts are model outputs, not certainties. They're a prompt to look closer — not a substitute for professional advice.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="foot-back">
+    <a href="mailto:hello@humanitai.uk" class="btn">Questions? Talk to us &rarr;</a>
+  </div>
+
+</main>
+
+<footer><div class="wrap">
+  <span><b>© 2026 HumanitAI CIC.</b> Forecasts free to share with credit.</span>
+  <span>Built to end the crisis, not own it.</span>
+</div></footer>
+
+</body>
+</html>
