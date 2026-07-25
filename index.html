@@ -24,7 +24,7 @@
 }
 </script>
 <title>HumanitAI CIC. Predictive community intelligence with a human front door</title>
-<meta name="description" content="HumanitAI helps communities identify rising social, health and economic pressure before it becomes crisis. It directs support towards the people and places where earlier action may have the greatest impact.">
+<meta name="description" content="HumanitAI is a UK CIC using public data and AI to spot rising community pressure early, then connect people to local help before crisis.">
 <meta property="og:title" content="HumanitAI. An early-warning and prevention platform for communities">
 <meta property="og:description" content="We bring together public data, local knowledge and community voices to understand where pressure is increasing, then help residents, charities, councils and funders see it earlier and coordinate practical action before problems become crises. In pilot.">
 <meta property="og:type" content="website">
@@ -42,11 +42,11 @@
 <script>document.documentElement.className+=' js';</script>
 <noscript><style>.rv,.rv-rise{opacity:1!important;transform:none!important;clip-path:none!important}.ticker .track{overflow-x:auto}</style></noscript>
 <style>
-/* ═══════ TOKENS — "Editorial Noir / Forecast Terminal" refined ═══════ */
+/* ═══════ TOKENS ,  "Editorial Noir / Forecast Terminal" refined ═══════ */
 :root{
   --ink:#0A0A0B; --ink-2:#121214; --ink-3:#1A1A1E; --ink-4:#232329;
   --paper:#F6F3EC; --paper-2:#EEE9DE; --paper-3:#E4DDCF;
-  /* ONE restrained accent — used sparingly (primary CTA, signature line, status dots).
+  /* ONE restrained accent ,  used sparingly (primary CTA, signature line, status dots).
      Never flood fills/kickers/links. This is the anti-"ad-colour" rule. */
   --accent:#D6452B; --accent-deep:#B2351C; --accent-bright:#E8654A;
   --water:#3BA0FF; --water-deep:#1E5E8C; --water-soft:#BFE0FF;
@@ -185,7 +185,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.035em;li
 .statband .n b{color:var(--accent)}
 .statband .l{font-size:11px;color:var(--on-dark-dim);text-transform:uppercase;letter-spacing:.1em;margin-top:14px;line-height:1.5;max-width:210px}
 
-/* ═══════ 5TH SPACE (paper — contrast therapy) ═══════ */
+/* ═══════ 5TH SPACE (paper ,  contrast therapy) ═══════ */
 .fifth{background:var(--paper);color:var(--on-paper);position:relative;overflow:hidden}
 .fifth::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 600px at 85% 10%,rgba(59,160,255,.08),transparent 60%);pointer-events:none}
 .fifth .wrap{position:relative;z-index:2}
@@ -237,7 +237,7 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.035em;li
 #data .viz-reg{font-size:.78rem;color:var(--on-dark-dim);margin-left:8px;flex-basis:100%;margin-top:2px}
 #data .viz-sev{font-family:var(--font-mono);font-size:1.9rem;color:#fff;text-align:right;font-weight:700;white-space:nowrap}
 #data .viz-sev small{display:block;font-family:var(--font-mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-dim)}
-/* composite severity meter — bar length = score 0-100 (honest ratio on mobile) */
+/* composite severity meter ,  bar length = score 0-100 (honest ratio on mobile) */
 #data .viz-meter{height:9px;border-radius:5px;background:rgba(255,255,255,.06);overflow:hidden;margin-top:12px}
 #data .viz-meter i{display:block;height:100%;border-radius:5px;width:0;background:linear-gradient(90deg,var(--accent-deep),var(--accent));transition:width .9s var(--ease)}
 #data .viz-track{height:10px;border-radius:5px;background:rgba(255,255,255,.06);overflow:hidden;display:flex;gap:2px;margin-top:7px}
@@ -504,6 +504,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   </div>
   <button class="nav-burger" id="navBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></nav>
+<main>
 
 <!-- ═══════ HERO ═══════ -->
 <section class="hero" id="top">
@@ -512,7 +513,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <p class="kicker rv">Predictive community intelligence · with a human front door</p>
       <h1 class="rv-rise">We see community pressure rising <span class="em">before</span> it becomes crisis. We then connect people to help, in the places that need it most.</h1>
       <p class="hero-stakes rv">HumanitAI is a UK Community Interest Company. We combine predictive intelligence with trusted human connection to help communities act earlier: bringing together public data, local knowledge and advanced forecasting to identify rising social, health and economic pressure. It directs support, education and prevention towards the people and places where earlier action may have the greatest impact. We are in pilot. We do not yet forecast crises with certainty.</p>
-      <p class="hero-sub rv">Community problems are usually counted too late: homelessness after someone loses their home, hospital demand after health deteriorates, crisis after isolation becomes severe. We bring together the analytical system <b>and</b> a physical, welcoming front door. Community sauna, cold immersion and social wellbeing. So that insight turns into a relationship, and a relationship turns into early help. <b>Our pilot will test whether the model works in practice.</b></p>
+      <p class="hero-sub rv" id="pilot">Community problems are usually counted too late: homelessness after someone loses their home, hospital demand after health deteriorates, crisis after isolation becomes severe. We bring together the analytical system <b>and</b> a physical, welcoming front door. Community sauna, cold immersion and social wellbeing. So that insight turns into a relationship, and a relationship turns into early help. <b>Our pilot will test whether the model works in practice.</b></p>
       <div class="hero-actions rv">
         <a href="#how" class="btn btn-primary">How it works <span class="arr">&rarr;</span></a>
         <a href="#data" class="btn btn-ghost">See the prototype</a>
@@ -529,7 +530,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   </div>
 </section>
 
-<!-- ═══════ STAT BAND — real UK context, sourced ═══════ -->
+<!-- ═══════ STAT BAND ,  real UK context, sourced ═══════ -->
 <section class="statband">
   <div class="wrap"><div class="grid">
     <div class="cell"><div class="n" data-count="14.3" data-suffix="M"><b>14.3M</b></div><div class="l">People in poverty across the UK <a href="https://www.endchildpoverty.org.uk" target="_blank" rel="noopener" style="color:var(--accent);font-size:.8em">&nearr; ONS</a></div></div>
@@ -557,7 +558,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   </div>
 </section>
 
-<!-- ═══════ 5TH SPACE — CONTRAST THERAPY (proposed concept) ═══════ -->
+<!-- ═══════ 5TH SPACE ,  CONTRAST THERAPY (proposed concept) ═══════ -->
 <section class="section tight fifth" id="fifth-space">
   <div class="wrap">
     <div class="fifth-head">
@@ -630,9 +631,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     </div>
 
     <div class="fifth-stats">
-      <div class="figure impact"><div class="n" data-count="2" data-prefix=""><b>2</b></div><div class="l">Core rituals — sauna + ice bath — that draw people in (proposed)</div></div>
-      <div class="figure impact"><div class="n" data-count="60" data-prefix="~"><b>~60</b></div><div class="l">People held per session / week — proposed design target</div></div>
-      <div class="figure impact"><div class="n"><b>x</b></div><div class="l">Communities reached by a mobile unit vs one fixed site — the bet we're testing</div></div>
+      <div class="figure impact"><div class="n" data-count="2" data-prefix=""><b>2</b></div><div class="l">Core rituals ,  sauna + ice bath ,  that draw people in (proposed)</div></div>
+      <div class="figure impact"><div class="n" data-count="60" data-prefix="~"><b>~60</b></div><div class="l">People held per session / week ,  proposed design target</div></div>
+      <div class="figure impact"><div class="n"><b>x</b></div><div class="l">Communities reached by a mobile unit vs one fixed site ,  the bet we're testing</div></div>
     </div>
   </div>
 </section>
@@ -641,9 +642,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <section class="section air" id="data">
   <div class="wrap">
     <p class="kicker-tag rv"><span class="num">03</span>Prototype · illustrative data</p>
-    <h2 class="statement rv-rise" style="font-size:clamp(1.9rem,4.6vw,3rem)">What the community dashboard could show — a working prototype.</h2>
+    <h2 class="statement rv-rise" style="font-size:clamp(1.9rem,4.6vw,3rem)">What the community dashboard could show ,  a working prototype.</h2>
     <p class="lede rv">This is a demonstration of the dashboard interface using <b>illustrative example data</b>, not live forecasts or verified findings. It shows how pressure signals could be presented: current condition, direction of change, main pressures, and recommended next steps. In the pilot, real signals will be validated with local partners before any claim is made.</p>
-    <p class="src-note" style="margin-top:-6px">Illustrative only. The 18 example towns and their scores are placeholder design data to show the interface — they are not HumanitAI's verified results and should not be read as forecasts. Confidence scores are not yet published.</p>
+    <p class="src-note" style="margin-top:-6px">Illustrative only. The 18 example towns and their scores are placeholder design data to show the interface ,  they are not HumanitAI's verified results and should not be read as forecasts. Confidence scores are not yet published.</p>
     <div class="viz-filters rv" id="vf"></div>
     <div class="src-head"><span>Rank · Example community</span><span>Illustrative severity</span></div>
     <div class="viz-list" id="vl"></div>
@@ -653,13 +654,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     <div class="pc-wrap rv">
       <p class="kicker-tag" style="margin-bottom:18px"><span class="num">03a</span>Postcode check-in · prototype</p>
       <h3 style="font-family:var(--font-serif);font-size:1.5rem;color:#fff;margin-bottom:6px">Know how your community is holding.</h3>
-      <p style="color:var(--on-dark-dim);font-size:.96rem;margin-bottom:18px;max-width:600px">Enter a postcode to see a simple read of current community condition, main pressures, and direction of change. This is a <b>demonstration</b> using illustrative data — real postcode signals will be validated with local partners in the pilot.</p>
+      <p style="color:var(--on-dark-dim);font-size:.96rem;margin-bottom:18px;max-width:600px">Enter a postcode to see a simple read of current community condition, main pressures, and direction of change. This is a <b>demonstration</b> using illustrative data ,  real postcode signals will be validated with local partners in the pilot.</p>
       <div class="pc-row">
         <input class="pc-input" id="pcInput" placeholder="e.g. BS1 4ST (Bristol)" aria-label="Enter a postcode">
         <button class="pc-btn" id="pcBtn" type="button">Check</button>
       </div>
       <div class="pc-result" id="pcResult"></div>
-      <p class="pc-note" id="pcNote">Try a Bristol postcode (BS1–BS16) for an illustrative example. Any other entry returns a clear “not yet modelled” message — we are not implying coverage we don’t have.</p>
+      <p class="pc-note" id="pcNote">Try a Bristol postcode (BS1-BS16) for an illustrative example. Any other entry returns a clear “not yet modelled” message ,  we are not implying coverage we don’t have.</p>
     </div>
 
     <!-- LOCAL HELP DIRECTORY (prototype) -->
@@ -673,7 +674,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
     <!-- COMMUNITY SIGNAL (anonymous check-in) -->
     <div class="signal rv">
-      <h3>Community Signal — tell us what you see</h3>
+      <h3>Community Signal ,  tell us what you see</h3>
       <p class="sub">Anonymous residents and organisations can submit observations. This form is a front-end prototype: submissions are not yet stored or sent anywhere.</p>
       <form id="signalForm" onsubmit="return false">
         <label>What's changing?
@@ -690,11 +691,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
           <input id="sigArea" placeholder="e.g. BS2 or East Bristol">
         </label>
         <label>Detail (optional)
-          <textarea id="sigDetail" placeholder="A sentence or two — kept anonymous"></textarea>
+          <textarea id="sigDetail" placeholder="A sentence or two ,  kept anonymous"></textarea>
         </label>
-        <label class="anon"><input type="checkbox" id="sigAnon" checked> Submit anonymously — no name, no account.</label>
+        <label class="anon"><input type="checkbox" id="sigAnon" checked> Submit anonymously ,  no name, no account.</label>
         <button class="sbt" id="sigBtn" type="button">Submit signal</button>
-        <div class="s-out" id="sigOut">Thank you — this is a prototype, so nothing was sent. In the pilot your anonymous signal would be reviewed by the Community Intelligence Team.</div>
+        <div class="s-out" id="sigOut">Thank you ,  this is a prototype, so nothing was sent. In the pilot your anonymous signal would be reviewed by the Community Intelligence Team.</div>
       </form>
     </div>
   </div>
@@ -705,18 +706,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <div class="wrap">
     <p class="kicker-tag rv"><span class="num">04</span>The proposed platform</p>
     <h2 class="statement rv-rise">One platform. Several modules. A nervous system for communities.</h2>
-    <p class="lede rv">Not fifteen disconnected websites. A proposed system that observes pressure, connects people to help, exposes institutional friction, and helps test preventive action. This is the platform we are building toward — described here as a proposal, with the prototype dashboard above as the first working piece.</p>
+    <p class="lede rv">Not fifteen disconnected websites. A proposed system that observes pressure, connects people to help, exposes institutional friction, and helps test preventive action. This is the platform we are building toward ,  described here as a proposal, with the prototype dashboard above as the first working piece.</p>
     <div class="mod-grid rv">
       <div class="mod"><span class="mn"><i></i>Module 01</span><h3>Community dashboard</h3><p>A simple view of current community condition, direction of change, main pressure signals, local support capacity, and data confidence. The prototype above is the first version.</p></div>
       <div class="mod"><span class="mn"><i></i>Module 02</span><h3>Local Help directory</h3><p>A verified directory of useful support: what it provides, who can access it, opening times, contact, referral requirements, accessibility, and date last verified.</p></div>
-      <div class="mod"><span class="mn"><i></i>Module 03</span><h3>Community Signal</h3><p>A way for residents and organisations to submit observations — a service has closed, waiting times rising, more people need food support, transport is a barrier, a group is becoming isolated.</p></div>
+      <div class="mod"><span class="mn"><i></i>Module 03</span><h3>Community Signal</h3><p>A way for residents and organisations to submit observations ,  a service has closed, waiting times rising, more people need food support, transport is a barrier, a group is becoming isolated.</p></div>
       <div class="mod"><span class="mn"><i></i>Module 04</span><h3>Intervention Lab</h3><p>A later-stage decision-support tool: compare possible responses (e.g. would £50k help more as debt advice, transport support, community meals or peer groups?). Support, not automatic decisions.</p></div>
-      <div class="mod"><span class="mn"><i></i>Module 05</span><h3>Friction Monitor</h3><p>Measures how hard it is to reach support — waits, forms, repeated referrals, digital-only gates. The route to help is often the real barrier.</p></div>
-      <div class="mod"><span class="mn"><i></i>Module 06</span><h3>Impact Tracker</h3><p>Measures whether conditions improved after action. Every score tagged measured, reported, estimated, predicted or simulated — never false precision.</p></div>
+      <div class="mod"><span class="mn"><i></i>Module 05</span><h3>Friction Monitor</h3><p>Measures how hard it is to reach support ,  waits, forms, repeated referrals, digital-only gates. The route to help is often the real barrier.</p></div>
+      <div class="mod"><span class="mn"><i></i>Module 06</span><h3>Impact Tracker</h3><p>Measures whether conditions improved after action. Every score tagged measured, reported, estimated, predicted or simulated ,  never false precision.</p></div>
     </div>
     <div class="pulse-band rv">
       <span class="pb-k">Data &amp; governance</span>
-      <p>Any intelligence layer would use public UK data (ONS, MHCLG, NHS England, Companies House, council registers) and community-submitted signals, gathered and scored by <b>free, self-hosted models</b> — no per-query API bills. <b>AI recommends; people decide.</b> AI never decides whether a specific person deserves support.</p>
+      <p>Any intelligence layer would use public UK data (ONS, MHCLG, NHS England, Companies House, council registers) and community-submitted signals, gathered and scored by <b>free, self-hosted models</b> ,  no per-query API bills. <b>AI recommends; people decide.</b> AI never decides whether a specific person deserves support.</p>
     </div>
   </div>
 </section>
@@ -733,7 +734,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <div class="arch"><h3>Governance layer</h3><p>Privacy, consent, human review, safeguarding, bias testing. Published openly.</p></div>
     </div>
 
-    <div class="claims-grid rv" style="margin-top:34px">
+    <div class="claims-grid rv" style="margin-top:34px" id="honesty">
       <div class="claim-bad">We do not claim to already forecast 18 towns</div>
       <div class="claim-bad">No proven pressure reductions yet</div>
       <div class="claim-bad">No council partnerships that do not exist</div>
@@ -748,9 +749,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <div class="wrap">
     <p class="kicker-tag rv"><span class="num">08</span>Core proposition</p>
     <h2 class="rv-rise">See earlier. Connect people. Prevent crisis.</h2>
-    <p class="lede rv" style="max-width:680px">HumanitAI combines <b>predictive intelligence with trusted human connection</b> to help communities act before pressure becomes crisis. We bring together public data, local knowledge and advanced AI forecasting to identify where community pressure is rising — then help direct education, support and preventive services towards the places that may need them most. Community wellbeing spaces bring people together, while earned income helps sustain the wider social mission.</p>
+    <p class="lede rv" style="max-width:680px">HumanitAI combines <b>predictive intelligence with trusted human connection</b> to help communities act before pressure becomes crisis. We bring together public data, local knowledge and advanced AI forecasting to identify where community pressure is rising ,  then help direct education, support and preventive services towards the places that may need them most. Community wellbeing spaces bring people together, while earned income helps sustain the wider social mission.</p>
     <div class="cta-grid rv">
-      <div class="cta-card"><span class="step">Step 01</span><b>Fund it</b><span>Back the pilot and the proposed 5th Space concept. We are a CIC — every pound is legally bound to the mission and reported against real outcomes, not activity.</span></div>
+      <div class="cta-card"><span class="step">Step 01</span><b>Fund it</b><span>Back the pilot and the proposed 5th Space concept. We are a CIC ,  every pound is legally bound to the mission and reported against real outcomes, not activity.</span></div>
       <div class="cta-card"><span class="step">Step 02</span><b>Build it</b><span>Bring local knowledge, data or a partnership to the Bristol pilot; we onboard your team and your context.</span></div>
       <div class="cta-card"><span class="step">Step 03</span><b>Bring us in</b><span>Book a briefing for your council, NHS trust or funder. We'll show you the prototype and the plan.</span></div>
     </div>
@@ -761,12 +762,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   </div>
 </section>
 
+</main>
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="#top" class="brand">Humanit<b>AI</b></a>
-        <p>HumanitAI is a UK Community Interest Company. We use public data, local knowledge and advanced AI forecasting to identify where community pressure is rising, then help direct education, support and preventive services towards the places that may need them most. Community wellbeing spaces bring people together, while earned income helps sustain the wider social mission. In pilot — honest about what we can and cannot yet claim.</p>
+        <p>HumanitAI is a UK Community Interest Company. We use public data, local knowledge and advanced AI forecasting to identify where community pressure is rising, then help direct education, support and preventive services towards the places that may need them most. Community wellbeing spaces bring people together, while earned income helps sustain the wider social mission. In pilot ,  honest about what we can and cannot yet claim.</p>
       </div>
       <div class="foot-col">
         <h4>Navigate</h4>
@@ -784,7 +786,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         <a href="mailto:hello@humanitai.uk">Book a briefing</a>
       </div>
     </div>
-    <div class="foot-trust"><strong>© 2026 HumanitAI CIC.</strong> A UK Community Interest Company. Registered in England &amp; Wales — Companies House No. <strong><a href="https://find-and-update.company-information.service.gov.uk/company/16891121" target="_blank" rel="noopener">16891121</a></strong> (Active). In pilot — building in the open, reporting honestly. · hello@humanitai.uk</div>
+    <div class="foot-trust"><strong>© 2026 HumanitAI CIC.</strong> A UK Community Interest Company. Registered in England &amp; Wales ,  Companies House No. <strong><a href="https://find-and-update.company-information.service.gov.uk/company/16891121" target="_blank" rel="noopener">16891121</a></strong> (Active). In pilot ,  building in the open, reporting honestly. · hello@humanitai.uk</div>
   </div>
 </footer>
 
@@ -849,18 +851,18 @@ window.addEventListener('load',function(){ document.querySelectorAll('.hero .rv'
   document.querySelectorAll('.hero-panel .hp-bar i').forEach(function(b){ var w=b.style.width; requestAnimationFrame(function(){ b.style.width=w; }); });
 });
 
-// LIVE TICKER — Sky/Nasdaq style. Real, verifiable items (HumanitAI OSINT + BBC UK headlines pulled 2026-07-25).
+// LIVE TICKER ,  Sky/Nasdaq style. Real, verifiable items (HumanitAI OSINT + BBC UK headlines pulled 2026-07-25).
 var TICKER_ITEMS=[
-  {tag:'HUMANITAI',cls:'tag-humanitai',t:'HumanitAI: predictive community intelligence with a human front door — see earlier, connect people, prevent crisis. In pilot.',u:'#how'},
-  {tag:'NHS',cls:'tag-nhs',t:'NHS waiting list stands at 7.3M — the pressure we aim to help local services see earlier',u:'https://www.england.nhs.uk/statistics'},
+  {tag:'HUMANITAI',cls:'tag-humanitai',t:'HumanitAI: predictive community intelligence with a human front door ,  see earlier, connect people, prevent crisis. In pilot.',u:'#how'},
+  {tag:'NHS',cls:'tag-nhs',t:'NHS waiting list stands at 7.3M ,  the pressure we aim to help local services see earlier',u:'https://www.england.nhs.uk/statistics'},
   {tag:'HOMELESS',cls:'tag-homeless',t:'354K homeless in England; gov.uk records 132,410 households in temporary accommodation (Jun 2025)',u:'https://www.gov.uk/government/statistics/statutory-homelessness-in-england-april-to-june-2025'},
-  {tag:'POVERTY',cls:'tag-poverty',t:'4.3M children growing up in poverty — End Child Poverty Coalition',u:'https://www.endchildpoverty.org.uk'},
+  {tag:'POVERTY',cls:'tag-poverty',t:'4.3M children growing up in poverty ,  End Child Poverty Coalition',u:'https://www.endchildpoverty.org.uk'},
   {tag:'MENTAL',cls:'tag-mental',t:'1 in 6 adults experience a common mental health problem; isolation is the hidden driver',u:'https://www.mind.org.uk'},
-  {tag:'5TH SPACE',cls:'tag-lonely',t:'The 5th Space is contrast therapy — sauna + ice bath — our proposed human front door. Not yet operating',u:'#fifth-space'},
+  {tag:'5TH SPACE',cls:'tag-lonely',t:'The 5th Space is contrast therapy ,  sauna + ice bath ,  our proposed human front door. Not yet operating',u:'#fifth-space'},
   {tag:'MODEL',cls:'tag-osint',t:'Four connected parts: community wellbeing, predictive intelligence, decision support, community response',u:'#how'},
   {tag:'BBC',cls:'tag-nhs',t:'Heatwave conditions to return for many as UK temperatures to peak at 35C',u:'https://www.bbc.co.uk/news/uk'},
   {tag:'BBC',cls:'tag-homeless',t:'Police declare major incident as wind change increases Cairngorms wildfire risk',u:'https://www.bbc.co.uk/news/uk'},
-  {tag:'HUMANITAI',cls:'tag-humanitai',t:'Prototype dashboard is illustrative demo data — not live forecasts. See our honesty policy',u:'#honesty'}
+  {tag:'HUMANITAI',cls:'tag-humanitai',t:'Prototype dashboard is illustrative demo data ,  not live forecasts. See our honesty policy',u:'#honesty'}
 ];
 (function(){
   var track=document.getElementById('tickerTrack'); if(!track) return;
@@ -970,17 +972,17 @@ function pcRender(area){
 }
 function pcRun(){
   var v=pcInput.value.trim();
-  if(!v){pcNote.textContent='Enter a postcode to try it — e.g. BS5 (Easton & Lawrence Hill).';return;}
+  if(!v){pcNote.textContent='Enter a postcode to try it ,  e.g. BS5 (Easton & Lawrence Hill).';return;}
   var area=pcMatch(v);
   if(area){pcRender(area);pcNote.textContent='Illustrative example for '+area.name+'. Not a live reading.';}
-  else{pcResult.classList.remove('show');pcResult.innerHTML='';pcNote.textContent='“'+v+'” is not yet modelled. We are piloting in Bristol only (BS1–BS16) — we are not implying coverage we don’t have.';}
+  else{pcResult.classList.remove('show');pcResult.innerHTML='';pcNote.textContent='“'+v+'” is not yet modelled. We are piloting in Bristol only (BS1-BS16) ,  we are not implying coverage we don’t have.';}
 }
 if(pcBtn&&pcInput){pcBtn.addEventListener('click',pcRun);pcInput.addEventListener('keydown',function(e){if(e.key==='Enter')pcRun();});}
 
 // ─── LOCAL HELP DIRECTORY (illustrative) ───
 var DIR=[
-  {name:'Bristol Food Network',type:'Food support',provides:'Emergency food, community pantries, cooking sessions',who:'Anyone in need, no referral',times:'Mon–Sat, varies by hub',contact:'hello@bristolfoodnetwork.org',referral:'Self-referral',access:'Step-free, interpreters on request',verified:'Illustrative · not yet verified'},
-  {name:'Talking Therapies (demo)',type:'Mental health',provides:'Free NHS talking therapies, low mood & anxiety',who:'Adults registered with a Bristol GP',times:'Mon–Fri 9–5',contact:'111 / online referral',referral:'Self or GP referral',access:'Phone & video options',verified:'Illustrative · not yet verified'},
+  {name:'Bristol Food Network',type:'Food support',provides:'Emergency food, community pantries, cooking sessions',who:'Anyone in need, no referral',times:'Mon-Sat, varies by hub',contact:'hello@bristolfoodnetwork.org',referral:'Self-referral',access:'Step-free, interpreters on request',verified:'Illustrative · not yet verified'},
+  {name:'Talking Therapies (demo)',type:'Mental health',provides:'Free NHS talking therapies, low mood & anxiety',who:'Adults registered with a Bristol GP',times:'Mon-Fri 9-5',contact:'111 / online referral',referral:'Self or GP referral',access:'Phone & video options',verified:'Illustrative · not yet verified'},
   {name:'Bristol Housing First (demo)',type:'Housing',provides:'Supported housing for people with complex needs',who:'Rough sleepers & at-risk',times:'24/7 response',contact:'via council housing team',referral:'Professional referral',access:'Full access support',verified:'Illustrative · not yet verified'},
   {name:'Warm Welcome Spaces (demo)',type:'Community',provides:'Free warm space, tea, company, wifi',who:'All welcome',times:'Winter, weekly',contact:'local venue',referral:'None',access:'Step-free',verified:'Illustrative · not yet verified'}
 ];
