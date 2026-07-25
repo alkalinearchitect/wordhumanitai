@@ -45,16 +45,18 @@
 :root{
   --ink:#0A0A0B; --ink-2:#121214; --ink-3:#1A1A1E; --ink-4:#232329;
   --paper:#F6F3EC; --paper-2:#EEE9DE; --paper-3:#E4DDCF;
-  --accent:#FF4D2E; --accent-deep:#DB3417; --accent-bright:#FF6A4D;
+  /* ONE restrained accent — used sparingly (primary CTA, signature line, status dots).
+     Never flood fills/kickers/links. This is the anti-"ad-colour" rule. */
+  --accent:#D6452B; --accent-deep:#B2351C; --accent-bright:#E8654A;
   --water:#3BA0FF; --water-deep:#1E5E8C; --water-soft:#BFE0FF;
-  --gold:#E8B23A;
+  --gold:#C9A23A;
   --on-dark:#F2EEE5; --on-dark-dim:#9D978B; --on-dark-dim2:#6E6860;
   --on-paper:#0A0A0B; --on-paper-dim:#56504A;
   --hair-dark:rgba(255,255,255,.10); --hair-dark-2:rgba(255,255,255,.06);
   --hair-light:#E4DDCF; --hair-light-2:#D6CDBB;
-  /* severity heat scale */
-  --sev-poverty:#E0322B; --sev-homeless:#FF6A2B; --sev-nhs:#E8B23A;
-  --sev-mental:#8B5CF6; --sev-isolation:#3BA0FF;
+  /* calm, desaturated severity scale (not candy / not neon) */
+  --sev-poverty:#C25543; --sev-homeless:#CF8850; --sev-nhs:#C2A24A;
+  --sev-mental:#7C6BC4; --sev-isolation:#3E8FBF;
   /* spacing scale */
   --s-1:8px; --s-2:16px; --s-3:24px; --s-4:40px; --s-5:64px; --s-6:96px; --s-7:140px; --s-8:200px;
   --radius:18px; --radius-sm:12px; --ease:cubic-bezier(.16,1,.3,1);
@@ -63,7 +65,7 @@
   --font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%;font-optical-sizing:auto;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:120px;-webkit-text-size-adjust:100%;font-optical-sizing:auto;overflow-x:hidden}
 body{background:var(--ink);color:var(--on-dark);font-family:var(--font-ui);line-height:1.62;font-size:17px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;position:relative;overflow-x:hidden}
 img,svg{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -94,14 +96,14 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.035em;li
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ═══════ STATUS STRIP ═══════ */
-.statusbar{position:fixed;top:30px;left:0;right:0;z-index:102;background:rgba(10,10,11,.72);border-bottom:1px solid var(--hair-dark);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;color:var(--on-dark-dim);height:32px;display:flex;align-items:center;overflow:hidden;white-space:nowrap;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.statusbar{position:fixed;top:30px;left:0;right:0;z-index:102;background:rgba(10,10,11,.72);border-bottom:1px solid var(--hair-dark);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;color:var(--on-dark-dim);height:30px;display:flex;align-items:center;overflow:hidden;white-space:nowrap;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .statusbar .wrap{display:flex;align-items:center;gap:18px;width:100%}
 .statusbar .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(255,77,46,.22);animation:pulse 2.4s infinite}
 .statusbar b{color:var(--on-dark);font-weight:700}
 .statusbar .sep{color:var(--hair-dark-2)}
 
 /* ═══════ NAV ═══════ */
-#nav{position:fixed;top:62px;left:0;right:0;z-index:101;transition:background .4s var(--ease),border-color .4s,color .4s;background:rgba(10,10,11,.66);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid transparent;color:var(--on-dark)}
+#nav{position:fixed;top:60px;left:0;right:0;z-index:101;transition:background .4s var(--ease),border-color .4s,color .4s;background:rgba(10,10,11,.66);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid transparent;color:var(--on-dark)}
 #nav.light{background:rgba(246,243,236,.82);color:var(--on-paper);border-bottom-color:var(--hair-light)}
 #nav.scrolled{border-bottom-color:var(--hair-dark)}
 #nav.light.scrolled{border-bottom-color:var(--hair-light)}
@@ -120,9 +122,9 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.035em;li
 .nav-cta:hover{background:var(--accent-deep);transform:translateY(-1px)}
 
 /* ═══════ SHARED ═══════ */
-.kicker{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:13px;margin-bottom:26px}
+.kicker{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-dim);display:inline-flex;align-items:center;gap:13px;margin-bottom:26px}
 .kicker::before{content:"";width:30px;height:2px;background:var(--accent);border-radius:2px}
-.kicker-tag{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);display:inline-flex;align-items:center;gap:11px;margin-bottom:22px}
+.kicker-tag{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--on-paper-dim);display:inline-flex;align-items:center;gap:11px;margin-bottom:22px}
 .kicker-tag .num{background:var(--paper-2);border:1px solid var(--hair-light-2);border-radius:7px;padding:2px 8px;line-height:1;color:var(--on-paper);font-weight:700}
 .statement{font-family:var(--font-serif);font-weight:600;font-size:clamp(1.9rem,4.6vw,3.2rem);line-height:1.12;letter-spacing:-.025em;max-width:920px}
 .statement .hl{color:var(--accent-deep)}
@@ -203,12 +205,12 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.035em;li
 
 .fifth-stats{display:flex;gap:60px;flex-wrap:wrap;margin-top:50px;padding-top:40px;border-top:1px solid var(--hair-light)}
 .figure.impact .n{font-family:var(--font-mono);font-weight:700;font-size:3.4rem;color:var(--on-paper);line-height:1;letter-spacing:-.03em}
-.figure.impact .n b{color:var(--water-deep)}
+.figure.impact .n b{color:var(--on-paper)}
 .figure.impact .l{font-size:11px;color:var(--on-paper-dim);text-transform:uppercase;letter-spacing:.1em;margin-top:12px;max-width:170px}
 
 /* ═══════ INTELLIGENCE (dark terminal) ═══════ */
 #data{background:var(--ink);color:var(--on-dark);padding:var(--s-7) 0}
-#data .kicker-tag{color:var(--accent)}
+#data .kicker-tag{color:var(--on-dark-dim)}
 #data .kicker-tag .num{background:var(--ink-2);border-color:var(--hair-dark);color:var(--on-dark)}
 #data h2{color:#fff}
 #data .lede{color:var(--on-dark-dim)}
@@ -322,7 +324,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <span>FORECAST WINDOW <b>ACTIVE</b></span><span class="sep">/</span>
   <span><b>18</b> UK TOWNS</span><span class="sep">/</span>
   <span>MODEL CONF <b>0.81</b></span><span class="sep">/</span>
-  <span>5TH SPACE <b>AT DRAUGHT</b></span><span class="sep">/</span>
+  <span>5TH SPACE <b>READY TO SAIL</b></span><span class="sep">/</span>
   <span>UPDATED <b>JUL 2026</b></span>
 </div></div>
 
@@ -496,6 +498,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     <p class="kicker-tag rv"><span class="num">03</span>The intelligence</p>
     <h2 class="statement rv" style="font-size:clamp(1.9rem,4.6vw,3rem)">18 towns. One forecast window. Severity you can act on.</h2>
     <p class="lede rv">Highest first. Tap a pressure to re-rank the map by it — the barge's next mooring follows the top of this list.</p>
+    <p class="src-note" style="margin-top:-6px">Every score is an estimate from open data (confidence 0.81), not a measurement of individuals. Updated Jul 2026.</p>
     <div class="viz-filters rv" id="vf"></div>
     <div class="src-head"><span>Rank · Town</span><span>Composite severity</span></div>
     <div class="viz-list" id="vl"></div>
@@ -552,7 +555,7 @@ var lenis=null;
 if(!REDUCE && window.Lenis){
   lenis=new Lenis({ lerp:0.09, smoothWheel:true });
   (function lr(t){ lenis.raf(t); requestAnimationFrame(lr); })(performance.now());
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id && id.length>1 && document.querySelector(id)){ e.preventDefault(); lenis.scrollTo(document.querySelector(id),{offset:-110}); } }); });
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id && id.length>1 && document.querySelector(id)){ e.preventDefault(); lenis.scrollTo(document.querySelector(id),{offset:-120}); } }); });
 }
 // nav: dark over dark sections (hero/intel/closing), light over 5th Space (paper)
 var nav=document.getElementById('nav');
