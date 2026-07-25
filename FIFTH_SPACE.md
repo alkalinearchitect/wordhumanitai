@@ -8,6 +8,12 @@ The **5th Space** is a large, off-grid **canal barge** that travels the UK inlan
 network (CRT canals + connected rivers) and moors at the towns the HumanitAI forecast flags
 as tipping into crisis. It is the mobile, physical arm of the CIC's loneliness intervention.
 
+**Fleet name:** *The Forerunner Fleet* — a forerunner arrives ahead of what it announces.
+**Flagship vessel:** *The Lowry* (named for L. S. Lowry, painter of northern industrial towns,
+canals, and the loneliness of crowds). Later barges take names of British chroniclers of
+ordinary isolation: The Orwell, The Betjeman, The Priestley, The Beryl.
+**Tagline:** *We sail before the silence does.*
+
 ## Why a barge (not a fixed building)
 - A fixed venue waits for people to come to it. The barge **goes to the people**.
 - The forecast decides the next mooring; the mooring decides the company.
