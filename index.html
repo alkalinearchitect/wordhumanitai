@@ -252,6 +252,25 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.035em;li
 .cta .btn-ghost{color:var(--on-dark);border-color:var(--hair-dark);font-size:14px;padding:18px 32px;min-height:60px}
 .cta .btn-ghost:hover{border-color:var(--accent);color:#fff}
 
+/* ═══════ PULSE PLATFORM (calm module grid) ═══════ */
+.pulse{background:var(--ink);color:var(--on-dark);padding:var(--s-7) 0;border-top:1px solid var(--hair-dark);position:relative;overflow:hidden}
+.pulse::before{content:"";position:absolute;inset:0;background:radial-gradient(820px 420px at 12% 0%,rgba(59,160,255,.07),transparent 60%);pointer-events:none}
+.pulse .wrap{position:relative;z-index:2}
+.pulse .lede{color:var(--on-dark-dim)}
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+.mod{background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:var(--radius-sm);padding:24px;transition:border-color .25s,transform .25s var(--ease)}
+.mod:hover{border-color:rgba(59,160,255,.45);transform:translateY(-3px)}
+.mod .mn{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--water);display:inline-flex;align-items:center;gap:8px;margin-bottom:14px}
+.mod .mn i{width:7px;height:7px;border-radius:50%;background:var(--water);display:inline-block}
+.mod h3{font-family:var(--font-serif);font-size:1.28rem;color:#fff;margin-bottom:10px;font-weight:600}
+.mod p{font-size:.94rem;line-height:1.58;color:var(--on-dark-dim)}
+.pulse-band{margin-top:46px;padding:22px 24px;border:1px solid var(--hair-dark);border-radius:var(--radius-sm);background:var(--ink-2);display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.pulse-band .pb-k{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);flex-shrink:0;padding-top:2px}
+.pulse-band p{font-size:.96rem;line-height:1.6;color:var(--on-dark-dim);margin:0;flex:1;min-width:240px}
+.pulse-band b{color:var(--on-dark);font-weight:600}
+@media(max-width:820px){.mod-grid{grid-template-columns:1fr 1fr}.mod-grid .mod:nth-child(3){grid-column:1/-1}}
+@media(max-width:560px){.mod-grid{grid-template-columns:1fr}}
+
 /* ═══════ FOOTER ═══════ */
 footer{background:var(--paper);color:var(--on-paper);border-top:1px solid var(--hair-light);padding:60px 0 34px}
 .foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
@@ -332,6 +351,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <a href="#top" class="brand">Humanit<b>AI</b></a>
   <div class="nav-links" id="navLinks">
     <a href="#data">Intelligence</a>
+    <a href="#pulse">Pulse</a>
     <a href="#fifth-space">5th Space</a>
     <a href="#join" class="nav-cta">Back the work</a>
   </div>
@@ -506,6 +526,27 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   </div>
 </section>
 
+<!-- ═══════ HUMANITAI PULSE PLATFORM ═══════ -->
+<section class="pulse" id="pulse">
+  <div class="wrap">
+    <p class="kicker-tag rv"><span class="num">03b</span>HumanitAI Pulse</p>
+    <h2 class="statement rv">One platform. Six modules. A nervous system for communities.</h2>
+    <p class="lede rv">Not fifteen websites. One system that observes pressure, connects people to help, exposes institutional friction, simulates preventive action, and measures what improved.</p>
+    <div class="mod-grid rv">
+      <div class="mod"><span class="mn"><i></i>Module 01</span><h3>Community Pulse</h3><p>Live postcode Pressure Score across housing, finance, loneliness, health access and support capacity. See strain before it becomes crisis.</p></div>
+      <div class="mod"><span class="mn"><i></i>Module 02</span><h3>Help Now</h3><p>A verified, real-time directory: open or closed, current capacity, waiting time, eligibility, last-checked date. Find help without being passed between organisations.</p></div>
+      <div class="mod"><span class="mn"><i></i>Module 03</span><h3>Friction Monitor</h3><p>Measures how hard it is to reach support — waits, forms, repeated referrals, digital-only gates. The route to help is often the real barrier.</p></div>
+      <div class="mod"><span class="mn"><i></i>Module 04</span><h3>Prevention Radar</h3><p>Detects deterioration early: rent arrears → eviction → homelessness; isolation → crisis care. Low-cost intervention, caught in time.</p></div>
+      <div class="mod"><span class="mn"><i></i>Module 05</span><h3>Intervention Lab</h3><p>Test £100k before spending it. Estimate people reached, geography, prevented crises, cost-per-person, confidence — possibilities, not promises.</p></div>
+      <div class="mod"><span class="mn"><i></i>Module 06</span><h3>Impact Tracker</h3><p>Measures whether conditions improved after action. Every score tagged measured, reported, estimated, predicted or simulated — never false precision.</p></div>
+    </div>
+    <div class="pulse-band rv">
+      <span class="pb-k">OSINT Intelligence</span>
+      <p>The forecast runs on an open-source intelligence layer: public UK data (ONS, MHCLG, NHS England, Companies House, council registers) and live signals, gathered and scored by <b>free, self-hosted models</b> — no per-query API bills. The barge's next mooring is chosen by the top of this list. <b>AI recommends; people decide.</b></p>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════ CLOSING ═══════ -->
 <section class="cta" id="join">
   <div class="wrap">
@@ -533,6 +574,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <div class="foot-col">
         <h4>Navigate</h4>
         <a href="#data">Intelligence</a>
+        <a href="#pulse">Pulse</a>
         <a href="#fifth-space">5th Space</a>
         <a href="legal.html">Legal &amp; IP</a>
         <a href="#join">Get involved</a>
