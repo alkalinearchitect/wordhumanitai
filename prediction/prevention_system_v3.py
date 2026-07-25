@@ -44,7 +44,7 @@ PLABEL = {"mental":"Mental health","ageing":"Ageing / older people",
 # architecture weighting: primary domains count more
 WEIGHT = {"mental":1.4,"ageing":1.4,"poverty":1.0,"homelessness":1.0,"nhs":1.0,"isolation":1.0}
 
-# Intervention levers (CHW + 4th space). gain = expected outcome lift (0-1), cost = £ per cohort.
+# Intervention levers (CHW + 5th space). gain = expected outcome lift (0-1), cost = £ per cohort.
 LEVERS = {
  "mental":[("Community navigation to talking-therapy (VCSE)",0.70,780),
            ("Low-intensity CBT via VCSE",0.75,820),
@@ -65,18 +65,24 @@ LEVERS = {
             ("Social prescribing + group activity",0.55,460),
             ("Transport-to-service vouchers",0.40,390)],
 }
-# 4TH SPACE — flagship loneliness-combat intervention (pillar 2)
-FOURTH_SPACE = {
- "name":"4th Space — sauna, cold plunge, contrast therapy",
- "rationale":"A physical/social venue that combats loneliness by bringing people together through shared contrast-therapy rituals. Models the CIC's pillar-2 delivery.",
+# 5TH SPACE — flagship loneliness-combat intervention (pillar 2): a CANAL BARGE
+# A large, off-grid canal boat that travels the UK inland-waterway network and moors
+# at the towns the forecast flags. Same loneliness-combat mission as the old fixed
+# "4th Space" sauna, but mobile: it goes to the people instead of waiting for them.
+FIFTH_SPACE = {
+ "name":"5th Space — off-grid canal barge (mobile community venue)",
+ "rationale":"A large canal barge, solar + lithium off-grid, that sails the UK canal/river network and moors at the towns the AI flags. It combats loneliness by arriving before the crisis — a warm room, on the water, with no postcode lottery. Models the CIC's pillar-2 delivery as a mobile venue.",
  "levers":[
-   ("Sauna + cold plunge membership (subsidised, social sessions)",0.80,540),
-   ("Guided contrast-therapy + community circle",0.78,480),
-   ("Intergenerational 4th-space sessions (ageing + youth)",0.72,520),
+   ("Canal-barge community mooring (subsidised, social sessions)",0.80,1800),
+   ("Warm-room + contrast/wellbeing circle on board",0.78,1200),
+   ("Intergenerational 5th-space sessions (ageing + youth)",0.72,1100),
  ],
- "loneliness_reduction":0.8,   # expected share of regular users reporting reduced loneliness
- "sessions_per_cohort":24,
- "capacity_per_site":60,        # members per site at steady state
+ # illustrative planning proxies (replace with evaluation data before any spend):
+ "loneliness_reduction":0.8,   # expected share of regular visitors reporting reduced loneliness
+ "sessions_per_mooring":24,    # onboard sessions per mooring stop
+ "capacity_per_mooring":60,    # people held per mooring / week at steady state
+ "towns_per_year":12,          # approx towns reached/yr (4mph canals, 14-day CRT mooring limit)
+ "reach_multiplier":12,        # rough x vs one fixed site (illustrative)
  "sroi_proxy":3.2,             # £ social value per £ invested (proxy; replace with eval)
 }
 
@@ -88,7 +94,7 @@ ESCAL_WORDS = ["record","worst","highest","rising","surge","crisis","soar","shar
 CAUSAL = {
  "mental":[("vcse_talking_therapy_nav","access_to_treatment"),("low_intensity_cbt","reduced_symptoms"),("peer_support","reduced_loneliness_crisis")],
  "ageing":[("ageing_connector","reduced_older_isolation"),("fall_prevention_club","reduced_falls_hospitalisation"),("warm_space","reduced_fuel_poverty")],
- "isolation":[("4th_space_contrast","reduced_loneliness_connection"),("navigator_befriend","reduced_loneliness"),("group_activity","increased_belonging")],
+ "isolation":[("5th_space_barge","reduced_loneliness_connection"),("navigator_befriend","reduced_loneliness"),("group_activity","increased_belonging")],
  "poverty":[("cash_support","reduced_child_poverty"),("debt_advice","reduced_arrears_escalation")],
  "homelessness":[("tenancy_sustainment","prevented_lose_home"),("rapid_rehousing","reduced_sleep_rough")],
  "nhs":[("community_navigation","reduced_avoidable_ae"),("social_prescribing","better_chronic_control")],
@@ -177,14 +183,15 @@ def causal_graph():
             edges.append(dict(pressure=p,lever=lever,expected_outcome=outcome))
     return edges
 
-def fourth_space_model():
-    fs=FOURTH_SPACE
-    # expected users reached & loneliness reduction at one site, steady state
-    members=fs["capacity_per_site"]
+def fifth_space_model():
+    fs=FIFTH_SPACE
+    # expected users reached & loneliness reduction per mooring stop, steady state
+    members=fs["capacity_per_mooring"]
     reduced=round(members*fs["loneliness_reduction"])
     annual_cost=fs["levers"][0][2]* (members//8 + 1)  # proxy cohort cost
     sroi_value=round(annual_cost*fs["sroi_proxy"])
-    return dict(spec=fs,members_per_site=members,expected_loneliness_reduced=reduced,
+    return dict(spec=fs,members_per_mooring=members,towns_per_year=fs["towns_per_year"],
+                reach_multiplier=fs["reach_multiplier"],expected_loneliness_reduced=reduced,
                 sroi_proxy=fs["sroi_proxy"],est_annual_investment=annual_cost,
                 est_social_value=round(annual_cost*fs["sroi_proxy"]))
 
@@ -210,19 +217,19 @@ def allocate(df,g,budget=120000):
         if spent+c["cost"]>budget: continue
         if per[c["place"]]>=MAX: continue
         funded.append(c);spent+=c["cost"];total_hh+=c["hh"];coverage.add(c["place"]);per[c["place"]]+=1
-    # ring-fence a 4th-space pilot from remaining budget
-    fs_cost=FOURTH_SPACE["levers"][0][2]
+    # ring-fence a 5th-space barge pilot from remaining budget
+    fs_cost=FIFTH_SPACE["levers"][0][2]
     fs_funded=False
     if spent+fs_cost<=budget:
-        funded.append(dict(place="PILOT: 4th Space site",tier="Priority",pressure="isolation",
-            intervention=FOURTH_SPACE["name"],gain=FOURTH_SPACE["loneliness_reduction"],
-            cost=fs_cost,eff=IMPACT_PER_1K["isolation"]*FOURTH_SPACE["loneliness_reduction"]/fs_cost,
-            hh=round(FOURTH_SPACE["capacity_per_site"]*FOURTH_SPACE["loneliness_reduction"],1)))
-        spent+=fs_cost; total_hh+=round(FOURTH_SPACE["capacity_per_site"]*FOURTH_SPACE["loneliness_reduction"],1)
-        coverage.add("4th Space"); fs_funded=True
+        funded.append(dict(place="PILOT: 5th Space barge",tier="Priority",pressure="isolation",
+            intervention=FIFTH_SPACE["name"],gain=FIFTH_SPACE["loneliness_reduction"],
+            cost=fs_cost,eff=IMPACT_PER_1K["isolation"]*FIFTH_SPACE["loneliness_reduction"]/fs_cost,
+            hh=round(FIFTH_SPACE["capacity_per_mooring"]*FIFTH_SPACE["loneliness_reduction"],1)))
+        spent+=fs_cost; total_hh+=round(FIFTH_SPACE["capacity_per_mooring"]*FIFTH_SPACE["loneliness_reduction"],1)
+        coverage.add("5th Space"); fs_funded=True
     return dict(funded=funded,spent=spent,total_hh=round(total_hh,1),
                 places_covered=len(coverage),budget=budget,remaining=budget-spent,
-                fourth_space_funded=fs_funded)
+                fifth_space_funded=fs_funded)
 
 def intervention_system(df,g,budget=120000):
     present=df.groupby("place")["pressure"].apply(list).to_dict()
@@ -250,14 +257,14 @@ def main():
     news=json.load(open(NEWS)) if os.path.exists(NEWS) else {}
     trends=trend_projection(g,news)
     edges=causal_graph()
-    fs=fourth_space_model()
+    fs=fifth_space_model()
     intervs=intervention_system(df,g,budget=120000)
     alloc=allocate(df,g,budget=120000)
     miro=json.load(open(MIRO)).get("synthesis","") if os.path.exists(MIRO) else ""
     L=[]
     L.append("HUMANITAI — PREVENTION & INTERVENTION SYSTEM v3 (architecture-aligned)")
     L.append("="*72)
-    L.append(f"Pillar1 PREDICTION (mental health + ageing primary) | Pillar2 4TH SPACE")
+    L.append(f"Pillar1 PREDICTION (mental health + ageing primary) | Pillar2 5TH SPACE (canal barge)")
     L.append(f"Data: {len(df)} records ({df['place'].nunique()} places) + live news")
     L.append("1) COMPOSITE RISK + TIER (mental/ageing weighted)")
     for _,r in g.head(8).iterrows():
@@ -265,29 +272,29 @@ def main():
     L.append("")
     L.append("2) SPATIAL: "+spatial_note)
     L.append("3) TREND (news drift): "+"; ".join(f"{t['place']}->{t['h3']}(±{t['band_pm']})" for t in trends[:4]))
-    L.append("4) CAUSAL edges: "+str(len(edges))+" (mental/ageing/4th-space led)")
+    L.append("4) CAUSAL edges: "+str(len(edges))+" (mental/ageing/5th-space led)")
     L.append("")
-    L.append("5) 4TH SPACE MODEL (pillar 2 flagship):")
+    L.append("5) 5TH SPACE MODEL (pillar 2 flagship — mobile canal barge):")
     L.append(f"   {fs['spec']['name']}")
-    L.append(f"   members/site {fs['members_per_site']} | expected loneliness reduced {fs['expected_loneliness_reduced']} | SROI proxy x{fs['sroi_proxy']}")
+    L.append(f"   members/mooring {fs['members_per_mooring']} | towns/yr ~{fs['towns_per_year']} | reach x{fs['reach_multiplier']} vs fixed | expected loneliness reduced {fs['expected_loneliness_reduced']} | SROI proxy x{fs['sroi_proxy']}")
     L.append(f"   est annual investment £{fs['est_annual_investment']} -> social value £{fs['est_social_value']}")
     L.append("")
     if news:
         L.append("6) NEWS EARLY-WARNING: "+str(news.get("early_warning")))
     a=alloc
-    L.append(f"7) BUDGET £{a['budget']:,}: spent £{a['spent']:,} | {a['places_covered']} places | ~{a['total_hh']} hh | 4thSpace funded={a['fourth_space_funded']}")
+    L.append(f"7) BUDGET £{a['budget']:,}: spent £{a['spent']:,} | {a['places_covered']} places | ~{a['total_hh']} hh | 5thSpace funded={a['fifth_space_funded']}")
     L.append("8) INTERVENTION SYSTEMS:")
     for s in intervs:
         L.append(f"  -- {s['place']} ({s['tier']}, risk {s['risk']}) --")
         for iv in s["interventions"]:
             L.append(f"     * {iv['intervention']} | gain {iv['expected_gain']:.2f} | ~£{iv['cost']}")
     L.append("")
-    L.append("NOTE: mental health + ageing are the primary modelled domains per architecture; 4th space is the flagship loneliness intervention. Priors illustrative until replaced with evaluation data.")
+    L.append("NOTE: mental health + ageing are the primary modelled domains per architecture; 5th space (mobile canal barge) is the flagship loneliness intervention. Priors illustrative until replaced with evaluation data.")
     print("\n".join(L))
     out=dict(composite=g.to_dict(orient="records"),trends=trends,causal=edges,
-             fourth_space=fs,allocation=alloc,interventions=intervs,news=news,
+             fifth_space=fs,allocation=alloc,interventions=intervs,news=news,
              mirofish_synthesis=miro,spatial_note=spatial_note,
-             architecture="PREDICTION(mental/ageing primary)+4TH SPACE",
+             architecture="PREDICTION(mental/ageing primary)+5TH SPACE(canal barge)",
              generated=datetime.datetime.now(datetime.timezone.utc).isoformat())
     with open(os.path.join(ROOT,"prediction","prevention_out_v3.json"),"w") as f:
         json.dump(out,f,indent=2)

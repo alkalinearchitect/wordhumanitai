@@ -1,14 +1,14 @@
 import json, html, datetime
 from pathlib import Path
 
-ROOT = Path("/opt/data/wordhumanitai_v2")
+ROOT = Path("/root/wordhumanitai")
 d = json.loads((ROOT / "prediction" / "prevention_out_v3.json").read_text())
 comp = d["composite"][:10]
 trends = {t["place"]: t for t in d.get("trends", [])}
 alloc = d["allocation"]
 intervs = d["interventions"][:6]
 edges = d.get("causal", [])
-fs = d.get("fourth_space", {})
+fs = d.get("fifth_space", {})
 news = d.get("news", {})
 
 def tier_cls(t): return {"Critical":"crit","Priority":"prio","Watch":"watch"}.get(t,"watch")
@@ -29,11 +29,11 @@ if len(edges)>12: causal_rows+='<tr><td colspan="3"><i>+%d more edges</i></td></
 
 fs_spec=fs.get("spec",{})
 fs_html=('<div class="fs"><div class="fsh">%s</div><div class="fsr">%s</div>'
-    '<div class="fsm">Members/site: <b>%s</b> &middot; Expected loneliness reduced: <b>%s</b> &middot; SROI proxy: <b>x%s</b></div>'
+    '<div class="fsm">Members / mooring: <b>%s</b> &middot; Towns / year: <b>~%s</b> &middot; Expected loneliness reduced: <b>%s</b> &middot; SROI proxy: <b>x%s</b></div>'
     '<div class="fsm">Est. annual investment: <b>£%s</b> &rarr; est. social value: <b>£%s</b></div>'
     '<div class="fslev">%s</div></div>\n')%(
     esc(fs_spec.get("name","")), esc(fs_spec.get("rationale","")),
-    fs.get("members_per_site",0), fs.get("expected_loneliness_reduced",0), fs.get("sroi_proxy",0),
+    fs.get("members_per_mooring",0), fs.get("towns_per_year",0), fs.get("expected_loneliness_reduced",0), fs.get("sroi_proxy",0),
     f"{fs.get('est_annual_investment',0):,}", f"{fs.get('est_social_value',0):,}",
     "".join('<li>%s (gain %.2f, ~£%s)</li>'%(esc(l[0]),l[1],f"{l[2]:,}") for l in fs_spec.get("levers",[])))
 
@@ -95,12 +95,12 @@ ul { margin:3pt 0 3pt 15pt; padding:0; } li { margin:1.5pt 0; font-size:9pt; }
 html_doc=f"""<!DOCTYPE html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>
 <div class="kick">HumanitAI · Prevention & Intervention System v3 · Architecture-Aligned</div>
 <h1>Where to act, and what to build</h1>
-<div class="sub">Two pillars. <b>Pillar 1 — Prediction:</b> models on existing UK open data to target help, with <b>mental health and ageing as the primary domains</b>. <b>Pillar 2 — 4th Space:</b> a physical/social venue (sauna, cold plunge, contrast therapy) that combats loneliness by bringing people together. This pack models both.</div>
+<div class="sub">Two pillars. <b>Pillar 1 — Prediction:</b> models on existing UK open data to target help, with <b>mental health and ageing as the primary domains</b>. <b>Pillar 2 — 5th Space:</b> a mobile canal barge (off-grid community venue) that sails to the towns the forecast flags, combating loneliness by arriving before the crisis. This pack models both.</div>
 
 <h2>1 — Composite risk, tier and 3-period trend</h2>
 <table><tr><th>#</th><th>Place</th><th>Risk</th><th>Tier</th><th>Projected h1/h2/h3 (±band)</th></tr>{risk_rows}</table>
 
-<h2>2 — Pillar 2: 4th Space model (flagship loneliness intervention)</h2>
+<h2>2 — Pillar 2: 5th Space model (flagship loneliness intervention — mobile canal barge)</h2>
 {fs_html}
 
 <h2>3 — Budget optimisation (£{alloc['budget']:,})</h2>
@@ -124,7 +124,7 @@ html_doc=f"""<!DOCTYPE html><html><head><meta charset="utf-8"><style>{CSS}</styl
 <h2>7 — Second-order: MiroFish agent reaction</h2>
 <div class="synth">{miro_html}</div>
 
-<div class="note">Mental health and ageing are the primary modelled domains per the CIC architecture; the 4th Space is the flagship loneliness-combat intervention. Priors are transparent and illustrative; trend projection is planning-only (one slice + live news momentum), not a calibrated forecast. Replace with local evaluation data before any spend. No individual-level inference. Aggregate place-level only.
+<div class="note">Mental health and ageing are the primary modelled domains per the CIC architecture; the 5th Space (mobile canal barge) is the flagship loneliness-combat intervention. Priors are transparent and illustrative; trend projection is planning-only (one slice + live news momentum), not a calibrated forecast. Replace with local evaluation data before any spend. No individual-level inference. Aggregate place-level only.
 <div class="foot">HumanitAI CIC · Community Intelligence Blueprint v1.0 · generated {datetime.date.today().isoformat()}</div></div>
 </body></html>"""
 (ROOT/"prediction"/"prevention_report_v3.html").write_text(html_doc)

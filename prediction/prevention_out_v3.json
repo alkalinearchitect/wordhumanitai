@@ -13,7 +13,6 @@
       "risk": 98.0,
       "tier": "Critical",
       "rank": 1,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -29,7 +28,6 @@
       "risk": 91.0,
       "tier": "Critical",
       "rank": 2,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -45,7 +43,6 @@
       "risk": 90.6,
       "tier": "Critical",
       "rank": 3,
-      "hotspot": "ns",
       "pressure_dominant": "isolation"
     },
     {
@@ -61,7 +58,6 @@
       "risk": 88.7,
       "tier": "Critical",
       "rank": 4,
-      "hotspot": "ns",
       "pressure_dominant": "homelessness"
     },
     {
@@ -77,7 +73,6 @@
       "risk": 87.6,
       "tier": "Critical",
       "rank": 5,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -93,7 +88,6 @@
       "risk": 85.0,
       "tier": "Critical",
       "rank": 6,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -109,7 +103,6 @@
       "risk": 84.7,
       "tier": "Critical",
       "rank": 7,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -125,7 +118,6 @@
       "risk": 78.4,
       "tier": "Priority",
       "rank": 8,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -141,7 +133,6 @@
       "risk": 78.0,
       "tier": "Priority",
       "rank": 9,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -157,7 +148,6 @@
       "risk": 78.0,
       "tier": "Priority",
       "rank": 10,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -173,7 +163,6 @@
       "risk": 77.0,
       "tier": "Priority",
       "rank": 11,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -189,7 +178,6 @@
       "risk": 77.0,
       "tier": "Priority",
       "rank": 12,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -205,7 +193,6 @@
       "risk": 76.0,
       "tier": "Priority",
       "rank": 13,
-      "hotspot": "ns",
       "pressure_dominant": "isolation"
     },
     {
@@ -221,7 +208,6 @@
       "risk": 76.0,
       "tier": "Priority",
       "rank": 14,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -237,7 +223,6 @@
       "risk": 75.6,
       "tier": "Priority",
       "rank": 15,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -253,7 +238,6 @@
       "risk": 74.6,
       "tier": "Priority",
       "rank": 16,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -269,7 +253,6 @@
       "risk": 73.0,
       "tier": "Priority",
       "rank": 17,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -285,7 +268,6 @@
       "risk": 72.0,
       "tier": "Priority",
       "rank": 18,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -301,7 +283,6 @@
       "risk": 72.0,
       "tier": "Priority",
       "rank": 19,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -317,7 +298,6 @@
       "risk": 72.0,
       "tier": "Priority",
       "rank": 20,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -333,7 +313,6 @@
       "risk": 70.0,
       "tier": "Watch",
       "rank": 21,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -349,7 +328,6 @@
       "risk": 69.8,
       "tier": "Watch",
       "rank": 22,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -365,7 +343,6 @@
       "risk": 69.6,
       "tier": "Watch",
       "rank": 23,
-      "hotspot": "ns",
       "pressure_dominant": "homelessness"
     },
     {
@@ -381,7 +358,6 @@
       "risk": 68.7,
       "tier": "Watch",
       "rank": 24,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -397,7 +373,6 @@
       "risk": 68.0,
       "tier": "Watch",
       "rank": 25,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -413,7 +388,6 @@
       "risk": 67.0,
       "tier": "Watch",
       "rank": 26,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -429,7 +403,6 @@
       "risk": 66.2,
       "tier": "Watch",
       "rank": 27,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -445,7 +418,6 @@
       "risk": 65.5,
       "tier": "Watch",
       "rank": 28,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -461,7 +433,6 @@
       "risk": 64.0,
       "tier": "Watch",
       "rank": 29,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -477,7 +448,6 @@
       "risk": 64.0,
       "tier": "Watch",
       "rank": 30,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -493,7 +463,6 @@
       "risk": 63.7,
       "tier": "Watch",
       "rank": 31,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -509,7 +478,6 @@
       "risk": 63.7,
       "tier": "Watch",
       "rank": 32,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -525,7 +493,6 @@
       "risk": 63.6,
       "tier": "Watch",
       "rank": 33,
-      "hotspot": "ns",
       "pressure_dominant": "isolation"
     },
     {
@@ -541,7 +508,6 @@
       "risk": 63.0,
       "tier": "Watch",
       "rank": 34,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -557,7 +523,6 @@
       "risk": 63.0,
       "tier": "Watch",
       "rank": 35,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -573,7 +538,6 @@
       "risk": 63.0,
       "tier": "Watch",
       "rank": 36,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -589,7 +553,6 @@
       "risk": 63.0,
       "tier": "Watch",
       "rank": 37,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -605,7 +568,6 @@
       "risk": 63.0,
       "tier": "Watch",
       "rank": 38,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -621,7 +583,6 @@
       "risk": 62.9,
       "tier": "Watch",
       "rank": 39,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -637,7 +598,6 @@
       "risk": 62.0,
       "tier": "Watch",
       "rank": 40,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -653,7 +613,6 @@
       "risk": 62.0,
       "tier": "Watch",
       "rank": 41,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -669,7 +628,6 @@
       "risk": 62.0,
       "tier": "Watch",
       "rank": 42,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -685,7 +643,6 @@
       "risk": 61.0,
       "tier": "Watch",
       "rank": 43,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -701,7 +658,6 @@
       "risk": 61.0,
       "tier": "Watch",
       "rank": 44,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -717,7 +673,6 @@
       "risk": 61.0,
       "tier": "Watch",
       "rank": 45,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -733,7 +688,6 @@
       "risk": 60.7,
       "tier": "Watch",
       "rank": 46,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -749,7 +703,6 @@
       "risk": 60.0,
       "tier": "Watch",
       "rank": 47,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -765,7 +718,6 @@
       "risk": 60.0,
       "tier": "Watch",
       "rank": 48,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -781,7 +733,6 @@
       "risk": 59.7,
       "tier": "Watch",
       "rank": 49,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -797,7 +748,6 @@
       "risk": 59.0,
       "tier": "Watch",
       "rank": 50,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -813,7 +763,6 @@
       "risk": 59.0,
       "tier": "Watch",
       "rank": 51,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -829,7 +778,6 @@
       "risk": 59.0,
       "tier": "Watch",
       "rank": 52,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -845,7 +793,6 @@
       "risk": 59.0,
       "tier": "Watch",
       "rank": 53,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -861,7 +808,6 @@
       "risk": 58.0,
       "tier": "Watch",
       "rank": 54,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -877,7 +823,6 @@
       "risk": 58.0,
       "tier": "Watch",
       "rank": 55,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -893,7 +838,6 @@
       "risk": 58.0,
       "tier": "Watch",
       "rank": 56,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -909,7 +853,6 @@
       "risk": 58.0,
       "tier": "Watch",
       "rank": 57,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -925,7 +868,6 @@
       "risk": 58.0,
       "tier": "Watch",
       "rank": 58,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -941,7 +883,6 @@
       "risk": 58.0,
       "tier": "Watch",
       "rank": 59,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -957,7 +898,6 @@
       "risk": 58.0,
       "tier": "Watch",
       "rank": 60,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -973,7 +913,6 @@
       "risk": 57.7,
       "tier": "Watch",
       "rank": 61,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -989,7 +928,6 @@
       "risk": 57.0,
       "tier": "Watch",
       "rank": 62,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1005,7 +943,6 @@
       "risk": 57.0,
       "tier": "Watch",
       "rank": 63,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1021,7 +958,6 @@
       "risk": 57.0,
       "tier": "Watch",
       "rank": 64,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1037,7 +973,6 @@
       "risk": 57.0,
       "tier": "Watch",
       "rank": 65,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1053,7 +988,6 @@
       "risk": 57.0,
       "tier": "Watch",
       "rank": 66,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1069,7 +1003,6 @@
       "risk": 57.0,
       "tier": "Watch",
       "rank": 67,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1085,7 +1018,6 @@
       "risk": 57.0,
       "tier": "Watch",
       "rank": 68,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1101,7 +1033,6 @@
       "risk": 57.0,
       "tier": "Watch",
       "rank": 69,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1117,7 +1048,6 @@
       "risk": 57.0,
       "tier": "Watch",
       "rank": 70,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1133,7 +1063,6 @@
       "risk": 57.0,
       "tier": "Watch",
       "rank": 71,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1149,7 +1078,6 @@
       "risk": 57.0,
       "tier": "Watch",
       "rank": 72,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1165,7 +1093,6 @@
       "risk": 57.0,
       "tier": "Watch",
       "rank": 73,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1181,7 +1108,6 @@
       "risk": 56.9,
       "tier": "Watch",
       "rank": 74,
-      "hotspot": "ns",
       "pressure_dominant": "poverty"
     },
     {
@@ -1197,7 +1123,6 @@
       "risk": 56.0,
       "tier": "Watch",
       "rank": 75,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1213,7 +1138,6 @@
       "risk": 56.0,
       "tier": "Watch",
       "rank": 76,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1229,7 +1153,6 @@
       "risk": 56.0,
       "tier": "Watch",
       "rank": 77,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1245,7 +1168,6 @@
       "risk": 56.0,
       "tier": "Watch",
       "rank": 78,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1261,7 +1183,6 @@
       "risk": 55.0,
       "tier": "Watch",
       "rank": 79,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1277,7 +1198,6 @@
       "risk": 55.0,
       "tier": "Watch",
       "rank": 80,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1293,7 +1213,6 @@
       "risk": 55.0,
       "tier": "Watch",
       "rank": 81,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1309,7 +1228,6 @@
       "risk": 55.0,
       "tier": "Watch",
       "rank": 82,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1325,7 +1243,6 @@
       "risk": 55.0,
       "tier": "Watch",
       "rank": 83,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1341,7 +1258,6 @@
       "risk": 55.0,
       "tier": "Watch",
       "rank": 84,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1357,7 +1273,6 @@
       "risk": 55.0,
       "tier": "Watch",
       "rank": 85,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1373,7 +1288,6 @@
       "risk": 55.0,
       "tier": "Watch",
       "rank": 86,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1389,7 +1303,6 @@
       "risk": 55.0,
       "tier": "Watch",
       "rank": 87,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1405,7 +1318,6 @@
       "risk": 55.0,
       "tier": "Watch",
       "rank": 88,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1421,7 +1333,6 @@
       "risk": 55.0,
       "tier": "Watch",
       "rank": 89,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1437,7 +1348,6 @@
       "risk": 54.0,
       "tier": "Watch",
       "rank": 90,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1453,7 +1363,6 @@
       "risk": 54.0,
       "tier": "Watch",
       "rank": 91,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1469,7 +1378,6 @@
       "risk": 54.0,
       "tier": "Watch",
       "rank": 92,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1485,7 +1393,6 @@
       "risk": 54.0,
       "tier": "Watch",
       "rank": 93,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1501,7 +1408,6 @@
       "risk": 54.0,
       "tier": "Watch",
       "rank": 94,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1517,7 +1423,6 @@
       "risk": 54.0,
       "tier": "Watch",
       "rank": 95,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1533,7 +1438,6 @@
       "risk": 54.0,
       "tier": "Watch",
       "rank": 96,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1549,7 +1453,6 @@
       "risk": 54.0,
       "tier": "Watch",
       "rank": 97,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1565,7 +1468,6 @@
       "risk": 54.0,
       "tier": "Watch",
       "rank": 98,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1581,7 +1483,6 @@
       "risk": 54.0,
       "tier": "Watch",
       "rank": 99,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1597,7 +1498,6 @@
       "risk": 54.0,
       "tier": "Watch",
       "rank": 100,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1613,7 +1513,6 @@
       "risk": 54.0,
       "tier": "Watch",
       "rank": 101,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1629,7 +1528,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 102,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1645,7 +1543,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 103,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1661,7 +1558,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 104,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1677,7 +1573,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 105,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1693,7 +1588,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 106,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1709,7 +1603,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 107,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1725,7 +1618,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 108,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1741,7 +1633,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 109,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1757,7 +1648,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 110,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1773,7 +1663,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 111,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1789,7 +1678,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 112,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1805,7 +1693,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 113,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1821,7 +1708,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 114,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1837,7 +1723,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 115,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1853,7 +1738,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 116,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1869,7 +1753,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 117,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1885,7 +1768,6 @@
       "risk": 53.0,
       "tier": "Watch",
       "rank": 118,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1901,7 +1783,6 @@
       "risk": 52.0,
       "tier": "Watch",
       "rank": 119,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1917,7 +1798,6 @@
       "risk": 52.0,
       "tier": "Watch",
       "rank": 120,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1933,7 +1813,6 @@
       "risk": 52.0,
       "tier": "Watch",
       "rank": 121,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1949,7 +1828,6 @@
       "risk": 52.0,
       "tier": "Watch",
       "rank": 122,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1965,7 +1843,6 @@
       "risk": 52.0,
       "tier": "Watch",
       "rank": 123,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1981,7 +1858,6 @@
       "risk": 52.0,
       "tier": "Watch",
       "rank": 124,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -1997,7 +1873,6 @@
       "risk": 52.0,
       "tier": "Watch",
       "rank": 125,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2013,7 +1888,6 @@
       "risk": 52.0,
       "tier": "Watch",
       "rank": 126,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2029,7 +1903,6 @@
       "risk": 52.0,
       "tier": "Watch",
       "rank": 127,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2045,7 +1918,6 @@
       "risk": 52.0,
       "tier": "Watch",
       "rank": 128,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2061,7 +1933,6 @@
       "risk": 52.0,
       "tier": "Watch",
       "rank": 129,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2077,7 +1948,6 @@
       "risk": 52.0,
       "tier": "Watch",
       "rank": 130,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2093,7 +1963,6 @@
       "risk": 52.0,
       "tier": "Watch",
       "rank": 131,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2109,7 +1978,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 132,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2125,7 +1993,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 133,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2141,7 +2008,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 134,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2157,7 +2023,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 135,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2173,7 +2038,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 136,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2189,7 +2053,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 137,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2205,7 +2068,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 138,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2221,7 +2083,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 139,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2237,7 +2098,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 140,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2253,7 +2113,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 141,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2269,7 +2128,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 142,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2285,7 +2143,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 143,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2301,7 +2158,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 144,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2317,7 +2173,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 145,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2333,7 +2188,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 146,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2349,7 +2203,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 147,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2365,7 +2218,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 148,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2381,7 +2233,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 149,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2397,7 +2248,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 150,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2413,7 +2263,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 151,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2429,7 +2278,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 152,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2445,7 +2293,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 153,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2461,7 +2308,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 154,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2477,7 +2323,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 155,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2493,7 +2338,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 156,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2509,7 +2353,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 157,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2525,7 +2368,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 158,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2541,7 +2383,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 159,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2557,7 +2398,6 @@
       "risk": 51.0,
       "tier": "Watch",
       "rank": 160,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2573,7 +2413,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 161,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2589,7 +2428,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 162,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2605,7 +2443,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 163,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2621,7 +2458,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 164,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2637,7 +2473,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 165,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2653,7 +2488,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 166,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2669,7 +2503,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 167,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2685,7 +2518,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 168,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2701,7 +2533,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 169,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2717,7 +2548,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 170,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2733,7 +2563,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 171,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2749,7 +2578,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 172,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2765,7 +2593,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 173,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2781,7 +2608,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 174,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2797,7 +2623,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 175,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2813,7 +2638,6 @@
       "risk": 50.0,
       "tier": "Watch",
       "rank": 176,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2829,7 +2653,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 177,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2845,7 +2668,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 178,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2861,7 +2683,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 179,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2877,7 +2698,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 180,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2893,7 +2713,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 181,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2909,7 +2728,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 182,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2925,7 +2743,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 183,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2941,7 +2758,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 184,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2957,7 +2773,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 185,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2973,7 +2788,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 186,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -2989,7 +2803,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 187,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3005,7 +2818,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 188,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3021,7 +2833,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 189,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3037,7 +2848,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 190,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3053,7 +2863,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 191,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3069,7 +2878,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 192,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3085,7 +2893,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 193,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3101,7 +2908,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 194,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3117,7 +2923,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 195,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3133,7 +2938,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 196,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3149,7 +2953,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 197,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3165,7 +2968,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 198,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3181,7 +2983,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 199,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3197,7 +2998,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 200,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3213,7 +3013,6 @@
       "risk": 49.0,
       "tier": "Watch",
       "rank": 201,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3229,7 +3028,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 202,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3245,7 +3043,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 203,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3261,7 +3058,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 204,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3277,7 +3073,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 205,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3293,7 +3088,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 206,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3309,7 +3103,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 207,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3325,7 +3118,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 208,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3341,7 +3133,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 209,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3357,7 +3148,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 210,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3373,7 +3163,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 211,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3389,7 +3178,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 212,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3405,7 +3193,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 213,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3421,7 +3208,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 214,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3437,7 +3223,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 215,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3453,7 +3238,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 216,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3469,7 +3253,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 217,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3485,7 +3268,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 218,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3501,7 +3283,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 219,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3517,7 +3298,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 220,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3533,7 +3313,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 221,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3549,7 +3328,6 @@
       "risk": 48.0,
       "tier": "Watch",
       "rank": 222,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3565,7 +3343,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 223,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3581,7 +3358,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 224,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3597,7 +3373,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 225,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3613,7 +3388,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 226,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3629,7 +3403,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 227,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3645,7 +3418,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 228,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3661,7 +3433,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 229,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3677,7 +3448,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 230,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3693,7 +3463,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 231,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3709,7 +3478,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 232,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3725,7 +3493,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 233,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3741,7 +3508,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 234,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3757,7 +3523,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 235,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3773,7 +3538,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 236,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3789,7 +3553,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 237,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3805,7 +3568,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 238,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3821,7 +3583,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 239,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3837,7 +3598,6 @@
       "risk": 47.0,
       "tier": "Watch",
       "rank": 240,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3853,7 +3613,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 241,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3869,7 +3628,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 242,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3885,7 +3643,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 243,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3901,7 +3658,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 244,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3917,7 +3673,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 245,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3933,7 +3688,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 246,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3949,7 +3703,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 247,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3965,7 +3718,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 248,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3981,7 +3733,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 249,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -3997,7 +3748,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 250,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4013,7 +3763,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 251,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4029,7 +3778,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 252,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4045,7 +3793,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 253,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4061,7 +3808,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 254,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4077,7 +3823,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 255,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4093,7 +3838,6 @@
       "risk": 46.0,
       "tier": "Watch",
       "rank": 256,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4109,7 +3853,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 257,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4125,7 +3868,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 258,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4141,7 +3883,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 259,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4157,7 +3898,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 260,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4173,7 +3913,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 261,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4189,7 +3928,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 262,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4205,7 +3943,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 263,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4221,7 +3958,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 264,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4237,7 +3973,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 265,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4253,7 +3988,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 266,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4269,7 +4003,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 267,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4285,7 +4018,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 268,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4301,7 +4033,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 269,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4317,7 +4048,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 270,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4333,7 +4063,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 271,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4349,7 +4078,6 @@
       "risk": 45.0,
       "tier": "Watch",
       "rank": 272,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4365,7 +4093,6 @@
       "risk": 44.0,
       "tier": "Watch",
       "rank": 273,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4381,7 +4108,6 @@
       "risk": 44.0,
       "tier": "Watch",
       "rank": 274,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4397,7 +4123,6 @@
       "risk": 44.0,
       "tier": "Watch",
       "rank": 275,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4413,7 +4138,6 @@
       "risk": 44.0,
       "tier": "Watch",
       "rank": 276,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4429,7 +4153,6 @@
       "risk": 44.0,
       "tier": "Watch",
       "rank": 277,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4445,7 +4168,6 @@
       "risk": 44.0,
       "tier": "Watch",
       "rank": 278,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4461,7 +4183,6 @@
       "risk": 44.0,
       "tier": "Watch",
       "rank": 279,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4477,7 +4198,6 @@
       "risk": 44.0,
       "tier": "Watch",
       "rank": 280,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4493,7 +4213,6 @@
       "risk": 44.0,
       "tier": "Watch",
       "rank": 281,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4509,7 +4228,6 @@
       "risk": 44.0,
       "tier": "Watch",
       "rank": 282,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4525,7 +4243,6 @@
       "risk": 44.0,
       "tier": "Watch",
       "rank": 283,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4541,7 +4258,6 @@
       "risk": 43.6,
       "tier": "Watch",
       "rank": 284,
-      "hotspot": "ns",
       "pressure_dominant": "isolation"
     },
     {
@@ -4557,7 +4273,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 285,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4573,7 +4288,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 286,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4589,7 +4303,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 287,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4605,7 +4318,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 288,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4621,7 +4333,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 289,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4637,7 +4348,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 290,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4653,7 +4363,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 291,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4669,7 +4378,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 292,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4685,7 +4393,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 293,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4701,7 +4408,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 294,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4717,7 +4423,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 295,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4733,7 +4438,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 296,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4749,7 +4453,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 297,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4765,7 +4468,6 @@
       "risk": 43.0,
       "tier": "Watch",
       "rank": 298,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4781,7 +4483,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 299,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4797,7 +4498,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 300,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4813,7 +4513,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 301,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4829,7 +4528,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 302,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4845,7 +4543,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 303,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4861,7 +4558,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 304,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4877,7 +4573,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 305,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4893,7 +4588,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 306,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4909,7 +4603,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 307,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4925,7 +4618,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 308,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4941,7 +4633,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 309,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4957,7 +4648,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 310,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4973,7 +4663,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 311,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -4989,7 +4678,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 312,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5005,7 +4693,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 313,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5021,7 +4708,6 @@
       "risk": 42.0,
       "tier": "Watch",
       "rank": 314,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5037,7 +4723,6 @@
       "risk": 41.0,
       "tier": "Watch",
       "rank": 315,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5053,7 +4738,6 @@
       "risk": 41.0,
       "tier": "Watch",
       "rank": 316,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5069,7 +4753,6 @@
       "risk": 41.0,
       "tier": "Watch",
       "rank": 317,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5085,7 +4768,6 @@
       "risk": 41.0,
       "tier": "Watch",
       "rank": 318,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5101,7 +4783,6 @@
       "risk": 41.0,
       "tier": "Watch",
       "rank": 319,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5117,7 +4798,6 @@
       "risk": 41.0,
       "tier": "Watch",
       "rank": 320,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5133,7 +4813,6 @@
       "risk": 41.0,
       "tier": "Watch",
       "rank": 321,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5149,7 +4828,6 @@
       "risk": 41.0,
       "tier": "Watch",
       "rank": 322,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5165,7 +4843,6 @@
       "risk": 41.0,
       "tier": "Watch",
       "rank": 323,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5181,7 +4858,6 @@
       "risk": 41.0,
       "tier": "Watch",
       "rank": 324,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5197,7 +4873,6 @@
       "risk": 41.0,
       "tier": "Watch",
       "rank": 325,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5213,7 +4888,6 @@
       "risk": 40.0,
       "tier": "Watch",
       "rank": 326,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5229,7 +4903,6 @@
       "risk": 40.0,
       "tier": "Watch",
       "rank": 327,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5245,7 +4918,6 @@
       "risk": 40.0,
       "tier": "Watch",
       "rank": 328,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5261,7 +4933,6 @@
       "risk": 40.0,
       "tier": "Watch",
       "rank": 329,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5277,7 +4948,6 @@
       "risk": 40.0,
       "tier": "Watch",
       "rank": 330,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5293,7 +4963,6 @@
       "risk": 40.0,
       "tier": "Watch",
       "rank": 331,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5309,7 +4978,6 @@
       "risk": 40.0,
       "tier": "Watch",
       "rank": 332,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5325,7 +4993,6 @@
       "risk": 40.0,
       "tier": "Watch",
       "rank": 333,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5341,7 +5008,6 @@
       "risk": 39.0,
       "tier": "Watch",
       "rank": 334,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5357,7 +5023,6 @@
       "risk": 39.0,
       "tier": "Watch",
       "rank": 335,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5373,7 +5038,6 @@
       "risk": 39.0,
       "tier": "Watch",
       "rank": 336,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5389,7 +5053,6 @@
       "risk": 39.0,
       "tier": "Watch",
       "rank": 337,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5405,7 +5068,6 @@
       "risk": 39.0,
       "tier": "Watch",
       "rank": 338,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5421,7 +5083,6 @@
       "risk": 39.0,
       "tier": "Watch",
       "rank": 339,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5437,7 +5098,6 @@
       "risk": 39.0,
       "tier": "Watch",
       "rank": 340,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5453,7 +5113,6 @@
       "risk": 39.0,
       "tier": "Watch",
       "rank": 341,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5469,7 +5128,6 @@
       "risk": 39.0,
       "tier": "Watch",
       "rank": 342,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5485,7 +5143,6 @@
       "risk": 38.0,
       "tier": "Watch",
       "rank": 343,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5501,7 +5158,6 @@
       "risk": 38.0,
       "tier": "Watch",
       "rank": 344,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5517,7 +5173,6 @@
       "risk": 38.0,
       "tier": "Watch",
       "rank": 345,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5533,7 +5188,6 @@
       "risk": 38.0,
       "tier": "Watch",
       "rank": 346,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5549,7 +5203,6 @@
       "risk": 38.0,
       "tier": "Watch",
       "rank": 347,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5565,7 +5218,6 @@
       "risk": 38.0,
       "tier": "Watch",
       "rank": 348,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5581,7 +5233,6 @@
       "risk": 38.0,
       "tier": "Watch",
       "rank": 349,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5597,7 +5248,6 @@
       "risk": 38.0,
       "tier": "Watch",
       "rank": 350,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5613,7 +5263,6 @@
       "risk": 38.0,
       "tier": "Watch",
       "rank": 351,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5629,7 +5278,6 @@
       "risk": 37.0,
       "tier": "Watch",
       "rank": 352,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5645,7 +5293,6 @@
       "risk": 37.0,
       "tier": "Watch",
       "rank": 353,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5661,7 +5308,6 @@
       "risk": 37.0,
       "tier": "Watch",
       "rank": 354,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5677,7 +5323,6 @@
       "risk": 37.0,
       "tier": "Watch",
       "rank": 355,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5693,7 +5338,6 @@
       "risk": 37.0,
       "tier": "Watch",
       "rank": 356,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5709,7 +5353,6 @@
       "risk": 37.0,
       "tier": "Watch",
       "rank": 357,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5725,7 +5368,6 @@
       "risk": 37.0,
       "tier": "Watch",
       "rank": 358,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5741,7 +5383,6 @@
       "risk": 37.0,
       "tier": "Watch",
       "rank": 359,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5757,7 +5398,6 @@
       "risk": 37.0,
       "tier": "Watch",
       "rank": 360,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5773,7 +5413,6 @@
       "risk": 37.0,
       "tier": "Watch",
       "rank": 361,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5789,7 +5428,6 @@
       "risk": 37.0,
       "tier": "Watch",
       "rank": 362,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5805,7 +5443,6 @@
       "risk": 37.0,
       "tier": "Watch",
       "rank": 363,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5821,7 +5458,6 @@
       "risk": 36.0,
       "tier": "Watch",
       "rank": 364,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5837,7 +5473,6 @@
       "risk": 36.0,
       "tier": "Watch",
       "rank": 365,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5853,7 +5488,6 @@
       "risk": 36.0,
       "tier": "Watch",
       "rank": 366,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5869,7 +5503,6 @@
       "risk": 36.0,
       "tier": "Watch",
       "rank": 367,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5885,7 +5518,6 @@
       "risk": 36.0,
       "tier": "Watch",
       "rank": 368,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5901,7 +5533,6 @@
       "risk": 35.0,
       "tier": "Watch",
       "rank": 369,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5917,7 +5548,6 @@
       "risk": 35.0,
       "tier": "Watch",
       "rank": 370,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5933,7 +5563,6 @@
       "risk": 35.0,
       "tier": "Watch",
       "rank": 371,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5949,7 +5578,6 @@
       "risk": 34.0,
       "tier": "Watch",
       "rank": 372,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5965,7 +5593,6 @@
       "risk": 34.0,
       "tier": "Watch",
       "rank": 373,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5981,7 +5608,6 @@
       "risk": 34.0,
       "tier": "Watch",
       "rank": 374,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -5997,7 +5623,6 @@
       "risk": 34.0,
       "tier": "Watch",
       "rank": 375,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6013,7 +5638,6 @@
       "risk": 34.0,
       "tier": "Watch",
       "rank": 376,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6029,7 +5653,6 @@
       "risk": 33.0,
       "tier": "Watch",
       "rank": 377,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6045,7 +5668,6 @@
       "risk": 33.0,
       "tier": "Watch",
       "rank": 378,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6061,7 +5683,6 @@
       "risk": 33.0,
       "tier": "Watch",
       "rank": 379,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6077,7 +5698,6 @@
       "risk": 33.0,
       "tier": "Watch",
       "rank": 380,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6093,7 +5713,6 @@
       "risk": 33.0,
       "tier": "Watch",
       "rank": 381,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6109,7 +5728,6 @@
       "risk": 33.0,
       "tier": "Watch",
       "rank": 382,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6125,7 +5743,6 @@
       "risk": 33.0,
       "tier": "Watch",
       "rank": 383,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6141,7 +5758,6 @@
       "risk": 33.0,
       "tier": "Watch",
       "rank": 384,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6157,7 +5773,6 @@
       "risk": 32.0,
       "tier": "Watch",
       "rank": 385,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6173,7 +5788,6 @@
       "risk": 32.0,
       "tier": "Watch",
       "rank": 386,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6189,7 +5803,6 @@
       "risk": 32.0,
       "tier": "Watch",
       "rank": 387,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6205,7 +5818,6 @@
       "risk": 32.0,
       "tier": "Watch",
       "rank": 388,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6221,7 +5833,6 @@
       "risk": 32.0,
       "tier": "Watch",
       "rank": 389,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6237,7 +5848,6 @@
       "risk": 32.0,
       "tier": "Watch",
       "rank": 390,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6253,7 +5863,6 @@
       "risk": 32.0,
       "tier": "Watch",
       "rank": 391,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6269,7 +5878,6 @@
       "risk": 31.0,
       "tier": "Watch",
       "rank": 392,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6285,7 +5893,6 @@
       "risk": 31.0,
       "tier": "Watch",
       "rank": 393,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6301,7 +5908,6 @@
       "risk": 31.0,
       "tier": "Watch",
       "rank": 394,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6317,7 +5923,6 @@
       "risk": 31.0,
       "tier": "Watch",
       "rank": 395,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6333,7 +5938,6 @@
       "risk": 31.0,
       "tier": "Watch",
       "rank": 396,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6349,7 +5953,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 397,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6365,7 +5968,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 398,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6381,7 +5983,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 399,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6397,7 +5998,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 400,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6413,7 +6013,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 401,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6429,7 +6028,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 402,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6445,7 +6043,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 403,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6461,7 +6058,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 404,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6477,7 +6073,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 405,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6493,7 +6088,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 406,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6509,7 +6103,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 407,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6525,7 +6118,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 408,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6541,7 +6133,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 409,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6557,7 +6148,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 410,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6573,7 +6163,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 411,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6589,7 +6178,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 412,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6605,7 +6193,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 413,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6621,7 +6208,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 414,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6637,7 +6223,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 415,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6653,7 +6238,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 416,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6669,7 +6253,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 417,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6685,7 +6268,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 418,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     },
     {
@@ -6701,7 +6283,6 @@
       "risk": 30.0,
       "tier": "Watch",
       "rank": 419,
-      "hotspot": "ns",
       "pressure_dominant": "mental"
     }
   ],
@@ -10511,7 +10092,7 @@
     },
     {
       "pressure": "isolation",
-      "lever": "4th_space_contrast",
+      "lever": "5th_space_barge",
       "expected_outcome": "reduced_loneliness_connection"
     },
     {
@@ -10555,37 +10136,41 @@
       "expected_outcome": "better_chronic_control"
     }
   ],
-  "fourth_space": {
+  "fifth_space": {
     "spec": {
-      "name": "4th Space \u2014 sauna, cold plunge, contrast therapy",
-      "rationale": "A physical/social venue that combats loneliness by bringing people together through shared contrast-therapy rituals. Models the CIC's pillar-2 delivery.",
+      "name": "5th Space \u2014 off-grid canal barge (mobile community venue)",
+      "rationale": "A large canal barge, solar + lithium off-grid, that sails the UK canal/river network and moors at the towns the AI flags. It combats loneliness by arriving before the crisis \u2014 a warm room, on the water, with no postcode lottery. Models the CIC's pillar-2 delivery as a mobile venue.",
       "levers": [
         [
-          "Sauna + cold plunge membership (subsidised, social sessions)",
+          "Canal-barge community mooring (subsidised, social sessions)",
           0.8,
-          540
+          1800
         ],
         [
-          "Guided contrast-therapy + community circle",
+          "Warm-room + contrast/wellbeing circle on board",
           0.78,
-          480
+          1200
         ],
         [
-          "Intergenerational 4th-space sessions (ageing + youth)",
+          "Intergenerational 5th-space sessions (ageing + youth)",
           0.72,
-          520
+          1100
         ]
       ],
       "loneliness_reduction": 0.8,
-      "sessions_per_cohort": 24,
-      "capacity_per_site": 60,
+      "sessions_per_mooring": 24,
+      "capacity_per_mooring": 60,
+      "towns_per_year": 12,
+      "reach_multiplier": 12,
       "sroi_proxy": 3.2
     },
-    "members_per_site": 60,
+    "members_per_mooring": 60,
+    "towns_per_year": 12,
+    "reach_multiplier": 12,
     "expected_loneliness_reduced": 48,
     "sroi_proxy": 3.2,
-    "est_annual_investment": 4320,
-    "est_social_value": 13824
+    "est_annual_investment": 14400,
+    "est_social_value": 46080
   },
   "allocation": {
     "funded": [
@@ -12725,7 +12310,7 @@
     "places_covered": 179,
     "budget": 120000,
     "remaining": 70.0,
-    "fourth_space_funded": false
+    "fifth_space_funded": false
   },
   "interventions": [
     {
@@ -13249,7 +12834,7 @@
     ]
   },
   "mirofish_synthesis": "(1) Community pressure will concentrate on inner-city areas with vulnerable families facing reduced benefits.\n(2) Three concrete interventions are: \n- Targeted assistance such as utility subsidies and emergency food supplies for vulnerable families.\n- Prevention spending on services like job training programs and affordable housing initiatives.\n- Expanding public health campaigns to include mental health support resources.",
-  "spatial_note": "Gi* KNN k=4 (n=24 geocoded)",
-  "architecture": "PREDICTION(mental/ageing primary)+4TH SPACE",
-  "generated": "2026-07-24T19:08:23.894540+00:00"
+  "spatial_note": "spatial skipped (No module named 'libpysal')",
+  "architecture": "PREDICTION(mental/ageing primary)+5TH SPACE(canal barge)",
+  "generated": "2026-07-25T04:40:01.806416+00:00"
 }
