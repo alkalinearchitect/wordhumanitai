@@ -1,0 +1,1217 @@
+{
+  "composite": [
+    {
+      "place": "Middlesbrough",
+      "sev": 90.0,
+      "region": "North East England",
+      "lat": 54.5742,
+      "lng": -1.2348,
+      "n": 1,
+      "esc": 1.0,
+      "trajectory": 1.02,
+      "risk": 93.6,
+      "tier": "Critical",
+      "rank": 1,
+      "gi_star": 0.19573155800755543,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Glasgow",
+      "sev": 87.0,
+      "region": "Scotland",
+      "lat": 55.8642,
+      "lng": -4.2518,
+      "n": 1,
+      "esc": 1.0,
+      "trajectory": 0.99,
+      "risk": 90.6,
+      "tier": "Critical",
+      "rank": 2,
+      "gi_star": 0.05537503461838492,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Manchester",
+      "sev": 86.0,
+      "region": "North West England",
+      "lat": 53.4808,
+      "lng": -2.2426,
+      "n": 1,
+      "esc": 1.0,
+      "trajectory": 0.98,
+      "risk": 89.6,
+      "tier": "Critical",
+      "rank": 3,
+      "gi_star": 0.6343456935987182,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Blackpool",
+      "sev": 88.0,
+      "region": "North West England",
+      "lat": 53.8175,
+      "lng": -3.0357,
+      "n": 1,
+      "esc": 0.0,
+      "trajectory": 0.88,
+      "risk": 88.0,
+      "tier": "Critical",
+      "rank": 4,
+      "gi_star": 0.7747022169878898,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Kingston upon Hull",
+      "sev": 84.0,
+      "region": "Yorkshire and the Humber",
+      "lat": 53.7457,
+      "lng": -0.3367,
+      "n": 1,
+      "esc": 1.0,
+      "trajectory": 0.96,
+      "risk": 87.6,
+      "tier": "Critical",
+      "rank": 5,
+      "gi_star": 0.4062663430913134,
+      "hotspot": "ns"
+    },
+    {
+      "place": "London (Newham)",
+      "sev": 83.0,
+      "region": "London",
+      "lat": 51.5074,
+      "lng": 0.1278,
+      "n": 1,
+      "esc": 1.0,
+      "trajectory": 0.95,
+      "risk": 86.6,
+      "tier": "Critical",
+      "rank": 6,
+      "gi_star": 0.15625628580435164,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Nottingham",
+      "sev": 82.0,
+      "region": "East Midlands",
+      "lat": 52.9548,
+      "lng": -1.1581,
+      "n": 1,
+      "esc": 1.0,
+      "trajectory": 0.94,
+      "risk": 85.6,
+      "tier": "Critical",
+      "rank": 7,
+      "gi_star": 0.13871172038070587,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Birmingham",
+      "sev": 85.0,
+      "region": "West Midlands",
+      "lat": 52.4862,
+      "lng": -1.8904,
+      "n": 1,
+      "esc": 0.0,
+      "trajectory": 0.85,
+      "risk": 85.0,
+      "tier": "Critical",
+      "rank": 8,
+      "gi_star": 0.24397911292258376,
+      "hotspot": "ns"
+    },
+    {
+      "place": "UK (national)",
+      "sev": 85.0,
+      "region": "United Kingdom",
+      "lat": 54.0,
+      "lng": -2.5,
+      "n": 1,
+      "esc": 0.0,
+      "trajectory": 0.85,
+      "risk": 85.0,
+      "tier": "Critical",
+      "rank": 9,
+      "gi_star": 0.7747022169878898,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Liverpool",
+      "sev": 80.0,
+      "region": "North West England",
+      "lat": 53.4084,
+      "lng": -2.9916,
+      "n": 1,
+      "esc": 1.0,
+      "trajectory": 0.92,
+      "risk": 83.6,
+      "tier": "Critical",
+      "rank": 10,
+      "gi_star": 0.7747022169878898,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Stoke-on-Trent",
+      "sev": 80.0,
+      "region": "West Midlands",
+      "lat": 53.0027,
+      "lng": -2.1794,
+      "n": 1,
+      "esc": 0.0,
+      "trajectory": 0.8,
+      "risk": 80.0,
+      "tier": "Priority",
+      "rank": 11,
+      "gi_star": 0.42381090851496134,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Bradford",
+      "sev": 80.0,
+      "region": "Yorkshire and the Humber",
+      "lat": 53.795,
+      "lng": -1.7594,
+      "n": 1,
+      "esc": 0.0,
+      "trajectory": 0.8,
+      "risk": 80.0,
+      "tier": "Priority",
+      "rank": 12,
+      "gi_star": 0.3185435159730813,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Leeds",
+      "sev": 74.0,
+      "region": "Yorkshire and the Humber",
+      "lat": 53.8008,
+      "lng": -1.5491,
+      "n": 1,
+      "esc": 1.0,
+      "trajectory": 0.86,
+      "risk": 77.6,
+      "tier": "Priority",
+      "rank": 13,
+      "gi_star": 0.4062663430913134,
+      "hotspot": "ns"
+    },
+    {
+      "place": "England (national)",
+      "sev": 73.75,
+      "region": "England",
+      "lat": 52.3555,
+      "lng": -1.1743,
+      "n": 4,
+      "esc": 1.0,
+      "trajectory": 0.8575,
+      "risk": 77.4,
+      "tier": "Priority",
+      "rank": 14,
+      "gi_star": 0.24397911292258376,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Scotland (national)",
+      "sev": 71.0,
+      "region": "Scotland",
+      "lat": 56.4907,
+      "lng": -4.2026,
+      "n": 2,
+      "esc": 1.0,
+      "trajectory": 0.83,
+      "risk": 74.6,
+      "tier": "Priority",
+      "rank": 15,
+      "gi_star": 0.05537503461838492,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Wales (national)",
+      "sev": 70.5,
+      "region": "Wales",
+      "lat": 52.1307,
+      "lng": -3.7837,
+      "n": 2,
+      "esc": 1.0,
+      "trajectory": 0.825,
+      "risk": 74.1,
+      "tier": "Priority",
+      "rank": 16,
+      "gi_star": -1.0236157389358729,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Newcastle upon Tyne",
+      "sev": 74.0,
+      "region": "North East England",
+      "lat": 54.9783,
+      "lng": -1.6178,
+      "n": 1,
+      "esc": 0.0,
+      "trajectory": 0.74,
+      "risk": 74.0,
+      "tier": "Priority",
+      "rank": 17,
+      "gi_star": 0.4939891702095455,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Northern Ireland (national)",
+      "sev": 66.0,
+      "region": "Northern Ireland",
+      "lat": 54.7877,
+      "lng": -6.4923,
+      "n": 1,
+      "esc": 1.0,
+      "trajectory": 0.78,
+      "risk": 69.6,
+      "tier": "Watch",
+      "rank": 18,
+      "gi_star": 0.05537503461838492,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Belfast",
+      "sev": 66.0,
+      "region": "Northern Ireland",
+      "lat": 54.5973,
+      "lng": -5.9301,
+      "n": 1,
+      "esc": 1.0,
+      "trajectory": 0.78,
+      "risk": 69.6,
+      "tier": "Watch",
+      "rank": 19,
+      "gi_star": 0.05537503461838492,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Sheffield",
+      "sev": 68.0,
+      "region": "Yorkshire and the Humber",
+      "lat": 53.3811,
+      "lng": -1.4701,
+      "n": 1,
+      "esc": 0.0,
+      "trajectory": 0.68,
+      "risk": 68.0,
+      "tier": "Watch",
+      "rank": 20,
+      "gi_star": 0.2659098197021418,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Cardiff",
+      "sev": 64.0,
+      "region": "Wales",
+      "lat": 51.4816,
+      "lng": -3.1791,
+      "n": 1,
+      "esc": 1.0,
+      "trajectory": 0.76,
+      "risk": 67.6,
+      "tier": "Watch",
+      "rank": 21,
+      "gi_star": -0.9358929118176397,
+      "hotspot": "ns"
+    },
+    {
+      "place": "London (Kensington & Chelsea)",
+      "sev": 60.0,
+      "region": "London",
+      "lat": 51.4991,
+      "lng": -0.1938,
+      "n": 1,
+      "esc": 1.0,
+      "trajectory": 0.72,
+      "risk": 63.6,
+      "tier": "Watch",
+      "rank": 22,
+      "gi_star": 0.15625628580435164,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Bristol",
+      "sev": 62.0,
+      "region": "South West England",
+      "lat": 51.4545,
+      "lng": -2.5879,
+      "n": 1,
+      "esc": 0.0,
+      "trajectory": 0.62,
+      "risk": 62.0,
+      "tier": "Watch",
+      "rank": 23,
+      "gi_star": -0.9358929118176397,
+      "hotspot": "ns"
+    },
+    {
+      "place": "Bath",
+      "sev": 40.0,
+      "region": "South West England",
+      "lat": 51.3751,
+      "lng": -2.3617,
+      "n": 1,
+      "esc": 0.0,
+      "trajectory": 0.4,
+      "risk": 40.0,
+      "tier": "Watch",
+      "rank": 24,
+      "gi_star": -0.8788730741907913,
+      "hotspot": "ns"
+    }
+  ],
+  "interventions": [
+    {
+      "place": "Middlesbrough",
+      "region": "North East England",
+      "risk": 93.6,
+      "tier": "Critical",
+      "hotspot": "ns",
+      "pressures": [
+        "poverty"
+      ],
+      "interventions": [
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "intervention": "Targeted child-poverty cash / cost-of-living support",
+          "expected_gain": 0.9,
+          "cost": 1100,
+          "est_households_helped": 8.0
+        },
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "intervention": "Debt advice + money guidance (CHW-delivered)",
+          "expected_gain": 0.7,
+          "cost": 650,
+          "est_households_helped": 2.9
+        },
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "intervention": "Living-wage / employment access programme",
+          "expected_gain": 0.5,
+          "cost": 1400,
+          "est_households_helped": 3.1
+        }
+      ],
+      "est_total_households": 14.0,
+      "est_cost": 3150,
+      "equity_note": "Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.",
+      "stop_condition": "Review at week 8; stop expansion if completion <35% or access gap widens in Middlesbrough. Escalate to safeguarding lead if self-harm risk indicated in referrals."
+    },
+    {
+      "place": "Glasgow",
+      "region": "Scotland",
+      "risk": 90.6,
+      "tier": "Critical",
+      "hotspot": "ns",
+      "pressures": [
+        "isolation"
+      ],
+      "interventions": [
+        {
+          "pressure": "isolation",
+          "label": "Isolation / loneliness",
+          "intervention": "Community navigator + befriending",
+          "expected_gain": 0.6,
+          "cost": 480,
+          "est_households_helped": 2.2
+        },
+        {
+          "pressure": "isolation",
+          "label": "Isolation / loneliness",
+          "intervention": "Social prescribing + group activity",
+          "expected_gain": 0.55,
+          "cost": 460,
+          "est_households_helped": 1.8
+        },
+        {
+          "pressure": "isolation",
+          "label": "Isolation / loneliness",
+          "intervention": "Transport-to-service vouchers",
+          "expected_gain": 0.4,
+          "cost": 390,
+          "est_households_helped": 0.8
+        }
+      ],
+      "est_total_households": 4.9,
+      "est_cost": 1330,
+      "equity_note": "Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.",
+      "stop_condition": "Review at week 8; stop expansion if completion <35% or access gap widens in Glasgow. Escalate to safeguarding lead if self-harm risk indicated in referrals."
+    },
+    {
+      "place": "Manchester",
+      "region": "North West England",
+      "risk": 89.6,
+      "tier": "Critical",
+      "hotspot": "ns",
+      "pressures": [
+        "poverty"
+      ],
+      "interventions": [
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "intervention": "Targeted child-poverty cash / cost-of-living support",
+          "expected_gain": 0.9,
+          "cost": 1100,
+          "est_households_helped": 8.0
+        },
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "intervention": "Debt advice + money guidance (CHW-delivered)",
+          "expected_gain": 0.7,
+          "cost": 650,
+          "est_households_helped": 2.9
+        },
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "intervention": "Living-wage / employment access programme",
+          "expected_gain": 0.5,
+          "cost": 1400,
+          "est_households_helped": 3.1
+        }
+      ],
+      "est_total_households": 14.0,
+      "est_cost": 3150,
+      "equity_note": "Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.",
+      "stop_condition": "Review at week 8; stop expansion if completion <35% or access gap widens in Manchester. Escalate to safeguarding lead if self-harm risk indicated in referrals."
+    },
+    {
+      "place": "Blackpool",
+      "region": "North West England",
+      "risk": 88.0,
+      "tier": "Critical",
+      "hotspot": "ns",
+      "pressures": [
+        "isolation"
+      ],
+      "interventions": [
+        {
+          "pressure": "isolation",
+          "label": "Isolation / loneliness",
+          "intervention": "Community navigator + befriending",
+          "expected_gain": 0.6,
+          "cost": 480,
+          "est_households_helped": 2.2
+        },
+        {
+          "pressure": "isolation",
+          "label": "Isolation / loneliness",
+          "intervention": "Social prescribing + group activity",
+          "expected_gain": 0.55,
+          "cost": 460,
+          "est_households_helped": 1.8
+        },
+        {
+          "pressure": "isolation",
+          "label": "Isolation / loneliness",
+          "intervention": "Transport-to-service vouchers",
+          "expected_gain": 0.4,
+          "cost": 390,
+          "est_households_helped": 0.8
+        }
+      ],
+      "est_total_households": 4.9,
+      "est_cost": 1330,
+      "equity_note": "Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.",
+      "stop_condition": "Review at week 8; stop expansion if completion <35% or access gap widens in Blackpool. Escalate to safeguarding lead if self-harm risk indicated in referrals."
+    },
+    {
+      "place": "Kingston upon Hull",
+      "region": "Yorkshire and the Humber",
+      "risk": 87.6,
+      "tier": "Critical",
+      "hotspot": "ns",
+      "pressures": [
+        "poverty"
+      ],
+      "interventions": [
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "intervention": "Targeted child-poverty cash / cost-of-living support",
+          "expected_gain": 0.9,
+          "cost": 1100,
+          "est_households_helped": 8.0
+        },
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "intervention": "Debt advice + money guidance (CHW-delivered)",
+          "expected_gain": 0.7,
+          "cost": 650,
+          "est_households_helped": 2.9
+        },
+        {
+          "pressure": "poverty",
+          "label": "Poverty / low income",
+          "intervention": "Living-wage / employment access programme",
+          "expected_gain": 0.5,
+          "cost": 1400,
+          "est_households_helped": 3.1
+        }
+      ],
+      "est_total_households": 14.0,
+      "est_cost": 3150,
+      "equity_note": "Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.",
+      "stop_condition": "Review at week 8; stop expansion if completion <35% or access gap widens in Kingston upon Hull. Escalate to safeguarding lead if self-harm risk indicated in referrals."
+    },
+    {
+      "place": "London (Newham)",
+      "region": "London",
+      "risk": 86.6,
+      "tier": "Critical",
+      "hotspot": "ns",
+      "pressures": [
+        "homelessness"
+      ],
+      "interventions": [
+        {
+          "pressure": "homelessness",
+          "label": "Homelessness",
+          "intervention": "Preventive tenancy sustainment (pre-Section-21 reach)",
+          "expected_gain": 0.85,
+          "cost": 950,
+          "est_households_helped": 4.8
+        },
+        {
+          "pressure": "homelessness",
+          "label": "Homelessness",
+          "intervention": "Rapid rehousing + temporary-accommodation diversion",
+          "expected_gain": 0.8,
+          "cost": 1300,
+          "est_households_helped": 5.8
+        },
+        {
+          "pressure": "homelessness",
+          "label": "Homelessness",
+          "intervention": "Rent arrears mediation with landlord",
+          "expected_gain": 0.6,
+          "cost": 700,
+          "est_households_helped": 1.8
+        }
+      ],
+      "est_total_households": 12.4,
+      "est_cost": 2950,
+      "equity_note": "Higher expected benefit in this high-deprivation area; monitor differential take-up across underserved groups.",
+      "stop_condition": "Review at week 8; stop expansion if completion <35% or access gap widens in London (Newham). Escalate to safeguarding lead if self-harm risk indicated in referrals."
+    }
+  ],
+  "allocation": {
+    "funded": [
+      {
+        "place": "Glasgow",
+        "tier": "Critical",
+        "pressure": "isolation",
+        "intervention": "Community navigator + befriending",
+        "gain": 0.6,
+        "cost": 480,
+        "eff": 0.01625,
+        "hh": 7.8
+      },
+      {
+        "place": "Blackpool",
+        "tier": "Critical",
+        "pressure": "isolation",
+        "intervention": "Community navigator + befriending",
+        "gain": 0.6,
+        "cost": 480,
+        "eff": 0.01625,
+        "hh": 7.8
+      },
+      {
+        "place": "Glasgow",
+        "tier": "Critical",
+        "pressure": "isolation",
+        "intervention": "Social prescribing + group activity",
+        "gain": 0.55,
+        "cost": 460,
+        "eff": 0.015543478260869567,
+        "hh": 7.2
+      },
+      {
+        "place": "Blackpool",
+        "tier": "Critical",
+        "pressure": "isolation",
+        "intervention": "Social prescribing + group activity",
+        "gain": 0.55,
+        "cost": 460,
+        "eff": 0.015543478260869567,
+        "hh": 7.2
+      },
+      {
+        "place": "Glasgow",
+        "tier": "Critical",
+        "pressure": "isolation",
+        "intervention": "Transport-to-service vouchers",
+        "gain": 0.4,
+        "cost": 390,
+        "eff": 0.013333333333333334,
+        "hh": 5.2
+      },
+      {
+        "place": "Blackpool",
+        "tier": "Critical",
+        "pressure": "isolation",
+        "intervention": "Transport-to-service vouchers",
+        "gain": 0.4,
+        "cost": 390,
+        "eff": 0.013333333333333334,
+        "hh": 5.2
+      },
+      {
+        "place": "Middlesbrough",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Manchester",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Kingston upon Hull",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Nottingham",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Birmingham",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Liverpool",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Middlesbrough",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "Manchester",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "Kingston upon Hull",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "Nottingham",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "Birmingham",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "Liverpool",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "London (Newham)",
+        "tier": "Critical",
+        "pressure": "homelessness",
+        "intervention": "Preventive tenancy sustainment (pre-Section-21 reach)",
+        "gain": 0.85,
+        "cost": 950,
+        "eff": 0.006263157894736842,
+        "hh": 6.0
+      },
+      {
+        "place": "London (Newham)",
+        "tier": "Critical",
+        "pressure": "homelessness",
+        "intervention": "Rent arrears mediation with landlord",
+        "gain": 0.6,
+        "cost": 700,
+        "eff": 0.006,
+        "hh": 4.2
+      },
+      {
+        "place": "London (Newham)",
+        "tier": "Critical",
+        "pressure": "homelessness",
+        "intervention": "Rapid rehousing + temporary-accommodation diversion",
+        "gain": 0.8,
+        "cost": 1300,
+        "eff": 0.004307692307692308,
+        "hh": 5.6
+      },
+      {
+        "place": "Middlesbrough",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      },
+      {
+        "place": "Manchester",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      },
+      {
+        "place": "Kingston upon Hull",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      },
+      {
+        "place": "Nottingham",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      },
+      {
+        "place": "Birmingham",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      },
+      {
+        "place": "Liverpool",
+        "tier": "Critical",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      },
+      {
+        "place": "Stoke-on-Trent",
+        "tier": "Priority",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Bradford",
+        "tier": "Priority",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Leeds",
+        "tier": "Priority",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Newcastle upon Tyne",
+        "tier": "Priority",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Stoke-on-Trent",
+        "tier": "Priority",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "Bradford",
+        "tier": "Priority",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "Leeds",
+        "tier": "Priority",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "Newcastle upon Tyne",
+        "tier": "Priority",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "Stoke-on-Trent",
+        "tier": "Priority",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      },
+      {
+        "place": "Bradford",
+        "tier": "Priority",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      },
+      {
+        "place": "Leeds",
+        "tier": "Priority",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      },
+      {
+        "place": "Newcastle upon Tyne",
+        "tier": "Priority",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      },
+      {
+        "place": "London (Kensington & Chelsea)",
+        "tier": "Watch",
+        "pressure": "isolation",
+        "intervention": "Community navigator + befriending",
+        "gain": 0.6,
+        "cost": 480,
+        "eff": 0.01625,
+        "hh": 7.8
+      },
+      {
+        "place": "Bath",
+        "tier": "Watch",
+        "pressure": "isolation",
+        "intervention": "Community navigator + befriending",
+        "gain": 0.6,
+        "cost": 480,
+        "eff": 0.01625,
+        "hh": 7.8
+      },
+      {
+        "place": "London (Kensington & Chelsea)",
+        "tier": "Watch",
+        "pressure": "isolation",
+        "intervention": "Social prescribing + group activity",
+        "gain": 0.55,
+        "cost": 460,
+        "eff": 0.015543478260869567,
+        "hh": 7.2
+      },
+      {
+        "place": "Bath",
+        "tier": "Watch",
+        "pressure": "isolation",
+        "intervention": "Social prescribing + group activity",
+        "gain": 0.55,
+        "cost": 460,
+        "eff": 0.015543478260869567,
+        "hh": 7.2
+      },
+      {
+        "place": "London (Kensington & Chelsea)",
+        "tier": "Watch",
+        "pressure": "isolation",
+        "intervention": "Transport-to-service vouchers",
+        "gain": 0.4,
+        "cost": 390,
+        "eff": 0.013333333333333334,
+        "hh": 5.2
+      },
+      {
+        "place": "Bath",
+        "tier": "Watch",
+        "pressure": "isolation",
+        "intervention": "Transport-to-service vouchers",
+        "gain": 0.4,
+        "cost": 390,
+        "eff": 0.013333333333333334,
+        "hh": 5.2
+      },
+      {
+        "place": "Belfast",
+        "tier": "Watch",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Sheffield",
+        "tier": "Watch",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Cardiff",
+        "tier": "Watch",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Bristol",
+        "tier": "Watch",
+        "pressure": "poverty",
+        "intervention": "Debt advice + money guidance (CHW-delivered)",
+        "gain": 0.7,
+        "cost": 650,
+        "eff": 0.009692307692307693,
+        "hh": 6.3
+      },
+      {
+        "place": "Belfast",
+        "tier": "Watch",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "Sheffield",
+        "tier": "Watch",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "Cardiff",
+        "tier": "Watch",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "Bristol",
+        "tier": "Watch",
+        "pressure": "poverty",
+        "intervention": "Targeted child-poverty cash / cost-of-living support",
+        "gain": 0.9,
+        "cost": 1100,
+        "eff": 0.007363636363636363,
+        "hh": 8.1
+      },
+      {
+        "place": "Northern Ireland (national)",
+        "tier": "Watch",
+        "pressure": "homelessness",
+        "intervention": "Preventive tenancy sustainment (pre-Section-21 reach)",
+        "gain": 0.85,
+        "cost": 950,
+        "eff": 0.006263157894736842,
+        "hh": 6.0
+      },
+      {
+        "place": "Northern Ireland (national)",
+        "tier": "Watch",
+        "pressure": "homelessness",
+        "intervention": "Rent arrears mediation with landlord",
+        "gain": 0.6,
+        "cost": 700,
+        "eff": 0.006,
+        "hh": 4.2
+      },
+      {
+        "place": "Northern Ireland (national)",
+        "tier": "Watch",
+        "pressure": "homelessness",
+        "intervention": "Rapid rehousing + temporary-accommodation diversion",
+        "gain": 0.8,
+        "cost": 1300,
+        "eff": 0.004307692307692308,
+        "hh": 5.6
+      },
+      {
+        "place": "Belfast",
+        "tier": "Watch",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      },
+      {
+        "place": "Sheffield",
+        "tier": "Watch",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      },
+      {
+        "place": "Cardiff",
+        "tier": "Watch",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      },
+      {
+        "place": "Bristol",
+        "tier": "Watch",
+        "pressure": "poverty",
+        "intervention": "Living-wage / employment access programme",
+        "gain": 0.5,
+        "cost": 1400,
+        "eff": 0.0032142857142857142,
+        "hh": 4.5
+      }
+    ],
+    "spent": 55320,
+    "total_hh": 377.0,
+    "places_covered": 20,
+    "budget": 120000,
+    "remaining": 64680
+  },
+  "spatial_note": "Gi* KNN k=4 (n=24)",
+  "mirofish_synthesis": "(1) Community pressure will concentrate on inner-city areas with vulnerable families facing reduced benefits.\n(2) Three concrete interventions are: \n- Targeted assistance such as utility subsidies and emergency food supplies for vulnerable families.\n- Prevention spending on services like job training programs and affordable housing initiatives.\n- Expanding public health campaigns to include mental health support resources."
+}

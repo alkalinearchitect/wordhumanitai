@@ -1,69 +1,37 @@
-# Humanitai CIC Landing Page
+# Humanitai CIC
 
-Transforming UK Communities Through AI-Powered Solutions
+**We fix what Britain breaks.**
 
-## About Humanitai
+UK Community Interest Company deploying onsite intelligence teams and AI to solve Britain's hardest social problems. Asset-locked. Outcome-tracked. Fundable through Social Impact Bonds.
 
-Humanitai is a Community Interest Company (CIC) pioneering intelligent solutions to address the UK's most pressing social challenges. We use advanced AI prediction models to identify where help is needed most and deliver impact that matters.
+**Live site:** https://alkalinearchitect.github.io/wordhumanitai/
 
-## Live Site
+## What we do
 
-**https://alkalinearchitect.github.io/wordhumanitai/**
+- **Onsite Intelligence** — Trained Community Health Workers collect real ground truth in underserved UK neighbourhoods
+- **MiroFish Swarm AI** — Multi-agent prediction model that forecasts where crisis will hit before it happens
+- **Social Impact Bonds** — Investors fund interventions upfront; government pays back only on verified outcomes
+- **SROI Measurement** — Every pound tracked through the UK-government-recognised Social Return on Investment framework
 
-## The Scale of the Challenge
+## Deployment Map
 
-Based on verified UK government and research data:
+18 UK regions with verified ONS, JRF, and Trussell Trust data:
+Birmingham · Manchester · Liverpool · Leeds · Glasgow · London (Newham) · Cardiff · Belfast · Bristol · Newcastle · Sheffield · Nottingham · Bradford · Blackpool · Middlesbrough · Hull · Stoke-on-Trent · Kensington & Chelsea
 
-- **£1.3T** Annual Government Spend (£19,000 per person)
-- **14.4M** People in Poverty (including 4.4M children)
-- **£70B** Annual Mental Health Cost to UK Economy
-- **7.2M** NHS Patients Waiting for Treatment
-- **309,000** People Homeless in England
-- **£260B** Spent Annually Without Measuring Outcomes
+## Data Sources
 
-## Our Approach
+- Office for National Statistics (ONS)
+- Joseph Rowntree Foundation (JRF)
+- Trussell Trust
+- Shelter England
+- NHS England
+- End Child Poverty Coalition
+- HM Treasury PESA
 
-### 1. Predictive Targeting
-AI-powered identification of at-risk populations before crisis points hit
+## Technical
 
-### 2. Outcome Optimization
-Every pound tracked against measurable results, eliminating bureaucratic waste
-
-### 3. Community Intelligence
-Aggregated insights from 10+ verified UK sources to design sustainable interventions
-
-## MiroFish Prediction Model
-
-Our proprietary swarm intelligence model analyzed UK social data across multiple dimensions. Primary recommendation: **Bridging the mental health support gap for young adults (16-29) in underserved communities**.
-
-Predicted impact: Could save £28 billion annually by reducing emergency care demand and addressing root causes.
-
-## Technology Stack
-
-- **Frontend**: Pure HTML5/CSS3, no JavaScript dependencies
-- **Design**: Dark premium theme with gradient animations
-- **Responsive**: Mobile-first design
-- **Performance**: Fast loading, no external resources
-
-## Deployment
-
-This site is deployed on GitHub Pages and auto-updates on every push to main.
-
-### Local Development
-
-```bash
-# Clone the repo
-git clone https://github.com/alkalinearchitect/wordhumanitai.git
-cd wordhumanitai
-
-# Open in browser
-open index.html
-```
+Single-page static site. Vanilla HTML/CSS/JS. Leaflet map with CartoDB dark tiles. Three.js hero animation. Zero build step — deploy straight to GitHub Pages.
 
 ## License
 
-© 2026 Humanitai CIC. All rights reserved.
-
----
-
-Built with precision by Human Architect
+AGPL-3.0

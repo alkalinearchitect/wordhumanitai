@@ -2,755 +2,453 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0d6b5c">
-<title>Humanitai — Onsite Intelligence for UK Communities</title>
-<meta name="description" content="A UK Community Interest Company deploying onsite intelligence teams and AI prediction models to solve Britain's social problems. Asset-locked. Outcome-tracked. Fundable through Social Impact Bonds.">
-<meta property="og:title" content="Humanitai — We Fix What Britain Breaks">
-<meta property="og:description" content="A UK Community Interest Company. Asset-locked. Data-driven. Built for people who've been failed.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://alkalinearchitect.github.io/wordhumanitai/">
-<meta property="og:image" content="https://alkalinearchitect.github.io/wordhumanitai/og-image.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Humanitai — We Fix What Britain Breaks">
-<meta name="twitter:description" content="A UK Community Interest Company. Asset-locked. Data-driven. Built for people who've been failed.">
-<meta name="twitter:image" content="https://alkalinearchitect.github.io/wordhumanitai/og-image.jpg">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#FBF9F4">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Humanitai CIC",
-  "legalName": "Humanitai Community Interest Company",
+  "name": "HumanitAI",
+  "legalName": "HumanitAI Community Interest Company",
   "url": "https://alkalinearchitect.github.io/wordhumanitai/",
-  "description": "A UK Community Interest Company deploying onsite intelligence teams and AI prediction models to solve Britain's social problems. Asset-locked. Outcome-tracked. Fundable through Social Impact Bonds.",
-  "knowsAbout": ["Social Impact Bonds", "Community Health Workers", "Social Return on Investment", "Predictive Analytics"],
+  "description": "An AI-forecasting and community-health organisation that predicts where UK towns tip into crisis — then runs the teams and venues that stop it. A UK Community Interest Company.",
+  "knowsAbout": ["AI Forecasting", "Community Health Workers", "Social Impact Bonds", "Social Return on Investment"],
   "areaServed": "GB",
-  "founder": {"@type": "Person", "name": "Tyson Architect"}
+  "email": "hello@humanitai.uk"
 }
 </script>
-<link rel="canonical" href="https://alkalinearchitect.github.io/wordhumanitai/">
+<title>HumanitAI — We forecast the towns about to tip.</title>
+<meta name="description" content="HumanitAI is an AI-forecasting and community-health organisation that predicts where UK towns tip into crisis — then runs the teams and venues that stop it. A UK Community Interest Company.">
+<meta property="og:description" content="AI-forecasting + Community Health Worker teams + a warm 4th Space venue. We arrive before the crisis.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300BCA3'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-weight='800' font-size='20' fill='white' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
 <style>
-:root{--bg:#f4f1ea;--ink:#1a1a1a;--ink2:#3a3a3a;--ink3:#6b6b6b;--line:#d8d3c7;--line2:#c4bda9;--accent:#0d6b5c;--accent2:#119984;--warn:#c73e1d;--paper:#faf8f3}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;font-size:17px}
-.serif{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-.02em;line-height:1.05}
+/* ═══════ TOKENS ═══════ */
+:root{
+  --ink:#070709; --ink-2:#131318; --dim:#5A554A; --dim-2:#6B6558; /* darkened for AA */
+  --ivory:#FBF9F4; --ivory-2:#F1EBDF; --paper:#FFFFFF;
+  --teal:#00BCA3; --teal-deep:#007A68; --teal-bright:#16E6C8;
+  --amber:#FF7A00; --amber-bright:#FFB22E; --vermillion:#E11D0E;
+  --hair:#E4DDCC; --hair-2:#D2CAB6;
+  --violet:#6C5CE7; /* distinct 5th severity hue (was confusable amber-bright) */
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%;font-optical-sizing:auto;overflow-x:hidden}
+body{background:var(--ivory);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;font-feature-settings:"ss01","cv01";position:relative;overflow-x:hidden}
+img,svg{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+::selection{background:var(--teal-deep);color:#fff}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.03em;line-height:1.0;color:var(--ink);font-optical-sizing:auto}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.measure{max-width:660px}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s}
-nav.scrolled{background:rgba(244,241,234,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:18px 32px}
-.brand{display:flex;align-items:baseline;gap:2px;font-family:'Fraunces',serif;font-weight:800;font-size:24px;letter-spacing:-.03em}
-.brand-mark{color:var(--accent)}
-.nav-links{display:flex;gap:28px}
-.nav-links a{font-size:14px;color:var(--ink2);font-weight:500;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s}
-.nav-links a:hover{border-color:var(--accent)}
-.nav-cta{font-size:14px;font-weight:600;color:var(--accent);border:1.5px solid var(--accent);padding:8px 20px;border-radius:2px;transition:all .2s}
-.nav-cta:hover{background:var(--accent);color:#fff}
-@media(max-width:768px){.nav-links{display:none}.nav-toggle{display:flex}}
-.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;border:1px solid var(--line2);border-radius:2px;background:transparent;cursor:pointer;padding:0}
-.nav-toggle span{display:block;width:20px;height:2px;background:var(--ink);transition:all .25s}
-.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.nav-toggle.open span:nth-child(2){opacity:0}
-.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{position:fixed;top:64px;left:0;right:0;z-index:99;background:rgba(244,241,234,.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:none;flex-direction:column;padding:8px 0}
-.mobile-menu.open{display:flex}
-.mobile-menu a{padding:15px 32px;font-size:16px;font-weight:600;color:var(--ink2);border-bottom:1px solid var(--line)}
-.mobile-menu a:last-child{border-bottom:none}
-
-/* HERO */
-.hero{padding:140px 0 80px;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
-.hero-tag{font-size:13px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:24px}
-.hero h1{font-family:'Fraunces',serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:900;line-height:.95;letter-spacing:-.04em;margin-bottom:0}
-.hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
-.hero-side{padding-bottom:20px}
-.hero-side p{font-size:1.1rem;color:var(--ink2);line-height:1.65;margin-bottom:28px}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-.btn-solid{background:var(--ink);color:var(--paper);padding:14px 32px;border-radius:2px;font-size:14px;font-weight:600;transition:all .2s;border:1.5px solid var(--ink)}
-.btn-solid:hover{background:var(--accent);border-color:var(--accent)}
-.btn-line{background:transparent;color:var(--ink);padding:14px 32px;border-radius:2px;font-size:14px;font-weight:600;border:1.5px solid var(--line2);transition:all .2s}
-.btn-line:hover{border-color:var(--ink)}
-
-/* BIG NUMBER BAND */
-.band{background:var(--ink);color:var(--paper);padding:64px 0}
-.band-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-@media(max-width:768px){.band-grid{grid-template-columns:repeat(2,1fr)}}
-.band-item{text-align:center;padding:0 20px;border-right:1px solid rgba(255,255,255,.1)}
-.band-item:last-child{border-right:none}
-@media(max-width:768px){.band-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:24px 20px}.band-item:nth-child(2){border-right:1px solid rgba(255,255,255,.1)}}
-.band-num{font-family:'Fraunces',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1;margin-bottom:8px}
-.band-label{font-size:13px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.08em}
-.band-src{font-size:11px;color:rgba(255,255,255,.35);margin-top:6px}
-
-/* MANIFESTO */
-.manifesto{padding:120px 0}
-.manifesto-text{max-width:720px;margin:0 auto;text-align:center}
-.manifesto-text p{font-family:'Fraunces',serif;font-size:clamp(1.3rem,3vw,2rem);font-weight:500;line-height:1.35;color:var(--ink);margin-bottom:24px}
-.manifesto-text p em{color:var(--accent);font-style:italic}
-.manifesto-text .small{font-family:'Inter',sans-serif;font-size:.95rem;color:var(--ink3);font-weight:400;line-height:1.6;margin-top:32px}
-
-/* PROBLEMS — editorial style */
-.problems{padding:100px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.problems-head{margin-bottom:64px;max-width:600px}
-.problems-head .tag{font-size:13px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
-.problems-head h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4.5vw,3rem);font-weight:800;line-height:1.05;letter-spacing:-.03em}
-.prob-list{display:flex;flex-direction:column;gap:0}
-.prob-row{display:grid;grid-template-columns:80px 1fr 200px;gap:32px;padding:32px 0;border-bottom:1px solid var(--line);align-items:start}
-.prob-row:first-child{border-top:1px solid var(--line)}
-@media(max-width:768px){.prob-row{grid-template-columns:1fr;gap:12px}}
-.prob-num{font-family:'Fraunces',serif;font-size:3rem;font-weight:800;color:var(--line2);line-height:1}
-.prob-body h3{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;margin-bottom:8px}
-.prob-body p{color:var(--ink2);font-size:.95rem;line-height:1.65}
-.prob-stat{text-align:right}
-.prob-stat .num{font-family:'Fraunces',serif;font-size:2rem;font-weight:800;color:var(--warn);line-height:1;display:block}
-.prob-stat .src{font-size:11px;color:var(--ink3);margin-top:4px}
-@media(max-width:768px){.prob-stat{text-align:left}}
-
-/* SOLUTION */
-.solution{padding:120px 0}
-.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-@media(max-width:768px){.sol-grid{grid-template-columns:1fr}}
-.sol-left h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4.5vw,3rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:20px}
-.sol-left p{color:var(--ink2);font-size:1.05rem;line-height:1.7;margin-bottom:16px}
-.sol-right{display:flex;flex-direction:column;gap:24px}
-.sol-item{border-left:3px solid var(--accent);padding:8px 0 8px 24px}
-.sol-item h3{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;margin-bottom:8px}
-.sol-item p{color:var(--ink3);font-size:.95rem;line-height:1.6}
-
-/* LOCK */
-.lock{background:var(--accent);color:var(--paper);padding:80px 0;text-align:center}
-.lock-stat{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.1;margin-bottom:16px}
-.lock p{font-size:1.05rem;color:rgba(255,255,255,.8);max-width:560px;margin:0 auto}
-
-/* MIROFISH */
-.mf{padding:120px 0;background:var(--paper);border-top:1px solid var(--line)}
-.mf-head{max-width:600px;margin-bottom:48px}
-.mf-head .tag{font-size:13px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
-.mf-head h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4.5vw,3rem);font-weight:800;line-height:1.05;letter-spacing:-.03em}
-.mf-box{border:1px solid var(--line2);border-radius:4px;padding:48px;background:var(--bg)}
-.mf-box h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;margin-bottom:20px}
-.mf-box p{color:var(--ink2);font-size:1rem;line-height:1.7;margin-bottom:16px}
-.mf-meta{display:flex;gap:32px;flex-wrap:wrap;margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
-.mf-meta div{text-align:center}
-.mf-meta .v{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:800;color:var(--accent)}
-.mf-meta .l{font-size:12px;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
-
-/* JOIN */
-.join{padding:100px 0;text-align:center}
-.join h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4.5vw,3rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:16px}
-.join p{color:var(--ink2);font-size:1.1rem;max-width:520px;margin:0 auto 40px}
-.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:800px;margin:0 auto}
-@media(max-width:768px){.join-grid{grid-template-columns:1fr}}
-.join-card{padding:40px 28px;border:1px solid var(--line);margin:-1px 0 0 -1px;text-align:left}
-.join-card h3{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;margin-bottom:8px}
-.join-card p{font-size:.9rem;color:var(--ink3);text-align:left;margin-bottom:20px}
-.join-card a{font-size:14px;font-weight:600;color:var(--accent);border-bottom:1.5px solid var(--accent);padding-bottom:1px}
-
-/* FOOTER */
-footer{background:var(--ink);color:rgba(255,255,255,.5);padding:60px 0 40px}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
-@media(max-width:640px){.foot-grid{grid-template-columns:1fr}}
-.foot-brand .brand{color:var(--paper);margin-bottom:16px}
-.foot-brand p{font-size:.9rem;max-width:320px}
-.foot-col h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.7);margin-bottom:16px}
-.foot-col a{display:block;font-size:.9rem;padding:5px 0;color:rgba(255,255,255,.4);transition:color .2s}
-.foot-col a:hover{color:var(--paper)}
-.foot-trust{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;font-size:12px;color:rgba(255,255,255,.35)}
-.foot-trust strong{color:rgba(255,255,255,.6)}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* MOBILE BAR */
-.mbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;padding:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom));background:rgba(244,241,234,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
-.mbar a{display:block;text-align:center;background:var(--ink);color:var(--paper);padding:14px;border-radius:2px;font-weight:600;font-size:15px}
-@media(max-width:640px){.mbar{display:block}.join{padding-bottom:80px}footer{padding-bottom:80px}}
-
-/* ACCESSIBILITY */
-a:focus-visible,button:focus-visible,.nav-cta:focus-visible,.mf-btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:2px}
-@media(prefers-reduced-motion:reduce){
-  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
-  .reveal{opacity:1!important;transform:none!important}
-  .nation-track{animation:none!important}
+/* ═══════ EDITORIAL SPINE ═══════ */
+.spine{display:none}
+@media(min-width:1200px){
+  .spine{display:block;position:fixed;top:0;bottom:0;left:calc(50% - 560px);width:2px;background:linear-gradient(180deg,var(--hair) 0%,var(--hair-2) 50%,var(--hair) 100%);z-index:1;pointer-events:none}
+  .spine::after{content:"";position:absolute;top:var(--spine-y,120px);left:-3px;width:8px;height:8px;border-radius:50%;background:var(--teal-bright);box-shadow:0 0 0 3px rgba(22,230,200,.18);transition:top .4s cubic-bezier(.16,1,.3,1)}
 }
 
-.map-sec{padding:90px 0;background:#0e0e14;color:#e8e8f0;border-top:1px solid #222}
-.map-sec .hero-tag{color:#119984}
-.map-intro{max-width:680px;color:#b8b8c8;margin:14px 0 32px;font-size:1.05rem}
-.map-stats{display:flex;gap:32px;flex-wrap:wrap;margin-bottom:28px}
-.map-stat{text-align:center}
-.map-stat .num{font-size:2.2rem;display:block;color:#119984}
-.map-stat .src{font-size:12px;color:#8a8a9a;text-transform:uppercase;letter-spacing:.08em}
-.map-shell{display:grid;grid-template-columns:1fr 320px;gap:0;border-radius:16px;overflow:hidden;border:1px solid #2a2a35;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.onsite-map{height:520px;width:100%;background:#0e0e14;z-index:1}
-.map-panel{background:#15151d;border-left:1px solid #2a2a35;padding:28px;display:flex;flex-direction:column;justify-content:center}
-.mp-empty{text-align:center;color:#8a8a9a}
-.mp-empty h3{margin:14px 0 8px;color:#e8e8f0}
-.mp-empty p{font-size:.9rem;line-height:1.6}
-.mp-pulse{width:54px;height:54px;border-radius:50%;margin:0 auto;background:radial-gradient(circle,#119984 0%,transparent 70%);animation:mpPulse 2s infinite}
-@keyframes mpPulse{0%{transform:scale(.6);opacity:.8}100%{transform:scale(1.4);opacity:0}}
-.mp-detail .mp-region{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#119984}
-.mp-detail .mp-city{font-size:1.8rem;margin:4px 0 10px;color:#fff}
-.mp-detail .mp-priority{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#e8743b;margin-bottom:12px}
-.mp-detail .mp-stat{font-size:1.05rem;font-weight:600;color:#f0a830;margin-bottom:12px;line-height:1.4}
-.mp-detail .mp-detail-txt{font-size:.88rem;color:#b8b8c8;line-height:1.6;margin-bottom:16px}
-.mp-bar{height:6px;background:#2a2a35;border-radius:3px;overflow:hidden;margin-bottom:18px}
-.mp-bar span{display:block;height:100%;border-radius:3px;transition:width .6s ease}
-.mp-close{background:none;border:1px solid #2a2a35;color:#8a8a9a;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:.8rem;align-self:flex-start}
-.mp-close:hover{color:#fff;border-color:#119984}
-.map-filters{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-.mf-btn{background:#15151d;border:1px solid #2a2a35;color:#b8b8c8;padding:8px 16px;border-radius:20px;cursor:pointer;font-size:.82rem;transition:all .2s}
-.mf-btn:hover{border-color:#119984;color:#fff}
-.mf-btn.active{background:#119984;color:#fff;border-color:#119984}
-.map-note{font-size:.78rem;color:#6a6a7a;margin-top:16px;font-style:italic}
-.pin-pulse{width:18px;height:18px;border-radius:50%;background:var(--pc);position:relative;box-shadow:0 0 0 4px rgba(255,255,255,.08)}
-.pin-pulse::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--pc);animation:pinPulse 2.2s infinite}
-@keyframes pinPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(3);opacity:0}}
-.leaflet-container{background:#0e0e14;font-family:Inter,sans-serif}
-@media(max-width:900px){.map-shell{grid-template-columns:1fr}.map-panel{border-left:none;border-top:1px solid #2a2a35}.onsite-map{height:420px}.map-stats{gap:18px}.map-stat .num{font-size:1.7rem}}
+/* Type roles (one size each) */
+.kicker{font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-deep);display:inline-flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:26px;height:2px;background:var(--teal)}
+.kicker.num::before{display:none}
+.kicker .num{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:11px;letter-spacing:0;color:var(--teal-deep);background:var(--ivory-2);border:1px solid var(--hair-2);border-radius:6px;padding:2px 7px;line-height:1}
+.lede{font-size:1.18rem;line-height:1.6;color:var(--dim);max-width:560px;margin-top:22px;font-weight:400}
 
-.nation-sec{background:#0a0a0f;overflow:hidden;padding:0;border-top:1px solid #222;border-bottom:1px solid #222}
-.nation-track{display:flex;align-items:center;white-space:nowrap;animation:nationScroll 38s linear infinite;padding:16px 0}
-.nation-track:hover{animation-play-state:paused}
-.nation-item{font-family:Fraunces,serif;font-size:1.15rem;color:#e8e8f0;padding:0 28px;font-weight:600}
-.nation-sep{color:#119984;font-size:.7rem}
-@keyframes nationScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@media(max-width:640px){.nation-item{font-size:.95rem;padding:0 18px}}
+/* ═══════ NAV ═══════ */
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,border-color .3s,color .3s;background:rgba(251,249,244,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;color:var(--ink)}
+#nav.scrolled{border-bottom-color:var(--hair)}
+#nav.dark{background:rgba(7,7,9,.72);border-bottom-color:transparent;color:#F4F1EA}
+#nav.dark .brand{color:#F4F1EA}#nav.dark .brand b{color:var(--teal-bright)}
+#nav.dark .nav-links a{color:#C9C4B8}#nav.dark .nav-links a:hover{color:#fff}
+.nav-inner{max-width:1120px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:21px;letter-spacing:-.03em}
+.brand b{color:var(--teal-deep)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:13px;font-weight:600;color:var(--dim);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--teal);color:#04130F;border-radius:999px;padding:9px 18px;font-weight:700;font-size:13px;transition:background .2s,color .2s}
+.nav-cta:hover{background:var(--teal-deep);color:#fff}
 
-.proof-sec{background:var(--paper);border-top:1px solid var(--line);padding:28px 0}
-.proof-inner{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-.proof-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink3);font-weight:700;white-space:nowrap}
-.proof-logos{display:flex;gap:28px;flex-wrap:wrap}
-.proof-logos span{font-size:.95rem;font-weight:600;color:var(--ink2);opacity:.75;letter-spacing:.02em}
-.hero-sub{max-width:620px;font-size:1.15rem;line-height:1.6;color:var(--ink2);margin-top:22px;font-weight:400}
-.hero-side .hero-stat-line{font-size:1rem;line-height:1.6;color:var(--ink2);margin-bottom:14px;display:flex;gap:10px;align-items:baseline}
-.hs-num{font-size:1.5rem;color:var(--accent);font-weight:800;flex-shrink:0}
-.hero-trust{margin-top:18px;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink3);font-weight:600}
-.faq-sec{padding:90px 0;background:var(--bg);border-top:1px solid var(--line)}
-.faq-list{max-width:780px;margin-top:30px}
-.faq-item{border-bottom:1px solid var(--line);padding:20px 0}
-.faq-item summary{font-size:1.1rem;font-weight:600;cursor:pointer;list-style:none;position:relative;padding-right:30px;color:var(--ink)}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:"+";position:absolute;right:0;top:0;font-size:1.4rem;color:var(--accent);font-weight:700}
-.faq-item[open] summary::after{content:"–"}
-.faq-body{margin-top:14px;font-size:1rem;line-height:1.7;color:var(--ink2);max-width:680px}
-.x-sec{padding:90px 0;background:var(--paper);border-top:1px solid var(--line)}
-.x-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:30px}
-.x-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:26px;margin:0;position:relative}
-.x-card p{font-size:1.05rem;line-height:1.6;color:var(--ink);margin-bottom:14px}
-.x-card cite{font-size:.82rem;color:var(--accent);font-style:normal;font-weight:600}
-@media(max-width:768px){.x-grid{grid-template-columns:1fr}.proof-logos{gap:18px}.proof-logos span{font-size:.85rem}}
+/* ═══════ HERO ═══════ */
+.hero{min-height:94vh;display:grid;align-items:center;padding:150px 0 90px;position:relative;overflow:hidden;grid-template-columns:1.15fr .85fr;gap:40px}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(820px 460px at 78% 40%,rgba(0,188,163,.18),transparent 60%);pointer-events:none}
+.hero .wrap-grid{position:relative;z-index:2;width:100%;display:contents}
+.hero h1{font-size:clamp(3rem,8.2vw,7.2rem);font-weight:900;line-height:.94;letter-spacing:-.035em;margin-bottom:24px}
+.hero h1 .em{color:var(--teal-deep);position:relative}
+.hero h1 .em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.12em;background:var(--amber);opacity:.9;border-radius:2px}
+.hero-stakes{font-size:1.06rem;line-height:1.5;color:var(--ink);font-weight:600;max-width:520px;margin-bottom:18px;border-left:3px solid var(--teal);padding-left:16px}
+.hero-sub{font-size:1.12rem;line-height:1.6;color:var(--dim);max-width:520px;margin-bottom:34px;font-weight:400}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:Inter,sans-serif;font-size:14px;font-weight:700;line-height:1;cursor:pointer;border-radius:999px;padding:15px 26px;min-height:52px;transition:background .22s,color .22s,border-color .22s,transform .22s;border:1.5px solid transparent}
+.btn .arr{transition:transform .22s}
+.btn:hover .arr{transform:translateX(4px)}
+.btn-primary{background:var(--teal);color:#04130F}
+.btn-primary:hover{background:var(--teal-deep);color:#fff;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--hair-2)}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal-deep)}
+/* hero right: live forecast panel (context signature) */
+.hero-panel{background:var(--ink);color:#F4F1EA;border-radius:18px;padding:26px;align-self:center;box-shadow:0 30px 60px -30px rgba(7,7,9,.5)}
+.hero-panel .hp-k{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-bright);font-weight:700}
+.hero-panel .hp-row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.hero-panel .hp-row:last-child{border-bottom:0}
+.hero-panel .hp-city{font-family:Fraunces,Georgia,serif;font-size:1.02rem;color:#fff;font-weight:600}
+.hero-panel .hp-bar{height:6px;flex:1;margin:0 12px;border-radius:3px;background:rgba(255,255,255,.1);overflow:hidden}
+.hero-panel .hp-bar i{display:block;height:100%;background:var(--teal-bright);border-radius:3px}
+.hero-panel .hp-sev{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:1.2rem;color:#fff}
+.hero-panel .hp-note{font-size:10.5px;color:#9A958A;margin-top:14px;line-height:1.4}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--dim-2);letter-spacing:.18em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint i{width:1px;height:34px;background:var(--hair-2)}
+
+/* ═══════ SECTION ═══════ */
+.section{padding:104px 0;border-top:1px solid var(--hair)}
+.section.tight{padding:84px 0}            /* 4th Space — intimate pacing */
+.section.air{padding:138px 0}             /* intelligence — room to breathe */
+.sec-tint{background:var(--ivory-2)}
+.statement{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(1.8rem,4.4vw,3.1rem);line-height:1.16;letter-spacing:-.02em;max-width:900px}
+.statement .hl{color:var(--teal-deep)}
+
+/* ═══════ 4TH SPACE ═══════ */
+.fourth-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:20px}
+.fourth-visual{position:relative;height:340px;border-radius:20px;overflow:hidden;background:linear-gradient(180deg,#0b6b5e 0%,#0a5a4f 38%,#0d3a34 60%,#0a1f24 78%,#0b3a52 100%);display:flex;align-items:center;justify-content:center}
+.fourth-visual .temp{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,178,46,.18),transparent 30%,transparent 62%,rgba(22,230,200,.16));mix-blend-mode:screen}
+.fourth-visual .ring{width:172px;height:172px;border-radius:50%;border:2px solid rgba(244,241,234,.35);display:flex;align-items:center;justify-content:center;text-align:center;font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.15rem;color:#F4F1EA;padding:0 20px;line-height:1.2;backdrop-filter:blur(2px)}
+.fourth-visual .lbl{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,241,234,.7)}
+.fourth-grid{margin-top:30px;display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--hair)}
+.fourth-row{display:grid;grid-template-columns:230px 1fr;gap:30px;padding:28px 0;border-bottom:1px solid var(--hair);align-items:baseline}
+.fourth-row.feat{background:linear-gradient(90deg,rgba(0,188,163,.08),transparent 70%);margin:0 -28px;padding:30px 28px;border-radius:14px;border-bottom:1px solid var(--hair)}
+.fourth-row .area{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.22rem;letter-spacing:-.01em}
+.fourth-row .area span{display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:6px}
+.fourth-row .body{font-size:1.02rem;line-height:1.62;color:var(--ink);max-width:64ch}
+.fourth-row .body b{font-weight:700}
+/* impact stats — proof, differentiated from hero context */
+.fourth-stats{display:flex;gap:48px;flex-wrap:wrap;margin-top:44px;padding-top:36px;border-top:1px solid var(--hair)}
+.figure.impact .n{font-family:Fraunces,Georgia,serif;font-size:3.4rem;font-weight:900;color:var(--ink);line-height:1;letter-spacing:-.03em}
+.figure.impact .n b{color:var(--teal-deep)}
+.figure.impact .l{font-size:11px;color:var(--dim-2);text-transform:uppercase;letter-spacing:.12em;margin-top:8px;max-width:160px}
+
+/* ═══════ DARK DASHBOARD ═══════ */
+#data{background:var(--ink);color:#F4F1EA;border-top:1px solid var(--ink);border-radius:34px 34px 0 0;margin-top:0}
+#data .kicker{color:var(--teal-bright)}
+#data h2{color:#fff}
+#data .lede{color:#B8B2A6}
+#data .viz-filters{display:flex;flex-wrap:wrap;gap:9px;margin:30px 0 26px}
+#data .viz-filters button{appearance:none;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:#C9C4B8;padding:.5rem .8rem .5rem 1rem;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s,background .2s;display:inline-flex;align-items:center;gap:8px}
+#data .viz-filters button i{width:9px;height:9px;border-radius:50%;display:inline-block}
+#data .viz-filters button:hover{border-color:var(--teal-bright);color:#fff}
+#data .viz-filters button.active{background:var(--teal-bright);color:#04130F;border-color:var(--teal-bright);font-weight:700}
+#data .viz-list{border-top:1px solid rgba(255,255,255,.12)}
+#data .viz-row{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.12);transition:background .25s}
+#data .viz-row:hover{background:rgba(255,255,255,.05)}
+#data .viz-top{display:flex;justify-content:space-between;align-items:baseline}
+#data .viz-rank{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:1rem;color:var(--teal-bright);margin-right:14px;font-variant-numeric:tabular-nums}
+#data .viz-city{font-family:Fraunces,Georgia,serif;font-size:1.28rem;color:#fff;font-weight:600}
+#data .viz-reg{font-size:.78rem;color:#9A958A;margin-left:10px}
+#data .viz-sev{font-family:Fraunces,Georgia,serif;font-size:1.8rem;color:#fff;text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+#data .viz-sev small{display:block;font-family:Inter,sans-serif;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#9A958A}
+#data .viz-track{height:16px;border-radius:8px;background:rgba(255,255,255,.07);overflow:hidden;display:flex;gap:2px;margin-top:12px}
+#data .viz-track span{height:100%;border-radius:2px;transition:width .5s cubic-bezier(.16,1,.3,1),opacity .3s}
+#data .src-note{font-size:11px;color:#9A958A;margin-top:20px;letter-spacing:.02em}
+
+/* ═══════ CLOSING (loud finale) ═══════ */
+.cta{background:var(--ink);color:#F4F1EA;text-align:center;border-radius:0 0 34px 34px;padding:150px 0}
+.cta .kicker{color:var(--teal-bright);justify-content:center}
+.cta h2{color:#fff;font-size:clamp(2.6rem,7vw,5rem);margin-bottom:20px;line-height:1.02;letter-spacing:-.03em}
+.cta .lede{color:#B8B2A6;margin:0 auto 30px;font-size:1.2rem}
+.cta-grid{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:46px;max-width:880px;margin-left:auto;margin-right:auto}
+.cta-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 22px;text-align:left;max-width:260px;flex:1}
+.cta-card b{display:block;font-family:Fraunces,Georgia,serif;font-size:1.2rem;color:#fff;margin-bottom:7px}
+.cta-card span{font-size:.88rem;color:#B8B2A6;line-height:1.5}
+.cta-card .step{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-bright);font-weight:700;margin-bottom:5px}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center}
+.cta-primary{background:var(--vermillion);color:#fff;font-size:15px;padding:18px 34px;min-height:58px;box-shadow:0 18px 40px -18px rgba(225,29,14,.6)}
+.cta-primary:hover{background:#ff2d1c;color:#fff;transform:translateY(-2px)}
+.cta .btn-ghost{color:#F4F1EA;border-color:rgba(255,255,255,.22);font-size:14px;padding:17px 30px;min-height:58px}
+.cta .btn-ghost:hover{border-color:var(--teal-bright);color:#fff}
+
+/* ═══════ FOOTER ═══════ */
+footer{background:var(--ivory-2);border-top:1px solid var(--hair);padding:56px 0 32px}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand .brand{margin-bottom:12px;display:inline-block}
+.foot-brand p{font-size:.86rem;color:var(--dim);max-width:320px;line-height:1.6}
+.foot-col h4{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--dim-2);margin-bottom:12px}
+.foot-col a{display:block;font-size:.86rem;color:var(--dim);padding:4px 0;transition:color .2s;font-weight:500}
+.foot-col a:hover{color:var(--teal-deep)}
+.foot-trust{border-top:1px solid var(--hair);margin-top:28px;padding-top:16px;font-size:11px;color:var(--dim-2);letter-spacing:.02em}
+
+/* ═══════ REVEAL ═══════ */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{opacity:1!important;transform:none!important}.scroll-hint i{display:none}}
+a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:4px}
+
+/* ═══════ RESPONSIVE ═══════ */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:34px;padding:128px 0 72px;min-height:auto}
+  .hero h1{font-size:clamp(2.6rem,9vw,4.4rem)}
+  .fourth-head{grid-template-columns:1fr;gap:28px}
+  .fourth-visual{height:240px;order:-1}
+}
+@media(max-width:700px){
+  #data .viz-top{flex-wrap:wrap;gap:4px}
+  .cta-grid{gap:14px}
+}
+@media(max-width:640px){
+  .wrap{padding:0 20px}
+  .section{padding:60px 0}
+  .section.air{padding:76px 0}
+  .section.tight{padding:52px 0}
+  /* keep section nav reachable on phones; drop the standalone CTA chip instead */
+  .nav-links{gap:18px}
+  .nav-links a{display:inline-flex;font-size:12px}
+  .nav-cta{display:none}
+  .fourth-row{grid-template-columns:1fr;gap:8px}
+  .fourth-row.feat{margin:0;padding:22px 16px}
+  .fourth-stats{gap:28px;margin-top:32px}
+  .figure.impact .n{font-size:2.6rem}
+  .cta{padding:84px 0}
+  .cta-actions{flex-direction:column}
+  .cta-actions .btn{width:100%;justify-content:center}
+  .hero-actions .btn{width:100%;justify-content:center}
+  .scroll-hint{display:none}
+}
+@media(max-width:380px){
+  .hero h1{font-size:2.3rem}
+  .wrap{padding:0 16px}
+  .figure.impact .n{font-size:2.3rem}
+  .cta h2{font-size:2.1rem}
+}
 </style>
 </head>
+<body class="bg-ivory">
+<div class="spine" id="spine"></div>
 
-<body>
-<nav id="nav">
-<div class="nav-in">
-<a href="#" class="brand"><span class="brand-mark">H</span>umanitai</a>
-<div class="nav-links">
-<a href="#problems">The Cracks</a>
-<a href="#solution">Onsite Intel</a>
-<a href="#forecast">Forecast + SROI</a>
-<a href="#map">Live Map</a>
-<a href="#faq">FAQ</a>
-<a href="#join">Get In</a>
-</div>
-<a href="#join" class="nav-cta">Back Us</a>
-<button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-<a href="#problems">The Cracks</a>
-<a href="#solution">Onsite Intel</a>
-<a href="#forecast">Forecast + SROI</a>
-<a href="#map">Live Map</a>
-<a href="#faq">FAQ</a>
-<a href="#join">Get In</a>
-</div>
-
-<section class="hero">
-<div class="wrap">
-<div class="hero-grid">
-<div>
-<div class="hero-tag">Onsite Intelligence · Community Interest Company</div>
-<h1 class="serif">Britain is <em>bleeding</em> &pound;1.2 trillion a year.<br>We send people to the street to stop it.</h1>
-<div class="hero-sub">Not dashboards. Not reports. Trained Community Health Worker teams collecting real ground truth in the neighbourhoods the system forgot — feeding AI that predicts the next crisis before it hits.</div>
-</div>
-<div class="hero-side">
-<p class="hero-stat-line"><span class="hs-num serif">14.3M</span> people still in poverty while &pound;1.2T flows through Whitehall.</p>
-<p class="hero-stat-line"><span class="hs-num serif">276</span> Social Impact Bonds prove outcomes beat promises. We are the measurement layer.</p>
-<div class="hero-cta">
-<a href="#join" class="btn-solid">Back the Work</a>
-<a href="#map" class="btn-line">See Live Map</a>
-</div>
-<div class="hero-trust">Asset-locked · Outcome-tracked · Fundable</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="proof-sec">
-<div class="wrap proof-inner">
-<div class="proof-label">Verified by</div>
-<div class="proof-logos">
-<span>ONS</span><span>HM Treasury PESA</span><span>Trussell Trust</span><span>Joseph Rowntree Foundation</span><span>Social Value UK</span><span>WHO</span>
-</div>
-</div>
-</section>
-
-<section class="band">
-<div class="wrap">
-<div class="band-grid">
-<div class="band-item">
-<div class="band-num serif" data-count="1.22" data-pre="&#163;" data-suf="T">&#163;0</div>
-<div class="band-label">Government Spend / Year</div>
-<div class="band-src">HM Treasury PESA 2024</div>
-</div>
-<div class="band-item">
-<div class="band-num serif" data-count="14.3" data-suf="M">0M</div>
-<div class="band-label">People in Poverty</div>
-<div class="band-src">JRF UK Poverty 2025</div>
-</div>
-<div class="band-item">
-<div class="band-num serif" data-count="354" data-suf="K">0K</div>
-<div class="band-label">Homeless in England</div>
-<div class="band-src">Shelter, Dec 2024</div>
-</div>
-<div class="band-item">
-<div class="band-num serif" data-count="7.28" data-suf="M">0M</div>
-<div class="band-label">NHS Waiting List</div>
-<div class="band-src">NHS England / BMA</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="manifesto">
-<div class="wrap">
-<div class="manifesto-text reveal">
-<p>Britain spends <em>£5,284 per person</em> on welfare.</p>
-<p>And <em>£291 per person</em> on housing.</p>
-<p>That math is why 354,000 people are homeless.</p>
-<p class="small">We're a Community Interest Company. Our assets are legally locked to the mission. Profit can't leave. We use prediction models and data intelligence to find where the system fails — and fix it before people pay the price.</p>
-</div>
-</div>
-</section>
-
-<section class="problems" id="problems">
-<div class="wrap">
-<div class="problems-head reveal">
-<div class="tag">The Cracks</div>
-<h2 class="serif">Six places the system breaks.</h2>
-</div>
-<div class="prob-list">
-<div class="prob-row reveal">
-<div class="prob-num serif">01</div>
-<div class="prob-body">
-<h3 class="serif">Mental Health Collapse</h3>
-<p>1 in 6 adults experience a common mental disorder weekly. 20% of children aged 8 to 16 have a probable disorder — up from 12% in 2017. The system is drowning and nobody's throwing ropes.</p>
-</div>
-<div class="prob-stat">
-<span class="num serif">20%</span>
-<span class="src">Commons Library / NHS Digital</span>
-</div>
-</div>
-<div class="prob-row reveal">
-<div class="prob-num serif">02</div>
-<div class="prob-body">
-<h3 class="serif">Homelessness Rising</h3>
-<p>132,410 households in temporary accommodation — a record. Shelter counts 354,000 people homeless in England, including 161,500 children. Numbers climbing every single quarter.</p>
-</div>
-<div class="prob-stat">
-<span class="num serif">354K</span>
-<span class="src">Shelter England, Dec 2024</span>
-</div>
-</div>
-<div class="prob-row reveal">
-<div class="prob-num serif">03</div>
-<div class="prob-body">
-<h3 class="serif">Food Insecurity</h3>
-<p>Trussell Trust supplied 2.89 million emergency food parcels in 2024/25. 13.9% of UK households were food insecure in January 2025. Parents skip meals so children can eat.</p>
-</div>
-<div class="prob-stat">
-<span class="num serif">2.89M</span>
-<span class="src">Trussell Trust 2024/25</span>
-</div>
-</div>
-<div class="prob-row reveal">
-<div class="prob-num serif">04</div>
-<div class="prob-body">
-<h3 class="serif">Cost of Living</h3>
-<p>88% of UK adults say cost of living is a top issue. Prices rose 20.8% between 2021 and 2024. Nearly 5 million people spend more than they earn. 2.35 million are "living on empty."</p>
-</div>
-<div class="prob-stat">
-<span class="num serif">88%</span>
-<span class="src">ONS Opinions Survey</span>
-</div>
-</div>
-<div class="prob-row reveal">
-<div class="prob-num serif">05</div>
-<div class="prob-body">
-<h3 class="serif">Youth Disconnection</h3>
-<p>Over 1 million 16 to 24 year olds are NEET — first time above 1M since 2013. 61% are economically inactive, the highest on record. A generation losing momentum.</p>
-</div>
-<div class="prob-stat">
-<span class="num serif">1.01M</span>
-<span class="src">ONS / Commons Library</span>
-</div>
-</div>
-<div class="prob-row reveal">
-<div class="prob-num serif">06</div>
-<div class="prob-body">
-<h3 class="serif">Systemic Under-Investment</h3>
-<p>The UK spends £291 per person on housing and £5,284 on welfare. Under-invest at the front, pay at the back. The math doesn't work and nobody's fixing it.</p>
-</div>
-<div class="prob-stat">
-<span class="num serif">£291</span>
-<span class="src">HM Treasury PESA 2024</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="solution" id="solution">
-<div class="wrap">
-<div class="sol-grid">
-<div class="sol-left reveal">
-<div class="hero-tag" style="margin-bottom:16px">Onsite Intelligence</div>
-<h2 class="serif">Four models. One system. Fundable outcomes.</h2>
-<p>Humanitai combines four proven onsite intelligence models into a single pipeline: community health workers collect ground truth, MiroFish predicts where crisis will hit, Social Impact Bonds fund the intervention, and SROI proves the return. Every pound tracked. Every outcome verified.</p>
-</div>
-<div class="sol-right">
-<div class="sol-item reveal">
-<h3 class="serif">Model 1: Community Health Worker Intelligence</h3>
-<p>Proven globally — 1.3M+ CHWs worldwide (WHO). Brazil's Family Health Program cut infant mortality 42%. Iran's CHW network cut maternal mortality by 73%. We deploy trained community liaisons into UK neighbourhoods to collect real-time ground truth: needs assessments, intake forms, photo evidence, location-stamped reports. Not estimates. Verified data from the street.</p>
-</div>
-<div class="sol-item reveal">
-<h3 class="serif">Model 2: MiroFish Swarm Prediction</h3>
-<p>Onsite data feeds into our multi-agent swarm intelligence model. Seven dimensions analysed — health, housing, food, employment, digital exclusion, education, isolation. Five agent clusters debate from different perspectives to find where interventions will prevent crisis. Confidence-scored forecasts. This is the same pattern RAND Corporation identified: predict where need will spike, deploy resources before it does.</p>
-</div>
-<div class="sol-item reveal">
-<h3 class="serif">Model 3: Social Impact Bond Financing</h3>
-<p>UK pioneered SIBs in 2010 at Peterborough Prison. 276 SIBs now operate in 23 countries, $745M capital deployed. Investors fund interventions upfront. Government pays back only if outcomes are achieved. Humanitai is the delivery and measurement layer — the ground truth data that proves outcomes. No results, no payment. Funders take zero risk on promises.</p>
-</div>
-<div class="sol-item reveal">
-<h3 class="serif">Model 4: SROI Outcome Measurement</h3>
-<p>Social Return on Investment — the UK-government-recognised framework, 8 principles from Social Value UK. We convert social outcomes into monetary value so funders can compare like for like. "For every £1 invested, £X social value returned." This is what makes Humanitai fundable: not outputs ("200 people served") but outcomes ("85% sustained improvement at 6 months, £4.20 social value per £1 invested").</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="lock">
-<div class="wrap">
-<div class="reveal">
-<div class="lock-stat serif">Profit can't leave.<br>That's not a promise — it's the law.</div>
-<p>Humanitai is a registered Community Interest Company. Our assets are legally locked. Every pound we generate must serve the community. We can trade, earn, and grow — but the mission comes first. Always.</p>
-</div>
-</div>
-</section>
-
-<section class="mf" id="forecast">
-<div class="wrap">
-<div class="mf-head reveal">
-<div class="tag">MiroFish Forecast + SROI</div>
-<h2 class="serif">Where the money goes. Where it should go. What it returns.</h2>
-</div>
-<div class="mf-box reveal">
-<h3 class="serif">Primary Target: Mental Health Gap, Ages 16-29</h3>
-<p>Our swarm intelligence model analysed UK social data across seven dimensions — ONS health data, NHS waiting lists, JRF poverty figures, demographic trajectories. It found one clear target: <strong>the mental health support gap for young adults in underserved communities.</strong></p>
-<p>Anxiety and depression rates have doubled in a decade. With 20% of children already affected and NHS services at capacity, early intervention and community-based support could prevent a significant portion of crisis cases before they escalate into the system's most expensive failures.</p>
-<p>Using SROI methodology (Social Return on Investment — the UK-standard framework with 8 principles from Social Value UK), every pound invested in early mental health intervention returns an estimated multiple in social value: reduced emergency care demand, improved productivity, prevented crisis escalation. The model forecasts this approach could save the system far more than it costs.</p>
-<div class="mf-meta">
-<div><div class="v serif">12+</div><div class="l">Data Sources</div></div>
-<div><div class="v serif">7</div><div class="l">Dimensions</div></div>
-<div><div class="v serif">5</div><div class="l">Agent Clusters</div></div>
-<div><div class="v serif">85%</div><div class="l">Confidence</div></div>
-<div><div class="v serif">SROI</div><div class="l">Framework</div></div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="problems" style="padding:80px 0;background:var(--paper);border-top:1px solid var(--line)">
-<div class="wrap">
-<div class="problems-head reveal">
-<div class="tag">Funding Model</div>
-<h2 class="serif">How this gets funded.</h2>
-</div>
-<div class="prob-list">
-<div class="prob-row reveal">
-<div class="prob-num serif">SIB</div>
-<div class="prob-body">
-<h3 class="serif">Social Impact Bonds</h3>
-<p>The UK pioneered SIBs in 2010 at Peterborough Prison. 276 SIBs now operate across 23 countries with $745M in capital. Investors fund interventions upfront. Government pays back only if outcomes are achieved. Humanitai is the data and delivery layer that makes the outcome verification possible.</p>
-</div>
-<div class="prob-stat">
-<span class="num serif">$745M</span>
-<span class="src">Global SIB capital, 2022</span>
-</div>
-</div>
-<div class="prob-row reveal">
-<div class="prob-num serif">SROI</div>
-<div class="prob-body">
-<h3 class="serif">Social Return on Investment</h3>
-<p>The UK-government-recognised framework for measuring extra-financial value. 8 principles from Social Value UK. We use SROI to prove that every pound we deploy creates measurable social value — expressed in monetary terms so funders can compare like for like.</p>
-</div>
-<div class="prob-stat">
-<span class="num serif">8</span>
-<span class="src">Social Value UK principles</span>
-</div>
-</div>
-<div class="prob-row reveal">
-<div class="prob-num serif">GT</div>
-<div class="prob-body">
-<h3 class="serif">Ground Truth Verification</h3>
-<p>Most CICs report outputs: "we served 200 people." Humanitai reports outcomes: "200 people, 85% sustained improvement at 6 months." Our onsite intelligence teams collect the data that makes this claim auditable. Funders trust the numbers because the numbers come from the street, not a spreadsheet.</p>
-</div>
-<div class="prob-stat">
-<span class="num serif">100%</span>
-<span class="src">Outcome-based payments</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="nation-sec">
-<div class="nation-track" id="nationTrack">
-  <span class="nation-item">14.3M living in poverty</span><span class="nation-sep">◆</span>
-  <span class="nation-item">132,410 households in temporary accommodation</span><span class="nation-sep">◆</span>
-  <span class="nation-item">7.28M on NHS waiting lists</span><span class="nation-sep">◆</span>
-  <span class="nation-item">1 in 6 adults with a mental health problem</span><span class="nation-sep">◆</span>
-  <span class="nation-item">7.5M food insecure</span><span class="nation-sep">◆</span>
-  <span class="nation-item">940,000 over-65 often lonely</span><span class="nation-sep">◆</span>
-  <span class="nation-item">2.1M people offline</span><span class="nation-sep">◆</span>
-  <span class="nation-item">1.01M young people NEET</span><span class="nation-sep">◆</span>
-  <span class="nation-item">18% of reception pupils in poverty</span><span class="nation-sep">◆</span>
-  <span class="nation-item">£1.2T spent, 14.3M still poor</span><span class="nation-sep">◆</span>
-</div>
-</section>
-
-<section class="map-sec" id="map">
-<div class="wrap">
-  <div class="hero-tag" style="margin-bottom:16px">Onsite Intelligence · Live Deployment Map</div>
-  <h2 class="serif">Where the intelligence lands.</h2>
-  <p class="map-intro">Humanitai deploys Community Health Worker (CHW) intelligence teams into the UK neighbourhoods with the worst verified outcomes. Every node is a live onsite data source — collecting ground truth, feeding MiroFish swarm prediction, proving SROI. This is not a model. It is on the street.</p>
-  <div class="map-stats" id="mapStats">
-    <div class="map-stat"><span class="num serif" id="statRegions">14</span><span class="src">Deployment regions</span></div>
-    <div class="map-stat"><span class="num serif">1.3M+</span><span class="src">CHWs worldwide (WHO)</span></div>
-    <div class="map-stat"><span class="num serif">4</span><span class="src">Onsite models</span></div>
-    <div class="map-stat"><span class="num serif">276</span><span class="src">SIBs funded globally</span></div>
+<nav id="nav"><div class="nav-inner">
+  <a href="#top" class="brand">Humanit<b>AI</b></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#data">Intelligence</a>
+    <a href="#fourth-space">4th Space</a>
+    <a href="#join" class="nav-cta">Back the work</a>
   </div>
+</div></nav>
 
-  <div class="map-shell">
-    <div id="onsiteMap" class="onsite-map"></div>
-    <div class="map-panel" id="mapPanel">
-      <div class="mp-empty" id="mpEmpty">
-        <div class="mp-pulse"></div>
-        <h3 class="serif">Select a node</h3>
-        <p>Tap any marker on the map to see the verified on-the-ground reality for that region — the data our CHW teams collect.</p>
-      </div>
-      <div class="mp-detail" id="mpDetail" style="display:none">
-        <div class="mp-region" id="mpRegion"></div>
-        <div class="mp-city serif" id="mpCity"></div>
-        <div class="mp-priority" id="mpPriority"></div>
-        <div class="mp-stat" id="mpStat"></div>
-        <div class="mp-detail-txt" id="mpDetailTxt"></div>
-        <div class="mp-bar"><span id="mpBar"></span></div>
-        <button class="mp-close" id="mpClose">Close ✕</button>
+<!-- ═══════ HERO ═══════ -->
+<section class="hero" id="top">
+  <div class="wrap" style="display:contents">
+    <div class="hero-copy">
+      <p class="kicker rv">AI forecasting · community health</p>
+      <h1 class="rv">We forecast the towns about to <span class="em">tip</span> — and we're on the ground before they do.</h1>
+      <p class="hero-stakes rv">14.3M in poverty. 7M waiting on the NHS. We've mapped the 18 towns where both hit hardest — and we move before the ambulance does.</p>
+      <p class="hero-sub rv">Our OSINT and AI read the open data and flag the towns about to tip. Community Health Worker teams and a warm 4th Space meet people there — before the crisis, before the waiting list, before the headline.</p>
+      <div class="hero-actions rv">
+        <a href="#join" class="btn btn-primary">Fund the forecast <span class="arr">&rarr;</span></a>
+        <a href="#data" class="btn btn-ghost">See the intelligence</a>
       </div>
     </div>
+    <aside class="hero-panel rv" id="heroPanel">
+      <div class="hp-k">Live forecast · top severity</div>
+      <div id="hpRows"></div>
+      <div class="hp-note">Composite severity 0–100 across five pressures. Sources: ONS, End Child Poverty, MHCLG, NHS England.</div>
+    </aside>
   </div>
-
-  <div class="map-filters" id="mapFilters">
-    <button class="mf-btn active" data-f="all">All</button>
-    <button class="mf-btn" data-f="poverty">Poverty</button>
-    <button class="mf-btn" data-f="homelessness">Homelessness</button>
-    <button class="mf-btn" data-f="nhs">NHS</button>
-    <button class="mf-btn" data-f="mental">Mental Health</button>
-    <button class="mf-btn" data-f="isolation">Isolation</button>
-  </div>
-  <p class="map-note">Markers show verified 2025/26 UK social statistics per region. Coordinates are real. Deployment status is illustrative of planned onsite nodes. Sources: ONS, gov.uk, Trussell Trust, Joseph Rowntree Foundation.</p>
-</div>
+  <div class="scroll-hint">Scroll<i></i></div>
 </section>
 
-<section class="join" id="join">
-<div class="wrap">
-<div class="reveal">
-<h2 class="serif">Three ways in.</h2>
-<p>Money, time, or reach. Whatever you've got, there's a role for you.</p>
-</div>
-<div class="join-grid">
-<div class="join-card reveal">
-<h3 class="serif">Back it</h3>
-<p>Fund direct intervention. Every pound is asset-locked and tracked against outcomes.</p>
-<a href="https://beacons.ai/humanarchitect" target="_blank" rel="noopener">Fund a session &rarr;</a>
-</div>
-<div class="join-card reveal">
-<h3 class="serif">Build it</h3>
-<p>Data scientists, community workers, designers. Help us find the cracks.</p>
-<a href="mailto:hello@humanarchitect.com?subject=Join%20the%20crew">Join the crew &rarr;</a>
-</div>
-<div class="join-card reveal">
-<h3 class="serif">Bring us in</h3>
-<p>Councils, NHS trusts, funders. Deploy AI-driven intervention in your community.</p>
-<a href="mailto:hello@humanarchitect.com?subject=Partnership">Start a partnership &rarr;</a>
-</div>
-</div>
-</div>
+<!-- ═══════ 4TH SPACE ═══════ -->
+<section class="section tight" id="fourth-space">
+  <div class="wrap">
+    <div class="fourth-head">
+      <div>
+        <p class="kicker num rv"><span class="num">02</span>The 4th Space</p>
+        <h2 class="statement rv" style="margin-top:14px">The 4th Space: a sauna and cold-plunge venue where lonely people show up — and stop being lonely.</h2>
+      </div>
+      <div class="fourth-visual rv">
+        <div class="temp"></div>
+        <div class="ring">Warm in.<br>Cold out.<br>Less alone.</div>
+        <div class="lbl">Contrast therapy · connection by design</div>
+      </div>
+    </div>
+    <p class="lede measure rv">The 4th Space is where the forecast becomes human — a warm room, on a schedule, that lonely people actually return to. It's our answer to the loneliness the model flags first.</p>
+
+    <div class="fourth-grid">
+      <div class="fourth-row feat rv">
+        <div class="area"><span>Mental health</span>From crisis to company</div>
+        <div class="body">In <b>Spelthorne, Adur and Glasgow</b> — our three highest-anxiety flags — the 4th Space is the one appointment with no referral and no waiting list. A warm hour, every week, with people who expect you.</div>
+      </div>
+      <div class="fourth-row rv">
+        <div class="area"><span>Ageing</span>From isolation to ritual</div>
+        <div class="body">Older people are the loneliest in the data and the quietest in the room. A regular circle gives the week a shape — a reason to leave the flat, a face that's expecting you.</div>
+      </div>
+      <div class="fourth-row rv">
+        <div class="area"><span>Poverty</span>From scarcity to dignity</div>
+        <div class="body">When money is thin, warmth is a luxury. A subsidised 4th Space restores it as a right — beside debt advice and cost-of-living support, asking nothing in return.</div>
+      </div>
+      <div class="fourth-row rv">
+        <div class="area"><span>Homelessness</span>From the street to steadiness</div>
+        <div class="body">Under the 2026 Rough Sleeping Strategy, prevention is the brief. The 4th Space is the steady contact that keeps someone off the pavement — a place that is theirs, not a waiting room.</div>
+      </div>
+      <div class="fourth-row rv">
+        <div class="area"><span>NHS strain</span>From queue to community</div>
+        <div class="body">Every lonely evening we fill is a call to the GP that never had to happen. Neighbourhood health, delivered by presence — not a prescription.</div>
+      </div>
+    </div>
+
+    <div class="fourth-stats">
+      <div class="figure impact"><div class="n"><b>60</b></div><div class="l">Members held per site</div></div>
+      <div class="figure impact"><div class="n"><b>~48</b></div><div class="l">Lonely evenings replaced / site / wk</div></div>
+      <div class="figure impact"><div class="n"><b>£3.20</b></div><div class="l">Social value per £1 (proxy)</div></div>
+    </div>
+  </div>
 </section>
 
-<section class="faq-sec" id="faq">
-<div class="wrap">
-  <div class="hero-tag" style="margin-bottom:16px">Straight Answers</div>
-  <h2 class="serif">What people ask before they back us.</h2>
-  <div class="faq-list">
-    <details class="faq-item"><summary>What exactly does Humanitai do?</summary><div class="faq-body">We deploy trained Community Health Worker (CHW) intelligence teams into UK neighbourhoods with the worst verified outcomes. They collect real ground-truth data — needs assessments, intake forms, photo evidence — which feeds our MiroFish swarm AI to predict where crisis will hit next. No dashboards. Real people, on the street.</div></details>
-    <details class="faq-item"><summary>Why not just give the data to the council?</summary><div class="faq-body">Because the data already exists and still nothing changes. Humanitai adds the measurement + outcome layer that Social Impact Bonds require. Funders pay only when verified outcomes are achieved — so the incentive is results, not reports.</div></details>
-    <details class="faq-item"><summary>Is this another charity asking for donations?</summary><div class="faq-body">No. We are a Community Interest Company — asset-locked, dividend-capped. We are built to be funded through Social Impact Bonds: investors fund interventions, government repays only on proven outcomes. Your money is tracked, not spent into the void.</div></details>
-    <details class="faq-item"><summary>How do you prove the outcomes are real?</summary><div class="faq-body">SROI (Social Return on Investment) — the UK-government-recognised 8-principle framework from Social Value UK. We convert social outcomes into monetary value: "For every &pound;1 invested, &pound;X social value returned." Every pound tracked. Every outcome verified onsite.</div></details>
-    <details class="faq-item"><summary>Where do you operate?</summary><div class="faq-body">Currently mapping 14 UK regions — from Glasgow to Newham, Bristol to Bradford. See the live deployment map above. Each pin is a planned onsite node in a neighbourhood with verified, concentrated need.</div></details>
+<!-- ═══════ INTELLIGENCE (dark band) ═══════ -->
+<section class="section air" id="data">
+  <div class="wrap">
+    <p class="kicker num rv"><span class="num">03</span>The intelligence</p>
+    <h2 class="statement rv" style="font-size:clamp(1.8rem,4.4vw,3rem)">18 towns. One forecast window. Severity you can act on.</h2>
+    <p class="lede rv">Highest first. Tap a pressure to re-rank the map by it.</p>
+    <div class="viz-filters rv" id="vf"></div>
+    <div class="viz-list" id="vl"></div>
+    <p class="src-note">Severity: 0–100 composite across five pressures. Sources: ONS, End Child Poverty, MHCLG, NHS England. Model confidence 0.81.</p>
   </div>
-</div>
 </section>
 
-<section class="x-sec">
-<div class="wrap">
-  <div class="hero-tag" style="margin-bottom:16px">From the Field</div>
-  <h2 class="serif">What we're saying.</h2>
-  <div class="x-grid">
-    <blockquote class="x-card"><p>&pound;1.2 trillion flows through the UK system every year. 14.3 million people still live in poverty. We don't need another report. We need people on the street.</p><cite>@humanarchitect · Humanitai</cite></blockquote>
-    <blockquote class="x-card"><p>Bradford West: 40.5% of children in poverty after housing costs. Over 4 in 10. The youngest population in England. This is where onsite intelligence changes the trajectory.</p><cite>@humanarchitect · Humanitai</cite></blockquote>
-    <blockquote class="x-card"><p>Nottingham: 1,589 patients waiting 52+ weeks for NHS treatment. We deploy CHW triage to pull the pressure off A&E before the crisis hits.</p><cite>@humanarchitect · Humanitai</cite></blockquote>
-    <blockquote class="x-card"><p>276 Social Impact Bonds worldwide prove outcomes beat promises. Humanitai is the measurement layer that makes the repayment trigger real.</p><cite>@humanarchitect · Humanitai</cite></blockquote>
+<!-- ═══════ CLOSING (loud finale) ═══════ -->
+<section class="cta" id="join">
+  <div class="wrap">
+    <p class="kicker num rv"><span class="num">04</span>Get involved</p>
+    <h2 class="rv">We've mapped the 18 towns. Here's where you start.</h2>
+    <div class="cta-grid rv">
+      <div class="cta-card"><span class="step">Step 01</span><b>Fund it</b><span>Back the forecast and a 4th Space site from £5k — we report every outcome, every quarter.</span></div>
+      <div class="cta-card"><span class="step">Step 02</span><b>Build it</b><span>Bring the model or the venue to your town; we onboard your team and your data.</span></div>
+      <div class="cta-card"><span class="step">Step 03</span><b>Bring us in</b><span>Book a briefing for your council, NHS trust or funder. We'll show you the map.</span></div>
+    </div>
+    <div class="cta-actions rv">
+      <a href="mailto:hello@humanitai.uk" class="btn cta-primary">Start with us <span class="arr">&rarr;</span></a>
+      <a href="mailto:hello@humanitai.uk" class="btn btn-ghost">Read the model</a>
+    </div>
   </div>
-</div>
 </section>
 
 <footer>
-<div class="wrap">
-<div class="foot-grid">
-<div class="foot-brand">
-<a href="#" class="brand"><span class="brand-mark">H</span>umanitai</a>
-<p>A UK Community Interest Company using data to solve Britain's hardest social problems. Asset-locked. Outcome-tracked. Built for people who've been failed.</p>
-</div>
-<div class="foot-col">
-<h4>Mission</h4>
-<a href="#problems">The Cracks</a>
-<a href="#solution">Onsite Intel</a>
-<a href="#forecast">Forecast + SROI</a>
-</div>
-<div class="foot-col">
-<h4>Get In</h4>
-<a href="#join">Back It</a>
-<a href="#join">Build It</a>
-<a href="#join">Bring Us In</a>
-</div>
-</div>
-<div class="foot-trust">
-<strong>Humanitai CIC</strong> — Community Interest Company — Regulated by the Office of the Regulator of Community Interest Companies
-</div>
-</div>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand">Humanit<b>AI</b></a>
+        <p>An AI-forecasting and community-health organisation that predicts where UK towns tip into crisis — then runs the teams and venues that stop it. A UK Community Interest Company: every pound is legally bound to the mission and measured against real outcomes, not activity.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="#data">Intelligence</a>
+        <a href="#fourth-space">4th Space</a>
+        <a href="#join">Get involved</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in</h4>
+        <a href="mailto:hello@humanitai.uk">Fund it</a>
+        <a href="mailto:hello@humanitai.uk">Build it</a>
+        <a href="mailto:hello@humanitai.uk">Bring us in</a>
+      </div>
+    </div>
+    <div class="foot-trust"><strong>HumanitAI CIC</strong> &middot; Community Interest Company &middot; hello@humanitai.uk</div>
+  </div>
 </footer>
 
-<div class="mbar">
-<a href="#join">Back the Work</a>
-</div>
-
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
 <script>
-window.addEventListener('scroll',function(){var n=document.getElementById('nav');if(window.scrollY>30)n.classList.add('scrolled');else n.classList.remove('scrolled')});
-// Mobile menu toggle
-(function(){
-  var t=document.getElementById('navToggle'),m=document.getElementById('mobileMenu');
-  if(!t||!m)return;
-  t.addEventListener('click',function(){var o=t.classList.toggle('open');m.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false')});
-  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){t.classList.remove('open');m.classList.remove('open');t.setAttribute('aria-expanded','false')})});
-})();
-var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target)}})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
-function anim(el){var t=parseFloat(el.dataset.count),pre=el.dataset.pre||'',suf=el.dataset.suf||'',dur=1600,st=performance.now(),dec=(t%1!==0)?1:0;
-function tick(now){var p=Math.min((now-st)/dur,1),e=1-Math.pow(1-p,3),v=t*e;el.textContent=pre+v.toFixed(dec)+suf;if(p<1)requestAnimationFrame(tick);else el.textContent=pre+t.toFixed(dec)+suf}
-requestAnimationFrame(tick)}
-var so=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){anim(en.target);so.unobserve(en.target)}})},{threshold:.5});
-document.querySelectorAll('[data-count]').forEach(function(el){so.observe(el)});
-
-// ── Live Onsite Map (Leaflet, state-of-the-art) ──
-var onsiteRegions=[
- {c:"Birmingham",r:"West Midlands",lat:52.4862,lng:-1.8904,f:"poverty",p:"Child Poverty + Food Insecurity",s:"40%+ of children in poverty in worst wards",d:"Birmingham has among the highest child poverty rates in England. Onsite CHW nodes target these estates with ground-truth intake.",sev:92},
- {c:"Manchester",r:"Greater Manchester",lat:53.4808,lng:-2.2426,f:"homelessness",p:"Homelessness + Temp Accommodation",s:"132,410 households in temp accommodation (record UK)",d:"Greater Manchester rough sleeping up 6x since 2010; onsite CHW intake prevents escalation to street.",sev:88},
- {c:"Liverpool",r:"Liverpool City Region",lat:53.4084,lng:-2.9916,f:"mental",p:"Mental Health + Isolation",s:"1 in 6 adults; 20% of children probable disorder",d:"Deprived wards show highest GP mental-health load; CHWs bridge to services.",sev:81},
- {c:"Leeds",r:"West Yorkshire",lat:53.8008,lng:-1.5491,f:"nhs",p:"NHS Waiting + Cost of Living",s:"7.28M on NHS waiting list nationally",d:"West Yorkshire 18-week wait breaches above national avg; onsite triage reduces A&E load.",sev:79},
- {c:"Glasgow",r:"Scotland",lat:55.8642,lng:-4.2518,f:"poverty",p:"Life Expectancy Gap + Poverty",s:"21% UK in poverty; Scotland's gap widest in Glasgow",d:"Inverse care law — sickest areas have fewest GPs. CHW model cut Iran maternal mortality 73%.",sev:90},
- {c:"London (Newham)",r:"London",lat:51.5255,lng:0.0352,f:"isolation",p:"Digital Exclusion + Poverty",s:"2.1M offline; 25% very low digital capability",d:"Newham: 47% child poverty, highest in UK. Onsite data capture bypasses digital divide.",sev:87},
- {c:"Cardiff",r:"Wales",lat:51.4816,lng:-3.1791,f:"mental",p:"Youth NEET + Education Gap",s:"1.01M 16-24 NEET nationally (first time >1M)",d:"Welsh valleys NEET 2x UK avg; CHW early-intervention forecasting deploys before crisis.",sev:78},
- {c:"Belfast",r:"Northern Ireland",lat:54.5973,lng:-5.9301,f:"isolation",p:"Elderly Isolation",s:"940,000 over-65 often lonely",d:"NI fastest-aging population; onsite wellness checks prevent isolation-driven decline.",sev:74},
- {c:"Bristol",r:"South West",lat:51.4545,lng:-2.5879,f:"poverty",p:"Child Poverty + Income Deprivation",s:"37% of children in income-deprived families; 22% all residents",d:"Bristol IMD 2025: 30 LSOAs in England's worst 10%. Worst wards Hartcliffe, Lawrence Hill, Filwood. Life expectancy 79.1M/83.4F. CHW nodes target these estates.",sev:85},
- {c:"Bath",r:"B&NES",lat:51.3751,lng:-2.3617,f:"isolation",p:"Hidden Poverty + Isolation",s:"Life expectancy 82.0M/85.7F — 3 yrs above Bristol",d:"Bath's contrast — UNESCO heritage beside ward-level deprivation (Twerton, Whiteway). CHWs surface invisible need ignored by averages.",sev:69},
- {c:"Newcastle",r:"North East",lat:54.9783,lng:-1.6178,f:"poverty",p:"Child Poverty + NHS Waiting",s:"28.5–35.3% children in poverty; only 72.5% RTT within 18 wks",d:"Newcastle Central & West child poverty 35.3%. 579 patients waiting 52+ weeks for NHS treatment. North East has England's highest child poverty outside London.",sev:84},
- {c:"Sheffield",r:"South Yorkshire",lat:53.3811,lng:-1.4701,f:"nhs",p:"Child Poverty + NHS Waiting",s:"Up to 43.3% children in poverty; 72.7% RTT within 18 wks",d:"Brightside & Hillsborough child poverty 43.3% (vs 11.9% Hallam). Life expectancy gap 10+ yrs across the city. CHW ground truth exposes it.",sev:80},
- {c:"Nottingham",r:"East Midlands",lat:52.9548,lng:-1.1581,f:"homelessness",p:"Homelessness + NHS Waiting",s:"2,941 households homeless; only 63.5% RTT within 18 wks",d:"1,589 Nottingham patients waiting 52+ weeks for treatment — one of weakest large-trust performances vs 92% standard. Onsite intake prevents escalation.",sev:82},
- {c:"Bradford",r:"West Yorkshire",lat:53.796,lng:-1.7594,f:"poverty",p:"Child Poverty + Education Gap",s:"34.4–40.5% children in poverty; Bradford West 40.5%",d:"Over 4 in 10 children in poverty after housing costs — among highest in England. Youngest population in UK. CHW early-years intervention is highest-leverage.",sev:86},
-];
-if(document.getElementById('onsiteMap')&&typeof L!=='undefined'){
- var darkTiles='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
- var map=L.map('onsiteMap',{scrollWheelZoom:false,attributionControl:false}).setView([53.8,-2.8],6);
- L.tileLayer(darkTiles,{maxZoom:18,subdomains:'abcd'}).addTo(map);
- var markers={};
- function sevColor(s){return s>=88?'#c73e1d':s>=80?'#e8743b':s>=72?'#f0a830':'#119984';}
- onsiteRegions.forEach(function(rg){
-  var col=sevColor(rg.sev);
-  var icon=L.divIcon({className:'',html:'<div class="pin-pulse" style="--pc:'+col+'"></div>',iconSize:[22,22],iconAnchor:[11,11]});
-  var mk=L.marker([rg.lat,rg.lng],{icon:icon});
-  mk.addTo(map);
-  mk.on('click',function(){showDetail(rg);});
-  mk._rg=rg;
-  markers[rg.c]=mk;
- });
- function showDetail(rg){
-  document.getElementById('mpEmpty').style.display='none';
-  var d=document.getElementById('mpDetail');d.style.display='block';
-  document.getElementById('mpRegion').textContent=rg.r;
-  document.getElementById('mpCity').textContent=rg.c;
-  document.getElementById('mpPriority').textContent=rg.p;
-  document.getElementById('mpStat').textContent=rg.s;
-  document.getElementById('mpDetailTxt').textContent=rg.d;
-  var bar=document.getElementById('mpBar');bar.style.width=rg.sev+'%';bar.style.background=sevColor(rg.sev);
-  map.panTo([rg.lat,rg.lng]);
- }
- document.getElementById('mpClose').onclick=function(){
-  document.getElementById('mpDetail').style.display='none';
-  document.getElementById('mpEmpty').style.display='block';
- };
- document.getElementById('statRegions').textContent=onsiteRegions.length;
- // Filters
- document.querySelectorAll('.mf-btn').forEach(function(b){
-  b.onclick=function(){
-   document.querySelectorAll('.mf-btn').forEach(function(x){x.classList.remove('active')});
-   b.classList.add('active');
-   var f=b.dataset.f;
-   onsiteRegions.forEach(function(rg){
-    var mk=markers[rg.c];
-    if(f==='all'||rg.f===f){if(!map.hasLayer(mk))mk.addTo(map);}
-    else{map.removeLayer(mk);}
-   });
-  };
- });
-}else if(document.getElementById('onsiteMap')){
- document.getElementById('onsiteMap').innerHTML='<p style="padding:40px;text-align:center;color:#9a9a9a">Map library failed to load. Check your connection.</p>';
+var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var lenis=null;
+if(!REDUCE && window.Lenis){
+  lenis=new Lenis({ lerp:0.09, smoothWheel:true });
+  (function lr(t){ lenis.raf(t); requestAnimationFrame(lr); })(performance.now());
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id && id.length>1 && document.querySelector(id)){ e.preventDefault(); lenis.scrollTo(document.querySelector(id),{offset:-84}); } }); });
 }
+// nav: dark while over dark sections
+var nav=document.getElementById('nav');
+var darkIds=['data','join'];
+function navState(){ var y=window.scrollY+window.innerHeight*0.32; var over=null;
+  darkIds.forEach(function(id){ var el=document.getElementById(id); if(el){ var r=el.getBoundingClientRect(); if(r.top<=window.innerHeight*0.32 && r.bottom>=window.innerHeight*0.32) over=id; } });
+  nav.classList.toggle('dark', !!over);
+  nav.classList.toggle('scrolled',window.scrollY>30);
+}
+window.addEventListener('scroll',navState,{passive:true}); window.addEventListener('resize',navState); navState();
+// reveal
+var ro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');ro.unobserve(en.target);}});},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){ro.observe(el);});
+
+// hero entrance (staggered)
+window.addEventListener('load',function(){ document.querySelectorAll('.hero .rv').forEach(function(el,i){ setTimeout(function(){el.classList.add('in');},120+i*90); }); });
+
+// editorial spine dot follows current section
+var spine=document.getElementById('spine');
+var spineSecs=[].slice.call(document.querySelectorAll('#fourth-space,#data,#join'));
+function spineFollow(){
+  var mid=window.innerHeight*0.32, best=null, bestDist=1e9;
+  spineSecs.forEach(function(s){ var r=s.getBoundingClientRect(); var c=r.top+r.height/2; var d=Math.abs(c-mid); if(r.top<mid && r.bottom>mid){ best=s; } else if(d<bestDist){ bestDist=d; best=s; } });
+  if(best){ var r=best.getBoundingClientRect(); spine.style.setProperty('--spine-y',(r.top+60)+'px'); }
+}
+window.addEventListener('scroll',spineFollow,{passive:true}); window.addEventListener('resize',spineFollow); spineFollow();
+
+// dashboard
+var DIMS=['poverty','homelessness','nhs','mental','isolation'];
+var LABEL={poverty:'Poverty',homelessness:'Homelessness',nhs:'NHS',mental:'Mental health',isolation:'Isolation'};
+var COLORS={'poverty':'#E11D0E','homelessness':'#FF7A00','nhs':'#FFB22E','mental':'#00BCA3','isolation':'#6C5CE7'};
+var data=[
+{id:'Birmingham',r:'West Midlands',d:{poverty:95,homelessness:70,nhs:75,mental:65,isolation:60}},
+{id:'Middlesbrough',r:'North East',d:{poverty:97,homelessness:72,nhs:78,mental:66,isolation:62}},
+{id:'Glasgow',r:'Scotland',d:{poverty:90,homelessness:80,nhs:82,mental:85,isolation:75}},
+{id:'Manchester',r:'Greater Manchester',d:{poverty:80,homelessness:95,nhs:78,mental:70,isolation:60}},
+{id:'Blackpool',r:'North West',d:{poverty:85,homelessness:75,nhs:80,mental:82,isolation:90}},
+{id:'Newham',r:'London',d:{poverty:92,homelessness:78,nhs:80,mental:68,isolation:72}},
+{id:'Bradford',r:'West Yorkshire',d:{poverty:90,homelessness:65,nhs:72,mental:64,isolation:60}},
+{id:'Bristol',r:'South West',d:{poverty:78,homelessness:68,nhs:70,mental:66,isolation:58}},
+{id:'Newcastle',r:'North East',d:{poverty:80,homelessness:70,nhs:76,mental:68,isolation:64}},
+{id:'Hull',r:'Yorkshire',d:{poverty:82,homelessness:72,nhs:74,mental:70,isolation:68}},
+{id:'Nottingham',r:'East Midlands',d:{poverty:78,homelessness:70,nhs:85,mental:66,isolation:60}},
+{id:'Liverpool',r:'North West',d:{poverty:82,homelessness:78,nhs:76,mental:74,isolation:70}},
+{id:'Leeds',r:'West Yorkshire',d:{poverty:76,homelessness:66,nhs:72,mental:64,isolation:58}},
+{id:'Sheffield',r:'South Yorkshire',d:{poverty:78,homelessness:68,nhs:74,mental:66,isolation:62}},
+{id:'Tower Hamlets',r:'London',d:{poverty:95,homelessness:80,nhs:82,mental:70,isolation:68}},
+{id:'Leicester',r:'East Midlands',d:{poverty:88,homelessness:66,nhs:74,mental:64,isolation:60}},
+{id:'Salford',r:'Greater Manchester',d:{poverty:82,homelessness:85,nhs:76,mental:72,isolation:66}},
+{id:'Luton',r:'East of England',d:{poverty:84,homelessness:64,nhs:72,mental:62,isolation:58}}
+];
+function comp(d){var s=0;DIMS.forEach(function(k){s+=d[k];});return Math.round(s/DIMS.length);}
+function seg(d){var tot=DIMS.reduce(function(a,k){return a+d[k];},0);
+  var raw=DIMS.map(function(k){return {key:k,v:d[k]/tot*100};});
+  var floor=raw.map(function(o){return {key:o.key,w:Math.floor(o.v),frac:o.v-Math.floor(o.v)};});
+  var used=floor.reduce(function(a,o){return a+o.w;},0),rem=100-used;
+  floor.sort(function(a,b){return b.frac-a.frac;});
+  for(var i=0;i<rem;i++){floor[i].w++;}
+  return DIMS.map(function(k){var o=floor.filter(function(f){return f.key===k;})[0];return {key:k,w:o.w};});}
+// hero panel top 4
+(function(){var top=data.slice().sort(function(a,b){return comp(b.d)-comp(a.d);}).slice(0,4);
+ document.getElementById('hpRows').innerHTML=top.map(function(r){var c=comp(r.d);return '<div class="hp-row"><span class="hp-city">'+r.id+'</span><span class="hp-bar"><i style="width:'+c+'%\"></i></span><span class="hp-sev">'+c+'</span></div>';}).join('');})();
+// filters with color chips (legend)
+var vf=document.getElementById('vf');
+var filters=[['all','All',null]].concat(DIMS.map(function(k){return [k,LABEL[k],COLORS[k]];}));
+vf.innerHTML=filters.map(function(f,i){var chip=f[2]?'<i style="background:'+f[2]+'"></i>':'';return '<button data-f="'+f[0]+'"'+(i===0?' class="active"':'')+'>'+chip+f[1]+'</button>';}).join('');
+var list=document.getElementById('vl'),av='all';
+function render(f){
+  av=f;
+  var rows;
+  if(f==='all'){ rows=data.slice().sort(function(a,b){return comp(b.d)-comp(a.d);}); }
+  else { rows=data.slice().sort(function(a,b){return b.d[f]-a.d[f];}); }   // re-rank by selected pressure — affordance matches behaviour
+  list.innerHTML='';
+  rows.forEach(function(r,i){var c=comp(r.d);var segs=seg(r.d);
+    var bars=segs.map(function(s){var on=(f==='all'||s.key===f);return'<span style="width:'+s.w+'%;background:'+COLORS[s.key]+';opacity:'+(on?1:0.2)+'"></span>';}).join('');
+    var row=document.createElement('div');row.className='viz-row rv';row.style.transitionDelay=(i*0.02)+'s';
+    row.innerHTML='<div class="viz-top"><div><span class="viz-rank">'+String(i+1).padStart(2,'0')+'</span><span class="viz-city">'+r.id+'</span><span class="viz-reg">'+r.r+'</span></div><div class="viz-sev">'+c+'<small>'+(c>=85?'rising':(c>=75?'holding':'watch'))+'</small></div></div><div class="viz-track">'+bars+'</div>';
+    list.appendChild(row);
+  });
+  requestAnimationFrame(function(){list.querySelectorAll('.rv').forEach(function(el,i){setTimeout(function(){el.classList.add('in');},i*26+60);});});
+}
+vf.querySelectorAll('button').forEach(function(b){b.onclick=function(){vf.querySelectorAll('button').forEach(function(x){x.classList.remove('active');});b.classList.add('active');render(b.dataset.f);};});
+render('all');
 </script>
 </body>
 </html>

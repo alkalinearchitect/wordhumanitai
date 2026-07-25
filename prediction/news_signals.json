@@ -1,0 +1,279 @@
+{
+  "fetched_at": "2026-07-24T18:54:07.114679+00:00",
+  "n_signals": 32,
+  "per_pressure_counts": {
+    "poverty": 6,
+    "homelessness": 7,
+    "nhs": 12,
+    "mental": 9,
+    "isolation": 1
+  },
+  "early_warning": {
+    "poverty": "ELEVATED",
+    "homelessness": "ELEVATED",
+    "nhs": "ELEVATED",
+    "mental": "ELEVATED",
+    "isolation": "baseline"
+  },
+  "items": [
+    {
+      "source": "guardian_society",
+      "title": "From high heels to \u2018Zara death pants\u2019: how fashion falls foul of women\u2019s safety",
+      "link": "https://www.theguardian.com/society/2026/jul/24/from-high-heels-to-zara-death-pants-how-fashion-falls-foul-of-womens-safety",
+      "pressures": {
+        "nhs": 1
+      }
+    },
+    {
+      "source": "guardian_society",
+      "title": "\u2018It\u2019s generations of decline\u2019: can Andy Burnham really end rough sleeping?",
+      "link": "https://www.theguardian.com/society/2026/jul/24/can-andy-burnham-really-end-rough-sleeping",
+      "pressures": {
+        "homelessness": 6
+      }
+    },
+    {
+      "source": "guardian_society",
+      "title": "Poorest children in England 40% more likely to be hospitalised for lung infections",
+      "link": "https://www.theguardian.com/society/2026/jul/23/alarm-hospital-lung-admissions-children-england-poorest",
+      "pressures": {
+        "nhs": 6
+      }
+    },
+    {
+      "source": "guardian_society",
+      "title": "The social media ban sceptic: are we getting it wrong on kids, tech and mental health?",
+      "link": "https://www.theguardian.com/society/2026/jul/16/psychologist-candice-odgers-kids-tech-mental-health-social-media-bans",
+      "pressures": {
+        "mental": 2
+      }
+    },
+    {
+      "source": "guardian_society",
+      "title": "Illness narratives are broken \u2013 and they\u2019re failing women like me | Emma Hardy",
+      "link": "https://www.theguardian.com/society/2026/may/18/women-chronic-illness-narratives-broken",
+      "pressures": {
+        "mental": 1
+      }
+    },
+    {
+      "source": "guardian_society",
+      "title": "Burnham is acting like he\u2019s mayor of everywhere \u2013 that\u2019s not devolving power to local communities | Simon Jenkins",
+      "link": "https://www.theguardian.com/commentisfree/2026/jul/24/andy-burnham-mayor-everywhere-devolving-localism-centralised-meloni-macron",
+      "pressures": {
+        "homelessness": 2
+      }
+    },
+    {
+      "source": "guardian_society",
+      "title": "The Guardian view on social care reform: Andy Burnham is right \u2013 this issue must be gripped | Editorial",
+      "link": "https://www.theguardian.com/commentisfree/2026/jul/21/the-guardian-view-on-social-care-reform-andy-burnham-is-right-this-issue-must-be-gripped",
+      "pressures": {
+        "poverty": 1,
+        "homelessness": 3
+      }
+    },
+    {
+      "source": "guardian_society",
+      "title": "\u2018I don\u2019t know where the kids will go\u2019: beloved football cage in east London to be demolished",
+      "link": "https://www.theguardian.com/uk-news/2026/jul/22/beloved-football-cage-east-london-hackney-keith-miller-demolished",
+      "pressures": {
+        "isolation": 1
+      }
+    },
+    {
+      "source": "guardian_society",
+      "title": "Thursday briefing: \u200bNow he has the power to do it, can Andy Burham really end homelessness in the UK?",
+      "link": "https://www.theguardian.com/world/2026/jul/23/thursday-briefing-now-he-has-the-power-to-do-it-can-andy-burham-really-end-homelessness-in-the-uk",
+      "pressures": {
+        "homelessness": 6
+      }
+    },
+    {
+      "source": "guardian_society",
+      "title": "Here\u2019s how Andy Burnham really could end homelessness | Daniel Lavelle",
+      "link": "https://www.theguardian.com/commentisfree/2026/jul/22/andy-burnham-end-homelessness-empty-homes-capping-rents",
+      "pressures": {
+        "poverty": 1,
+        "homelessness": 11,
+        "mental": 1
+      }
+    },
+    {
+      "source": "guardian_society",
+      "title": "Burnham pledges to end rough sleeping in England in first speech as prime minister",
+      "link": "https://www.theguardian.com/society/2026/jul/20/andy-burnham-pledges-end-rough-sleeping-homelessness-prime-minister-first-speech",
+      "pressures": {
+        "homelessness": 6
+      }
+    },
+    {
+      "source": "bbc_uk",
+      "title": "Southport killer Axel Rudakubana appears to be manipulating the system, families' lawyer says",
+      "link": "https://www.bbc.co.uk/news/articles/cjrvy450jv5o?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "nhs": 1
+      }
+    },
+    {
+      "source": "bbc_uk",
+      "title": "Heatwave anxiety made me feel helpless - here\u2019s how to manage it",
+      "link": "https://www.bbc.co.uk/news/articles/cgk4xrznxn5o?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "mental": 2
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "'Evidence lacking' for mental health monitoring tech",
+      "link": "https://www.bbc.co.uk/news/articles/c7vgd11d60do?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "mental": 1
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "Heatwave anxiety can make you feel 'incredibly helpless' - here's how to manage it",
+      "link": "https://www.bbc.co.uk/news/articles/cgk4xrznxn5o?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "mental": 2
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "'Life-changing' MS drug to help people walk now on NHS in England",
+      "link": "https://www.bbc.co.uk/news/articles/cgmkygjk9g2o?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "nhs": 1
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "UK humanitarian worker monitored for Ebola in London hospital",
+      "link": "https://www.bbc.co.uk/news/articles/cdewk5r308jo?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "nhs": 1
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "Rare identical quadruplets born in Australia",
+      "link": "https://www.bbc.co.uk/news/articles/cx2jnj3428lo?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "nhs": 1
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "Targeted prostate cancer treatment cuts risk of side effects, study suggests",
+      "link": "https://www.bbc.co.uk/news/articles/cwyq3lnndvxo?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "nhs": 1
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "We are living fewer years in good health: Is the NHS part of the problem?",
+      "link": "https://www.bbc.co.uk/news/articles/c8r2nz82z3vo?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "nhs": 1
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "Starting uni? What to know about the free NHS meningitis B jab in England",
+      "link": "https://www.bbc.co.uk/news/articles/cvgmyggpg42o?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "nhs": 1
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "What are UV levels and how can you protect yourself?",
+      "link": "https://www.bbc.co.uk/news/articles/ckmg1572e8ko?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "mental": 1
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "Female veterans support group makes national impact",
+      "link": "https://www.bbc.co.uk/news/articles/cg7mzv73jjdo?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "poverty": 1
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "'You are not alone with endometriosis pain'",
+      "link": "https://www.bbc.co.uk/news/articles/c9q22vwe049o?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "mental": 1
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "Is laughter really the best medicine?",
+      "link": "https://www.bbc.co.uk/news/videos/c74y1wn09n3o?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "mental": 1
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "UK wasted \u00a310bn on PPE that left NHS staff poorly protected, Covid inquiry finds",
+      "link": "https://www.bbc.co.uk/news/articles/czrxrlydyzzo?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "nhs": 1
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "A&E to remain open as doctors' strike called off",
+      "link": "https://www.bbc.co.uk/news/articles/cy8wpz316lgo?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "nhs": 1
+      }
+    },
+    {
+      "source": "bbc_health",
+      "title": "Why Joe Marler turned to cycling",
+      "link": "https://www.bbc.co.uk/sport/videos/c8dnm3qj71eo?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "poverty": 1
+      }
+    },
+    {
+      "source": "bbc_politics",
+      "title": "Burnham says 20% business rates cut for English pubs 'a first step'",
+      "link": "https://www.bbc.co.uk/news/articles/cq6dg816464o?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "nhs": 1
+      }
+    },
+    {
+      "source": "bbc_politics",
+      "title": "Most bus fares in England to be capped at \u00a32 from January",
+      "link": "https://www.bbc.co.uk/news/articles/cz64l78n5vpo?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "poverty": 1
+      }
+    },
+    {
+      "source": "bbc_politics",
+      "title": "How a rise in ADHD benefits claims is adding to welfare spending challenge",
+      "link": "https://www.bbc.co.uk/news/articles/c24ym9yd8p6o?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "poverty": 2
+      }
+    },
+    {
+      "source": "bbc_politics",
+      "title": "Analysis: Burnham's policy choices reveal what kind of PM he wants to be",
+      "link": "https://www.bbc.co.uk/news/articles/c3r0x5nzg0eo?at_medium=RSS&at_campaign=rss",
+      "pressures": {
+        "homelessness": 2
+      }
+    }
+  ]
+}
