@@ -223,13 +223,17 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.035em;li
 #data .viz-list{border-top:1px solid var(--hair-dark)}
 #data .viz-row{padding:22px 0;border-bottom:1px solid var(--hair-dark-2);transition:background .25s}
 #data .viz-row:hover{background:rgba(255,255,255,.04)}
-#data .viz-top{display:flex;justify-content:space-between;align-items:baseline}
-#data .viz-rank{font-family:var(--font-mono);font-weight:700;font-size:1rem;color:var(--accent);margin-right:14px}
+#data .viz-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+#data .viz-id{display:flex;align-items:baseline;flex-wrap:wrap}
+#data .viz-rank{font-family:var(--font-mono);font-weight:700;font-size:1rem;color:var(--accent);margin-right:12px}
 #data .viz-city{font-family:var(--font-serif);font-size:1.32rem;color:#fff;font-weight:600}
-#data .viz-reg{font-family:var(--font-mono);font-size:.74rem;color:var(--on-dark-dim);margin-left:10px}
-#data .viz-sev{font-family:var(--font-mono);font-size:1.9rem;color:#fff;text-align:right;font-weight:700}
+#data .viz-reg{font-size:.78rem;color:var(--on-dark-dim);margin-left:8px;flex-basis:100%;margin-top:2px}
+#data .viz-sev{font-family:var(--font-mono);font-size:1.9rem;color:#fff;text-align:right;font-weight:700;white-space:nowrap}
 #data .viz-sev small{display:block;font-family:var(--font-mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-dim)}
-#data .viz-track{height:16px;border-radius:8px;background:rgba(255,255,255,.06);overflow:hidden;display:flex;gap:2px;margin-top:13px}
+/* composite severity meter — bar length = score 0-100 (honest ratio on mobile) */
+#data .viz-meter{height:9px;border-radius:5px;background:rgba(255,255,255,.06);overflow:hidden;margin-top:12px}
+#data .viz-meter i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--teal),var(--teal-bright));transition:width .5s var(--ease)}
+#data .viz-track{height:10px;border-radius:5px;background:rgba(255,255,255,.06);overflow:hidden;display:flex;gap:2px;margin-top:7px}
 #data .viz-track span{height:100%;border-radius:2px;transition:width .5s var(--ease),opacity .3s}
 #data .src-note{font-family:var(--font-mono);font-size:11px;color:var(--on-dark-dim);margin-top:22px;letter-spacing:.02em}
 
@@ -321,6 +325,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   .cta h2{font-size:2.2rem}
   .figure.impact .n{font-size:2.4rem}
   .fifth-stats .figure.impact{flex:1 1 40%}
+  /* dashboard: stack severity under the city so it can't collide on phones */
+  #data .viz-top{flex-direction:column;align-items:flex-start;gap:6px}
+  #data .viz-sev{text-align:left}
 }
 @media(max-width:380px){
   .hero h1{font-size:2.1rem}
@@ -694,7 +701,7 @@ function render(f){
   rows.forEach(function(r,i){var c=comp(r.d);var segs=seg(r.d);
     var bars=segs.map(function(s){var on=(f==='all'||s.key===f);return'<span style="width:'+s.w+'%;background:'+COLORS[s.key]+';opacity:'+(on?1:0.2)+'"></span>';}).join('');
     var row=document.createElement('div');row.className='viz-row rv';row.style.transitionDelay=(i*0.02)+'s';
-    row.innerHTML='<div class="viz-top"><div><span class="viz-rank">'+String(i+1).padStart(2,'0')+'</span><span class="viz-city">'+r.id+'</span><span class="viz-reg">'+r.r+'</span></div><div class="viz-sev">'+c+'<small>'+(c>=85?'rising':(c>=75?'holding':'watch'))+'</small></div></div><div class="viz-track">'+bars+'</div>';
+    row.innerHTML='<div class="viz-top"><div class="viz-id"><span class="viz-rank">'+String(i+1).padStart(2,'0')+'</span><span class="viz-city">'+r.id+'</span><span class="viz-reg">'+r.r+'</span></div><div class="viz-sev">'+c+'<small>'+(c>=85?'rising':(c>=75?'holding':'watch'))+'</small></div></div><div class="viz-meter"><i style="width:'+c+'%"></i></div><div class="viz-track">'+bars+'</div>';
     list.appendChild(row);
   });
   requestAnimationFrame(function(){list.querySelectorAll('.rv').forEach(function(el,i){setTimeout(function(){el.classList.add('in');},i*26+60);});});
