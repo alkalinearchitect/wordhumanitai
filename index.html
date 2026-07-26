@@ -497,7 +497,7 @@ if(sigBtn){sigBtn.addEventListener('click',function(){sigOut.style.display='bloc
   window.addEventListener('load',resize);
   setTimeout(resize,60); resize();
   var p=geo.attributes.position.array, p2=geo2.attributes.position.array, t=0;
-  function fit(){var w=canvas.clientWidth||window.innerWidth,h=canvas.clientHeight||window.innerHeight;if(w>0&&h>0&&(canvas.width!==w||canvas.height!==h)){renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}}
+  function fit(){var w=canvas.clientWidth||canvas.parentElement.clientWidth||window.innerWidth,h=canvas.clientHeight||canvas.parentElement.clientHeight||window.innerHeight;var dpr=Math.min(window.devicePixelRatio||1,2);var bw=Math.round(w*dpr),bh=Math.round(h*dpr);if(bw>0&&bh>0&&(canvas.width!==bw||canvas.height!==bh)){renderer.setSize(w,h,false);canvas.width=bw;canvas.height=bh;cam.aspect=w/h;cam.updateProjectionMatrix();}}
   (function loop(){ t+=0.01; fit();
     tx+=(mx-tx)*0.05; ty+=(my-ty)*0.05;
     var sc=1+Math.min(scrollY/3000,1)*0.6;
