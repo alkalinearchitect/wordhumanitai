@@ -47,7 +47,8 @@
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 <style>
-  html{font-optical-sizing:auto}
+  html{font-optical-sizing:auto;scroll-padding-top:86px}
+  :root{--bar:86px}
   body{font-family:'Inter',system-ui,sans-serif}
   ::selection{background:#2BD4BE;color:#06141A}
   /* reveal */
@@ -66,9 +67,9 @@
     radial-gradient(40% 40% at 50% 50%, rgba(31,184,166,.10), transparent 60%);
     background-size:200% 200%;animation:heroAurora 14s ease-in-out infinite}
   @media(prefers-reduced-motion:reduce){.hero-aurora{animation:none}}
-  /* nav light/dark */
-  #nav.dark{background:rgba(5,9,12,.66);color:#EFF7F5;border-color:transparent}
-  #nav.light{background:rgba(245,248,249,.9);color:#06141A;border-bottom-color:#D8E1E4}
+  /* nav: one consistent glass treatment over every section */
+  #nav{background:rgba(5,9,12,.72);color:#EFF7F5}
+  #nav.scrolled{background:rgba(5,9,12,.92)}
   /* ticker scroll */
   @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   .ticker .track{display:flex;white-space:nowrap;animation:tick 70s linear infinite}
@@ -81,26 +82,14 @@
 <a href="#top" class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[300] focus:bg-accent focus:text-ink focus:px-4 focus:py-2 focus:rounded-md">Skip to content</a>
 <div id="progress" class="fixed top-0 left-0 h-[2px] w-0 z-[200] bg-gradient-to-r from-accent to-gold"></div>
 
-<!-- TICKER -->
-<div class="fixed top-0 left-0 right-0 z-[103] h-[30px] flex items-center bg-[rgba(5,9,12,.92)] border-b border-white/10 font-mono text-[11px] backdrop-blur overflow-hidden">
+<!-- TICKER (single top bar) -->
+<div class="fixed top-0 left-0 right-0 z-[120] h-[30px] flex items-center bg-[rgba(5,9,12,.92)] border-b border-white/10 font-mono text-[11px] backdrop-blur overflow-hidden">
   <div class="bg-accent text-ink font-bold text-[9.5px] tracking-[.14em] px-2.5 h-[30px] flex items-center gap-1.5 flex-shrink-0"><i class="w-1.5 h-1.5 rounded-full bg-ink inline-block"></i>LIVE</div>
   <div class="track" id="tickerTrack"></div>
 </div>
 
-<!-- STATUS STRIP -->
-<div class="fixed top-[30px] left-0 right-0 z-[102] h-[30px] flex items-center bg-[rgba(5,9,12,.72)] border-b border-white/10 font-mono text-[10.5px] tracking-[.08em] text-on-dark-dim backdrop-blur">
-  <div class="wrap max-w-[1180px] mx-auto px-8 flex items-center gap-4 w-full">
-    <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>
-    <span>STATUS <b class="text-on-dark">IN PILOT</b></span><span class="text-white/20">/</span>
-    <span>LOCATION <b class="text-on-dark">BRISTOL</b></span><span class="text-white/20">/</span>
-    <span>FIVE PRESSURE SIGNALS</span><span class="text-white/20">/</span>
-    <span>PROPOSED PLATFORM</span><span class="text-white/20">/</span>
-    <span>UPDATED <b class="text-on-dark">JUL 2026</b></span>
-  </div>
-</div>
-
-<!-- NAV -->
-<nav id="nav" class="dark fixed top-[60px] left-0 right-0 z-[101] transition-colors duration-300 border-b border-transparent backdrop-blur-xl">
+<!-- NAV (sits directly under ticker, one consistent look) -->
+<nav id="nav" class="dark fixed top-[30px] left-0 right-0 z-[119] border-b border-white/10 backdrop-blur-xl">
   <div class="max-w-[1180px] mx-auto px-8 py-3.5 flex items-center justify-between">
     <a href="#top" class="font-serif font-extrabold text-[21px] tracking-tight">Humanit<b class="text-accent">AI</b></a>
     <div class="hidden md:flex items-center gap-8" id="navLinks">
@@ -134,7 +123,7 @@
       <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-50"></div>
       <div class="flex justify-between items-center mb-4">
         <span class="font-mono text-[10px] tracking-[.16em] uppercase text-accent font-bold">Prototype · illustrative signals</span>
-        <span class="font-mono text-[9px] tracking-[.1em] text-on-dark-dim flex items-center gap-1.5"><i class="w-1.5 h-1.5 rounded-full bg-[#37D67A] inline-block"></i>DEMO</span>
+        <span class="font-mono text-[9px] tracking-[.1em] text-on-dark-dim flex items-center gap-1.5"><i class="w-1.5 h-1.5 rounded-full bg-accent-bright inline-block"></i>DEMO</span>
       </div>
       <div id="hpRows"></div>
       <p class="font-mono text-[9.5px] text-on-dark-dim mt-4 leading-relaxed">Illustrative prototype only. Example pressure signals for design purposes, not live forecasts or verified results.</p>
@@ -362,11 +351,11 @@ window.addEventListener('load',function(){ document.querySelectorAll('.hero .rv'
 // TICKER
 var TICKER_ITEMS=[
   {tag:'HUMANITAI',cls:'bg-accent text-ink',t:'HumanitAI: predictive community intelligence with a human front door. In pilot.',u:'#how'},
-  {tag:'NHS',cls:'bg-[rgba(232,178,58,.16)] text-gold',t:'NHS waiting list stands at 7.3M. Pressure we aim to help local services see earlier',u:'https://www.england.nhs.uk/statistics'},
-  {tag:'HOMELESS',cls:'bg-[rgba(224,50,43,.18)] text-[#FF6A5B]',t:'354K homeless in England; gov.uk records 132,410 households in temporary accommodation (Jun 2025)',u:'https://www.gov.uk/government/statistics/statutory-homelessness-in-england-april-to-june-2025'},
-  {tag:'POVERTY',cls:'bg-[rgba(224,50,43,.18)] text-[#FF6A5B]',t:'4.3M children growing up in poverty. End Child Poverty Coalition',u:'https://www.endchildpoverty.org.uk'},
-  {tag:'MENTAL',cls:'bg-[rgba(139,92,246,.20)] text-[#A78BFA]',t:'1 in 6 adults experience a common mental health problem; isolation is the hidden driver',u:'https://www.mind.org.uk'},
-  {tag:'5TH SPACE',cls:'bg-[rgba(59,160,255,.18)] text-[#5FB0FF]',t:'The 5th Space is contrast therapy: sauna + ice bath, our proposed human front door. Not yet operating',u:'#fifth-space'},
+  {tag:'NHS',cls:'bg-[rgba(232,178,57,.16)] text-gold',t:'NHS waiting list stands at 7.3M. Pressure we aim to help local services see earlier',u:'https://www.england.nhs.uk/statistics'},
+  {tag:'HOMELESS',cls:'bg-[rgba(86,194,242,.18)] text-water',t:'354K homeless in England; gov.uk records 132,410 households in temporary accommodation (Jun 2025)',u:'https://www.gov.uk/government/statistics/statutory-homelessness-in-england-april-to-june-2025'},
+  {tag:'POVERTY',cls:'bg-[rgba(43,212,190,.18)] text-accent',t:'4.3M children growing up in poverty. End Child Poverty Coalition',u:'https://www.endchildpoverty.org.uk'},
+  {tag:'MENTAL',cls:'bg-[rgba(46,111,184,.18)] text-[#2E6FB8]',t:'1 in 6 adults experience a common mental health problem; isolation is the hidden driver',u:'https://www.mind.org.uk'},
+  {tag:'5TH SPACE',cls:'bg-[rgba(86,194,242,.18)] text-water',t:'The 5th Space is contrast therapy: sauna + ice bath, our proposed human front door. Not yet operating',u:'#fifth-space'},
   {tag:'MODEL',cls:'bg-accent/20 text-accent-bright',t:'Four connected parts: community wellbeing, predictive intelligence, decision support, community response',u:'#how'},
   {tag:'HUMANITAI',cls:'bg-accent text-ink',t:'Prototype dashboard is illustrative demo data. Not live forecasts. See our honesty policy',u:'#honesty'}
 ];
@@ -383,7 +372,7 @@ var TICKER_ITEMS=[
 // DASHBOARD
 var DIMS=['poverty','homelessness','nhs','mental','isolation'];
 var LABEL={poverty:'Poverty',homelessness:'Homelessness',nhs:'NHS',mental:'Mental health',isolation:'Isolation'};
-var COLORS={'poverty':'#E0322B','homelessness':'#FF6A2B','nhs':'#E8B23A','mental':'#8B5CF6','isolation':'#3BA0FF'};
+var COLORS={'poverty':'#0FB7A2','homelessness':'#2BD4BE','nhs':'#56C2F2','mental':'#2E6FB8','isolation':'#E0B23C'};
 var data=[
 {id:'Birmingham',r:'West Midlands',d:{poverty:95,homelessness:70,nhs:75,mental:65,isolation:60}},
 {id:'Middlesbrough',r:'North East',d:{poverty:97,homelessness:72,nhs:78,mental:66,isolation:62}},
@@ -441,7 +430,7 @@ var PC_AREAS=[
 {pc:'BS16',name:'Fishponds & Staple Hill',d:{poverty:68,homelessness:64,nhs:66,mental:64,isolation:60}}
 ];
 var PC_LABEL={poverty:'Poverty',homelessness:'Homelessness',nhs:'NHS access',mental:'Mental health',isolation:'Isolation'};
-var PC_COL={poverty:'#E0322B',homelessness:'#FF6A2B',nhs:'#E8B23A',mental:'#8B5CF6',isolation:'#3BA0FF'};
+var PC_COL={poverty:'#0FB7A2',homelessness:'#2BD4BE',nhs:'#56C2F2',mental:'#2E6FB8',isolation:'#E0B23C'};
 function pcMatch(v){v=(v||'').toUpperCase().replace(/\s+/g,'');var hit=null;PC_AREAS.forEach(function(a){if(v.indexOf(a.pc)===0){if(!hit||a.pc.length>hit.pc.length)hit=a;}});return hit;}
 var pcBtn=document.getElementById('pcBtn'),pcInput=document.getElementById('pcInput'),pcResult=document.getElementById('pcResult'),pcNote=document.getElementById('pcNote');
 function pcRender(area){
