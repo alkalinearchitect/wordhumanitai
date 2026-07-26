@@ -472,6 +472,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   .hero h1{font-size:2.1rem}
   .wrap{padding:0 16px}
 }
+/* ═══════ AI AGENTS SECTION (editorial noir) ═══════ */
+.agent-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
+.agent-card{background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:var(--radius-sm);padding:22px;transition:border-color .3s,transform .3s}
+.agent-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.agent-ico{display:inline-block;font-size:12px;color:var(--accent);border:1px solid var(--accent);border-radius:5px;padding:2px 7px;margin-bottom:12px;letter-spacing:.06em}
+.agent-card h3{font-family:var(--font-serif);font-size:19px;margin-bottom:8px;color:var(--on-dark)}
+.agent-card p{font-size:14.5px;line-height:1.55;color:var(--on-dark-dim)}
+.loop-band{margin-top:30px;background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:var(--radius-sm);overflow:hidden}
+.loop-row{display:flex;align-items:baseline;gap:18px;padding:13px 22px;border-bottom:1px solid var(--hair-dark-2)}
+.loop-row:last-child{border-bottom:none}
+.loop-k{color:var(--accent);font-size:11px;letter-spacing:.12em;min-width:96px;flex-shrink:0}
+.loop-v{color:var(--on-dark-dim);font-size:14px;font-family:var(--font-ui)}
+@media(max-width:880px){.agent-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.agent-grid{grid-template-columns:1fr}.loop-row{flex-direction:column;gap:4px}}
+
 </style>
 </head>
 <body class="bg-ink">
@@ -500,6 +515,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     <a href="#how">How it works</a>
     <a href="#data">Prototype</a>
     <a href="#fifth-space">5th Space</a>
+    <a href="#agents">AI agents</a>
     <a href="#architecture">How we work</a>
     <a href="#join" class="nav-cta">Get involved</a>
   </div>
@@ -724,6 +740,51 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 </section>
 
 <!-- ═══════ HOW WE WORK (condensed) ═══════ -->
+
+<!-- ═══════ AI AGENTS / LOOP & GRAPH ENGINEERING ═══════ -->
+<section class="section air" id="agents">
+  <div class="wrap">
+    <p class="kicker-tag rv"><span class="num">04</span>How we build</p>
+    <h2 class="statement rv-rise">AI agents, loops and graphs &mdash; the engine room.</h2>
+    <p class="measure rv">HumanitAI is built the way modern agent systems are built: small autonomous loops that watch, classify and act, organised into graphs when a single loop would rot. Below is the actual pattern &mdash; the same one used to run the platform and to make agents pay for themselves.</p>
+
+    <div class="agent-grid rv">
+      <div class="agent-card">
+        <span class="agent-ico mono">01</span>
+        <h3>AI agents</h3>
+        <p>Autonomous workers that take a trigger, do a task, check a success bar, and re-run until it is met. We use them for intake triage, signal classification and report drafting &mdash; always with a human in the approval seat.</p>
+      </div>
+      <div class="agent-card">
+        <span class="agent-ico mono">02</span>
+        <h3>Prompts as programs</h3>
+        <p>The unit of work is the instruction you paste to the agent. Precise, copy-paste-able prompts with acceptance criteria beat vague briefs. Rules files and hooks keep every loop on-rail.</p>
+      </div>
+      <div class="agent-card">
+        <span class="agent-ico mono">03</span>
+        <h3>Loop engineering</h3>
+        <p>Self-improving loops: heartbeat, cron and webhook triggers; manager triages, worker executes only low-risk tickets; each run pastes evidence (screenshot, test output) into the ticket before merge.</p>
+      </div>
+      <div class="agent-card">
+        <span class="agent-ico mono">04</span>
+        <h3>Graph engineering</h3>
+        <p>When one loop rots from context, we split the task into nodes &mdash; each its own loop with its own success bar &mdash; feeding a synthesizer. Graphs answer "if this fails, where do we roll back", which tables cannot.</p>
+      </div>
+    </div>
+
+    <div class="loop-band rv">
+      <div class="loop-row"><span class="mono loop-k">TRIGGER</span><span class="loop-v">heartbeat &middot; cron &middot; webhook &middot; new ticket</span></div>
+      <div class="loop-row"><span class="mono loop-k">TASK</span><span class="loop-v">classify &rarr; build &rarr; review &rarr; test &rarr; open PR with evidence</span></div>
+      <div class="loop-row"><span class="mono loop-k">SUCCESS</span><span class="loop-v">measurable bar met, or fix and re-run from step one</span></div>
+      <div class="loop-row"><span class="mono loop-k">GUARDRAIL</span><span class="loop-v">cap 3 issues/run &middot; read-only backlog &middot; human merge &middot; own worktree</span></div>
+    </div>
+
+    <p class="measure rv" style="margin-top:34px">And the same discipline earns its keep. Agent-first products, knowledge-base reframing as a service, and autonomous engineering for other organisations are how a small team runs many projects at once &mdash; each looping on its own, multiplyng shipped output without more of our own hours. <b>Verified domains only.</b> High-risk decisions stay with people.</p>
+
+    <p class="src-note">Pattern drawn from open engineering practice (loop &amp; graph engineering, manager/worker agents, verification gates). Applied to HumanitAI's intake, forecasting and reporting pipelines.</p>
+  </div>
+</section>
+
+
 <section class="section air" id="architecture">
   <div class="wrap">
     <p class="kicker-tag rv"><span class="num">05</span>How we work</p>
