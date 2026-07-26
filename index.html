@@ -491,8 +491,11 @@ if(sigBtn){sigBtn.addEventListener('click',function(){sigOut.style.display='bloc
   var mx=0,my=0, tx=0,ty=0, scrollY=0;
   window.addEventListener('mousemove',function(e){ mx=(e.clientX/window.innerWidth-0.5)*2; my=(e.clientY/window.innerHeight-0.5)*2; });
   window.addEventListener('scroll',function(){ scrollY=window.scrollY; },{passive:true});
-  function resize(){var w=canvas.clientWidth||window.innerWidth,h=canvas.clientHeight||window.innerHeight;renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}
-  window.addEventListener('resize',resize); resize();
+  function resize(){var w=canvas.clientWidth||window.innerWidth,h=canvas.clientHeight||window.innerHeight;if(w>0&&h>0){renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}}
+  window.addEventListener('resize',resize);
+  if(window.ResizeObserver){ new ResizeObserver(resize).observe(canvas); }
+  window.addEventListener('load',resize);
+  setTimeout(resize,60); resize();
   var p=geo.attributes.position.array, p2=geo2.attributes.position.array, t=0;
   (function loop(){ t+=0.01;
     tx+=(mx-tx)*0.05; ty+=(my-ty)*0.05;
