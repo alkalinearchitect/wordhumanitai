@@ -58,6 +58,14 @@
   @media(prefers-reduced-motion:reduce){.rv,.rv-rise{opacity:1!important;transform:none!important}}
   /* hero 3D canvas */
   #heroField{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.9;pointer-events:none}
+  /* animated aurora fallback (always visible, even if WebGL unavailable) */
+  @keyframes heroAurora{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .hero-aurora{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.55;background:
+    radial-gradient(60% 50% at 78% 22%, rgba(43,212,190,.22), transparent 60%),
+    radial-gradient(55% 55% at 12% 88%, rgba(86,194,242,.18), transparent 62%),
+    radial-gradient(40% 40% at 50% 50%, rgba(31,184,166,.10), transparent 60%);
+    background-size:200% 200%;animation:heroAurora 14s ease-in-out infinite}
+  @media(prefers-reduced-motion:reduce){.hero-aurora{animation:none}}
   /* nav light/dark */
   #nav.dark{background:rgba(5,9,12,.66);color:#EFF7F5;border-color:transparent}
   #nav.light{background:rgba(245,248,249,.9);color:#06141A;border-bottom-color:#D8E1E4}
@@ -110,7 +118,7 @@
 <!-- HERO -->
 <section class="hero relative min-h-screen flex items-center pt-44 pb-20 overflow-hidden" id="top">
   <canvas id="heroField"></canvas>
-  <div class="absolute inset-0 z-0 pointer-events-none" style="background:radial-gradient(1100px 640px at 82% 18%,rgba(43,212,190,.18),transparent 55%),radial-gradient(900px 700px at 6% 96%,rgba(46,92,148,.22),transparent 62%)"></div>
+  <div class="hero-aurora absolute inset-0 z-0 pointer-events-none"></div>
   <div class="relative z-10 max-w-[1180px] mx-auto px-8 grid lg:grid-cols-[1.05fr_.95fr] gap-16 items-center w-full">
     <div>
       <p class="font-mono text-[11px] font-bold tracking-[.2em] uppercase text-on-dark-dim flex items-center gap-3 mb-6"><span class="w-8 h-0.5 bg-accent rounded"></span>Predictive community intelligence · with a human front door</p>
@@ -303,7 +311,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
 <script>
-window.onerror=function(m,s,l,c){ document.title='JSERR:'+m+'@'+l; };
 var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 // Lenis smooth scroll
 var lenis = null;
@@ -472,8 +479,8 @@ if(sigBtn){sigBtn.addEventListener('click',function(){sigOut.style.display='bloc
   var cam=new THREE.PerspectiveCamera(55,1,0.1,1000); cam.position.set(0,26,46); cam.lookAt(0,0,0);
   var renderer;
   try{ renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true}); }
-  catch(err){ document.title='THREEERR:'+err.message; return; }
-  if(!renderer){ document.title='THREEERR:no renderer'; return; }
+  catch(err){ return; }
+  if(!renderer){ return; }
   renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
   // interactive wireframe terrain that warps toward the cursor like a pressure field
   var G=64, COUNT=G*G, pos=new Float32Array(COUNT*3);
@@ -517,7 +524,7 @@ if(sigBtn){sigBtn.addEventListener('click',function(){sigOut.style.display='bloc
     mesh.rotation.z=tx*0.25; mesh2.rotation.z=-tx*0.18;
     cam.position.y=26 - ty*8; cam.lookAt(0,0,0);
     mesh.scale.set(sc,sc,sc); mesh2.scale.set(sc,sc,sc);
-    try{ renderer.render(scene,cam); }catch(e){ document.title='RENDERERR:'+e.message; return; }
+    try{ renderer.render(scene,cam); }catch(e){ return; }
     requestAnimationFrame(loop);
   })();
 })();
