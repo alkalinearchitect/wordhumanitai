@@ -44,27 +44,31 @@
 <style>
 /* Editorial Noir / Forecast Terminal, refined */
 :root{
-  --ink:#070B0E; --ink-2:#0C1318; --ink-3:#121C23; --ink-4:#1B2A33;
-  --paper:#F4F7F8; --paper-2:#E8EEF0; --paper-3:#D7E0E3;
+  --ink:#05090C; --ink-2:#0A131A; --ink-3:#101E27; --ink-4:#172A35;
+  --paper:#F5F8F9; --paper-2:#E9EFE1; --paper-3:#D8E1E4;
   /* ONE restrained accent, used sparingly (primary CTA, signature line, status dots).
      Never flood fills/kickers/links. This is the anti-"ad-colour" rule. */
-  --accent:#1FB8A6; --accent-deep:#0E8C7E; --accent-bright:#34D6C2;
-  --navy:#1E3A5F; --navy-deep:#132947; --navy-bright:#2E5C94;
-  --water:#4FB8E8; --water-deep:#1E5E8C; --water-soft:#CFEAF7;
-  --gold:#C9A23A;
-  --on-dark:#EAF4F2; --on-dark-dim:#8FA6A3; --on-dark-dim2:#5C6E6B;
-  --on-paper:#081216; --on-paper-dim:#46585A;
-  --hair-dark:rgba(255,255,255,.10); --hair-dark-2:rgba(255,255,255,.055);
-  --hair-light:#D7E0E3; --hair-light-2:#C3CFD3;
+  --accent:#2BD4BE; --accent-deep:#0FB7A2; --accent-bright:#5BF0DC;
+  --navy:#1E3A5F; --navy-deep:#122844; --navy-bright:#2E6FB8;
+  --water:#56C2F2; --water-deep:#1E6EAC; --water-soft:#D6EFFB;
+  --gold:#E0B23C; --gold-deep:#C4921F;
+  --on-dark:#EFF7F5; --on-dark-dim:#8FB0AC; --on-dark-dim2:#5A6E6B;
+  --on-paper:#06141A; --on-paper-dim:#41606; --on-paper-dim:#416066;
+  --hair-dark:rgba(255,255,255,.12); --hair-dark-2:rgba(255,255,255,.06);
+  --hair-light:#D8E1E4; --hair-light-2:#C4CFD3;
   /* calm, desaturated severity scale (not candy / not neon) */
-  --sev-poverty:#C25543; --sev-homeless:#CF8850; --sev-nhs:#C2A24A;
-  --sev-mental:#7C6BC4; --sev-isolation:#3E8FBF;
+  --sev-poverty:#D9684F; --sev-homeless:#E0A05A; --sev-nhs:#D8B24E;
+  --sev-mental:#8C7BD4; --sev-isolation:#4FA6DC;
   /* spacing scale */
   --s-1:8px; --s-2:16px; --s-3:24px; --s-4:40px; --s-5:64px; --s-6:96px; --s-7:140px; --s-8:200px;
   --radius:18px; --radius-sm:12px; --ease:cubic-bezier(.16,1,.3,1);
   --font-ui:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
   --font-serif:'Fraunces',Georgia,'Times New Roman',serif;
   --font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  /* NEW: richer glow + grid tints for the Three.js hero field */
+  --glow-accent:rgba(43,212,190,.55);
+  --glow-water:rgba(86,194,242,.40);
+  --hero-fade:radial-gradient(120% 90% at 78% 12%, rgba(43,212,190,.10), transparent 60%), radial-gradient(90% 80% at 12% 90%, rgba(86,194,242,.08), transparent 55%);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:120px;-webkit-text-size-adjust:100%;font-optical-sizing:auto;overflow-x:hidden}
@@ -155,6 +159,8 @@ h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.035em;li
   pointer-events:none}
 .hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--hair-dark-2) 1px,transparent 1px),linear-gradient(90deg,var(--hair-dark-2) 1px,transparent 1px);background-size:68px 68px;mask-image:radial-gradient(circle at 72% 38%,#000,transparent 72%);-webkit-mask-image:radial-gradient(circle at 72% 38%,#000,transparent 72%);opacity:.45;pointer-events:none}
 .hero .wrap-grid{position:relative;z-index:2;width:100%}
+.hero-field{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.85;pointer-events:none}
+.hero-fade{position:absolute;inset:0;z-index:1;pointer-events:none;background:var(--hero-fade);mix-blend-mode:screen}
 .hero h1{font-size:clamp(3rem,8.4vw,7.2rem);font-weight:900;line-height:.9;letter-spacing:-.045em;margin-bottom:28px;color:#fff;max-width:14ch}
 .hero h1 .em{color:var(--accent);position:relative;font-style:italic}
 .hero h1 .em::after{content:"";position:absolute;left:0;right:0;bottom:.03em;height:.085em;background:var(--accent);border-radius:2px}
@@ -488,6 +494,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 @media(max-width:560px){.agent-grid{grid-template-columns:1fr}.loop-row{flex-direction:column;gap:4px}}
 
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 </head>
 <body class="bg-ink">
 <a href="#top" class="skip-link">Skip to content</a>
@@ -525,6 +532,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
 <!-- ═══════ HERO ═══════ -->
 <section class="hero" id="top">
+  <canvas id="heroField" class="hero-field" aria-hidden="true"></canvas>
+  <div class="hero-fade" aria-hidden="true"></div>
   <div class="wrap wrap-grid">
     <div class="hero-copy">
       <p class="kicker rv">Predictive community intelligence · with a human front door</p>
@@ -1057,6 +1066,44 @@ if(dirGrid){
 // ─── COMMUNITY SIGNAL (front-end prototype) ───
 var sigBtn=document.getElementById('sigBtn'),sigOut=document.getElementById('sigOut');
 if(sigBtn){sigBtn.addEventListener('click',function(){sigOut.style.display='block';});}
+
+// ─── THREE.JS HERO FIELD (subtle, performance-capped) ───
+(function(){
+  var canvas=document.getElementById('heroField');
+  if(!canvas) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(typeof THREE==='undefined') return;
+  var scene=new THREE.Scene();
+  var cam=new THREE.PerspectiveCamera(60,1,0.1,1000); cam.position.z=42;
+  var renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+  var N=900, pos=new Float32Array(N*3), col=new Float32Array(N*3);
+  var cA=new THREE.Color(0x2BD4BE), cW=new THREE.Color(0x56C2F2);
+  for(var i=0;i<N;i++){
+    pos[i*3]=(Math.random()-0.5)*120;
+    pos[i*3+1]=(Math.random()-0.5)*70;
+    pos[i*3+2]=(Math.random()-0.5)*60;
+    var c=Math.random()>0.5?cA:cW;
+    col[i*3]=c.r;col[i*3+1]=c.g;col[i*3+2]=c.b;
+  }
+  var geo=new THREE.BufferGeometry();
+  geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  geo.setAttribute('color',new THREE.BufferAttribute(col,3));
+  var mat=new THREE.PointsMaterial({size:0.55,vertexColors:true,transparent:true,opacity:0.8,depthWrite:false,blending:THREE.AdditiveBlending});
+  var pts=new THREE.Points(geo,mat); scene.add(pts);
+  function resize(){
+    var w=canvas.clientWidth||window.innerWidth, h=canvas.clientHeight||window.innerHeight;
+    renderer.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix();
+  }
+  window.addEventListener('resize',resize); resize();
+  var t=0;
+  (function loop(){
+    t+=0.0016;
+    pts.rotation.y=t; pts.rotation.x=Math.sin(t*0.6)*0.12;
+    renderer.render(scene,cam);
+    requestAnimationFrame(loop);
+  })();
+})();
 </script>
 </body>
 </html>
