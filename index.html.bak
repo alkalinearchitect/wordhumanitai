@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0B">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "HumanitAI",
+  "legalName": "HumanitAI Community Interest Company",
+  "url": "https://alkalinearchitect.github.io/wordhumanitai/",
+  "description": "A UK Community Interest Company building an early-warning and prevention platform that brings together public data, local knowledge and community voices to understand where pressure is increasing in communities. It then helps residents, charities, councils and funders coordinate a practical response before problems become crises. Currently in pilot.",
+  "knowsAbout": ["AI Forecasting", "Community Health Workers", "Social Impact Bonds", "Social Return on Investment"],
+  "areaServed": "GB",
+  "email": "hello@humanitai.uk",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Companies House Registration",
+    "value": "16891121",
+    "url": "https://find-and-update.company-information.service.gov.uk/company/16891121"
+  }
+}
+</script>
+<title>HumanitAI CIC. Predictive community intelligence with a human front door</title>
+<meta name="description" content="HumanitAI is a UK CIC using public data and AI to spot rising community pressure early, then connect people to local help before crisis.">
+<meta property="og:title" content="HumanitAI. An early-warning and prevention platform for communities">
+<meta property="og:description" content="We bring together public data, local knowledge and community voices to understand where pressure is increasing, then help residents, charities, councils and funders see it earlier and coordinate practical action before problems become crises. In pilot.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alkalinearchitect.github.io/wordhumanitai/">
+<meta property="og:image" content="https://alkalinearchitect.github.io/wordhumanitai/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HumanitAI. An early-warning and prevention platform for communities">
+<meta name="twitter:description" content="We bring together public data, local knowledge and community voices to see where pressure is increasing, then help residents, charities, councils and funders coordinate practical action before problems become crises. In pilot.">
+<meta name="twitter:image" content="https://alkalinearchitect.github.io/wordhumanitai/og-image.jpg">
+<link rel="canonical" href="https://alkalinearchitect.github.io/wordhumanitai/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0A0B'/%3E%3Ctext x='16' y='23' font-family='-apple-system,system-ui,sans-serif' font-weight='800' font-size='20' fill='%23FF4D2E' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
+<noscript><style>.rv,.rv-rise{opacity:1!important;transform:none!important;clip-path:none!important}.ticker .track{overflow-x:auto}</style></noscript>
+<style>
+/* Editorial Noir / Forecast Terminal, refined */
+:root{
+  --ink:#05090C; --ink-2:#0A131A; --ink-3:#101E27; --ink-4:#172A35;
+  --paper:#F5F8F9; --paper-2:#E9EFE1; --paper-3:#D8E1E4;
+  /* ONE restrained accent, used sparingly (primary CTA, signature line, status dots).
+     Never flood fills/kickers/links. This is the anti-"ad-colour" rule. */
+  --accent:#2BD4BE; --accent-deep:#0FB7A2; --accent-bright:#5BF0DC;
+  --navy:#1E3A5F; --navy-deep:#122844; --navy-bright:#2E6FB8;
+  --water:#56C2F2; --water-deep:#1E6EAC; --water-soft:#D6EFFB;
+  --gold:#E0B23C; --gold-deep:#C4921F;
+  --on-dark:#EFF7F5; --on-dark-dim:#8FB0AC; --on-dark-dim2:#5A6E6B;
+  --on-paper:#06141A; --on-paper-dim:#41606; --on-paper-dim:#416066;
+  --hair-dark:rgba(255,255,255,.12); --hair-dark-2:rgba(255,255,255,.06);
+  --hair-light:#D8E1E4; --hair-light-2:#C4CFD3;
+  /* calm, desaturated severity scale (not candy / not neon) */
+  --sev-poverty:#D9684F; --sev-homeless:#E0A05A; --sev-nhs:#D8B24E;
+  --sev-mental:#8C7BD4; --sev-isolation:#4FA6DC;
+  /* spacing scale */
+  --s-1:8px; --s-2:16px; --s-3:24px; --s-4:40px; --s-5:64px; --s-6:96px; --s-7:140px; --s-8:200px;
+  --radius:18px; --radius-sm:12px; --ease:cubic-bezier(.16,1,.3,1);
+  --font-ui:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+  --font-serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  /* NEW: richer glow + grid tints for the Three.js hero field */
+  --glow-accent:rgba(43,212,190,.55);
+  --glow-water:rgba(86,194,242,.40);
+  --hero-fade:radial-gradient(120% 90% at 78% 12%, rgba(43,212,190,.10), transparent 60%), radial-gradient(90% 80% at 12% 90%, rgba(86,194,242,.08), transparent 55%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:120px;-webkit-text-size-adjust:100%;font-optical-sizing:auto;overflow-x:hidden}
+body{background:var(--ink);color:var(--on-dark);font-family:var(--font-ui);line-height:1.62;font-size:17px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;position:relative;overflow-x:hidden}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+h1,h2,h3{font-family:var(--font-serif);font-weight:600;letter-spacing:-.035em;line-height:1.02}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.measure{max-width:660px}
+
+/* ═══════ LIVE TICKER ═══════ */
+.ticker{position:fixed;top:0;left:0;right:0;z-index:103;height:30px;background:rgba(10,10,11,.92);border-bottom:1px solid var(--hair-dark);overflow:hidden;display:flex;align-items:center;font-family:var(--font-mono);font-size:11px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.ticker .live{background:var(--accent);color:#fff;font-weight:700;font-size:9.5px;letter-spacing:.14em;padding:0 10px;height:30px;display:flex;align-items:center;gap:6px;flex-shrink:0;z-index:2}
+.ticker .live i{width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 1.5s infinite;box-shadow:0 0 0 0 rgba(255,255,255,.6);animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(255,255,255,.5)}50%{opacity:.4;box-shadow:0 0 0 4px rgba(255,255,255,0)}}
+.ticker .track{display:flex;align-items:center;white-space:nowrap;will-change:transform;animation:tick 70s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+.ticker .item{display:inline-flex;align-items:center;gap:9px;padding:0 24px;color:var(--on-dark);flex-shrink:0}
+.ticker .item a{color:inherit}
+.ticker .item a:hover{color:var(--accent)}
+.ticker .tag{font-weight:700;font-size:9px;letter-spacing:.08em;padding:1px 6px;border-radius:4px;flex-shrink:0}
+.tag-poverty{background:rgba(224,50,43,.18);color:#FF6A5B}
+.tag-homeless{background:rgba(255,106,43,.18);color:#FF8A4D}
+.tag-nhs{background:rgba(232,178,58,.16);color:var(--gold)}
+.tag-mental{background:rgba(139,92,246,.20);color:#A78BFA}
+.tag-lonely{background:rgba(59,160,255,.18);color:#5FB0FF}
+.tag-osint{background:rgba(31,184,166,.20);color:var(--accent-bright)}
+.tag-humanitai{background:var(--accent);color:#fff}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ═══════ STATUS STRIP ═══════ */
+.statusbar{position:fixed;top:30px;left:0;right:0;z-index:102;background:rgba(10,10,11,.72);border-bottom:1px solid var(--hair-dark);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;color:var(--on-dark-dim);height:30px;display:flex;align-items:center;overflow:hidden;white-space:nowrap;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.statusbar .wrap{display:flex;align-items:center;gap:18px;width:100%}
+.statusbar .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(31,184,166,.22);animation:pulse 2.4s infinite}
+.statusbar b{color:var(--on-dark);font-weight:700}
+.statusbar .sep{color:var(--hair-dark-2)}
+
+/* ═══════ NAV ═══════ */
+#nav{position:fixed;top:60px;left:0;right:0;z-index:101;transition:background .4s var(--ease),border-color .4s,color .4s;background:rgba(10,10,11,.66);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid transparent;color:var(--on-dark)}
+#nav.light{background:rgba(246,243,236,.82);color:var(--on-paper);border-bottom-color:var(--hair-light)}
+#nav.scrolled{border-bottom-color:var(--hair-dark)}
+#nav.light.scrolled{border-bottom-color:var(--hair-light)}
+.nav-inner{max-width:1180px;margin:0 auto;padding:15px 32px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:var(--font-serif);font-weight:800;font-size:21px;letter-spacing:-.03em}
+.brand b{color:var(--accent)}
+#nav.light .brand b{color:var(--accent-deep)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:13px;font-weight:600;color:var(--on-dark-dim);transition:color .2s;position:relative}
+#nav.light .nav-links a{color:var(--on-paper-dim)}
+.nav-links a:hover{color:var(--on-dark)}
+#nav.light .nav-links a:hover{color:var(--on-paper)}
+.nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1.5px;background:var(--accent);transition:right .25s var(--ease)}
+.nav-links a:hover::after{right:0}
+.nav-burger{display:none;flex-direction:column;gap:5px;width:42px;height:42px;border:1px solid var(--hair-dark);border-radius:10px;background:transparent;cursor:pointer;align-items:center;justify-content:center;padding:0}
+.nav-burger span{width:18px;height:2px;background:var(--on-dark);border-radius:2px;transition:transform .25s var(--ease),opacity .2s}
+#nav.light .nav-burger span{background:var(--on-paper)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-cta{background:var(--accent);color:#fff;border-radius:999px;padding:9px 18px;font-weight:700;font-size:13px;transition:background .2s,transform .2s;box-shadow:0 8px 24px -10px rgba(31,184,166,.6)}
+.nav-cta:hover{background:var(--accent-deep);transform:translateY(-1px)}
+
+/* ═══════ SHARED ═══════ */
+.kicker{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-dim);display:inline-flex;align-items:center;gap:13px;margin-bottom:26px}
+.kicker::before{content:"";width:30px;height:2px;background:var(--accent);border-radius:2px}
+.kicker-tag{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--on-paper-dim);display:inline-flex;align-items:center;gap:11px;margin-bottom:22px}
+.kicker-tag .num{background:var(--paper-2);border:1px solid var(--hair-light-2);border-radius:7px;padding:2px 8px;line-height:1;color:var(--on-paper);font-weight:700}
+.statement{font-family:var(--font-serif);font-weight:600;font-size:clamp(1.9rem,4.6vw,3.2rem);line-height:1.12;letter-spacing:-.025em;max-width:920px}
+.statement .hl{color:var(--accent-deep)}
+.lede{font-size:1.18rem;line-height:1.62;color:var(--on-paper-dim);max-width:580px;margin-top:22px;font-weight:400}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-ui);font-size:14px;font-weight:700;line-height:1;cursor:pointer;border-radius:999px;padding:16px 28px;min-height:54px;transition:background .22s,color .22s,border-color .22s,transform .22s;border:1.5px solid transparent}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--accent);color:#fff;padding:10px 16px;border-radius:6px;z-index:300;font-weight:700;font-size:13px}
+.skip-link:focus{left:12px;top:38px}
+.btn .arr{transition:transform .22s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-deep);transform:translateY(-1px);box-shadow:0 14px 34px -14px rgba(31,184,166,.6)}
+.btn-ghost{background:transparent;color:var(--on-dark);border-color:var(--hair-dark)}
+.btn-ghost:hover{border-color:var(--accent);color:#fff}
+
+/* ═══════ HERO (dark, full-bleed, asymmetric) ═══════ */
+.hero{min-height:100vh;display:grid;align-items:center;padding:190px 0 90px;position:relative;overflow:hidden;grid-template-columns:1.05fr .95fr;gap:64px;background:linear-gradient(160deg,var(--ink) 0%,var(--ink-2) 55%,var(--navy-deep) 130%)}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(1000px 560px at 85% 22%,rgba(31,184,166,.16),transparent 55%),
+  radial-gradient(760px 560px at 6% 92%,rgba(59,160,255,.10),transparent 60%);
+  pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--hair-dark-2) 1px,transparent 1px),linear-gradient(90deg,var(--hair-dark-2) 1px,transparent 1px);background-size:68px 68px;mask-image:radial-gradient(circle at 72% 38%,#000,transparent 72%);-webkit-mask-image:radial-gradient(circle at 72% 38%,#000,transparent 72%);opacity:.45;pointer-events:none}
+.hero .wrap-grid{position:relative;z-index:2;width:100%}
+.hero-field{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.85;pointer-events:none}
+.hero-fade{position:absolute;inset:0;z-index:1;pointer-events:none;background:var(--hero-fade);mix-blend-mode:screen}
+.hero h1{font-size:clamp(3rem,8.4vw,7.2rem);font-weight:900;line-height:.9;letter-spacing:-.045em;margin-bottom:28px;color:#fff;max-width:14ch}
+.hero h1 .em{color:var(--accent);position:relative;font-style:italic}
+.hero h1 .em::after{content:"";position:absolute;left:0;right:0;bottom:.03em;height:.085em;background:var(--accent);border-radius:2px}
+.hero-stakes{font-size:1.12rem;line-height:1.55;color:var(--on-dark);font-weight:600;max-width:540px;margin-bottom:18px;border-left:3px solid var(--accent);padding-left:18px}
+.hero-sub{font-size:1.12rem;line-height:1.62;color:var(--on-dark-dim);max-width:540px;margin-bottom:36px;font-weight:400}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+/* hero right: live forecast terminal */
+.hero-panel{background:linear-gradient(180deg,rgba(26,26,30,.96),rgba(18,18,22,.96));color:var(--on-dark);border:1px solid var(--hair-dark);border-radius:var(--radius);padding:26px;align-self:center;box-shadow:0 50px 100px -50px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.04);position:relative;overflow:hidden}
+.hero-panel::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.5}
+.hero-panel .hp-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.hero-panel .hp-k{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.hero-panel .hp-live{font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;color:var(--on-dark-dim);display:inline-flex;align-items:center;gap:6px}
+.hero-panel .hp-live i{width:6px;height:6px;border-radius:50%;background:#37D67A;display:inline-block;box-shadow:0 0 0 0 rgba(55,214,122,.6);animation:pulse 2s infinite}
+.hero-panel .hp-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--hair-dark-2)}
+.hero-panel .hp-row:last-child{border-bottom:0}
+.hero-panel .hp-city{font-family:var(--font-serif);font-size:1.04rem;color:#fff;font-weight:600;min-width:120px}
+.hero-panel .hp-bar{height:6px;flex:1;margin:0 14px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden}
+.hero-panel .hp-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:3px}
+.hero-panel .hp-sev{font-family:var(--font-mono);font-weight:700;font-size:1.2rem;color:#fff}
+.hero-panel .hp-note{font-family:var(--font-mono);font-size:9.5px;color:var(--on-dark-dim2);margin-top:18px;line-height:1.55;letter-spacing:.02em}
+
+/* ═══════ STAT BAND ═══════ */
+.statband{background:linear-gradient(180deg,var(--ink-2),var(--ink));border-top:1px solid var(--hair-dark);border-bottom:1px solid var(--hair-dark);padding:64px 0}
+.statband .grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.statband .cell{padding:0 30px;border-left:1px solid var(--hair-dark)}
+.statband .cell:first-child{border-left:0;padding-left:0}
+.statband .n{font-family:var(--font-mono);font-weight:700;font-size:clamp(2.3rem,4.6vw,3.6rem);color:#fff;line-height:1;letter-spacing:-.02em}
+.statband .n b{color:var(--accent)}
+.statband .l{font-size:11px;color:var(--on-dark-dim);text-transform:uppercase;letter-spacing:.1em;margin-top:14px;line-height:1.5;max-width:210px}
+
+/* ═══════ 5TH SPACE (paper ,  contrast therapy) ═══════ */
+.fifth{background:var(--paper);color:var(--on-paper);position:relative;overflow:hidden}
+.fifth::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 600px at 85% 10%,rgba(59,160,255,.08),transparent 60%);pointer-events:none}
+.fifth .wrap{position:relative;z-index:2}
+.fifth-head{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;margin-bottom:30px}
+.fifth-visual{position:relative;height:380px;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#0E1622 0%,#16243A 45%,#1E3656 100%);box-shadow:0 40px 80px -40px rgba(10,20,40,.6);display:flex;align-items:flex-end;justify-content:center}
+.fifth-visual svg{width:100%;height:100%;display:block}
+.fifth-visual .vlbl{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,243,236,.7);z-index:3}
+.fifth .lede{color:var(--on-paper-dim)}
+
+/* emotional pull-quotes */
+.voice{margin:54px 0;display:grid;gap:0}
+.voice blockquote{font-family:var(--font-serif);font-weight:500;font-size:clamp(1.5rem,3.6vw,2.4rem);line-height:1.28;letter-spacing:-.02em;color:var(--on-paper);max-width:880px;padding:30px 0;border-top:1px solid var(--hair-light)}
+.voice blockquote:last-child{border-bottom:1px solid var(--hair-light)}
+.voice blockquote b{color:var(--accent-deep);font-weight:700}
+.voice blockquote .q{color:var(--accent);font-family:var(--font-mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:14px;font-weight:700}
+
+/* dispatch sub-row */
+.dispatch{display:grid;grid-template-columns:240px 1fr;gap:32px;padding:30px 0;border-top:1px solid var(--hair-light);align-items:baseline}
+.dispatch.feat{background:linear-gradient(90deg,rgba(59,160,255,.08),transparent 72%);margin:0 -32px;padding:32px;padding-left:32px;border-radius:14px}
+.dispatch .area{font-family:var(--font-serif);font-weight:700;font-size:1.24rem;letter-spacing:-.01em}
+.dispatch .area span{display:block;font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--water-deep);margin-bottom:7px}
+.dispatch .body{font-size:1.04rem;line-height:1.64;color:var(--on-paper);max-width:66ch}
+.dispatch .body b{font-weight:700;color:var(--accent-deep)}
+
+.fifth-stats{display:flex;gap:60px;flex-wrap:wrap;margin-top:50px;padding-top:40px;border-top:1px solid var(--hair-light)}
+.figure.impact .n{font-family:var(--font-mono);font-weight:700;font-size:3.4rem;color:var(--on-paper);line-height:1;letter-spacing:-.03em}
+.figure.impact .n b{color:var(--on-paper)}
+.figure.impact .l{font-size:11px;color:var(--on-paper-dim);text-transform:uppercase;letter-spacing:.1em;margin-top:12px;max-width:170px}
+
+/* ═══════ INTELLIGENCE (dark terminal) ═══════ */
+#data{background:var(--ink);color:var(--on-dark);padding:var(--s-7) 0}
+#data .kicker-tag{color:var(--on-dark-dim)}
+#data .kicker-tag .num{background:var(--ink-2);border-color:var(--hair-dark);color:var(--on-dark)}
+#data h2{color:#fff}
+#data .lede{color:var(--on-dark-dim)}
+#data .src-head{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--hair-dark);border-bottom:1px solid var(--hair-dark);padding:15px 0;margin-bottom:8px;font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-dim)}
+#data .viz-filters{display:flex;flex-wrap:wrap;gap:9px;margin:30px 0 26px}
+#data .viz-filters button{appearance:none;border:1px solid var(--hair-dark);background:rgba(255,255,255,.03);color:var(--on-dark-dim);padding:.62rem 1rem .62rem 1.1rem;border-radius:999px;font-size:.82rem;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s,background .2s;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-ui);min-height:44px}
+#data .viz-filters button i{width:9px;height:9px;border-radius:50%;display:inline-block}
+#data .viz-filters button:hover{border-color:var(--accent);color:#fff}
+#data .viz-filters button.active{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:700}
+#data .viz-list{border-top:1px solid var(--hair-dark)}
+#data .viz-row{padding:22px 0;border-bottom:1px solid var(--hair-dark-2);transition:background .25s}
+#data .viz-row:hover{background:rgba(255,255,255,.04)}
+#data .viz-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+#data .viz-id{display:flex;align-items:baseline;flex-wrap:wrap}
+#data .viz-rank{font-family:var(--font-mono);font-weight:700;font-size:1rem;color:var(--accent);margin-right:12px}
+#data .viz-city{font-family:var(--font-serif);font-size:1.32rem;color:#fff;font-weight:600}
+#data .viz-reg{font-size:.78rem;color:var(--on-dark-dim);margin-left:8px;flex-basis:100%;margin-top:2px}
+#data .viz-sev{font-family:var(--font-mono);font-size:1.9rem;color:#fff;text-align:right;font-weight:700;white-space:nowrap}
+#data .viz-sev small{display:block;font-family:var(--font-mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-dim)}
+/* composite severity meter ,  bar length = score 0-100 (honest ratio on mobile) */
+#data .viz-meter{height:9px;border-radius:5px;background:rgba(255,255,255,.06);overflow:hidden;margin-top:12px}
+#data .viz-meter i{display:block;height:100%;border-radius:5px;width:0;background:linear-gradient(90deg,var(--accent-deep),var(--accent));transition:width .9s var(--ease)}
+#data .viz-track{height:10px;border-radius:5px;background:rgba(255,255,255,.06);overflow:hidden;display:flex;gap:2px;margin-top:7px}
+#data .viz-track span{height:100%;border-radius:2px;width:0;transition:width .9s var(--ease),opacity .3s}
+#data .src-note{font-family:var(--font-mono);font-size:11px;color:var(--on-dark-dim);margin-top:22px;letter-spacing:.02em}
+
+/* ═══════ CLOSING (loudest beat) ═══════ */
+.cta{background:linear-gradient(180deg,var(--ink),var(--navy-deep));color:var(--on-dark);text-align:center;padding:var(--s-8) 0 var(--s-6);border-top:1px solid var(--hair-dark);position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 520px at 50% 0%,rgba(31,184,166,.18),transparent 60%);pointer-events:none}
+.cta .wrap{position:relative;z-index:2}
+.cta .kicker-tag{color:var(--accent);justify-content:center}
+.cta h2{color:#fff;font-size:clamp(2.8rem,7.4vw,5.4rem);margin-bottom:22px;line-height:1.0;letter-spacing:-.035em;max-width:16ch;margin-left:auto;margin-right:auto}
+.cta .lede{color:var(--on-dark-dim);margin:0 auto 36px;font-size:1.22rem}
+.cta-grid{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:50px;max-width:900px;margin-left:auto;margin-right:auto}
+.cta-card{background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:var(--radius-sm);padding:22px 24px;text-align:left;max-width:270px;flex:1;transition:border-color .25s,transform .25s var(--ease)}
+.cta-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.cta-card b{display:block;font-family:var(--font-serif);font-size:1.22rem;color:#fff;margin-bottom:8px}
+.cta-card span{font-size:.9rem;color:var(--on-dark-dim);line-height:1.55}
+.cta-card .step{display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center}
+.cta-primary{background:var(--accent);color:#fff;font-size:15px;padding:19px 36px;min-height:60px;box-shadow:0 20px 44px -18px rgba(31,184,166,.55)}
+.cta-primary:hover{background:var(--accent-deep);transform:translateY(-2px);color:#fff}
+.cta .btn-ghost{color:var(--on-dark);border-color:var(--hair-dark);font-size:14px;padding:18px 32px;min-height:60px}
+.cta .btn-ghost:hover{border-color:var(--accent);color:#fff}
+
+/* ═══════ PULSE PLATFORM (calm module grid) ═══════ */
+.pulse{background:linear-gradient(180deg,var(--ink),var(--ink-2));color:var(--on-dark);padding:var(--s-7) 0;border-top:1px solid var(--hair-dark);position:relative;overflow:hidden}
+.pulse::before{content:"";position:absolute;inset:0;background:radial-gradient(820px 420px at 12% 0%,rgba(59,160,255,.07),transparent 60%);pointer-events:none}
+.pulse .wrap{position:relative;z-index:2}
+.pulse .lede{color:var(--on-dark-dim)}
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+.mod{background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:var(--radius-sm);padding:24px;transition:border-color .25s,transform .25s var(--ease)}
+.mod:hover{border-color:rgba(59,160,255,.45);transform:translateY(-3px)}
+.mod .mn{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--water);display:inline-flex;align-items:center;gap:8px;margin-bottom:14px}
+.mod .mn i{width:7px;height:7px;border-radius:50%;background:var(--water);display:inline-block}
+.mod h3{font-family:var(--font-serif);font-size:1.28rem;color:#fff;margin-bottom:10px;font-weight:600}
+.mod p{font-size:.94rem;line-height:1.58;color:var(--on-dark-dim)}
+.pulse-band{margin-top:46px;padding:22px 24px;border:1px solid var(--hair-dark);border-radius:var(--radius-sm);background:var(--ink-2);display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.pulse-band .pb-k{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);flex-shrink:0;padding-top:2px}
+.pulse-band p{font-size:.96rem;line-height:1.6;color:var(--on-dark-dim);margin:0;flex:1;min-width:240px}
+.pulse-band b{color:var(--on-dark);font-weight:600}
+@media(max-width:820px){.mod-grid{grid-template-columns:1fr 1fr}.mod-grid .mod:nth-child(3){grid-column:1/-1}}
+@media(max-width:560px){.mod-grid{grid-template-columns:1fr}}
+
+/* ═══════ FOOTER ═══════ */
+footer{background:var(--paper);color:var(--on-paper);border-top:1px solid var(--hair-light);padding:60px 0 34px}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand .brand{margin-bottom:14px;display:inline-block;color:var(--on-paper)}
+.foot-brand p{font-size:.88rem;color:var(--on-paper-dim);max-width:360px;line-height:1.65}
+.foot-col h4{font-family:var(--font-mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--on-paper-dim);margin-bottom:14px}
+.foot-col a{display:block;font-size:.88rem;color:var(--on-paper-dim);padding:5px 0;transition:color .2s;font-weight:500}
+.foot-col a:hover{color:var(--accent-deep)}
+.foot-trust{border-top:1px solid var(--hair-light);margin-top:30px;padding-top:18px;font-size:11px;color:var(--on-paper-dim);letter-spacing:.02em;line-height:1.6}
+
+/* ═══════ REVEAL ═══════ */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+/* ═══════ HIGH-LEVEL POLISH ═══════ */
+/* ambient section flow: every dark section gets a faint top glow so the page reads as one surface, not stacked blocks */
+.section,#data,.pulse,.cta{position:relative}
+.section::before,#data::before,.pulse::before,.cta::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(1200px 520px at 50% -10%,rgba(31,184,166,.06),transparent 60%)}
+/* card glow on hover: lift + soft outer ring, reads premium not flat */
+.loop-step,.arch,.mod,.cta-card,.dir-card{transition:border-color .3s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease)}
+.loop-step:hover,.arch:hover,.mod:hover,.cta-card:hover,.dir-card:hover{box-shadow:0 24px 60px -30px rgba(0,0,0,.8),0 0 0 1px rgba(31,184,166,.20)}
+/* hero: richer dual-glow ambient */
+.hero::before{background:
+  radial-gradient(1100px 640px at 82% 18%,rgba(31,184,166,.20),transparent 55%),
+  radial-gradient(900px 700px at 6% 96%,rgba(46,92,148,.22),transparent 62%);}
+/* buttons: sharper, more confident */
+.btn-primary{box-shadow:0 14px 34px -14px rgba(31,184,166,.6)}
+.nav-cta{box-shadow:0 10px 26px -10px rgba(31,184,166,.6)}
+/* richer, staggered editorial reveal for headings/statements */
+.js .rv-rise{opacity:0;transform:translateY(40px) scale(.985);clip-path:inset(0 0 12% 0);transition:opacity 1s var(--ease),transform 1s var(--ease),clip-path 1.1s var(--ease)}
+.js .rv-rise.in{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv,.js .rv-rise{opacity:1!important;transform:none!important;clip-path:none!important}.ticker .track{animation:none;overflow-x:auto}.statusbar .dot{animation:none}.hero-panel .hp-live i{animation:none}}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+/* ═══════ WATER SHIMMER ═══════ */
+@keyframes shimmer{0%,100%{opacity:.5}50%{opacity:.9}}
+.water-glint{animation:shimmer 4s ease-in-out infinite}
+/* ─── scroll progress (signature) ─── */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;max-width:100%;background:linear-gradient(90deg,var(--accent),var(--gold));z-index:200;transition:width .1s linear}
+/* ─── MOBILE COLLAPSE for grids that lacked breakpoints ─── */
+@media(max-width:820px){
+  .nav-burger{display:flex}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(10,10,11,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--hair-dark);padding:0 24px;max-height:0;overflow:hidden;transition:max-height .3s var(--ease),padding .3s var(--ease)}
+  #nav.light .nav-links{background:rgba(246,243,236,.98);border-bottom-color:var(--hair-light)}
+  .nav-links.open{max-height:420px;padding:14px 24px 22px}
+  .nav-links a{padding:14px 0;border-bottom:1px solid var(--hair-dark-2);font-size:15px}
+  #nav.light .nav-links a{border-bottom-color:var(--hair-light)}
+  .nav-links a::after{display:none}
+  .nav-links .nav-cta{margin-top:14px;border-bottom:0;text-align:center}
+  .statband .grid{grid-template-columns:repeat(2,1fr);gap:28px 0}
+  .statband .cell{padding:0 18px}
+  .statband .cell:first-child{padding-left:18px}
+  .statband .cell:nth-child(odd){border-left:0;padding-left:0}
+  .fifth-head{grid-template-columns:1fr;gap:32px}
+  .fifth-visual{height:300px}
+  .dispatch{grid-template-columns:1fr;gap:10px}
+  .pilot-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .statband .grid{grid-template-columns:1fr}
+  .statband .cell{border-left:0;padding:0}
+  .statband .cell+.cell{border-top:1px solid var(--hair-dark);padding-top:28px;margin-top:28px}
+}
+/* ═══════ HOW IT WORKS (loop) ═══════ */
+.loop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+.loop-step{background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:var(--radius-sm);padding:24px;transition:border-color .25s,transform .25s var(--ease)}
+.loop-step:hover{border-color:var(--accent);transform:translateY(-3px)}
+.loop-step .ls-num{font-family:var(--font-mono);font-weight:700;font-size:12px;color:var(--accent);display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid var(--hair-dark);border-radius:8px;margin-bottom:14px}
+.loop-step h3{font-family:var(--font-serif);font-size:1.32rem;color:#fff;margin-bottom:10px}
+.loop-step p{font-size:.94rem;line-height:1.58;color:var(--on-dark-dim)}
+@media(max-width:820px){.loop-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.loop-grid{grid-template-columns:1fr}}
+/* architecture + pilot + honesty */
+.arch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:46px}
+.arch{background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:var(--radius-sm);padding:26px;transition:border-color .25s,transform .25s var(--ease)}
+.arch:hover{border-color:var(--water);transform:translateY(-3px)}
+.arch h3{font-family:var(--font-serif);font-size:1.3rem;color:#fff;margin-bottom:10px}
+.arch p{font-size:.95rem;line-height:1.6;color:var(--on-dark-dim)}
+.pilot-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;margin-top:46px}
+.pilot-card{background:var(--paper-2);border:1px solid var(--hair-light-2);border-radius:var(--radius-sm);padding:28px}
+.pilot-card .pstep{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);display:block;margin-bottom:16px}
+.pilot-card ul{list-style:none;margin:0;padding:0}
+.pilot-card li{padding:9px 0 9px 22px;position:relative;font-size:.96rem;color:var(--on-paper);border-top:1px solid var(--hair-light)}
+.pilot-card li:first-child{border-top:0}
+.pilot-card li::before{content:"";position:absolute;left:0;top:15px;width:8px;height:8px;border-radius:2px;background:var(--accent)}
+.pm{font-size:.96rem;line-height:1.62;color:var(--on-paper);margin:0 0 14px}
+.claims-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
+.claim-bad{background:rgba(31,184,166,.10);border:1px solid rgba(31,184,166,.32);border-radius:10px;padding:16px 18px;font-size:1rem;color:var(--on-dark);font-weight:500}
+@media(max-width:820px){.arch-grid,.claims-grid,.pilot-grid{grid-template-columns:1fr}}
+
+/* ═══════ POSTCODE LOOKUP (prototype) ═══════ */
+.pc-wrap{margin-top:34px;background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:var(--radius);padding:26px}
+.pc-row{display:flex;gap:12px;flex-wrap:wrap;align-items:stretch}
+.pc-input{flex:1;min-width:220px;background:var(--ink);border:1px solid var(--hair-dark);border-radius:999px;padding:15px 22px;color:#fff;font-family:var(--font-mono);font-size:15px;letter-spacing:.04em}
+.pc-input::placeholder{color:var(--on-dark-dim2)}
+.pc-btn{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:15px 28px;font-weight:700;font-size:14px;cursor:pointer;transition:background .2s,transform .2s;font-family:var(--font-ui)}
+.pc-btn:hover{background:var(--accent-deep);transform:translateY(-1px)}
+.pc-result{margin-top:22px;padding-top:22px;border-top:1px solid var(--hair-dark-2);display:none}
+.pc-result.show{display:block;animation:fadeUp .6s var(--ease)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.pc-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.pc-head .pc-name{font-family:var(--font-serif);font-size:1.5rem;color:#fff;font-weight:600}
+.pc-head .pc-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-dim)}
+.pc-bars{display:grid;gap:14px}
+.pc-bar{display:grid;grid-template-columns:160px 1fr 54px;align-items:center;gap:14px}
+.pc-bar .pc-k{font-size:.86rem;color:var(--on-dark-dim);font-family:var(--font-ui);font-weight:500}
+.pc-bar .pc-track{height:10px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden}
+.pc-bar .pc-track i{display:block;height:100%;border-radius:6px;width:0;transition:width .9s var(--ease)}
+.pc-bar .pc-v{font-family:var(--font-mono);font-weight:700;font-size:.92rem;color:#fff;text-align:right}
+.pc-note{font-size:.8rem;color:var(--on-dark-dim2);margin-top:16px;font-family:var(--font-mono);letter-spacing:.01em}
+@media(max-width:560px){.pc-bar{grid-template-columns:110px 1fr 44px;gap:8px}.pc-bar .pc-k{font-size:.78rem}}
+
+/* ═══════ LOCAL HELP DIRECTORY ═══════ */
+.dir-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:34px}
+.dir-card{background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:var(--radius-sm);padding:22px;transition:border-color .25s,transform .25s var(--ease)}
+.dir-card:hover{border-color:var(--water);transform:translateY(-3px)}
+.dir-card h3{font-family:var(--font-serif);font-size:1.18rem;color:#fff;margin-bottom:4px;font-weight:600}
+.dir-card .dir-type{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--water);margin-bottom:12px}
+.dir-card dl{display:grid;grid-template-columns:auto 1fr;gap:5px 12px;font-size:.86rem;margin:0}
+.dir-card dt{color:var(--on-dark-dim);font-weight:600;white-space:nowrap}
+.dir-card dd{color:var(--on-dark);margin:0}
+.dir-card .dir-verified{margin-top:12px;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--hair-dark-2);padding-top:10px}
+.dir-disclaimer{font-size:.82rem;color:var(--on-dark-dim);margin-top:20px;font-style:italic}
+@media(max-width:820px){.dir-grid{grid-template-columns:1fr}}
+
+/* ═══════ COMMUNITY SIGNAL FORM ═══════ */
+.signal{background:var(--paper);color:var(--on-paper);border-radius:var(--radius);padding:30px;margin-top:34px}
+.signal h3{font-family:var(--font-serif);font-size:1.4rem;margin-bottom:6px}
+.signal p.sub{font-size:.92rem;color:var(--on-paper-dim);margin-bottom:20px}
+.signal form{display:grid;gap:16px;max-width:620px}
+.signal label{font-size:.82rem;font-weight:600;color:var(--on-paper-dim);display:flex;flex-direction:column;gap:7px}
+.signal select,.signal textarea,.signal input{font-family:var(--font-ui);font-size:.95rem;border:1px solid var(--hair-light-2);border-radius:10px;padding:12px 14px;background:#fff;color:var(--on-paper)}
+.signal textarea{resize:vertical;min-height:90px}
+.signal .anon{display:flex;align-items:center;gap:9px;font-size:.82rem;color:var(--on-paper-dim);font-weight:400}
+.signal .sbt{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:14px 26px;font-weight:700;font-size:14px;cursor:pointer;justify-self:start;transition:background .2s,transform .2s}
+.signal .sbt:hover{background:var(--accent-deep);transform:translateY(-1px)}
+.signal .s-out{font-family:var(--font-mono);font-size:.9rem;color:var(--accent-deep);font-weight:700;display:none;margin-top:4px}
+
+/* ═══════ GOVERNANCE ═══════ */
+.gov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.gov{background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:var(--radius-sm);padding:22px;transition:border-color .25s,transform .25s var(--ease)}
+.gov:hover{border-color:var(--accent);transform:translateY(-3px)}
+.gov h3{font-family:var(--font-serif);font-size:1.12rem;color:#fff;margin-bottom:8px}
+.gov p{font-size:.88rem;line-height:1.55;color:var(--on-dark-dim)}
+.gov .gk{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:10px}
+@media(max-width:820px){.gov-grid{grid-template-columns:1fr}}
+
+/* ═══════ OPERATIONS / TEAM ═══════ */
+.org-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:34px}
+.org{background:var(--paper-2);border:1px solid var(--hair-light-2);border-radius:var(--radius-sm);padding:24px}
+.org h3{font-family:var(--font-serif);font-size:1.18rem;color:var(--on-paper);margin-bottom:8px}
+.org p{font-size:.92rem;line-height:1.6;color:var(--on-paper-dim)}
+
+/* ═══════ RESPONSIVE ═══════ */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:38px;padding:140px 0 70px;min-height:auto}
+  .hero h1{font-size:clamp(2.6rem,9vw,4.6rem)}
+  .fifth-head{grid-template-columns:1fr;gap:30px}
+  .fifth-visual{height:260px;order:-1}
+  .statband .grid{grid-template-columns:repeat(2,1fr);gap:30px 0}
+  .statband .cell{padding:0 22px}
+  .statband .cell:nth-child(odd){border-left:0;padding-left:0}
+  .statband .cell:nth-child(3),.statband .cell:nth-child(4){border-top:1px solid var(--hair-dark);padding-top:30px}
+  .nav-links{gap:18px}
+  .nav-links a{display:inline-flex;font-size:12px}
+  .nav-cta{display:none}
+  .dispatch{grid-template-columns:1fr;gap:8px}
+  .dispatch.feat{margin:0;padding:24px 18px}
+  .fifth-stats{gap:30px;margin-top:34px}
+  .figure.impact .n{font-size:2.7rem}
+  .cta{padding:var(--s-6) 0 var(--s-5)}
+  .cta-actions{flex-direction:column}
+}
+@media(max-width:640px){
+  .wrap{padding:0 20px}
+  .section{padding:64px 0}
+  .cta-actions .btn{width:100%;justify-content:center}
+  .hero-actions .btn{width:100%;justify-content:center}
+  .hero h1{font-size:2.4rem}
+  .cta h2{font-size:2.2rem}
+  .figure.impact .n{font-size:2.4rem}
+  .fifth-stats .figure.impact{flex:1 1 40%}
+  /* dashboard: stack severity under the city so it can't collide on phones */
+  #data .viz-top{flex-direction:column;align-items:flex-start;gap:6px}
+  #data .viz-sev{text-align:left}
+}
+@media(max-width:380px){
+  .hero h1{font-size:2.1rem}
+  .wrap{padding:0 16px}
+}
+/* ═══════ AI AGENTS SECTION (editorial noir) ═══════ */
+.agent-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
+.agent-card{background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:var(--radius-sm);padding:22px;transition:border-color .3s,transform .3s}
+.agent-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.agent-ico{display:inline-block;font-size:12px;color:var(--accent);border:1px solid var(--accent);border-radius:5px;padding:2px 7px;margin-bottom:12px;letter-spacing:.06em}
+.agent-card h3{font-family:var(--font-serif);font-size:19px;margin-bottom:8px;color:var(--on-dark)}
+.agent-card p{font-size:14.5px;line-height:1.55;color:var(--on-dark-dim)}
+.loop-band{margin-top:30px;background:var(--ink-2);border:1px solid var(--hair-dark);border-radius:var(--radius-sm);overflow:hidden}
+.loop-row{display:flex;align-items:baseline;gap:18px;padding:13px 22px;border-bottom:1px solid var(--hair-dark-2)}
+.loop-row:last-child{border-bottom:none}
+.loop-k{color:var(--accent);font-size:11px;letter-spacing:.12em;min-width:96px;flex-shrink:0}
+.loop-v{color:var(--on-dark-dim);font-size:14px;font-family:var(--font-ui)}
+@media(max-width:880px){.agent-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.agent-grid{grid-template-columns:1fr}.loop-row{flex-direction:column;gap:4px}}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+</head>
+<body class="bg-ink">
+<a href="#top" class="skip-link">Skip to content</a>
+<div id="progress" aria-hidden="true"></div>
+
+<!-- ═══════ LIVE TICKER ═══════ -->
+<div class="ticker" aria-label="Live UK crisis & OSINT headlines">
+  <div class="live"><i></i>LIVE</div>
+  <div class="track" id="tickerTrack"></div>
+</div>
+
+<!-- ═══════ STATUS STRIP ═══════ -->
+<div class="statusbar"><div class="wrap">
+  <span class="dot"></span>
+  <span>STATUS <b>IN PILOT</b></span><span class="sep">/</span>
+  <span>LOCATION <b>BRISTOL</b></span><span class="sep">/</span>
+  <span>FIVE PRESSURE SIGNALS</span><span class="sep">/</span>
+  <span>PROPOSED PLATFORM</span><span class="sep">/</span>
+  <span>UPDATED <b>JUL 2026</b></span>
+</div></div>
+
+<nav id="nav"><div class="nav-inner">
+  <a href="#top" class="brand">Humanit<b>AI</b></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#how">How it works</a>
+    <a href="#data">Prototype</a>
+    <a href="#fifth-space">5th Space</a>
+    <a href="#agents">AI agents</a>
+    <a href="#architecture">How we work</a>
+    <a href="#join" class="nav-cta">Get involved</a>
+  </div>
+  <button class="nav-burger" id="navBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></nav>
+<main>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero" id="top">
+  <canvas id="heroField" class="hero-field" aria-hidden="true"></canvas>
+  <div class="hero-fade" aria-hidden="true"></div>
+  <div class="wrap wrap-grid">
+    <div class="hero-copy">
+      <p class="kicker rv">Predictive community intelligence · with a human front door</p>
+      <h1 class="rv-rise">We see community pressure rising <span class="em">before</span> it becomes a crisis. We then connect people to help, in the places that need it most.</h1>
+      <p class="hero-stakes rv">HumanitAI is a UK Community Interest Company. We combine predictive intelligence with trusted human connection to help communities act earlier: bringing together public data, local knowledge and advanced forecasting to identify rising social, health and economic pressure. It directs support, education and prevention towards the people and places where earlier action may have the greatest impact. We are in pilot. We do not yet forecast crises with certainty.</p>
+      <p class="hero-sub rv" id="pilot">Community problems are usually counted too late: homelessness after someone loses their home, hospital demand after health deteriorates, crisis after isolation becomes severe. We bring together the analytical system <b>and</b> a physical, welcoming front door. Community sauna, cold immersion and social wellbeing. So that insight turns into a relationship, and a relationship turns into early help. <b>Our pilot will test whether the model works in practice.</b></p>
+      <div class="hero-actions rv">
+        <a href="#how" class="btn btn-primary">How it works <span class="arr">&rarr;</span></a>
+        <a href="#data" class="btn btn-ghost">See the prototype</a>
+      </div>
+    </div>
+    <aside class="hero-panel rv" id="heroPanel">
+      <div class="hp-head">
+        <div class="hp-k">Prototype · illustrative signals</div>
+        <div class="hp-live"><i></i>DEMO</div>
+      </div>
+      <div id="hpRows"></div>
+      <div class="hp-note">Illustrative prototype only. These are example pressure signals for design purposes, not live forecasts or verified results. The pilot will test whether such signals match local reality.</div>
+    </aside>
+  </div>
+</section>
+
+<!-- ═══════ STAT BAND ,  real UK context, sourced ═══════ -->
+<section class="statband">
+  <div class="wrap"><div class="grid">
+    <div class="cell"><div class="n" data-count="14.3" data-suffix="M"><b>14.3M</b></div><div class="l">People in poverty across the UK <a href="https://www.endchildpoverty.org.uk" target="_blank" rel="noopener" style="color:var(--accent);font-size:.8em">&nearr; ONS</a></div></div>
+    <div class="cell"><div class="n" data-count="7.3" data-suffix="M"><b>7.3M</b></div><div class="l">On the NHS waiting list <a href="https://www.england.nhs.uk/statistics" target="_blank" rel="noopener" style="color:var(--accent);font-size:.8em">&nearr; NHS England</a></div></div>
+    <div class="cell"><div class="n" data-count="354" data-suffix="K"><b>354K</b></div><div class="l">Homeless in England (Jun 2025) <a href="https://www.gov.uk/government/statistics/statutory-homelessness-in-england-april-to-june-2025" target="_blank" rel="noopener" style="color:var(--accent);font-size:.8em">&nearr; gov.uk</a></div></div>
+    <div class="cell"><div class="n" data-count="4.3" data-suffix="M"><b>4.3M</b></div><div class="l">Children growing up in poverty <a href="https://www.endchildpoverty.org.uk" target="_blank" rel="noopener" style="color:var(--accent);font-size:.8em">&nearr; End Child Poverty</a></div></div>
+  </div>
+  <p class="src-note" style="margin-top:26px">These are real, sourced UK figures. This is the context HumanitAI works within. They are not HumanitAI's forecasts or results. Source links open the originating public body.</p>
+  </div>
+</section>
+
+<!-- ═══════ HOW IT WORKS (the four-part model) ═══════ -->
+<section class="section air" id="how">
+  <div class="wrap">
+    <p class="kicker-tag rv"><span class="num">01</span>The model</p>
+    <h2 class="statement rv-rise">Four connected parts: a human front door, and the intelligence behind it.</h2>
+    <p class="lede rv">HumanitAI has four connected parts. The community-facing activity builds trust and contact; behind it, a responsible early-warning system turns information into guidance. People decide what to do.</p>
+    <div class="loop-grid rv">
+      <div class="loop-step"><span class="ls-num">1</span><h3>Community wellbeing: the front door</h3><p>Sauna, cold immersion and social sessions. Low-stigma spaces where people meet and reconnect. Always voluntary.</p></div>
+      <div class="loop-step"><span class="ls-num">2</span><h3>Predictive intelligence: the engine</h3><p>Public and community data, combined with AI and forecasting, to detect pressure rising together and communities at risk of being overlooked.</p></div>
+      <div class="loop-step"><span class="ls-num">3</span><h3>Decision support: directing help</h3><p>Clear, practical intelligence on what is changing and where. Charities, councils and funders focus outreach. Humans stay responsible for decisions.</p></div>
+      <div class="loop-step"><span class="ls-num">4</span><h3>Community response: action</h3><p>Intelligence connects to response through local partners, verified directories and navigation. The proposed 5th Space brings it into the places under rising pressure.</p></div>
+    </div>
+    <p class="lede rv" style="margin-top:34px">The complete loop: <b>public data and local knowledge reveal emerging pressure → AI and forecasting identify patterns and possible risks → human review turns findings into responsible recommendations → community partners direct support to the right places → physical wellbeing spaces bring people together → outcomes are measured so the system learns.</b></p>
+  </div>
+</section>
+
+<!-- ═══════ 5TH SPACE ,  CONTRAST THERAPY (proposed concept) ═══════ -->
+<section class="section tight fifth" id="fifth-space">
+  <div class="wrap">
+    <div class="fifth-head">
+      <div>
+        <p class="kicker-tag rv"><span class="num">02</span>The 5th Space · proposed concept</p>
+        <h2 class="statement rv-rise" style="margin-top:14px">The front-end is contrast therapy. Sauna, then ice. The connector between a prediction and a person.</h2>
+      </div>
+      <div class="fifth-visual rv">
+        <svg viewBox="0 0 800 380" role="img" aria-label="Illustration of a proposed 5th Space: a timber sauna cabin beside a cold plunge pool, warm light against cool water">
+          <defs>
+            <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#0E1622"/>
+              <stop offset="1" stop-color="#16243A"/>
+            </linearGradient>
+            <linearGradient id="timber" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3A2A20"/>
+              <stop offset="1" stop-color="#241811"/>
+            </linearGradient>
+            <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFD9A0"/>
+              <stop offset="1" stop-color="#FF8A4D"/>
+            </linearGradient>
+            <linearGradient id="cold" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#173049"/>
+              <stop offset="1" stop-color="#0C1826"/>
+            </linearGradient>
+            <radialGradient id="moon" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#F6F3EC"/>
+              <stop offset="1" stop-color="#F6F3EC" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="800" height="380" fill="url(#bg)"/>
+          <circle cx="660" cy="70" r="30" fill="url(#moon)" opacity=".6"/>
+          <circle cx="660" cy="70" r="18" fill="#F6F3EC" opacity=".85"/>
+          <!-- ground -->
+          <rect y="300" width="800" height="80" fill="#0C1422"/>
+          <!-- sauna cabin -->
+          <g transform="translate(120,120)">
+            <rect x="0" y="40" width="240" height="150" rx="10" fill="url(#timber)"/>
+            <path d="M-12 40 L120 -8 L252 40 Z" fill="#2A1C14"/>
+            <rect x="20" y="70" width="60" height="44" rx="6" fill="url(#glow)" opacity=".92"/>
+            <rect x="160" y="70" width="60" height="44" rx="6" fill="url(#glow)" opacity=".92"/>
+            <rect x="92" y="120" width="56" height="70" rx="8" fill="#1A120C"/>
+            <text x="120" y="40" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#FFD9A0">SAUNA</text>
+          </g>
+          <!-- cold plunge -->
+          <g transform="translate(470,196)">
+            <rect x="0" y="0" width="220" height="94" rx="14" fill="url(#cold)"/>
+            <rect x="0" y="0" width="220" height="20" rx="14" fill="#21486B" opacity=".7"/>
+            <g class="water-glint" stroke="#7FC4FF" stroke-width="2" opacity=".5">
+              <line x1="40" y1="54" x2="90" y2="54"/>
+              <line x1="130" y1="40" x2="190" y2="40"/>
+            </g>
+            <text x="110" y="-10" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#9FD8FF">ICE BATH</text>
+          </g>
+          <!-- steam from sauna -->
+          <g opacity=".35" stroke="#FFD9A0" stroke-width="3" fill="none">
+            <path d="M150 120 q-10 -20 4 -38 q12 -16 0 -34"/>
+            <path d="M196 120 q-10 -20 4 -38 q12 -16 0 -34"/>
+          </g>
+        </svg>
+        <div class="vlbl">The 5th Space · proposed concept · sauna + cold plunge · design illustration</div>
+      </div>
+    </div>
+    <p class="lede measure rv">A fixed building waits for people to come to it. The 5th Space is our proposed answer: contrast therapy, a sauna then an ice bath, as a low-stigma front door where people meet and reconnect. The intelligence flags a place. The 5th Space is what a person actually meets. Paid sessions also generate sustainable income for the CIC. It is a proposed concept under development, not an operating service, and taking part is always voluntary.</p>
+
+    <div class="voice rv">
+      <blockquote><span class="q">The front door</span>The wellbeing service is separate from the analytical system. Sauna, cold immersion and social sessions create accessible, low-stigma spaces that reduce isolation and build trusted community contact.</blockquote>
+      <blockquote><span class="q">The connector</span>A forecast is a dashboard. A person is lonely. The 5th Space is the hinge between them: it turns a prediction into a place, and a place into the early help that stops a crisis.</blockquote>
+    </div>
+
+    <div class="fifth-stats">
+      <div class="figure impact"><div class="n" data-count="2" data-prefix=""><b>2</b></div><div class="l">Core rituals: sauna + ice bath, that draw people in (proposed)</div></div>
+      <div class="figure impact"><div class="n" data-count="60" data-prefix="~"><b>~60</b></div><div class="l">People held per session / week. Proposed design target</div></div>
+      <div class="figure impact"><div class="n"><b>x</b></div><div class="l">Communities reached by a mobile unit vs one fixed site. The bet we're testing</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PROTOTYPE DASHBOARD (illustrative) ═══════ -->
+<section class="section air" id="data">
+  <div class="wrap">
+    <p class="kicker-tag rv"><span class="num">03</span>Prototype · illustrative data</p>
+    <h2 class="statement rv-rise" style="font-size:clamp(1.9rem,4.6vw,3rem)">What the community dashboard could show: a working prototype.</h2>
+    <p class="lede rv">This is a demonstration of the dashboard interface using <b>illustrative example data</b>, not live forecasts or verified findings. It shows how pressure signals could be presented: current condition, direction of change, main pressures, and recommended next steps. In the pilot, real signals will be validated with local partners before any claim is made.</p>
+    <p class="src-note" style="margin-top:-6px">Illustrative only. The 18 example towns and their scores are placeholder design data to show the interface. They are not HumanitAI's verified results and should not be read as forecasts. Confidence scores are not yet published.</p>
+    <div class="viz-filters rv" id="vf"></div>
+    <div class="src-head"><span>Rank · Example community</span><span>Illustrative severity</span></div>
+    <div class="viz-list" id="vl"></div>
+    <p class="src-note">Prototype signals: housing stability, financial pressure, social isolation, health &amp; wellbeing, and access to services. Every figure here is illustrative placeholder data for the interface design.</p>
+
+    <!-- POSTCODE LOOKUP (prototype) -->
+    <div class="pc-wrap rv">
+      <p class="kicker-tag" style="margin-bottom:18px"><span class="num">03a</span>Postcode check-in · prototype</p>
+      <h3 style="font-family:var(--font-serif);font-size:1.5rem;color:#fff;margin-bottom:6px">Know how your community is holding.</h3>
+      <p style="color:var(--on-dark-dim);font-size:.96rem;margin-bottom:18px;max-width:600px">Enter a postcode to see a simple read of current community condition, main pressures, and direction of change. This is a <b>demonstration</b> using illustrative data. Real postcode signals will be validated with local partners in the pilot.</p>
+      <div class="pc-row">
+        <input class="pc-input" id="pcInput" placeholder="e.g. BS1 4ST (Bristol)" aria-label="Enter a postcode">
+        <button class="pc-btn" id="pcBtn" type="button">Check</button>
+      </div>
+      <div class="pc-result" id="pcResult"></div>
+      <p class="pc-note" id="pcNote">Try a Bristol postcode (BS1-BS16) for an illustrative example. Any other entry returns a clear “not yet modelled” message. We are not implying coverage we don’t have.</p>
+    </div>
+
+    <!-- LOCAL HELP DIRECTORY (prototype) -->
+    <div class="dir-wrap rv" style="margin-top:46px">
+      <p class="kicker-tag" style="margin-bottom:18px"><span class="num">03b</span>Local Help directory · prototype</p>
+      <h3 style="font-family:var(--font-serif);font-size:1.5rem;color:#fff;margin-bottom:6px">Verified support, shown the way the pilot will.</h3>
+      <p style="color:var(--on-dark-dim);font-size:.96rem;margin-bottom:8px;max-width:640px">Each entry shows what it provides, who can access it, opening times, contact, referral requirements, accessibility, and date last verified. The entries below are <b>illustrative examples</b> of the format, not a live directory.</p>
+      <div class="dir-grid" id="dirGrid"></div>
+      <p class="dir-disclaimer">Illustrative format only. A live directory would be built and verified with Bristol partners during the pilot; we do not yet list real services here.</p>
+    </div>
+
+    <!-- COMMUNITY SIGNAL (anonymous check-in) -->
+    <div class="signal rv">
+      <h3>Community Signal: tell us what you see</h3>
+      <p class="sub">Anonymous residents and organisations can submit observations. This form is a front-end prototype: submissions are not yet stored or sent anywhere.</p>
+      <form id="signalForm" onsubmit="return false">
+        <label>What's changing?
+          <select id="sigType">
+            <option>A service has closed</option>
+            <option>Waiting times are increasing</option>
+            <option>More people need food support</option>
+            <option>Transport is preventing access</option>
+            <option>A particular group is becoming isolated</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>Area / postcode (optional)
+          <input id="sigArea" placeholder="e.g. BS2 or East Bristol">
+        </label>
+        <label>Detail (optional)
+          <textarea id="sigDetail" placeholder="A sentence or two, kept anonymous"></textarea>
+        </label>
+        <label class="anon"><input type="checkbox" id="sigAnon" checked> Submit anonymously. No name, no account.</label>
+        <button class="sbt" id="sigBtn" type="button">Submit signal</button>
+        <div class="s-out" id="sigOut">Thank you. This is a prototype, so nothing was sent. In the pilot your anonymous signal would be reviewed by the Community Intelligence Team.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ HUMANITAI PLATFORM (proposed) ═══════ -->
+<section class="pulse" id="pulse">
+  <div class="wrap">
+    <p class="kicker-tag rv"><span class="num">04</span>The proposed platform</p>
+    <h2 class="statement rv-rise">One platform. Several modules. A nervous system for communities.</h2>
+    <p class="lede rv">Not fifteen disconnected websites. A proposed system that observes pressure, connects people to help, exposes institutional friction, and helps test preventive action. This is the platform we are building toward, described here as a proposal, with the prototype dashboard above as the first working piece.</p>
+    <div class="mod-grid rv">
+      <div class="mod"><span class="mn"><i></i>Module 01</span><h3>Community dashboard</h3><p>A simple view of current community condition, direction of change, main pressure signals, local support capacity, and data confidence. The prototype above is the first version.</p></div>
+      <div class="mod"><span class="mn"><i></i>Module 02</span><h3>Local Help directory</h3><p>A verified directory of useful support: what it provides, who can access it, opening times, contact, referral requirements, accessibility, and date last verified.</p></div>
+      <div class="mod"><span class="mn"><i></i>Module 03</span><h3>Community Signal</h3><p>A way for residents and organisations to submit observations. A service has closed, waiting times rising, more people need food support, transport is a barrier, a group is becoming isolated.</p></div>
+      <div class="mod"><span class="mn"><i></i>Module 04</span><h3>Intervention Lab</h3><p>A later-stage decision-support tool: compare possible responses (e.g. would £50k help more as debt advice, transport support, community meals or peer groups?). Support, not automatic decisions.</p></div>
+      <div class="mod"><span class="mn"><i></i>Module 05</span><h3>Friction Monitor</h3><p>Measures how hard it is to reach support: waits, forms, repeated referrals, digital-only gates. The route to help is often the real barrier.</p></div>
+      <div class="mod"><span class="mn"><i></i>Module 06</span><h3>Impact Tracker</h3><p>Measures whether conditions improved after action. Every score tagged measured, reported, estimated, predicted or simulated. Never false precision.</p></div>
+    </div>
+    <div class="pulse-band rv">
+      <span class="pb-k">Data &amp; governance</span>
+      <p>Any intelligence layer would use public UK data (ONS, MHCLG, NHS England, Companies House, council registers) and community-submitted signals, gathered and scored by <b>free, self-hosted models</b>. No per-query API bills. <b>AI recommends; people decide.</b> AI never decides whether a specific person deserves support.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ HOW WE WORK (condensed) ═══════ -->
+
+<!-- ═══════ AI AGENTS / LOOP & GRAPH ENGINEERING ═══════ -->
+<section class="section air" id="agents">
+  <div class="wrap">
+    <p class="kicker-tag rv"><span class="num">04</span>How we build</p>
+    <h2 class="statement rv-rise">AI agents, loops and graphs &mdash; the engine room.</h2>
+    <p class="measure rv">HumanitAI is built the way modern agent systems are built: small autonomous loops that watch, classify and act, organised into graphs when a single loop would rot. Below is the actual pattern &mdash; the same one used to run the platform and to make agents pay for themselves.</p>
+
+    <div class="agent-grid rv">
+      <div class="agent-card">
+        <span class="agent-ico mono">01</span>
+        <h3>AI agents</h3>
+        <p>Autonomous workers that take a trigger, do a task, check a success bar, and re-run until it is met. We use them for intake triage, signal classification and report drafting &mdash; always with a human in the approval seat.</p>
+      </div>
+      <div class="agent-card">
+        <span class="agent-ico mono">02</span>
+        <h3>Prompts as programs</h3>
+        <p>The unit of work is the instruction you paste to the agent. Precise, copy-paste-able prompts with acceptance criteria beat vague briefs. Rules files and hooks keep every loop on-rail.</p>
+      </div>
+      <div class="agent-card">
+        <span class="agent-ico mono">03</span>
+        <h3>Loop engineering</h3>
+        <p>Self-improving loops: heartbeat, cron and webhook triggers; manager triages, worker executes only low-risk tickets; each run pastes evidence (screenshot, test output) into the ticket before merge.</p>
+      </div>
+      <div class="agent-card">
+        <span class="agent-ico mono">04</span>
+        <h3>Graph engineering</h3>
+        <p>When one loop rots from context, we split the task into nodes &mdash; each its own loop with its own success bar &mdash; feeding a synthesizer. Graphs answer "if this fails, where do we roll back", which tables cannot.</p>
+      </div>
+    </div>
+
+    <div class="loop-band rv">
+      <div class="loop-row"><span class="mono loop-k">TRIGGER</span><span class="loop-v">heartbeat &middot; cron &middot; webhook &middot; new ticket</span></div>
+      <div class="loop-row"><span class="mono loop-k">TASK</span><span class="loop-v">classify &rarr; build &rarr; review &rarr; test &rarr; open PR with evidence</span></div>
+      <div class="loop-row"><span class="mono loop-k">SUCCESS</span><span class="loop-v">measurable bar met, or fix and re-run from step one</span></div>
+      <div class="loop-row"><span class="mono loop-k">GUARDRAIL</span><span class="loop-v">cap 3 issues/run &middot; read-only backlog &middot; human merge &middot; own worktree</span></div>
+    </div>
+
+    <p class="measure rv" style="margin-top:34px">And the same discipline earns its keep. Agent-first products, knowledge-base reframing as a service, and autonomous engineering for other organisations are how a small team runs many projects at once &mdash; each looping on its own, multiplyng shipped output without more of our own hours. <b>Verified domains only.</b> High-risk decisions stay with people.</p>
+
+    <p class="src-note">Pattern drawn from open engineering practice (loop &amp; graph engineering, manager/worker agents, verification gates). Applied to HumanitAI's intake, forecasting and reporting pipelines.</p>
+  </div>
+</section>
+
+
+<section class="section air" id="architecture">
+  <div class="wrap">
+    <p class="kicker-tag rv"><span class="num">05</span>How we work</p>
+    <h2 class="statement rv-rise">Four layers, with governance underneath.</h2>
+    <div class="arch-grid rv">
+      <div class="arch"><h3>Data layer</h3><p>Public datasets, community submissions, service directories and outcomes. Anonymous by default. No individual is scored.</p></div>
+      <div class="arch"><h3>Intelligence layer</h3><p>Statistics and AI clean, classify and detect change. AI recommends. People decide.</p></div>
+      <div class="arch"><h3>Application layer</h3><p>Website, postcode search, community dashboard, local-help directory, reporting tools.</p></div>
+      <div class="arch"><h3>Governance layer</h3><p>Privacy, consent, human review, safeguarding, bias testing. Published openly.</p></div>
+    </div>
+
+    <div class="claims-grid rv" style="margin-top:34px" id="honesty">
+      <div class="claim-bad">We do not claim to already forecast 18 towns</div>
+      <div class="claim-bad">No proven pressure reductions yet</div>
+      <div class="claim-bad">No council partnerships that do not exist</div>
+      <div class="claim-bad">The 5th Space is a proposed concept, not operating</div>
+    </div>
+    <p class="src-note">Honest language only: "We are developing", "Our pilot will test", "Illustrative data." Nothing is reported as a result we have not measured.</p>
+  </div>
+</section>
+
+<!-- ═══════ CLOSING ═══════ -->
+<section class="cta" id="join">
+  <div class="wrap">
+    <p class="kicker-tag rv"><span class="num">08</span>Core proposition</p>
+    <h2 class="rv-rise">See earlier. Connect people. Prevent crisis.</h2>
+    <p class="lede rv" style="max-width:680px">HumanitAI combines <b>predictive intelligence with trusted human connection</b> to help communities act before pressure becomes crisis. We bring together public data, local knowledge and advanced AI forecasting to identify where community pressure is rising, then help direct education, support and preventive services towards the places that may need them most. Community wellbeing spaces bring people together, while earned income helps sustain the wider social mission.</p>
+    <div class="cta-grid rv">
+      <div class="cta-card"><span class="step">Step 01</span><b>Fund it</b><span>Back the pilot and the proposed 5th Space concept. We are a CIC. Every pound is legally bound to the mission and reported against real outcomes, not activity.</span></div>
+      <div class="cta-card"><span class="step">Step 02</span><b>Build it</b><span>Bring local knowledge, data or a partnership to the Bristol pilot; we onboard your team and your context.</span></div>
+      <div class="cta-card"><span class="step">Step 03</span><b>Bring us in</b><span>Book a briefing for your council, NHS trust or funder. We'll show you the prototype and the plan.</span></div>
+    </div>
+    <div class="cta-actions rv">
+      <a href="mailto:hello@humanitai.uk" class="btn cta-primary">Talk to us <span class="arr">&rarr;</span></a>
+      <a href="#honesty" class="btn btn-ghost">Read our honesty policy</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand">Humanit<b>AI</b></a>
+        <p>HumanitAI is a UK Community Interest Company. We use public data, local knowledge and advanced AI forecasting to identify where community pressure is rising, then help direct education, support and preventive services towards the places that may need them most. Community wellbeing spaces bring people together, while earned income helps sustain the wider social mission. In pilot. Honest about what we can and cannot yet claim.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="#how">How it works</a>
+        <a href="#data">Prototype</a>
+        <a href="#architecture">Architecture</a>
+        <a href="about.html">Our model</a>
+        <a href="#pilot">The pilot</a>
+        <a href="#honesty">Honest claims</a>
+        <a href="#join">Get involved</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in</h4>
+        <a href="mailto:hello@humanitai.uk">Fund the pilot</a>
+        <a href="mailto:hello@humanitai.uk">Bring local knowledge</a>
+        <a href="mailto:hello@humanitai.uk">Book a briefing</a>
+      </div>
+    </div>
+    <div class="foot-trust"><strong>© 2026 HumanitAI CIC.</strong> A UK Community Interest Company. Registered in England &amp; Wales. Companies House No. <strong><a href="https://find-and-update.company-information.service.gov.uk/company/16891121" target="_blank" rel="noopener">16891121</a></strong> (Active). In pilot. Building in the open, reporting honestly. · hello@humanitai.uk</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
+<script>
+var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var lenis=null;
+if(!REDUCE && window.Lenis){
+  lenis=new Lenis({ lerp:0.09, smoothWheel:true });
+  (function lr(t){ lenis.raf(t); requestAnimationFrame(lr); })(performance.now());
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id && id.length>1 && document.querySelector(id)){ e.preventDefault(); lenis.scrollTo(document.querySelector(id),{offset:-120}); } }); });
+}
+// nav: dark over dark sections (hero/intel/closing), light over 5th Space (paper)
+var nav=document.getElementById('nav');
+var darkIds=['top','data','join'];
+function navState(){
+  var y=window.scrollY+window.innerHeight*0.30, over=null;
+  darkIds.forEach(function(id){ var el=document.getElementById(id); if(el){ var r=el.getBoundingClientRect(); if(r.top<=window.innerHeight*0.30 && r.bottom>=window.innerHeight*0.30) over=id; } });
+  nav.classList.toggle('dark-keep', !!over);
+  nav.classList.toggle('light', !over);
+  nav.classList.toggle('scrolled',window.scrollY>30);
+}
+window.addEventListener('scroll',navState,{passive:true}); window.addEventListener('resize',navState); navState();
+// mobile nav toggle
+var navBtn=document.getElementById('navBtn');
+if(navBtn){
+  navBtn.addEventListener('click',function(){
+    var open=navLinks.classList.toggle('open');
+    navBtn.classList.toggle('open',open);
+    navBtn.setAttribute('aria-expanded',open);
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){navLinks.classList.remove('open');navBtn.classList.remove('open');navBtn.setAttribute('aria-expanded',false);});});
+}
+// signature scroll-progress bar
+var prog=document.getElementById('progress');
+function progState(){ if(prog){ var h=document.documentElement.scrollHeight-window.innerHeight; prog.style.width=(h>0?(window.scrollY/h*100):0)+'%'; } }
+window.addEventListener('scroll',progState,{passive:true}); progState();
+// reveal + count-up + bar fill
+function countUp(el){
+  var target=parseFloat(el.getAttribute('data-count'));
+  if(isNaN(target)) return;
+  var suffix=el.getAttribute('data-suffix')||'';
+  var prefix=el.getAttribute('data-prefix')||'';
+  var comma=el.getAttribute('data-format')==='comma';
+  var dec=(target%1!==0)?1:0;
+  var b=el.querySelector('b')||el; var dur=1100, t0=null;
+  function fmt(v){ var s=comma?Math.round(v).toLocaleString('en-US'):(dec?v.toFixed(1):Math.round(v).toString()); return prefix+s+suffix; }
+  function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var e=1-Math.pow(1-p,3); b.textContent=fmt(target*e); if(p<1)requestAnimationFrame(step); else b.textContent=fmt(target); }
+  if(REDUCE){ b.textContent=fmt(target); return; }
+  requestAnimationFrame(step);
+}
+var ro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){
+  en.target.classList.add('in');
+  en.target.querySelectorAll('[data-count]').forEach(countUp);
+  // fill dashboard bars when the row becomes visible
+  var m=en.target.querySelector('.viz-meter i'); if(m && !m.dataset.filled){m.style.width=m.style.width||'0%'; requestAnimationFrame(function(){m.style.width=Math.round(parseFloat(m.style.width)||0)+'%';});}
+  ro.unobserve(en.target);
+}});},{threshold:.18});
+document.querySelectorAll('.rv,.rv-rise').forEach(function(el){ro.observe(el);});
+window.addEventListener('load',function(){ document.querySelectorAll('.hero .rv').forEach(function(el,i){ setTimeout(function(){el.classList.add('in');},120+i*90); });
+  // fill hero terminal bars on load
+  document.querySelectorAll('.hero-panel .hp-bar i').forEach(function(b){ var w=b.style.width; requestAnimationFrame(function(){ b.style.width=w; }); });
+});
+
+// LIVE TICKER ,  Sky/Nasdaq style. Real, verifiable items (HumanitAI OSINT + BBC UK headlines pulled 2026-07-25).
+var TICKER_ITEMS=[
+  {tag:'HUMANITAI',cls:'tag-humanitai',t:'HumanitAI: predictive community intelligence with a human front door. See earlier, connect people, prevent crisis. In pilot.',u:'#how'},
+  {tag:'NHS',cls:'tag-nhs',t:'NHS waiting list stands at 7.3M. The pressure we aim to help local services see earlier',u:'https://www.england.nhs.uk/statistics'},
+  {tag:'HOMELESS',cls:'tag-homeless',t:'354K homeless in England; gov.uk records 132,410 households in temporary accommodation (Jun 2025)',u:'https://www.gov.uk/government/statistics/statutory-homelessness-in-england-april-to-june-2025'},
+  {tag:'POVERTY',cls:'tag-poverty',t:'4.3M children growing up in poverty. End Child Poverty Coalition',u:'https://www.endchildpoverty.org.uk'},
+  {tag:'MENTAL',cls:'tag-mental',t:'1 in 6 adults experience a common mental health problem; isolation is the hidden driver',u:'https://www.mind.org.uk'},
+  {tag:'5TH SPACE',cls:'tag-lonely',t:'The 5th Space is contrast therapy: sauna + ice bath, our proposed human front door. Not yet operating',u:'#fifth-space'},
+  {tag:'MODEL',cls:'tag-osint',t:'Four connected parts: community wellbeing, predictive intelligence, decision support, community response',u:'#how'},
+  {tag:'BBC',cls:'tag-nhs',t:'Heatwave conditions to return for many as UK temperatures to peak at 35C',u:'https://www.bbc.co.uk/news/uk'},
+  {tag:'BBC',cls:'tag-homeless',t:'Police declare major incident as wind change increases Cairngorms wildfire risk',u:'https://www.bbc.co.uk/news/uk'},
+  {tag:'HUMANITAI',cls:'tag-humanitai',t:'Prototype dashboard is illustrative demo data. Not live forecasts. See our honesty policy',u:'#honesty'}
+];
+(function(){
+  var track=document.getElementById('tickerTrack'); if(!track) return;
+  function build(){
+    return TICKER_ITEMS.map(function(it){
+      var inner='<span class="tag '+it.cls+'">'+it.tag+'</span><span class="item-txt">'+it.t+'</span>';
+      var a=document.createElement('a'); a.href=it.u;
+      if(it.u.indexOf('http')===0){a.target='_blank';a.rel='noopener';}
+      a.innerHTML=inner;
+      var item=document.createElement('span'); item.className='item'; item.appendChild(a);
+      return item;
+    });
+  }
+  var set=build(); var dup=build();
+  set.concat(dup).forEach(function(n){track.appendChild(n);});
+})();
+
+// dashboard
+var DIMS=['poverty','homelessness','nhs','mental','isolation'];
+var LABEL={poverty:'Poverty',homelessness:'Homelessness',nhs:'NHS',mental:'Mental health',isolation:'Isolation'};
+var COLORS={'poverty':'#E0322B','homelessness':'#FF6A2B','nhs':'#E8B23A','mental':'#8B5CF6','isolation':'#3BA0FF'};
+var data=[
+{id:'Birmingham',r:'West Midlands',d:{poverty:95,homelessness:70,nhs:75,mental:65,isolation:60}},
+{id:'Middlesbrough',r:'North East',d:{poverty:97,homelessness:72,nhs:78,mental:66,isolation:62}},
+{id:'Glasgow',r:'Scotland',d:{poverty:90,homelessness:80,nhs:82,mental:85,isolation:75}},
+{id:'Manchester',r:'Greater Manchester',d:{poverty:80,homelessness:95,nhs:78,mental:70,isolation:60}},
+{id:'Blackpool',r:'North West',d:{poverty:85,homelessness:75,nhs:80,mental:82,isolation:90}},
+{id:'Newham',r:'London',d:{poverty:92,homelessness:78,nhs:80,mental:68,isolation:72}},
+{id:'Bradford',r:'West Yorkshire',d:{poverty:90,homelessness:65,nhs:72,mental:64,isolation:60}},
+{id:'Bristol',r:'South West',d:{poverty:78,homelessness:68,nhs:70,mental:66,isolation:58}},
+{id:'Newcastle',r:'North East',d:{poverty:80,homelessness:70,nhs:76,mental:68,isolation:64}},
+{id:'Hull',r:'Yorkshire',d:{poverty:82,homelessness:72,nhs:74,mental:70,isolation:68}},
+{id:'Nottingham',r:'East Midlands',d:{poverty:78,homelessness:70,nhs:85,mental:66,isolation:60}},
+{id:'Liverpool',r:'North West',d:{poverty:82,homelessness:78,nhs:76,mental:74,isolation:70}},
+{id:'Leeds',r:'West Yorkshire',d:{poverty:76,homelessness:66,nhs:72,mental:64,isolation:58}},
+{id:'Sheffield',r:'South Yorkshire',d:{poverty:78,homelessness:68,nhs:74,mental:66,isolation:62}},
+{id:'Tower Hamlets',r:'London',d:{poverty:95,homelessness:80,nhs:82,mental:70,isolation:68}},
+{id:'Leicester',r:'East Midlands',d:{poverty:88,homelessness:66,nhs:74,mental:64,isolation:60}},
+{id:'Salford',r:'Greater Manchester',d:{poverty:82,homelessness:85,nhs:76,mental:72,isolation:66}},
+{id:'Luton',r:'East of England',d:{poverty:84,homelessness:64,nhs:72,mental:62,isolation:58}}
+];
+function comp(d){var s=0;DIMS.forEach(function(k){s+=d[k];});return Math.round(s/DIMS.length);}
+function seg(d){var tot=DIMS.reduce(function(a,k){return a+d[k];},0);
+  var raw=DIMS.map(function(k){return {key:k,v:d[k]/tot*100};});
+  var floor=raw.map(function(o){return {key:o.key,w:Math.floor(o.v),frac:o.v-Math.floor(o.v)};});
+  var used=floor.reduce(function(a,o){return a+o.w;},0),rem=100-used;
+  floor.sort(function(a,b){return b.frac-a.frac;});
+  for(var i=0;i<rem;i++){floor[i].w++;}
+  return DIMS.map(function(k){var o=floor.filter(function(f){return f.key===k;})[0];return {key:k,w:o.w};});
+}
+(function(){var top=data.slice().sort(function(a,b){return comp(b.d)-comp(a.d);}).slice(0,4);
+ document.getElementById('hpRows').innerHTML=top.map(function(r){var c=comp(r.d);return '<div class="hp-row"><span class="hp-city">'+r.id+'</span><span class="hp-bar"><i style="width:'+c+'%"></i></span><span class="hp-sev">'+c+'</span></div>';}).join('');})();
+var vf=document.getElementById('vf');
+vf.setAttribute('role','group');vf.setAttribute('aria-label','Re-rank towns by pressure');
+var filters=[['all','All',null]].concat(DIMS.map(function(k){return [k,LABEL[k],COLORS[k]];}));
+vf.innerHTML=filters.map(function(f,i){var chip=f[2]?'<i style="background:'+f[2]+'"></i>':'';return '<button type="button" data-f="'+f[0]+'" aria-pressed="'+(i===0?'true':'false')+'"'+(i===0?' class="active"':'')+'>'+chip+f[1]+'</button>';}).join('');
+var list=document.getElementById('vl'),av='all';
+list.setAttribute('aria-live','polite');list.setAttribute('aria-label','Towns ranked by severity');
+function render(f){
+  av=f;
+  var rows;
+  if(f==='all'){ rows=data.slice().sort(function(a,b){return comp(b.d)-comp(a.d);}); }
+  else { rows=data.slice().sort(function(a,b){return b.d[f]-a.d[f];}); }
+  list.innerHTML='';
+  rows.forEach(function(r,i){var c=comp(r.d);var segs=seg(r.d);
+    var bars=segs.map(function(s){var on=(f==='all'||s.key===f);return'<span style="width:'+s.w+'%;background:'+COLORS[s.key]+';opacity:'+(on?1:0.2)+'"></span>';}).join('');
+    var row=document.createElement('div');row.className='viz-row rv';row.style.transitionDelay=(i*0.02)+'s';
+    row.innerHTML='<div class="viz-top"><div class="viz-id"><span class="viz-rank">'+String(i+1).padStart(2,'0')+'</span><span class="viz-city">'+r.id+'</span><span class="viz-reg">'+r.r+'</span></div><div class="viz-sev">'+c+'<small>'+(c>=85?'rising':(c>=75?'holding':'watch'))+'</small></div></div><div class="viz-meter"><i data-w="'+c+'"></i></div><div class="viz-track">'+bars+'</div>';
+    list.appendChild(row);
+  });
+  requestAnimationFrame(function(){list.querySelectorAll('.rv').forEach(function(el,i){setTimeout(function(){el.classList.add('in');},i*26+60);});
+    list.querySelectorAll('.viz-meter i').forEach(function(m){requestAnimationFrame(function(){m.style.width=m.getAttribute('data-w')+'%';});});
+  });
+}
+vf.querySelectorAll('button').forEach(function(b){b.onclick=function(){vf.querySelectorAll('button').forEach(function(x){x.classList.remove('active');x.setAttribute('aria-pressed','false');});b.classList.add('active');b.setAttribute('aria-pressed','true');render(b.dataset.f);};});
+render('all');
+
+// ─── POSTCODE CHECK-IN (prototype) ───
+var PC_AREAS=[
+  {pc:'BS1',name:'Central Bristol',d:{poverty:72,homelessness:70,nhs:68,mental:66,isolation:60}},
+  {pc:'BS2',name:'Bristol East',d:{poverty:80,homelessness:74,nhs:72,mental:70,isolation:64}},
+  {pc:'BS3',name:'Bedminster & Southville',d:{poverty:66,homelessness:62,nhs:64,mental:60,isolation:56}},
+  {pc:'BS4',name:'Brislington & St Anne’s',d:{poverty:78,homelessness:72,nhs:70,mental:68,isolation:62}},
+  {pc:'BS5',name:'Easton & Lawrence Hill',d:{poverty:86,homelessness:80,nhs:76,mental:74,isolation:68}},
+  {pc:'BS6',name:'Redland & Cotham',d:{poverty:48,homelessness:46,nhs:52,mental:50,isolation:46}},
+  {pc:'BS7',name:'Horfield & Bishopston',d:{poverty:56,homelessness:54,nhs:58,mental:56,isolation:52}},
+  {pc:'BS8',name:'Clifton',d:{poverty:42,homelessness:44,nhs:50,mental:48,isolation:46}},
+  {pc:'BS9',name:'Westbury-on-Trym',d:{poverty:40,homelessness:42,nhs:48,mental:46,isolation:44}},
+  {pc:'BS10',name:'Southmead',d:{poverty:84,homelessness:78,nhs:78,mental:72,isolation:66}},
+  {pc:'BS11',name:'Avonmouth & Shirehampton',d:{poverty:74,homelessness:70,nhs:66,mental:62,isolation:60}},
+  {pc:'BS13',name:'Hartcliffe & Withywood',d:{poverty:90,homelessness:84,nhs:82,mental:78,isolation:72}},
+  {pc:'BS14',name:'Stockwood & Hengrove',d:{poverty:76,homelessness:70,nhs:68,mental:64,isolation:60}},
+  {pc:'BS15',name:'Kingswood',d:{poverty:70,homelessness:66,nhs:64,mental:62,isolation:58}},
+  {pc:'BS16',name:'Fishponds & Staple Hill',d:{poverty:68,homelessness:64,nhs:66,mental:64,isolation:60}}
+];
+var PC_LABEL={poverty:'Poverty',homelessness:'Homelessness',nhs:'NHS access',mental:'Mental health',isolation:'Isolation'};
+var PC_COL={poverty:'#E0322B',homelessness:'#FF6A2B',nhs:'#E8B23A',mental:'#8B5CF6',isolation:'#3BA0FF'};
+function pcMatch(v){v=(v||'').toUpperCase().replace(/\s+/g,'');var hit=null;PC_AREAS.forEach(function(a){if(v.indexOf(a.pc)===0){if(!hit||a.pc.length>hit.pc.length)hit=a;}});return hit;}
+var pcBtn=document.getElementById('pcBtn'),pcInput=document.getElementById('pcInput'),pcResult=document.getElementById('pcResult'),pcNote=document.getElementById('pcNote');
+function pcRender(area){
+  var keys=['poverty','homelessness','nhs','mental','isolation'];
+  var bars=keys.map(function(k){var v=area.d[k];return '<div class="pc-bar"><span class="pc-k">'+PC_LABEL[k]+'</span><span class="pc-track"><i data-c="'+v+'" style="background:'+PC_COL[k]+'"></i></span><span class="pc-v">'+v+'</span></div>';}).join('');
+  var worst=keys.slice().sort(function(a,b){return area.d[b]-area.d[a];})[0];
+  pcResult.innerHTML='<div class="pc-head"><span class="pc-name">'+area.name+'</span><span class="pc-tag">Illustrative · '+area.pc+' area</span></div><div class="pc-bars">'+bars+'</div><p class="pc-note">Main pressure: '+PC_LABEL[worst]+' ('+area.d[worst]+'/100, illustrative). Real postcode signals will be validated with Bristol partners in the pilot.</p>';
+  pcResult.classList.add('show');
+  requestAnimationFrame(function(){pcResult.querySelectorAll('.pc-track i').forEach(function(i){requestAnimationFrame(function(){i.style.width=i.getAttribute('data-c')+'%';});});});
+}
+function pcRun(){
+  var v=pcInput.value.trim();
+  if(!v){pcNote.textContent='Enter a postcode to try it, e.g. BS5 (Easton & Lawrence Hill).';return;}
+  var area=pcMatch(v);
+  if(area){pcRender(area);pcNote.textContent='Illustrative example for '+area.name+'. Not a live reading.';}
+  else{pcResult.classList.remove('show');pcResult.innerHTML='';pcNote.textContent='“'+v+'” is not yet modelled. We are piloting in Bristol only (BS1-BS16). We are not implying coverage we don’t have.';}
+}
+if(pcBtn&&pcInput){pcBtn.addEventListener('click',pcRun);pcInput.addEventListener('keydown',function(e){if(e.key==='Enter')pcRun();});}
+
+// ─── LOCAL HELP DIRECTORY (illustrative) ───
+var DIR=[
+  {name:'Bristol Food Network',type:'Food support',provides:'Emergency food, community pantries, cooking sessions',who:'Anyone in need, no referral',times:'Mon-Sat, varies by hub',contact:'hello@bristolfoodnetwork.org',referral:'Self-referral',access:'Step-free, interpreters on request',verified:'Illustrative · not yet verified'},
+  {name:'Talking Therapies (demo)',type:'Mental health',provides:'Free NHS talking therapies, low mood & anxiety',who:'Adults registered with a Bristol GP',times:'Mon-Fri 9-5',contact:'111 / online referral',referral:'Self or GP referral',access:'Phone & video options',verified:'Illustrative · not yet verified'},
+  {name:'Bristol Housing First (demo)',type:'Housing',provides:'Supported housing for people with complex needs',who:'Rough sleepers & at-risk',times:'24/7 response',contact:'via council housing team',referral:'Professional referral',access:'Full access support',verified:'Illustrative · not yet verified'},
+  {name:'Warm Welcome Spaces (demo)',type:'Community',provides:'Free warm space, tea, company, wifi',who:'All welcome',times:'Winter, weekly',contact:'local venue',referral:'None',access:'Step-free',verified:'Illustrative · not yet verified'}
+];
+var dirGrid=document.getElementById('dirGrid');
+if(dirGrid){
+  dirGrid.innerHTML=DIR.map(function(s){return '<div class="dir-card"><h3>'+s.name+'</h3><span class="dir-type">'+s.type+'</span><dl><dt>Provides</dt><dd>'+s.provides+'</dd><dt>Who</dt><dd>'+s.who+'</dd><dt>Times</dt><dd>'+s.times+'</dd><dt>Contact</dt><dd>'+s.contact+'</dd><dt>Referral</dt><dd>'+s.referral+'</dd><dt>Access</dt><dd>'+s.access+'</dd></dl><div class="dir-verified">'+s.verified+'</div></div>';}).join('');
+}
+
+// ─── COMMUNITY SIGNAL (front-end prototype) ───
+var sigBtn=document.getElementById('sigBtn'),sigOut=document.getElementById('sigOut');
+if(sigBtn){sigBtn.addEventListener('click',function(){sigOut.style.display='block';});}
+
+// ─── THREE.JS HERO FIELD (subtle, performance-capped) ───
+(function(){
+  var canvas=document.getElementById('heroField');
+  if(!canvas) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(typeof THREE==='undefined') return;
+  var scene=new THREE.Scene();
+  var cam=new THREE.PerspectiveCamera(60,1,0.1,1000); cam.position.z=42;
+  var renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+  var N=900, pos=new Float32Array(N*3), col=new Float32Array(N*3);
+  var cA=new THREE.Color(0x2BD4BE), cW=new THREE.Color(0x56C2F2);
+  for(var i=0;i<N;i++){
+    pos[i*3]=(Math.random()-0.5)*120;
+    pos[i*3+1]=(Math.random()-0.5)*70;
+    pos[i*3+2]=(Math.random()-0.5)*60;
+    var c=Math.random()>0.5?cA:cW;
+    col[i*3]=c.r;col[i*3+1]=c.g;col[i*3+2]=c.b;
+  }
+  var geo=new THREE.BufferGeometry();
+  geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  geo.setAttribute('color',new THREE.BufferAttribute(col,3));
+  var mat=new THREE.PointsMaterial({size:0.55,vertexColors:true,transparent:true,opacity:0.8,depthWrite:false,blending:THREE.AdditiveBlending});
+  var pts=new THREE.Points(geo,mat); scene.add(pts);
+  function resize(){
+    var w=canvas.clientWidth||window.innerWidth, h=canvas.clientHeight||window.innerHeight;
+    renderer.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix();
+  }
+  window.addEventListener('resize',resize); resize();
+  var t=0;
+  (function loop(){
+    t+=0.0016;
+    pts.rotation.y=t; pts.rotation.x=Math.sin(t*0.6)*0.12;
+    renderer.render(scene,cam);
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
+</body>
+</html>
