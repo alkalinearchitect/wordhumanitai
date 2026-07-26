@@ -497,7 +497,8 @@ if(sigBtn){sigBtn.addEventListener('click',function(){sigOut.style.display='bloc
   window.addEventListener('load',resize);
   setTimeout(resize,60); resize();
   var p=geo.attributes.position.array, p2=geo2.attributes.position.array, t=0;
-  (function loop(){ t+=0.01;
+  function fit(){var w=canvas.clientWidth||window.innerWidth,h=canvas.clientHeight||window.innerHeight;if(w>0&&h>0&&(canvas.width!==w||canvas.height!==h)){renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}}
+  (function loop(){ t+=0.01; fit();
     tx+=(mx-tx)*0.05; ty+=(my-ty)*0.05;
     var sc=1+Math.min(scrollY/3000,1)*0.6;
     for(var n=0;n<COUNT;n++){ var x=p[n*3], z=p[n*3+2];
