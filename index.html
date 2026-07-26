@@ -26,7 +26,7 @@
     theme: {
       extend: {
         colors: {
-          ink: '#05090C', 'ink-2': '#0A131A', 'ink-3': '#101E27', 'ink-4': '#172A35',
+          ink: '#000000', 'ink-2': '#050709', 'ink-3': '#0A0E12', 'ink-4': '#10151B',
           paper: '#F5F8F9', 'paper-2': '#E9EFE1', 'paper-3': '#D8E1E4',
           accent: '#2BD4BE', 'accent-deep': '#0FB7A2', 'accent-bright': '#5BF0DC',
           navy: '#1E3A5F', 'navy-deep': '#122844', 'navy-bright': '#2E6FB8',
@@ -311,18 +311,20 @@ if(!REDUCE && window.Lenis){
   (function lr(t){ lenis.raf(t); requestAnimationFrame(lr); })(performance.now());
   document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id && id.length>1 && document.querySelector(id)){ e.preventDefault(); lenis.scrollTo(document.querySelector(id),{offset:-120}); } }); });
 }
-// nav light/dark
+// nav + progress
 var nav=document.getElementById('nav');
 var darkIds=['top','data','join'];
+var prog=document.getElementById('progress');
+function progState(){ if(prog){ var h=document.documentElement.scrollHeight-window.innerHeight; prog.style.width=(h>0?(window.scrollY/h*100):0)+'%'; } }
 function navState(){
-  var y=window.scrollY, over=null;
+  var over=null;
   darkIds.forEach(function(id){ var el=document.getElementById(id); if(el){ var r=el.getBoundingClientRect(); if(r.top<=window.innerHeight*0.30 && r.bottom>=window.innerHeight*0.30) over=id; } });
-  nav.classList.toggle('dark', !!over);
-  nav.classList.toggle('light', !over);
-  nav.classList.toggle('scrolled', window.scrollY>30);
+  if(nav){ nav.classList.toggle('dark', !!over); nav.classList.toggle('light', !over); nav.classList.toggle('scrolled', window.scrollY>30); }
 }
-window.addEventListener('scroll',navState,{passive:true}); window.addEventListener('resize',navState); navState();
-// mobile nav
+window.addEventListener('scroll',function(){ progState(); navState(); },{passive:true});
+window.addEventListener('resize',navState);
+if(lenis){ lenis.on('scroll', function(){ progState(); navState(); }); }
+progState(); navState();
 var navBtn=document.getElementById('navBtn'), navLinks=document.getElementById('navLinks');
 if(navBtn){
   navBtn.addEventListener('click',function(){
@@ -453,7 +455,7 @@ var DIR=[
 {name:'Warm Welcome Spaces (demo)',type:'Community',provides:'Free warm space, tea, company',who:'All welcome',times:'Winter weekly',contact:'local venue',referral:'None',access:'Step-free',verified:'Illustrative · not yet verified'}
 ];
 var dirGrid=document.getElementById('dirGrid');
-if(dirGrid){dirGrid.innerHTML=DIR.map(function(s){return '<div class="bg-ink border border-white/10 rounded-xl1 p-5.5"><h3 class="font-serif text-[1.18rem] text-white mb-1">'+s.name+'</h3><span class="font-mono text-[10px] tracking-[.12em] uppercase text-water block mb-3">'+s.type+'</span><dl class="grid grid-cols-auto-1fr gap-1.5 text-[.86rem]"><dt class="text-on-dark-dim font-semibold whitespace-nowrap">Provides</dt><dd class="text-on-dark">'+s.provides+'</dd><dt class="text-on-dark-dim font-semibold">Who</dt><dd class="text-on-dark">'+s.who+'</dd><dt class="text-on-dark-dim font-semibold">Times</dt><dd class="text-on-dark">'+s.times+'</dd><dt class="text-on-dark-dim font-semibold">Contact</dt><dd class="text-on-dark">'+s.contact+'</dd><dt class="text-on-dark-dim font-semibold">Referral</dt><dd class="text-on-dark">'+s.referral+'</dd><dt class="text-on-dark-dim font-semibold">Access</dt><dd class="text-on-dark">'+s.access+'</dd></dl><div class="font-mono text-[10px] tracking-[.1em] uppercase text-gold border-t border-white/10 mt-3 pt-2.5">'+s.verified+'</div></div>';}).join('');}
+if(dirGrid){dirGrid.innerHTML=DIR.map(function(s){return '<div class="bg-ink border border-white/10 rounded-xl1 p-5.5"><h3 class="font-serif text-[1.18rem] text-white mb-1">'+s.name+'</h3><span class="font-mono text-[10px] tracking-[.12em] uppercase text-water block mb-3">'+s.type+'</span><dl class="grid grid-cols-[auto_1fr] gap-1.5 text-[.86rem]"><dt class="text-on-dark-dim font-semibold whitespace-nowrap">Provides</dt><dd class="text-on-dark">'+s.provides+'</dd><dt class="text-on-dark-dim font-semibold">Who</dt><dd class="text-on-dark">'+s.who+'</dd><dt class="text-on-dark-dim font-semibold">Times</dt><dd class="text-on-dark">'+s.times+'</dd><dt class="text-on-dark-dim font-semibold">Contact</dt><dd class="text-on-dark">'+s.contact+'</dd><dt class="text-on-dark-dim font-semibold">Referral</dt><dd class="text-on-dark">'+s.referral+'</dd><dt class="text-on-dark-dim font-semibold">Access</dt><dd class="text-on-dark">'+s.access+'</dd></dl><div class="font-mono text-[10px] tracking-[.1em] uppercase text-gold border-t border-white/10 mt-3 pt-2.5">'+s.verified+'</div></div>';}).join('');}
 
 // SIGNAL
 var sigBtn=document.getElementById('sigBtn'),sigOut=document.getElementById('sigOut');
