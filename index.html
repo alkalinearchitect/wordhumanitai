@@ -461,36 +461,54 @@ if(dirGrid){dirGrid.innerHTML=DIR.map(function(s){return '<div class="bg-ink bor
 var sigBtn=document.getElementById('sigBtn'),sigOut=document.getElementById('sigOut');
 if(sigBtn){sigBtn.addEventListener('click',function(){sigOut.style.display='block';});}
 
-// ─── THREE.JS HERO SCENE (real WebGL, intentional) ───
+// ─── THREE.JS HERO SCENE (interactive WebGL pressure-terrain) ───
 (function(){
   var canvas=document.getElementById('heroField');
   if(!canvas) return;
   if(REDUCE) return;
   if(typeof THREE==='undefined') return;
   var scene=new THREE.Scene();
-  var cam=new THREE.PerspectiveCamera(62,1,0.1,1000); cam.position.z=46;
+  var cam=new THREE.PerspectiveCamera(55,1,0.1,1000); cam.position.set(0,26,46); cam.lookAt(0,0,0);
   var renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
-  // instanced points forming a flowing grid-plane that warps like a pressure field
-  var G=70, COUNT=G*G, pos=new Float32Array(COUNT*3);
-  for(var i=0;i<G;i++){for(var j=0;j<G;j++){var idx=(i*G+j)*3; pos[idx]=(i/(G-1)-0.5)*130; pos[idx+1]=(j/(G-1)-0.5)*78; pos[idx+2]=0;}}
+  // interactive wireframe terrain that warps toward the cursor like a pressure field
+  var G=64, COUNT=G*G, pos=new Float32Array(COUNT*3);
+  for(var i=0;i<G;i++){for(var j=0;j<G;j++){var idx=(i*G+j)*3; pos[idx]=(i/(G-1)-0.5)*120; pos[idx+1]=0; pos[idx+2]=(j/(G-1)-0.5)*72;}}
   var geo=new THREE.BufferGeometry(); geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
-  var mat=new THREE.PointsMaterial({size:0.5,color:0x2BD4BE,transparent:true,opacity:0.55,depthWrite:false,blending:THREE.AdditiveBlending});
-  var pts=new THREE.Points(geo,mat); scene.add(pts);
-  // a second, sparser water-blue field drifting
-  var COUNT2=700, pos2=new Float32Array(COUNT2*3);
-  for(var k=0;k<COUNT2;k++){pos2[k*3]=(Math.random()-0.5)*120;pos2[k*3+1]=(Math.random()-0.5)*70;pos2[k*3+2]=(Math.random()-0.5)*50;}
+  var idxArr=[]; for(var a=0;a<G-1;a++){for(var b=0;b<G-1;b++){var v0=a*G+b,v1=a*G+b+1,v2=(a+1)*G+b,v3=(a+1)*G+b+1; idxArr.push(v0,v2,v1, v1,v2,v3);}}
+  geo.setIndex(idxArr);
+  var mat=new THREE.MeshBasicMaterial({color:0x2BD4BE,wireframe:true,transparent:true,opacity:0.28,blending:THREE.AdditiveBlending});
+  var mesh=new THREE.Mesh(geo,mat); mesh.rotation.x=-0.9; scene.add(mesh);
+  // second field, water-blue, counter-rotating, sparser
+  var G2=40, C2=G2*G2, pos2=new Float32Array(C2*3);
+  for(var i2=0;i2<G2;i2++){for(var j2=0;j2<G2;j2++){var k2=(i2*G2+j2)*3; pos2[k2]=(i2/(G2-1)-0.5)*90; pos2[k2+1]=0; pos2[k2+2]=(j2/(G2-1)-0.5)*54;}}
   var geo2=new THREE.BufferGeometry(); geo2.setAttribute('position',new THREE.BufferAttribute(pos2,3));
-  var mat2=new THREE.PointsMaterial({size:0.7,color:0x56C2F2,transparent:true,opacity:0.5,depthWrite:false,blending:THREE.AdditiveBlending});
-  var pts2=new THREE.Points(geo2,mat2); scene.add(pts2);
+  var i2b=[]; for(var a2=0;a2<G2-1;a2++){for(var b2=0;b2<G2-1;b2++){var v0=a2*G2+b2,v1=a2*G2+b2+1,v2=(a2+1)*G2+b2,v3=(a2+1)*G2+b2+1; i2b.push(v0,v2,v1, v1,v2,v3);}}
+  geo2.setIndex(i2b);
+  var mat2=new THREE.MeshBasicMaterial({color:0x56C2F2,wireframe:true,transparent:true,opacity:0.18,blending:THREE.AdditiveBlending});
+  var mesh2=new THREE.Mesh(geo2,mat2); mesh2.rotation.x=-0.9; mesh2.position.y=2; scene.add(mesh2);
+  // interaction state
+  var mx=0,my=0, tx=0,ty=0, scrollY=0;
+  window.addEventListener('mousemove',function(e){ mx=(e.clientX/window.innerWidth-0.5)*2; my=(e.clientY/window.innerHeight-0.5)*2; });
+  window.addEventListener('scroll',function(){ scrollY=window.scrollY; },{passive:true});
   function resize(){var w=canvas.clientWidth||window.innerWidth,h=canvas.clientHeight||window.innerHeight;renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}
   window.addEventListener('resize',resize); resize();
-  var p=geo.attributes.position.array, t=0;
-  (function loop(){ t+=0.012;
-    for(var n=0;n<COUNT;n++){ var x=p[n*3], y=p[n*3+1]; p[n*3+2]=Math.sin(x*0.05+t)*Math.cos(y*0.05+t*0.7)*6; }
+  var p=geo.attributes.position.array, p2=geo2.attributes.position.array, t=0;
+  (function loop(){ t+=0.01;
+    tx+=(mx-tx)*0.05; ty+=(my-ty)*0.05;
+    var sc=1+Math.min(scrollY/3000,1)*0.6;
+    for(var n=0;n<COUNT;n++){ var x=p[n*3], z=p[n*3+2];
+      var d=Math.sqrt((x-tx*60)*(x-tx*60)+(z-ty*36)*(z-ty*36));
+      p[n*3+1]=Math.sin(x*0.06+t)*3.2 + Math.cos(z*0.06+t*0.8)*3.2 - 26/(d+6);
+    }
     geo.attributes.position.needsUpdate=true;
-    pts.rotation.y=Math.sin(t*0.2)*0.25; pts.rotation.x=Math.cos(t*0.15)*0.12;
-    pts2.rotation.y=-t*0.05; pts2.rotation.x=Math.sin(t*0.1)*0.1;
+    for(var n2=0;n2<C2;n2++){ var x2=p2[n2*3], z2=p2[n2*3+2];
+      p2[n2*3+1]=Math.cos(x2*0.08-t)*2.4 + Math.sin(z2*0.08+t*0.6)*2.4;
+    }
+    geo2.attributes.position.needsUpdate=true;
+    mesh.rotation.z=tx*0.25; mesh2.rotation.z=-tx*0.18;
+    cam.position.y=26 - ty*8; cam.lookAt(0,0,0);
+    mesh.scale.set(sc,sc,sc); mesh2.scale.set(sc,sc,sc);
     renderer.render(scene,cam); requestAnimationFrame(loop);
   })();
 })();
