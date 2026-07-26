@@ -469,7 +469,10 @@ if(sigBtn){sigBtn.addEventListener('click',function(){sigOut.style.display='bloc
   if(typeof THREE==='undefined') return;
   var scene=new THREE.Scene();
   var cam=new THREE.PerspectiveCamera(55,1,0.1,1000); cam.position.set(0,26,46); cam.lookAt(0,0,0);
-  var renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true});
+  var renderer;
+  try{ renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true}); }
+  catch(err){ window.__threeErr=err.message; return; }
+  if(!renderer){ window.__threeErr='no renderer'; return; }
   renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
   // interactive wireframe terrain that warps toward the cursor like a pressure field
   var G=64, COUNT=G*G, pos=new Float32Array(COUNT*3);
