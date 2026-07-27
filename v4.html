@@ -19,8 +19,6 @@ html{scroll-behavior:smooth}
 body{font-family:'Manrope',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .wrap{max-width:var(--container);margin:0 auto;padding:0 28px}
 .serif{font-family:'Spectral',Georgia,serif}
-.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
-a{color:inherit;text-decoration:none}
 .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:700}
 nav{position:sticky;top:0;z-index:50;background:rgba(244,246,245,.87);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav-in{max-width:var(--container);margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
@@ -31,7 +29,9 @@ nav{position:sticky;top:0;z-index:50;background:rgba(244,246,245,.87);backdrop-f
 .nav-links a:hover{color:var(--ink)}
 .btn{background:var(--teal);color:#fff;font-weight:700;font-size:13px;padding:11px 22px;border-radius:40px;transition:background .2s;display:inline-block}
 .btn:hover{background:#0a6453}
-/* HERO — asymmetric 60/40, dark navy visual panel with animated curve */
+.btn-outline{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
+.btn-outline:hover{background:var(--teal);color:#fff}
+/* HERO — asymmetric split, dark navy visual panel with animated curve */
 .hero{border-bottom:1px solid var(--line)}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;min-height:560px}
 .hero-left{padding:84px 56px 64px 0;display:flex;flex-direction:column;justify-content:center}
@@ -50,7 +50,7 @@ h1{font-family:'Spectral',serif;font-weight:800;font-size:clamp(2.3rem,4.6vw,3.9
 .pl-line{fill:none;stroke:var(--teal-b);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:640;stroke-dashoffset:640}
 .pl-fill{fill:url(#plg);opacity:.18}
 .pl-dot{fill:#fff;opacity:0}
-.pl-lab{font-family:'JetBrains Mono',monospace;font-size:9px;fill:#9FB4C4}
+.pl-lab{font-family:'JetBrains Mono',monospace;font-size:9px}
 .pl-l1{fill:#cfe0ec;font-weight:700}
 .pl-l2{fill:#2BD4BE;font-weight:700}
 .pl-l3{fill:#ffd9c8;font-weight:700}
@@ -248,4 +248,3 @@ footer{background:var(--ink);color:#c7d6e2;padding:32px 0;font-size:.84rem}
 </script>
 </body>
 </html>
-
