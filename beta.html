@@ -54,6 +54,15 @@ nav{position:sticky;top:0;z-index:50;background:rgba(244,247,245,.88);backdrop-f
 .layer ul li:before{content:"";position:absolute;left:0;top:12px;width:7px;height:7px;border-radius:50%;background:var(--teal)}
 .flow-line{display:flex;justify-content:center;margin:-1px 0;position:relative;z-index:2}
 .flow-line .flow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#fff;background:var(--ink);padding:8px 18px;border-radius:30px}
+/* GOLDEN CIRCLE */
+.why-sec{padding:64px 0;border-bottom:1px solid var(--line);background:#fff}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.why-grid h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.05;letter-spacing:-.02em;margin:10px 0 14px}
+.why-grid p{color:var(--ink2);font-size:1.05rem;max-width:52ch;margin-bottom:12px}
+.why-quote{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;color:var(--teal-d);line-height:1.4;margin:18px 0;padding-left:16px;border-left:3px solid var(--teal)}
+.gc{display:flex;justify-content:center}
+.gc svg{width:100%;max-width:420px;height:auto}
+@media(max-width:860px){.why-grid{grid-template-columns:1fr}.gc{order:-1;margin-bottom:20px}}
 /* PROBLEM GRID */
 .prob-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:10px}
 .prob-grid .pc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 14px;font-size:.92rem;color:var(--ink2)}
@@ -95,6 +104,7 @@ footer{background:var(--ink);color:#cdd9e6;padding:32px 0;font-size:.84rem}
 <nav><div class="nav-in">
   <div class="logo">Humanit<b>AI</b></div>
   <div class="nav-links">
+    <a href="#why">Why</a>
     <a href="#problem">Problem</a>
     <a href="#model">The model</a>
     <a href="#boat">The boat</a>
@@ -105,15 +115,43 @@ footer{background:var(--ink);color:#cdd9e6;padding:32px 0;font-size:.84rem}
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <span class="eyebrow">HumanitAI CIC · A National Prevention Infrastructure</span>
+  <span class="eyebrow">HumanitAI CIC · Why we exist</span>
   <div class="kicker">Not an AI company. Not a wellness company. Not a charity.</div>
-  <h1>A national prevention infrastructure for the United Kingdom.</h1>
-  <p class="lede">HumanitAI combines physical community spaces, artificial intelligence and evidence-based interventions to reduce the likelihood of social, health and economic problems escalating into crisis. The earlier we recognise pressure, the more lives we improve — and the lower the cost to society.</p>
+  <h1>We believe pressure should be seen before it becomes a crisis.</h1>
+  <p class="lede">Most public services wait until people hit a threshold for help. We exist to change that — because the earlier a community recognises pressure building, the more lives improve and the lower the cost to society. That belief is why HumanitAI exists. The AI, the 5th Space and the boat are simply how we live it.</p>
   <div class="cta">
-    <a class="btn" href="#model">See the model</a>
+    <a class="btn" href="#why">Why · How · What</a>
     <a class="ghost" href="#scaling">From Bath to the UK</a>
   </div>
 </div></header>
+
+<section class="why-sec" id="why"><div class="wrap">
+  <div class="why-grid">
+    <div>
+      <span class="eyebrow">The Golden Circle</span>
+      <h2>Start with why. Then explain how. Only then, what.</h2>
+      <p><b>WHY.</b> Communities are left to reach crisis before anyone helps. We believe that is wrong — and preventable. Pressure can be seen early.</p>
+      <p><b>HOW.</b> We combine predictive intelligence, a physical 5th Space and evidence-based regulation into one continuous prevention loop. People stay at the centre; technology supports, never replaces, human judgement.</p>
+      <p><b>WHAT.</b> A mobile canal boat, AI forecasts on public data, peer workshops, contrast therapy and community meals — the tangible things a town can see and touch.</p>
+      <div class="why-quote">&ldquo;People don't buy what you do; they buy why you do it.&rdquo; — Simon Sinek</div>
+    </div>
+    <div class="gc">
+      <svg viewBox="0 0 240 240" role="img" aria-label="Golden circle: Why, How, What">
+        <circle cx="120" cy="120" r="110" fill="none" stroke="#D3DEDB" stroke-width="1"/>
+        <circle cx="120" cy="120" r="110" fill="#0B1F3A"/>
+        <circle cx="120" cy="120" r="74" fill="#1E3A5F"/>
+        <circle cx="120" cy="120" r="38" fill="#0E7C66"/>
+        <text x="120" y="116" text-anchor="middle" font-family="Fraunces,serif" font-size="15" font-weight="900" fill="#fff">WHY</text>
+        <text x="120" y="76" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="700" fill="#fff" letter-spacing="1">HOW</text>
+        <text x="120" y="40" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#fff" letter-spacing="1">WHAT</text>
+        <text x="120" y="150" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#7FD9C6" letter-spacing=".5">PRESSURE</text>
+        <text x="120" y="163" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#7FD9C6" letter-spacing=".5">SEEN EARLY</text>
+        <text x="196" y="124" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" font-weight="600" fill="#cdd9e6" letter-spacing=".5">MODEL</text>
+        <text x="196" y="136" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" font-weight="600" fill="#cdd9e6" letter-spacing=".5">LOOP</text>
+      </svg>
+    </div>
+  </div>
+</div></section>
 
 <section class="section" id="problem"><div class="wrap">
   <div class="sec-head">
@@ -237,6 +275,7 @@ footer{background:var(--ink);color:#cdd9e6;padding:32px 0;font-size:.84rem}
     <span class="eyebrow">Why AI Matters</span>
     <h2>Without AI, everyone gets similar services regardless of local need.</h2>
     <p>With AI, communities receive support based on emerging pressure. Instead of opening another programme because funding exists, HumanitAI asks: which neighbourhood is beginning to struggle? Which age group is becoming isolated? Which intervention appears most effective? Limited resources have greater impact.</p>
+    <p style="margin-top:10px;font-size:.95rem;color:var(--grey)"><b>Our capability today:</b> HumanitAI already runs a forecasting prototype on open public datasets — the same engine that would power live community-level pressure signals. In the Bath pilot we take that from prototype to a verified, partner-reviewed service: every forecast checked by a person before it informs any action.</p>
   </div>
 </div></section>
 
