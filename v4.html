@@ -39,7 +39,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(244,246,245,.87);backdrop-f
 h1{font-family:'Spectral',serif;font-weight:800;font-size:clamp(2.3rem,4.6vw,3.9rem);line-height:1.04;letter-spacing:-.025em;max-width:16ch}
 .lede{font-size:1.08rem;color:var(--ink2);max-width:48ch;margin:22px 0 0;line-height:1.55}
 .cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.ask-hook{display:inline-block;margin-top:22px;background:rgba(14,124,102,.10);border:1px solid var(--teal);color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.04em;padding:8px 16px;border-radius:30px}
+.ask-hook{display:inline-block;margin-top:22px;background:rgba(14,124,102,.10);border:1px solid var(--teal);color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.04em;padding:8px 16px;border-radius:30px;white-space:nowrap}
 .ask-hook b{color:var(--ink)}
 .hero-right{position:relative;background:linear-gradient(160deg,#0B1F3A 0%,#102A4C 100%);overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:40px}
 .curve-card{background:rgba(255,255,255,.04);border:1px solid rgba(43,212,190,.25);border-radius:16px;padding:24px}
@@ -100,10 +100,9 @@ footer{background:var(--ink);color:#c7d6e2;padding:32px 0;font-size:.84rem}
 .reveal.in{opacity:1;transform:none}
 @media(max-width:980px){.hero-grid{grid-template-columns:1fr}.hero-left{padding:60px 0 32px}.hero-right{min-height:380px;padding:32px}.fund{grid-template-columns:1fr}.fund .ask{border-top:1px solid var(--line)}.meas{grid-template-columns:1fr}}
 @media(max-width:560px){.hero-left{padding:46px 0 26px}.layer{padding:24px 20px}.sec-head h2{font-size:1.7rem}.scale .s{padding:7px 13px;font-size:.85rem}.boat-callout{padding:24px}
-.nav-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;max-width:55%}
-.nav-links a{font-size:11px}
-.ask-hook{font-size:11px;padding:7px 13px;max-width:290px;line-height:1.5}
-.ask-hook b{white-space:nowrap}}
+.nav-links a:not(.btn){display:none}
+.nav-links{justify-content:flex-end}
+.ask-hook{font-size:11px;padding:7px 13px}}
 @media(prefers-reduced-motion:reduce){.pl-line.draw{animation:none;stroke-dashoffset:0}.pl-dot.on{animation:none;opacity:1}.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
