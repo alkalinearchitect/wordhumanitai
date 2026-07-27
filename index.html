@@ -84,7 +84,7 @@
 
 <!-- TICKER (single top bar) -->
 <div class="fixed top-0 left-0 right-0 z-[120] h-[30px] flex items-center bg-[rgba(5,9,12,.92)] border-b border-white/10 font-mono text-[11px] backdrop-blur overflow-hidden">
-  <div class="bg-accent text-ink font-bold text-[9.5px] tracking-[.14em] px-2.5 h-[30px] flex items-center gap-1.5 flex-shrink-0"><i class="w-1.5 h-1.5 rounded-full bg-ink inline-block"></i>LIVE</div>
+  <div class="bg-accent text-ink font-bold text-[9.5px] tracking-[.14em] px-2.5 h-[30px] flex items-center gap-1.5 flex-shrink-0"><i class="w-1.5 h-1.5 rounded-full bg-ink inline-block"></i>PILOT</div>
   <div class="track" id="tickerTrack"></div>
 </div>
 
@@ -95,9 +95,9 @@
     <div class="hidden md:flex items-center gap-8" id="navLinks">
       <a href="#how" class="text-[13px] font-semibold text-on-dark-dim hover:text-on-dark transition-colors">How it works</a>
       <a href="#data" class="text-[13px] font-semibold text-on-dark-dim hover:text-on-dark transition-colors">Prototype</a>
-      <a href="#fifth-space" class="text-[13px] font-semibold text-on-dark-dim hover:text-on-dark transition-colors">5th Space</a>
-      <a href="#agents" class="text-[13px] font-semibold text-on-dark-dim hover:text-on-dark transition-colors">AI agents</a>
-      <a href="#architecture" class="text-[13px] font-semibold text-on-dark-dim hover:text-on-dark transition-colors">How we work</a>
+      <a href="#fifth-space" class="text-[13px] font-semibold text-on-dark-dim hover:text-on-dark transition-colors">The 5th Space</a>
+      <a href="#agents" class="text-[13px] font-semibold text-on-dark-dim hover:text-on-dark transition-colors">How we build</a>
+      <a href="#funders" class="text-[13px] font-semibold text-on-dark-dim hover:text-on-dark transition-colors">For funders</a>
       <a href="#join" class="bg-accent text-ink rounded-full px-4.5 py-2.5 text-[13px] font-bold hover:bg-accent-deep transition-colors">Get involved</a>
     </div>
     <button id="navBtn" class="md:hidden flex flex-col gap-1.5 w-10 h-10 border border-white/15 rounded-xl items-center justify-center" aria-label="Menu"><span class="w-[18px] h-0.5 bg-on-dark rounded"></span><span class="w-[18px] h-0.5 bg-on-dark rounded"></span><span class="w-[18px] h-0.5 bg-on-dark rounded"></span></button>
@@ -197,7 +197,7 @@
         <button id="pcBtn" type="button" class="bg-accent text-ink rounded-full px-7 py-3.5 font-bold hover:bg-accent-deep transition-colors">Check</button>
       </div>
       <div id="pcResult" class="hidden mt-5 pt-5 border-t border-white/10"></div>
-      <p id="pcNote" class="font-mono text-[.8rem] text-on-dark-dim mt-4">Try a Bristol postcode (BS1-BS16) for an illustrative example. Any other entry returns a clear "not yet modelled" message.</p>
+      <p id="pcNote" class="font-mono text-[.8rem] text-on-dark-dim mt-4">Try a Bristol postcode (BS1-BS16) for an illustrative example. The Bath pilot will use the same format with local partners. Any other entry returns a clear "not yet modelled" message.</p>
     </div>
 
     <!-- DIRECTORY -->
@@ -206,7 +206,7 @@
       <h3 class="font-serif text-[1.5rem] text-white mb-1.5">Verified support, shown the way the pilot will.</h3>
       <p class="text-[.96rem] text-on-dark-dim max-w-[640px] mb-4">Each entry shows what it provides, who can access it, opening times, contact, referral, accessibility, date last verified. Entries below are illustrative examples of the format.</p>
       <div id="dirGrid" class="grid md:grid-cols-2 gap-4 mt-5"></div>
-      <p class="text-[.82rem] text-on-dark-dim mt-5 italic">Illustrative format only. A live directory would be built and verified with Bristol partners during the pilot.</p>
+      <p class="text-[.82rem] text-on-dark-dim mt-5 italic">Illustrative format only. A live directory would be built and verified with Bath and Bristol partners during the pilot.</p>
     </div>
   </div>
 </section>
@@ -253,6 +253,20 @@
   </div>
 </section>
 
+<!-- FUNDERS -->
+<section class="bg-ink-2 text-on-dark py-24 px-8" id="funders">
+  <div class="max-w-[1180px] mx-auto">
+    <p class="font-mono text-[11px] font-bold tracking-[.18em] uppercase text-on-dark-dim flex items-center gap-3 mb-5"><span class="bg-ink border border-white/15 rounded-md px-2 py-0.5 text-on-dark">07</span>For funders</p>
+    <h2 class="font-serif font-semibold text-[clamp(1.9rem,4.6vw,3.2rem)] leading-tight tracking-tight max-w-[920px] text-white">We are raising £15,000 to run a 12-month pilot in Bath.</h2>
+    <p class="text-[1.1rem] leading-relaxed text-on-dark-dim max-w-[660px] mt-5">HumanitAI is a Bristol-based CIC, piloting first in Bath, Somerset — a commuter community adjacent to our home base. The pilot turns our open-source crisis-forecast into community ownership: 12 monthly peer workshops, a free open-source toolkit, and 10 trained local volunteers.</p>
+    <div class="grid md:grid-cols-3 gap-4.5 mt-12">
+      <div class="bg-ink border border-white/10 rounded-xl1 p-6"><h3 class="font-serif text-[1.3rem] text-white mb-2.5">What we ask</h3><p class="text-[.95rem] leading-relaxed text-on-dark-dim">A £15,000 Awards for All grant to deliver the Bath pilot over 12 months. Every pound is asset-locked to our community mission.</p></div>
+      <div class="bg-ink border border-white/10 rounded-xl1 p-6"><h3 class="font-serif text-[1.3rem] text-white mb-2.5">What you get</h3><p class="text-[.95rem] leading-relaxed text-on-dark-dim">Measured outcomes: residents engaged, volunteers trained, a free toolkit the community keeps. A published report on what works, shared openly.</p></div>
+      <div class="bg-ink border border-white/10 rounded-xl1 p-6"><h3 class="font-serif text-[1.3rem] text-white mb-2.5">Why now</h3><p class="text-[.95rem] leading-relaxed text-on-dark-dim">Rolling decision, around 16 weeks. Early funding builds the track record we need to scale the model to other UK towns.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="bg-gradient-to-b from-ink to-navy-deep text-on-dark text-center py-28 px-8" id="join">
   <div class="max-w-[920px] mx-auto">
@@ -277,7 +291,7 @@
     <div class="flex flex-wrap justify-between gap-8">
       <div class="max-w-[360px]">
         <a href="#top" class="font-serif font-extrabold text-[21px] text-on-paper inline-block mb-3.5">Humanit<b class="text-accent-deep">AI</b></a>
-        <p class="text-[.88rem] text-on-paper-dim leading-relaxed">HumanitAI is a UK Community Interest Company. We use public data, local knowledge and advanced AI forecasting to identify where community pressure is rising, then help direct education, support and preventive services towards the places that may need them most. In pilot. Honest about what we can and cannot yet claim.</p>
+        <p class="text-[.88rem] text-on-paper-dim leading-relaxed">HumanitAI is a UK Community Interest Company, Bristol-based and piloting in Bath. We use public data, local knowledge and advanced AI forecasting to identify where community pressure is rising, then help direct education, support and preventive services towards the places that may need them most. In pilot. Honest about what we can and cannot yet claim.</p>
       </div>
       <div>
         <h4 class="font-mono text-[11px] font-bold uppercase tracking-[.12em] text-on-paper-dim mb-3.5">Navigate</h4>
