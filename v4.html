@@ -38,7 +38,9 @@ nav{position:sticky;top:0;z-index:50;background:rgba(244,246,245,.87);backdrop-f
 .kicker{font-family:'Spectral',serif;font-style:italic;font-size:1.15rem;color:var(--teal);max-width:34ch;margin:14px 0 18px}
 h1{font-family:'Spectral',serif;font-weight:800;font-size:clamp(2.3rem,4.6vw,3.9rem);line-height:1.04;letter-spacing:-.025em;max-width:16ch}
 .lede{font-size:1.08rem;color:var(--ink2);max-width:48ch;margin:22px 0 0;line-height:1.55}
-.cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.ask-hook{display:inline-block;margin-top:22px;background:rgba(14,124,102,.10);border:1px solid var(--teal);color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.04em;padding:8px 16px;border-radius:30px}
+.ask-hook b{color:var(--ink)}
 .hero-right{position:relative;background:linear-gradient(160deg,#0B1F3A 0%,#102A4C 100%);overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:40px}
 .curve-card{background:rgba(255,255,255,.04);border:1px solid rgba(43,212,190,.25);border-radius:16px;padding:24px}
 .curve-card .cc-cap{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
@@ -74,10 +76,13 @@ h1{font-family:'Spectral',serif;font-weight:800;font-size:clamp(2.3rem,4.6vw,3.9
 .fund .ftext{padding:30px 32px}
 .fund .ftext h2{font-family:'Spectral',serif;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.08;letter-spacing:-.02em;margin:10px 0 12px}
 .fund .ftext p{color:var(--ink2);font-size:1rem;max-width:46ch}
-.fund .ask{background:var(--paper2);padding:30px 32px;display:flex;flex-direction:column;justify-content:center}
-.fund .ask .big{font-family:'Spectral',serif;font-size:2.4rem;font-weight:800;color:var(--teal);line-height:1}
-.fund .ask .row{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:.9rem;color:var(--ink2)}
-.fund .ask .row b{color:var(--ink)}
+.fund .ask{background:linear-gradient(160deg,#0B1F3A,#102A4C);padding:30px 32px;display:flex;flex-direction:column;justify-content:center}
+.fund .ask .big{font-family:'Spectral',serif;font-size:2.4rem;font-weight:800;color:var(--teal-b);line-height:1}
+.fund .ask .row{margin-top:12px;padding-top:12px;border-top:1px solid rgba(43,212,190,.22);font-size:.9rem;color:#c7d6e2}
+.fund .ask .row b{color:#fff}
+.fund .ask .cta-fund{margin-top:18px;background:var(--teal-b);color:#06231d;font-weight:700;font-size:13px;padding:12px 22px;border-radius:40px;display:inline-block;text-align:center}
+.fund .ask .cta-fund:hover{background:#fff}
+.fund .ask .proof{margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:#9FB4C4}
 .scale{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:18px}
 .scale .s{background:#fff;border:1px solid var(--line);border-radius:30px;padding:8px 16px;font-size:.92rem;font-weight:600}
 .scale .arr{color:var(--teal);font-weight:700}
@@ -113,6 +118,7 @@ footer{background:var(--ink);color:#c7d6e2;padding:32px 0;font-size:.84rem}
     <div class="kicker">Not an AI company. Not a wellness company. Not a charity.</div>
     <h1>Pressure, seen before it becomes crisis.</h1>
     <p class="lede">Most public services wait until people hit a threshold for help. HumanitAI exists to change that — recognising pressure early, when a community can still act, not after it has already broken. A working boat, not a whitepaper.</p>
+    <div class="ask-hook">Piloting in Bath · <b>£15,000</b> National Lottery ask</div>
     <div class="cta">
       <a class="btn" href="#model">See the model</a>
       <a class="ghost btn-outline" href="#fund">The Bath pilot</a>
@@ -176,6 +182,8 @@ footer{background:var(--ink);color:#c7d6e2;padding:32px 0;font-size:.84rem}
       <div class="row"><b>What we ask:</b> a 12-month Bath pilot grant.</div>
       <div class="row"><b>What you get:</b> residents engaged, volunteers trained, a free toolkit the community keeps, and a published report on what works.</div>
       <div class="row"><b>Why now:</b> early funding builds the track record to scale the model to other UK towns.</div>
+      <a class="cta-fund" href="mailto:hello@humanitai.uk">Fund this pilot →</a>
+      <div class="proof">REG. CIC No. 16891121 · ASSET-LOCKED BY LAW</div>
     </div>
   </div>
 </div></section>
