@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>HumanitAI — The Three-Pillar Prevention Model</title>
+<meta name="description" content="HumanitAI CIC: a three-part prevention model — predictive intelligence, a physical community hub (the 5th Space), and contrast therapy — that helps towns act before pressure becomes crisis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F7F5; --paper2:#EAF1EE; --ink:#0B1F3A; --ink2:#16314F;
+  --teal:#0E7C66; --teal-d:#0A5E4E; --navy:#1E3A5F; --gold:#B8860B;
+  --grey:#54677A; --line:#D3DEDB; --water:#2E6FB8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* blueprint grid backdrop */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(14,124,102,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(14,124,102,.05) 1px,transparent 1px);
+  background-size:34px 34px;mask-image:radial-gradient(circle at 50% 30%,#000,transparent 85%)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+.serif{font-family:'Fraunces',Georgia,serif}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+.eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:700}
+a{color:inherit}
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(244,247,245,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1140px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Fraunces',serif;font-weight:900;font-size:21px;letter-spacing:-.02em}
+.logo b{color:var(--teal)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{font-size:13px;font-weight:600;color:var(--grey);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.btn{background:var(--teal);color:#fff;font-weight:700;font-size:13px;padding:11px 20px;border-radius:40px;text-decoration:none;transition:background .2s}
+.btn:hover{background:var(--teal-d)}
+/* HERO */
+.hero{padding:90px 0 70px;position:relative}
+.hero h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2.6rem,6.2vw,5rem);line-height:.98;letter-spacing:-.025em;max-width:16ch;margin:18px 0 22px}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero p.lede{font-size:1.18rem;color:var(--ink2);max-width:60ch;line-height:1.55}
+.hero .cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.cta .ghost{border:1px solid var(--line);padding:11px 20px;border-radius:40px;font-weight:700;font-size:13px;text-decoration:none;color:var(--ink);transition:border-color .2s}
+.cta .ghost:hover{border-color:var(--teal)}
+.tag-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:40px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--grey);border:1px solid var(--line);border-radius:30px;padding:6px 13px;background:#fff}
+.tag b{color:var(--teal)}
+/* PILLARS SYSTEM */
+.pillars{padding:30px 0 70px}
+.sec-head{margin-bottom:34px;max-width:70ch}
+.sec-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.05;letter-spacing:-.02em;margin:12px 0 10px}
+.sec-head p{color:var(--grey);font-size:1.05rem;max-width:62ch}
+.sys{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.pillar{padding:26px 24px;border-right:1px solid var(--line);position:relative}
+.pillar:last-child{border-right:none}
+.pillar .num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.1em}
+.pillar .ico{width:46px;height:46px;margin:14px 0 12px;color:var(--teal)}
+.pillar h3{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:600;margin-bottom:8px;line-height:1.1}
+.pillar p{font-size:.92rem;color:var(--ink2);line-height:1.5}
+.pillar ul{list-style:none;margin-top:12px}
+.pillar ul li{font-size:.86rem;color:var(--grey);padding:5px 0 5px 18px;position:relative;border-top:1px dashed var(--line)}
+.pillar ul li:before{content:"";position:absolute;left:0;top:12px;width:7px;height:7px;border-radius:50%;background:var(--teal)}
+.connect{display:flex;justify-content:center;gap:0;margin:-1px 0;position:relative;z-index:2}
+.connect .flow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#fff;background:var(--ink);padding:8px 18px;border-radius:30px}
+/* OUTCOMES BAR */
+.outcomes{background:var(--ink);color:#fff;border-radius:16px;padding:30px 32px;margin-top:26px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.outcomes .o{font-family:'Fraunces',serif;font-size:1.02rem;line-height:1.2}
+.outcomes .o span{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:#7FD9C6;margin-bottom:6px}
+/* BOAT */
+.boat{padding:60px 0;border-top:1px solid var(--line)}
+.boat-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+.boat h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.05;letter-spacing:-.02em;margin:12px 0 14px}
+.boat p{color:var(--ink2);font-size:1.02rem;max-width:52ch;margin-bottom:14px}
+.boat svg{width:100%;height:auto;border-radius:16px;border:1px solid var(--line);background:linear-gradient(180deg,#0E1622,#16243A)}
+.boat .pts{list-style:none;margin-top:10px}
+.boat .pts li{padding:9px 0 9px 22px;position:relative;font-size:.94rem;border-top:1px solid var(--line);color:var(--ink2)}
+.boat .pts li:before{content:"→";position:absolute;left:0;color:var(--teal);font-weight:700}
+/* FUNDERS */
+.fund{padding:60px 0 80px}
+.fund-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:36px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.fund-card h2{font-family:'Fraunces',serif;font-size:clamp(1.7rem,3.6vw,2.4rem);line-height:1.05;letter-spacing:-.02em;margin:10px 0 12px}
+.fund-card p{color:var(--ink2);font-size:1rem;max-width:46ch}
+.ask{background:var(--paper2);border-radius:14px;padding:22px;border:1px solid var(--line)}
+.ask .big{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:900;color:var(--teal);line-height:1}
+.ask .row{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:.9rem;color:var(--ink2)}
+.ask .row b{color:var(--ink)}
+footer{background:var(--ink);color:#cdd9e6;padding:34px 0;font-size:.84rem}
+.foot-in{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.foot-in a{color:#7FD9C6;text-decoration:none}
+@media(max-width:860px){
+  .sys{grid-template-columns:1fr}.pillar{border-right:none;border-bottom:1px solid var(--line)}
+  .outcomes{grid-template-columns:repeat(2,1fr)}
+  .boat-grid{grid-template-columns:1fr}.fund-card{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+<nav><div class="nav-in">
+  <div class="logo">Humanit<b>AI</b></div>
+  <div class="nav-links">
+    <a href="#model">The model</a>
+    <a href="#boat">The boat</a>
+    <a href="#funders">For funders</a>
+    <a href="#honest">Honesty</a>
+    <a class="btn" href="mailto:hello@humanitai.uk">Talk to us</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">HumanitAI CIC · White-paper model · Pilot</span>
+  <h1>See pressure <em>before</em> it becomes a crisis.</h1>
+  <p class="lede">HumanitAI is a UK Community Interest Company. We combine predictive intelligence, a physical community hub, and contrast therapy into one prevention model — so towns can act earlier, together.</p>
+  <div class="cta">
+    <a class="btn" href="#model">See the three pillars</a>
+    <a class="ghost" href="#funders">We are raising £15k for a Bath pilot</a>
+  </div>
+  <div class="tag-row">
+    <span class="tag"><b>●</b> Predictive AI</span>
+    <span class="tag"><b>●</b> The 5th Space</span>
+    <span class="tag"><b>●</b> Contrast therapy</span>
+    <span class="tag"><b>●</b> Bristol-based · piloting in Bath</span>
+    <span class="tag"><b>●</b> CIC No. 16891121</span>
+  </div>
+</div></header>
+
+<section class="pillars" id="model"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">The Three-Pillar Prevention Model</span>
+    <h2>Three integrated parts. Not a list of tools — a system.</h2>
+    <p>Each pillar does nothing alone. Together they form a loop: intelligence finds the need, the 5th Space brings people in, contrast therapy keeps them there, and what we learn feeds the intelligence again.</p>
+  </div>
+
+  <div class="sys">
+    <div class="pillar">
+      <div class="num">01 / INTELLIGENCE</div>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
+      <h3>Artificial Intelligence</h3>
+      <p>The invisible operating system. It reads ethically sourced public and community data to spot where pressure is rising — before it escalates.</p>
+      <ul><li>Where support is needed</li><li>Which communities are vulnerable</li><li>Which interventions work best</li><li>How to allocate resources</li></ul>
+    </div>
+    <div class="pillar">
+      <div class="num">02 / PLACE</div>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+      <h3>The 5th Space</h3>
+      <p>A welcoming hub outside home, work, school and clinic. The human interface of HumanitAI — first as a mobile canal boat, later from permanent venues.</p>
+      <ul><li>Build social connection</li><li>Regulate stress</li><li>Learn digital and life skills</li><li>Access help early</li></ul>
+    </div>
+    <div class="pillar">
+      <div class="num">03 / ENGAGEMENT</div>
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/></svg>
+      <h3>Contrast Therapy</h3>
+      <p>Sauna and cold immersion are the front door. Beyond wellbeing, they create the trust and conversation that connect people to wider support.</p>
+      <ul><li>Social interaction</li><li>Stress regulation</li><li>Trust-building</li><li>Early identification</li></ul>
+    </div>
+  </div>
+
+  <div class="connect"><span class="flow">AI detects · 5th Space gathers · contrast therapy engages · evidence feeds back</span></div>
+
+  <div class="outcomes">
+    <div class="o"><span>OUTCOME</span>Earlier intervention</div>
+    <div class="o"><span>OUTCOME</span>Better wellbeing</div>
+    <div class="o"><span>OUTCOME</span>Reduced isolation</div>
+    <div class="o"><span>OUTCOME</span>Stronger communities</div>
+    <div class="o"><span>OUTCOME</span>Lower demand on services</div>
+  </div>
+</div></section>
+<section class="boat" id="boat"><div class="wrap">
+  <div class="boat-grid">
+    <div>
+      <span class="eyebrow">Why the canal boat</span>
+      <h2>A mobile civic asset, not just transport.</h2>
+      <p>The first 5th Space may be a canal boat. It travels the UK and brings prevention services directly into communities — before a single permanent wall is built.</p>
+      <ul class="pts">
+        <li>Reach multiple communities without permanent infrastructure first</li>
+        <li>Serve as a recognisable, human HumanitAI hub</li>
+        <li>Bring prevention to people, not wait for them to arrive</li>
+        <li>Demonstrate the model before scaling to fixed locations</li>
+        <li>Gather evidence from different regions while building a national presence</li>
+      </ul>
+    </div>
+    <div>
+      <svg viewBox="0 0 420 260" role="img" aria-label="Canal boat illustration">
+        <defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#56C2F2"/><stop offset="1" stop-color="#1E6EAC"/></linearGradient></defs>
+        <rect width="420" height="260" fill="url(#w)"/>
+        <ellipse cx="210" cy="205" rx="190" ry="14" fill="#0E1622" opacity=".25"/>
+        <g transform="translate(70,120)">
+          <rect x="0" y="20" width="250" height="62" rx="10" fill="#0B1F3A"/>
+          <path d="M-14 20 L125 -16 L264 20 Z" fill="#16314F"/>
+          <rect x="18" y="38" width="46" height="30" rx="5" fill="#2BD4BE"/>
+          <rect x="86" y="38" width="46" height="30" rx="5" fill="#2BD4BE"/>
+          <rect x="154" y="38" width="46" height="30" rx="5" fill="#2BD4BE"/>
+          <rect x="104" y="78" width="40" height="20" rx="4" fill="#0E7C66"/>
+          <text x="125" y="6" text-anchor="middle" font-family="Fraunces,serif" font-size="15" fill="#fff">5TH SPACE</text>
+        </g>
+        <circle cx="350" cy="60" r="22" fill="#FFD9A0" opacity=".85"/>
+      </svg>
+    </div>
+  </div>
+</div></section>
+
+<section class="fund" id="funders"><div class="wrap">
+  <div class="fund-card">
+    <div>
+      <span class="eyebrow">For funders</span>
+      <h2>We are raising £15,000 to run a 12-month pilot in Bath.</h2>
+      <p>A Bristol-based CIC, piloting first in Bath, Somerset. The pilot turns our open-source crisis-forecast into community ownership: 12 monthly peer workshops, a free open-source toolkit, and 10 trained local volunteers.</p>
+      <p style="margin-top:12px;color:var(--grey);font-size:.92rem">Awards for All · rolling decision, around 16 weeks. Every pound is asset-locked to our community mission.</p>
+    </div>
+    <div class="ask">
+      <div class="big">£15,000</div>
+      <div class="row"><b>What we ask:</b> a 12-month Bath pilot grant.</div>
+      <div class="row"><b>What you get:</b> residents engaged, volunteers trained, a free toolkit the community keeps, and a published report on what works.</div>
+      <div class="row"><b>Why now:</b> early funding builds the track record to scale the model to other UK towns.</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="pillars" id="honest" style="padding-top:0"><div class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow">Honest claims</span>
+    <h2>We say what we can and cannot yet prove.</h2>
+    <p>The 5th Space and the canal boat are proposed concepts under development. The AI uses illustrative prototype data, not live forecasts. We report what we measure — not what we hope for.</p>
+  </div>
+</div></section>
+
+<footer><div class="foot-in">
+  <div>HumanitAI CIC · Companies House No. 16891121 (Active) · Bristol-based, piloting in Bath · In pilot.</div>
+  <div><a href="mailto:hello@humanitai.uk">hello@humanitai.uk</a> · <a href="/">View current site</a></div>
+</div></footer>
+</body>
+</html>
