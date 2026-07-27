@@ -177,27 +177,51 @@ footer{background:var(--ink);color:#cdd9e6;padding:32px 0;font-size:.84rem}
         <defs>
           <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe6f2"/><stop offset="1" stop-color="#eaf1ee"/></linearGradient>
           <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E7C66"/><stop offset="1" stop-color="#0A5E4E"/></linearGradient>
-          <linearGradient id="cab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16314F"/><stop offset="1" stop-color="#0B1F3A"/></linearGradient>
-          <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD9A0"/><stop offset="1" stop-color="#FF8A4D"/></linearGradient>
+          <linearGradient id="cab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d3a5c"/><stop offset="1" stop-color="#0B1F3A"/></linearGradient>
+          <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE3B8"/><stop offset="1" stop-color="#FF8A4D"/></linearGradient>
           <linearGradient id="riv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#56C2F2"/><stop offset="1" stop-color="#1E6EAC"/></linearGradient>
+          <linearGradient id="refl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A5E4E" stop-opacity=".35"/><stop offset="1" stop-color="#0A5E4E" stop-opacity="0"/></linearGradient>
         </defs>
         <rect width="440" height="280" fill="url(#sky)"/>
         <rect y="196" width="440" height="84" fill="url(#riv)"/>
-        <ellipse cx="220" cy="200" rx="200" ry="10" fill="#0B1F3A" opacity=".18"/>
-        <g transform="translate(70,96)">
-          <rect x="0" y="34" width="280" height="66" rx="14" fill="url(#hull)"/>
-          <path d="M-16 34 L140 -8 L296 34 Z" fill="url(#cab)"/>
-          <rect x="18" y="52" width="52" height="34" rx="6" fill="url(#glow)"/>
-          <rect x="92" y="52" width="52" height="34" rx="6" fill="url(#glow)"/>
-          <rect x="166" y="52" width="52" height="34" rx="6" fill="url(#glow)"/>
-          <rect x="112" y="86" width="44" height="22" rx="5" fill="#0A5E4E"/>
-          <text x="140" y="14" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="900" fill="#fff">5TH SPACE</text>
+        <!-- distant reeds -->
+        <g fill="#0A5E4E" opacity=".25"><path d="M20 196 q4 -22 8 0 z"/><path d="M36 196 q4 -28 8 0 z"/><path d="M404 196 q4 -24 8 0 z"/></g>
+        <!-- sun -->
+        <circle cx="380" cy="54" r="22" fill="#FFD9A0" opacity=".85"/>
+        <circle cx="380" cy="54" r="22" fill="none" stroke="#FFB870" stroke-width="1" opacity=".5"/>
+        <!-- boat group -->
+        <g transform="translate(64,92)">
+          <!-- reflection -->
+          <rect x="6" y="104" width="280" height="40" rx="10" fill="url(#refl)"/>
+          <!-- hull -->
+          <path d="M0 40 Q4 30 20 30 L286 30 Q300 30 304 42 L300 96 Q300 104 290 104 L14 104 Q4 104 0 96 Z" fill="url(#hull)"/>
+          <rect x="0" y="30" width="304" height="8" rx="4" fill="#0A5E4E"/>
+          <!-- cabin roof -->
+          <path d="M-14 30 L150 -10 L312 30 Z" fill="url(#cab)"/>
+          <path d="M-14 30 L150 -10 L312 30 Z" fill="none" stroke="#2BD4BE" stroke-width="1.5" opacity=".5"/>
+          <!-- roof box / hatch -->
+          <rect x="118" y="-2" width="64" height="14" rx="3" fill="#16314F"/>
+          <!-- chimney cowl -->
+          <rect x="172" y="-26" width="10" height="20" rx="2" fill="#0B1F3A"/>
+          <circle cx="177" cy="-28" r="7" fill="#0B1F3A"/>
+          <!-- flag mast + pennant -->
+          <rect x="40" y="-46" width="3" height="48" rx="1.5" fill="#0B1F3A"/>
+          <path d="M43 -44 L78 -37 L43 -30 Z" fill="#2BD4BE"/>
+          <!-- windows with warm glow -->
+          <rect x="22" y="48" width="54" height="36" rx="6" fill="url(#glow)"/>
+          <rect x="96" y="48" width="54" height="36" rx="6" fill="url(#glow)"/>
+          <rect x="170" y="48" width="54" height="36" rx="6" fill="url(#glow)"/>
+          <rect x="244" y="48" width="46" height="36" rx="6" fill="url(#glow)"/>
+          <g stroke="#FFB870" stroke-width="1" opacity=".6"><line x1="49" y1="48" x2="49" y2="84"/><line x1="123" y1="48" x2="123" y2="84"/><line x1="197" y1="48" x2="197" y2="84"/><line x1="267" y1="48" x2="267" y2="84"/></g>
+          <!-- door -->
+          <rect x="118" y="62" width="40" height="42" rx="5" fill="#0A5E4E"/>
+          <!-- wordmark on cabin -->
+          <text x="150" y="14" text-anchor="middle" font-family="Fraunces,serif" font-size="18" font-weight="900" fill="#fff">5TH SPACE</text>
         </g>
-        <circle cx="372" cy="58" r="20" fill="#FFD9A0" opacity=".9"/>
-        <path d="M372 78 v18 M362 84 h20" stroke="#0A5E4E" stroke-width="2" opacity=".5"/>
-        <g opacity=".5" stroke="#fff" stroke-width="2">
-          <line x1="40" y1="220" x2="80" y2="220"/><line x1="120" y1="232" x2="170" y2="232"/>
-          <line x1="260" y1="224" x2="310" y2="224"/><line x1="350" y1="236" x2="400" y2="236"/>
+        <!-- water ripple lines -->
+        <g opacity=".45" stroke="#fff" stroke-width="2" stroke-linecap="round">
+          <line x1="40" y1="222" x2="86" y2="222"/><line x1="120" y1="234" x2="172" y2="234"/>
+          <line x1="268" y1="226" x2="318" y2="226"/><line x1="352" y1="238" x2="404" y2="238"/>
         </g>
       </svg>
     </div>
