@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#05090C">
+<title>HumanitAI CIC. Predictive community intelligence with a human front door</title>
+<meta name="description" content="HumanitAI is a UK CIC using public data and AI to spot rising community pressure early, then connect people to local help before crisis.">
+<meta property="og:title" content="HumanitAI. An early-warning and prevention platform for communities">
+<meta property="og:description" content="We bring together public data, local knowledge and community voices to see where pressure is increasing, then help residents, charities, councils and funders coordinate practical action before problems become crises. In pilot.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alkalinearchitect.github.io/wordhumanitai/">
+<meta property="og:image" content="https://alkalinearchitect.github.io/wordhumanitai/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HumanitAI. An early-warning and prevention platform for communities">
+<meta name="twitter:description" content="We bring together public data, local knowledge and community voices to see where pressure is increasing, then help residents, charities, councils and funders coordinate practical action before problems become crises. In pilot.">
+<meta name="twitter:image" content="https://alkalinearchitect.github.io/wordhumanitai/og-image.jpg">
+<link rel="canonical" href="https://alkalinearchitect.github.io/wordhumanitai/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2305090C'/%3E%3Ctext x='16' y='23' font-family='-apple-system,system-ui,sans-serif' font-weight='800' font-size='20' fill='%232BD4BE' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#000000', 'ink-2': '#050709', 'ink-3': '#0A0E12', 'ink-4': '#10151B',
+          paper: '#F5F8F9', 'paper-2': '#E9EFE1', 'paper-3': '#D8E1E4',
+          accent: '#2BD4BE', 'accent-deep': '#0FB7A2', 'accent-bright': '#5BF0DC',
+          navy: '#1E3A5F', 'navy-deep': '#122844', 'navy-bright': '#2E6FB8',
+          water: '#56C2F2', 'water-deep': '#1E6EAC',
+          gold: '#E0B23C',
+          'on-dark': '#EFF7F5', 'on-dark-dim': '#8FB0AC',
+          'on-paper': '#06141A', 'on-paper-dim': '#416066'
+        },
+        fontFamily: {
+          ui: ['Inter', 'system-ui', 'sans-serif'],
+          serif: ['Fraunces', 'Georgia', 'serif'],
+          mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+        },
+        borderRadius: { xl2: '18px', xl1: '12px' }
+      }
+    }
+  }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<style>
+  html{font-optical-sizing:auto;scroll-padding-top:86px}
+  :root{--bar:86px}
+  body{font-family:'Inter',system-ui,sans-serif}
+  ::selection{background:#2BD4BE;color:#06141A}
+  /* reveal */
+  .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+  .rv.in{opacity:1;transform:none}
+  .rv-rise{opacity:0;transform:translateY(40px) scale(.985);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+  .rv-rise.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv,.rv-rise{opacity:1!important;transform:none!important}}
+  /* hero 3D canvas */
+  #heroField{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.9;pointer-events:none}
+  /* animated aurora fallback (always visible, even if WebGL unavailable) */
+  @keyframes heroAurora{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .hero-aurora{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.55;background:
+    radial-gradient(60% 50% at 78% 22%, rgba(43,212,190,.22), transparent 60%),
+    radial-gradient(55% 55% at 12% 88%, rgba(86,194,242,.18), transparent 62%),
+    radial-gradient(40% 40% at 50% 50%, rgba(31,184,166,.10), transparent 60%);
+    background-size:200% 200%;animation:heroAurora 14s ease-in-out infinite}
+  @media(prefers-reduced-motion:reduce){.hero-aurora{animation:none}}
+  /* nav: one consistent glass treatment over every section */
+  #nav{background:rgba(5,9,12,.72);color:#EFF7F5}
+  #nav.scrolled{background:rgba(5,9,12,.92)}
+  /* ticker scroll */
+  @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .ticker .track{display:flex;white-space:nowrap;animation:tick 70s linear infinite}
+  .ticker:hover .track{animation-play-state:paused}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .live i{animation:pulse 1.5s infinite}
+</style>
+</head>
+<body class="bg-ink text-on-dark font-ui antialiased overflow-x-hidden">
+<a href="#top" class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[300] focus:bg-accent focus:text-ink focus:px-4 focus:py-2 focus:rounded-md">Skip to content</a>
+<div id="progress" class="fixed top-0 left-0 h-[2px] w-0 z-[200] bg-gradient-to-r from-accent to-gold"></div>
+
+<!-- TICKER (single top bar) -->
+<div class="fixed top-0 left-0 right-0 z-[120] h-[30px] flex items-center bg-[rgba(5,9,12,.92)] border-b border-white/10 font-mono text-[11px] backdrop-blur overflow-hidden">
+  <div class="bg-accent text-ink font-bold text-[9.5px] tracking-[.14em] px-2.5 h-[30px] flex items-center gap-1.5 flex-shrink-0"><i class="w-1.5 h-1.5 rounded-full bg-ink inline-block"></i>PILOT</div>
+  <div class="track" id="tickerTrack"></div>
+</div>
+
+<!-- NAV (sits directly under ticker, one consistent look) -->
+<nav id="nav" class="dark fixed top-[30px] left-0 right-0 z-[119] border-b border-white/10 backdrop-blur-xl">
+  <div class="max-w-[1180px] mx-auto px-8 py-3.5 flex items-center justify-between">
+    <a href="#top" class="font-serif font-extrabold text-[21px] tracking-tight">Humanit<b class="text-accent">AI</b></a>
+    <div class="hidden md:flex items-center gap-8" id="navLinks">
+      <a href="#how" class="text-[13px] font-semibold text-on-dark-dim hover:text-on-dark transition-colors">How it works</a>
+      <a href="#data" class="text-[13px] font-semibold text-on-dark-dim hover:text-on-dark transition-colors">Prototype</a>
+      <a href="#fifth-space" class="text-[13px] font-semibold text-on-dark-dim hover:text-on-dark transition-colors">The 5th Space</a>
+      <a href="#agents" class="text-[13px] font-semibold text-on-dark-dim hover:text-on-dark transition-colors">How we build</a>
+      <a href="#funders" class="text-[13px] font-semibold text-on-dark-dim hover:text-on-dark transition-colors">For funders</a>
+      <a href="#join" class="bg-accent text-ink rounded-full px-4.5 py-2.5 text-[13px] font-bold hover:bg-accent-deep transition-colors">Get involved</a>
+    </div>
+    <button id="navBtn" class="md:hidden flex flex-col gap-1.5 w-10 h-10 border border-white/15 rounded-xl items-center justify-center" aria-label="Menu"><span class="w-[18px] h-0.5 bg-on-dark rounded"></span><span class="w-[18px] h-0.5 bg-on-dark rounded"></span><span class="w-[18px] h-0.5 bg-on-dark rounded"></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero relative min-h-screen flex items-center pt-44 pb-20 overflow-hidden" id="top">
+  <canvas id="heroField"></canvas>
+  <div class="hero-aurora absolute inset-0 z-0 pointer-events-none"></div>
+  <div class="relative z-10 max-w-[1180px] mx-auto px-8 grid lg:grid-cols-[1.05fr_.95fr] gap-16 items-center w-full">
+    <div>
+      <p class="font-mono text-[11px] font-bold tracking-[.2em] uppercase text-on-dark-dim flex items-center gap-3 mb-6"><span class="w-8 h-0.5 bg-accent rounded"></span>Predictive community intelligence · with a human front door</p>
+      <h1 class="font-serif font-black leading-[.9] tracking-tight text-white text-[clamp(3rem,8.4vw,7.2rem)] max-w-[14ch]">We see community pressure rising <span class="text-accent italic relative">before<span class="absolute left-0 right-0 -bottom-0.5 h-[2px] bg-accent"></span></span> it becomes a crisis. We then connect people to help, in the places that need it most.</h1>
+      <p class="text-[1.12rem] leading-relaxed text-on-dark font-semibold max-w-[540px] mt-5 border-l-2 border-accent pl-4">HumanitAI is a UK Community Interest Company. We combine predictive intelligence with trusted human connection to help communities act earlier.</p>
+      <p class="text-[1.1rem] leading-relaxed text-on-dark-dim max-w-[540px] mt-4">Community problems are usually counted too late: homelessness after someone loses their home, hospital demand after health deteriorates, crisis after isolation becomes severe. We bring the analytical system and a physical, welcoming front door. Our pilot will test whether the model works in practice.</p>
+      <div class="flex flex-wrap gap-3.5 mt-8">
+        <a href="#how" class="inline-flex items-center gap-2 font-bold bg-accent text-ink rounded-full px-7 py-4 hover:bg-accent-deep transition-colors">How it works <span>&rarr;</span></a>
+        <a href="#data" class="inline-flex items-center gap-2 font-bold text-on-dark rounded-full px-7 py-4 border border-white/15 hover:border-accent transition-colors">See the prototype</a>
+      </div>
+    </div>
+    <aside class="bg-[rgba(10,10,12,.96)] border border-white/10 rounded-xl2 p-6.5 relative overflow-hidden shadow-2xl">
+      <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-50"></div>
+      <div class="flex justify-between items-center mb-4">
+        <span class="font-mono text-[10px] tracking-[.16em] uppercase text-accent font-bold">Prototype · illustrative signals</span>
+        <span class="font-mono text-[9px] tracking-[.1em] text-on-dark-dim flex items-center gap-1.5"><i class="w-1.5 h-1.5 rounded-full bg-accent-bright inline-block"></i>DEMO</span>
+      </div>
+      <div id="hpRows"></div>
+      <p class="font-mono text-[9.5px] text-on-dark-dim mt-4 leading-relaxed">Illustrative prototype only. Example pressure signals for design purposes, not live forecasts or verified results.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- STAT BAND -->
+<section class="bg-gradient-to-b from-ink-2 to-ink border-y border-white/10 py-16">
+  <div class="max-w-[1180px] mx-auto px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="border-l border-white/10 pl-7 first:pl-0 first:border-l-0"><div class="font-mono font-bold text-[clamp(2.3rem,4.6vw,3.6rem)] text-white leading-none" data-count="14.3" data-suffix="M"><b>14.3M</b></div><div class="text-[11px] text-on-dark-dim uppercase tracking-[.1em] mt-3.5 leading-snug max-w-[210px]">People in poverty across the UK <a href="https://www.endchildpoverty.org.uk" target="_blank" rel="noopener" class="text-accent text-[.8em]">&nearr; ONS</a></div></div>
+      <div class="border-l border-white/10 pl-7"><div class="font-mono font-bold text-[clamp(2.3rem,4.6vw,3.6rem)] text-white leading-none" data-count="7.3" data-suffix="M"><b>7.3M</b></div><div class="text-[11px] text-on-dark-dim uppercase tracking-[.1em] mt-3.5 leading-snug max-w-[210px]">On the NHS waiting list <a href="https://www.england.nhs.uk/statistics" target="_blank" rel="noopener" class="text-accent text-[.8em]">&nearr; NHS England</a></div></div>
+      <div class="border-l border-white/10 pl-7"><div class="font-mono font-bold text-[clamp(2.3rem,4.6vw,3.6rem)] text-white leading-none" data-count="354" data-suffix="K"><b>354K</b></div><div class="text-[11px] text-on-dark-dim uppercase tracking-[.1em] mt-3.5 leading-snug max-w-[210px]">Homeless in England (Jun 2025) <a href="https://www.gov.uk/government/statistics/statutory-homelessness-in-england-april-to-june-2025" target="_blank" rel="noopener" class="text-accent text-[.8em]">&nearr; gov.uk</a></div></div>
+      <div class="border-l border-white/10 pl-7"><div class="font-mono font-bold text-[clamp(2.3rem,4.6vw,3.6rem)] text-white leading-none" data-count="4.3" data-suffix="M"><b>4.3M</b></div><div class="text-[11px] text-on-dark-dim uppercase tracking-[.1em] mt-3.5 leading-snug max-w-[210px]">Children growing up in poverty <a href="https://www.endchildpoverty.org.uk" target="_blank" rel="noopener" class="text-accent text-[.8em]">&nearr; End Child Poverty</a></div></div>
+    </div>
+    <p class="font-mono text-[11px] text-on-dark-dim mt-6">Real, sourced UK figures. The context HumanitAI works within. Not our forecasts. Source links open the originating public body.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="py-24 px-8" id="how">
+  <div class="max-w-[1180px] mx-auto">
+    <p class="font-mono text-[11px] font-bold tracking-[.18em] uppercase text-on-paper-dim flex items-center gap-3 mb-5"><span class="bg-paper-2 border border-paper-3 rounded-md px-2 py-0.5 text-on-paper">01</span>The model</p>
+    <h2 class="font-serif font-semibold text-[clamp(1.9rem,4.6vw,3.2rem)] leading-tight tracking-tight max-w-[920px] text-white">Four connected parts: a human front door, and the intelligence behind it.</h2>
+    <p class="text-[1.18rem] leading-relaxed text-on-dark-dim max-w-[580px] mt-5">HumanitAI has four connected parts. Community-facing activity builds trust and contact; behind it, a responsible early-warning system turns information into guidance. People decide what to do.</p>
+    <div class="grid md:grid-cols-3 gap-4.5 mt-12">
+      <div class="bg-ink-2 border border-white/10 rounded-xl1 p-6 hover:border-accent transition-colors"><span class="font-mono font-bold text-[12px] text-accent inline-flex items-center justify-center w-8 h-8 border border-white/15 rounded-lg mb-3.5">1</span><h3 class="font-serif text-[1.32rem] text-white mb-2.5">Community wellbeing: the front door</h3><p class="text-[.94rem] leading-relaxed text-on-dark-dim">Sauna, cold immersion and social sessions. Low-stigma spaces where people meet and reconnect. Always voluntary.</p></div>
+      <div class="bg-ink-2 border border-white/10 rounded-xl1 p-6 hover:border-accent transition-colors"><span class="font-mono font-bold text-[12px] text-accent inline-flex items-center justify-center w-8 h-8 border border-white/15 rounded-lg mb-3.5">2</span><h3 class="font-serif text-[1.32rem] text-white mb-2.5">Predictive intelligence: the engine</h3><p class="text-[.94rem] leading-relaxed text-on-dark-dim">Public and community data, combined with AI and forecasting, to detect pressure rising and communities at risk of being overlooked.</p></div>
+      <div class="bg-ink-2 border border-white/10 rounded-xl1 p-6 hover:border-accent transition-colors"><span class="font-mono font-bold text-[12px] text-accent inline-flex items-center justify-center w-8 h-8 border border-white/15 rounded-lg mb-3.5">3</span><h3 class="font-serif text-[1.32rem] text-white mb-2.5">Decision support: directing help</h3><p class="text-[.94rem] leading-relaxed text-on-dark-dim">Clear, practical intelligence on what is changing and where. Charities, councils and funders focus outreach. Humans stay responsible.</p></div>
+      <div class="bg-ink-2 border border-white/10 rounded-xl1 p-6 hover:border-accent transition-colors md:col-span-3"><span class="font-mono font-bold text-[12px] text-accent inline-flex items-center justify-center w-8 h-8 border border-white/15 rounded-lg mb-3.5">4</span><h3 class="font-serif text-[1.32rem] text-white mb-2.5">Community response: action</h3><p class="text-[.94rem] leading-relaxed text-on-dark-dim">Intelligence connects to response through local partners, verified directories and navigation. The proposed 5th Space brings it into the places under rising pressure.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5TH SPACE -->
+<section class="bg-paper text-on-paper py-24 px-8" id="fifth-space">
+  <div class="max-w-[1180px] mx-auto">
+    <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-14 items-center">
+      <div>
+        <p class="font-mono text-[11px] font-bold tracking-[.18em] uppercase text-on-paper-dim flex items-center gap-3 mb-5"><span class="bg-paper-2 border border-paper-3 rounded-md px-2 py-0.5">02</span>The 5th Space · proposed concept</p>
+        <h2 class="font-serif font-semibold text-[clamp(1.9rem,4.6vw,3.2rem)] leading-tight tracking-tight max-w-[760px]">The front-end is contrast therapy. Sauna, then ice. The connector between a prediction and a person.</h2>
+        <p class="text-[1.06rem] leading-relaxed text-on-paper-dim max-w-[560px] mt-5">A fixed building waits for people to come to it. The 5th Space is our proposed answer: contrast therapy as a low-stigma front door where people meet and reconnect. The intelligence flags a place. The 5th Space is what a person actually meets. Paid sessions also generate sustainable income for the CIC. Proposed concept under development; always voluntary.</p>
+      </div>
+      <div class="relative h-[380px] rounded-2xl overflow-hidden" style="background:linear-gradient(180deg,#0E1622,#16243A 45%,#1E3656)">
+        <svg viewBox="0 0 800 380" class="w-full h-full"><defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E1622"/><stop offset="1" stop-color="#16243A"/></linearGradient><linearGradient id="timber" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A2A20"/><stop offset="1" stop-color="#241811"/></linearGradient><linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD9A0"/><stop offset="1" stop-color="#FF8A4D"/></linearGradient><linearGradient id="cold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#173049"/><stop offset="1" stop-color="#0C1826"/></linearGradient></defs><rect width="800" height="380" fill="url(#bg)"/><rect y="300" width="800" height="80" fill="#0C1422"/><g transform="translate(120,120)"><rect x="0" y="40" width="240" height="150" rx="10" fill="url(#timber)"/><path d="M-12 40 L120 -8 L252 40 Z" fill="#2A1C14"/><rect x="20" y="70" width="60" height="44" rx="6" fill="url(#glow)" opacity=".92"/><rect x="160" y="70" width="60" height="44" rx="6" fill="url(#glow)" opacity=".92"/><rect x="92" y="120" width="56" height="70" rx="8" fill="#1A120C"/><text x="120" y="40" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#FFD9A0">SAUNA</text></g><g transform="translate(470,196)"><rect x="0" y="0" width="220" height="94" rx="14" fill="url(#cold)"/><rect x="0" y="0" width="220" height="20" rx="14" fill="#21486B" opacity=".7"/><text x="110" y="-10" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#9FD8FF">ICE BATH</text></g></svg>
+        <div class="absolute bottom-4 left-0 right-0 text-center font-mono text-[10px] tracking-[.18em] uppercase text-white/70">The 5th Space · proposed concept · sauna + cold plunge</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROTOTYPE DASHBOARD -->
+<section class="bg-ink text-on-dark py-24 px-8" id="data">
+  <div class="max-w-[1180px] mx-auto">
+    <p class="font-mono text-[11px] font-bold tracking-[.18em] uppercase text-on-dark-dim flex items-center gap-3 mb-5"><span class="bg-ink-2 border border-white/15 rounded-md px-2 py-0.5 text-on-dark">03</span>Prototype · illustrative data</p>
+    <h2 class="font-serif font-semibold text-[clamp(1.9rem,4.6vw,3rem)] leading-tight tracking-tight max-w-[820px] text-white">What the community dashboard could show: a working prototype.</h2>
+    <p class="text-[1.06rem] leading-relaxed text-on-dark-dim max-w-[640px] mt-5">A demonstration using illustrative example data, not live forecasts. It shows how pressure signals could be presented: current condition, direction of change, main pressures, and recommended steps. Real signals will be validated with local partners in the pilot.</p>
+    <div class="font-mono text-[10px] tracking-[.14em] uppercase text-on-dark-dim border-y border-white/10 py-3.5 mt-8 flex justify-between"><span>Rank · Example community</span><span>Illustrative severity</span></div>
+    <div id="vf" class="flex flex-wrap gap-2.5 my-7"></div>
+    <div id="vl"></div>
+    <p class="font-mono text-[11px] text-on-dark-dim mt-5">Prototype signals: housing stability, financial pressure, social isolation, health and wellbeing, access to services. Every figure is illustrative placeholder data.</p>
+
+    <!-- POSTCODE -->
+    <div class="mt-9 bg-ink-2 border border-white/10 rounded-xl2 p-6.5">
+      <p class="font-mono text-[11px] font-bold tracking-[.18em] uppercase text-on-dark-dim flex items-center gap-3 mb-4"><span class="bg-ink border border-white/15 rounded-md px-2 py-0.5 text-on-dark">03a</span>Postcode check-in · prototype</p>
+      <h3 class="font-serif text-[1.5rem] text-white mb-1.5">Know how your community is holding.</h3>
+      <p class="text-[.96rem] text-on-dark-dim max-w-[600px] mb-4">Enter a postcode for a simple read of current community condition, main pressures, direction of change. Demonstration using illustrative data.</p>
+      <div class="flex flex-wrap gap-3 items-stretch">
+        <input id="pcInput" placeholder="e.g. BS1 4ST (Bristol)" aria-label="Enter a postcode" class="flex-1 min-w-[220px] bg-ink border border-white/15 rounded-full px-5 py-3.5 text-white font-mono text-[15px] tracking-[.04em] placeholder:text-on-dark-dim">
+        <button id="pcBtn" type="button" class="bg-accent text-ink rounded-full px-7 py-3.5 font-bold hover:bg-accent-deep transition-colors">Check</button>
+      </div>
+      <div id="pcResult" class="hidden mt-5 pt-5 border-t border-white/10"></div>
+      <p id="pcNote" class="font-mono text-[.8rem] text-on-dark-dim mt-4">Try a Bristol postcode (BS1-BS16) for an illustrative example. The Bath pilot will use the same format with local partners. Any other entry returns a clear "not yet modelled" message.</p>
+    </div>
+
+    <!-- DIRECTORY -->
+    <div class="mt-11">
+      <p class="font-mono text-[11px] font-bold tracking-[.18em] uppercase text-on-dark-dim flex items-center gap-3 mb-4"><span class="bg-ink-2 border border-white/15 rounded-md px-2 py-0.5 text-on-dark">03b</span>Local Help directory · prototype</p>
+      <h3 class="font-serif text-[1.5rem] text-white mb-1.5">Verified support, shown the way the pilot will.</h3>
+      <p class="text-[.96rem] text-on-dark-dim max-w-[640px] mb-4">Each entry shows what it provides, who can access it, opening times, contact, referral, accessibility, date last verified. Entries below are illustrative examples of the format.</p>
+      <div id="dirGrid" class="grid md:grid-cols-2 gap-4 mt-5"></div>
+      <p class="text-[.82rem] text-on-dark-dim mt-5 italic">Illustrative format only. A live directory would be built and verified with Bath and Bristol partners during the pilot.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AI / RESPONSIBLE BUILD -->
+<section class="bg-ink-2 text-on-dark py-24 px-8" id="agents">
+  <div class="max-w-[1180px] mx-auto">
+    <p class="font-mono text-[11px] font-bold tracking-[.18em] uppercase text-on-dark-dim flex items-center gap-3 mb-5"><span class="bg-ink border border-white/15 rounded-md px-2 py-0.5 text-on-dark">04</span>How we build</p>
+    <h2 class="font-serif font-semibold text-[clamp(1.9rem,4.6vw,3.2rem)] leading-tight tracking-tight max-w-[900px] text-white">Responsible AI, with people in control.</h2>
+    <p class="text-[1.06rem] leading-relaxed text-on-dark-dim max-w-[660px] mt-5">We use AI to spot patterns in public data faster than a person could alone — but every output is reviewed by a human before it reaches a resident, a partner or a funder. AI recommends. People decide.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4.5 mt-9">
+      <div class="bg-ink border border-white/10 rounded-xl1 p-5.5 hover:border-accent transition-colors"><span class="font-mono text-[12px] text-accent border border-accent rounded-md px-1.5 py-0.5 mb-3 inline-block">01</span><h3 class="font-serif text-[19px] text-white mb-2">Public data only</h3><p class="text-[14.5px] leading-relaxed text-on-dark-dim">We work from open public datasets and community submissions. Anonymous by default. No individual is ever scored.</p></div>
+      <div class="bg-ink border border-white/10 rounded-xl1 p-5.5 hover:border-accent transition-colors"><span class="font-mono text-[12px] text-accent border border-accent rounded-md px-1.5 py-0.5 mb-3 inline-block">02</span><h3 class="font-serif text-[19px] text-white mb-2">Human review</h3><p class="text-[14.5px] leading-relaxed text-on-dark-dim">Forecasts are checked by people before they inform any action. A human stays responsible for what we publish.</p></div>
+      <div class="bg-ink border border-white/10 rounded-xl1 p-5.5 hover:border-accent transition-colors"><span class="font-mono text-[12px] text-accent border border-accent rounded-md px-1.5 py-0.5 mb-3 inline-block">03</span><h3 class="font-serif text-[19px] text-white mb-2">Privacy by design</h3><p class="text-[14.5px] leading-relaxed text-on-dark-dim">Consent, safeguarding and bias testing are built in from the start, not bolted on. Our governance is published openly.</p></div>
+      <div class="bg-ink border border-white/10 rounded-xl1 p-5.5 hover:border-accent transition-colors"><span class="font-mono text-[12px] text-accent border border-accent rounded-md px-1.5 py-0.5 mb-3 inline-block">04</span><h3 class="font-serif text-[19px] text-white mb-2">Open &amp; accountable</h3><p class="text-[14.5px] leading-relaxed text-on-dark-dim">Methods, limits and results are shared openly. We report what we measured, not what we hope to.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="bg-ink text-on-dark py-24 px-8" id="architecture">
+  <div class="max-w-[1180px] mx-auto">
+    <p class="font-mono text-[11px] font-bold tracking-[.18em] uppercase text-on-dark-dim flex items-center gap-3 mb-5"><span class="bg-ink-2 border border-white/15 rounded-md px-2 py-0.5 text-on-dark">05</span>How we work</p>
+    <h2 class="font-serif font-semibold text-[clamp(1.9rem,4.6vw,3.2rem)] leading-tight tracking-tight max-w-[900px] text-white">Four layers, with governance underneath.</h2>
+    <div class="grid sm:grid-cols-2 gap-4.5 mt-9">
+      <div class="bg-ink-2 border border-white/10 rounded-xl1 p-6"><h3 class="font-serif text-[1.3rem] text-white mb-2.5">Data layer</h3><p class="text-[.95rem] leading-relaxed text-on-dark-dim">Public datasets, community submissions, service directories and outcomes. Anonymous by default. No individual is scored.</p></div>
+      <div class="bg-ink-2 border border-white/10 rounded-xl1 p-6"><h3 class="font-serif text-[1.3rem] text-white mb-2.5">Intelligence layer</h3><p class="text-[.95rem] leading-relaxed text-on-dark-dim">Statistics and AI clean, classify and detect change. AI recommends. People decide.</p></div>
+      <div class="bg-ink-2 border border-white/10 rounded-xl1 p-6"><h3 class="font-serif text-[1.3rem] text-white mb-2.5">Application layer</h3><p class="text-[.95rem] leading-relaxed text-on-dark-dim">Website, postcode search, community dashboard, local-help directory, reporting tools.</p></div>
+      <div class="bg-ink-2 border border-white/10 rounded-xl1 p-6"><h3 class="font-serif text-[1.3rem] text-white mb-2.5">Governance layer</h3><p class="text-[.95rem] leading-relaxed text-on-dark-dim">Privacy, consent, human review, safeguarding, bias testing. Published openly.</p></div>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-4 mt-7" id="honesty">
+      <div class="bg-accent/10 border border-accent/30 rounded-xl1 p-4 text-[1rem] text-on-dark font-medium">We do not claim to already forecast 18 towns</div>
+      <div class="bg-accent/10 border border-accent/30 rounded-xl1 p-4 text-[1rem] text-on-dark font-medium">No proven pressure reductions yet</div>
+      <div class="bg-accent/10 border border-accent/30 rounded-xl1 p-4 text-[1rem] text-on-dark font-medium">No council partnerships that do not exist</div>
+      <div class="bg-accent/10 border border-accent/30 rounded-xl1 p-4 text-[1rem] text-on-dark font-medium">The 5th Space is a proposed concept, not operating</div>
+    </div>
+    <p class="font-mono text-[11px] text-on-dark-dim mt-5">Honest language only: "We are developing", "Our pilot will test", "Illustrative data." Nothing is reported as a result we have not measured.</p>
+  </div>
+</section>
+
+<!-- FUNDERS -->
+<section class="bg-ink-2 text-on-dark py-24 px-8" id="funders">
+  <div class="max-w-[1180px] mx-auto">
+    <p class="font-mono text-[11px] font-bold tracking-[.18em] uppercase text-on-dark-dim flex items-center gap-3 mb-5"><span class="bg-ink border border-white/15 rounded-md px-2 py-0.5 text-on-dark">07</span>For funders</p>
+    <h2 class="font-serif font-semibold text-[clamp(1.9rem,4.6vw,3.2rem)] leading-tight tracking-tight max-w-[920px] text-white">We are raising £15,000 to run a 12-month pilot in Bath.</h2>
+    <p class="text-[1.1rem] leading-relaxed text-on-dark-dim max-w-[660px] mt-5">HumanitAI is a Bristol-based CIC, piloting first in Bath, Somerset — a commuter community adjacent to our home base. The pilot turns our open-source crisis-forecast into community ownership: 12 monthly peer workshops, a free open-source toolkit, and 10 trained local volunteers.</p>
+    <div class="grid md:grid-cols-3 gap-4.5 mt-12">
+      <div class="bg-ink border border-white/10 rounded-xl1 p-6"><h3 class="font-serif text-[1.3rem] text-white mb-2.5">What we ask</h3><p class="text-[.95rem] leading-relaxed text-on-dark-dim">A £15,000 Awards for All grant to deliver the Bath pilot over 12 months. Every pound is asset-locked to our community mission.</p></div>
+      <div class="bg-ink border border-white/10 rounded-xl1 p-6"><h3 class="font-serif text-[1.3rem] text-white mb-2.5">What you get</h3><p class="text-[.95rem] leading-relaxed text-on-dark-dim">Measured outcomes: residents engaged, volunteers trained, a free toolkit the community keeps. A published report on what works, shared openly.</p></div>
+      <div class="bg-ink border border-white/10 rounded-xl1 p-6"><h3 class="font-serif text-[1.3rem] text-white mb-2.5">Why now</h3><p class="text-[.95rem] leading-relaxed text-on-dark-dim">Rolling decision, around 16 weeks. Early funding builds the track record we need to scale the model to other UK towns.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-gradient-to-b from-ink to-navy-deep text-on-dark text-center py-28 px-8" id="join">
+  <div class="max-w-[920px] mx-auto">
+    <p class="font-mono text-[11px] font-bold tracking-[.18em] uppercase text-accent flex items-center justify-center gap-3 mb-5"><span class="bg-accent/20 border border-accent/40 rounded-md px-2 py-0.5">08</span>Core proposition</p>
+    <h2 class="font-serif font-semibold text-[clamp(2.8rem,7.4vw,5.4rem)] leading-none tracking-tight text-white max-w-[16ch] mx-auto">See earlier. Connect people. Prevent crisis.</h2>
+    <p class="text-[1.22rem] leading-relaxed text-on-dark-dim max-w-[680px] mx-auto mt-5">HumanitAI combines predictive intelligence with trusted human connection to help communities act before pressure becomes crisis.</p>
+    <div class="flex flex-wrap gap-4 justify-center mt-12 max-w-[900px] mx-auto">
+      <div class="bg-ink-2 border border-white/10 rounded-xl1 p-5.5 text-left flex-1 min-w-[240px]"><span class="font-mono text-[10px] tracking-[.14em] uppercase text-accent font-bold block mb-1.5">Step 01</span><b class="font-serif text-[1.22rem] text-white block mb-2">Fund it</b><span class="text-[.9rem] text-on-dark-dim leading-relaxed">Back the pilot and the proposed 5th Space concept. A CIC: every pound bound to the mission.</span></div>
+      <div class="bg-ink-2 border border-white/10 rounded-xl1 p-5.5 text-left flex-1 min-w-[240px]"><span class="font-mono text-[10px] tracking-[.14em] uppercase text-accent font-bold block mb-1.5">Step 02</span><b class="font-serif text-[1.22rem] text-white block mb-2">Build it</b><span class="text-[.9rem] text-on-dark-dim leading-relaxed">Bring local knowledge, data or a partnership to the Bristol pilot.</span></div>
+      <div class="bg-ink-2 border border-white/10 rounded-xl1 p-5.5 text-left flex-1 min-w-[240px]"><span class="font-mono text-[10px] tracking-[.14em] uppercase text-accent font-bold block mb-1.5">Step 03</span><b class="font-serif text-[1.22rem] text-white block mb-2">Bring us in</b><span class="text-[.9rem] text-on-dark-dim leading-relaxed">Book a briefing for your council, NHS trust or funder.</span></div>
+    </div>
+    <div class="flex flex-wrap gap-4 justify-center mt-12">
+      <a href="mailto:hello@humanitai.uk" class="inline-flex items-center gap-2 bg-accent text-ink text-[15px] font-bold px-9 py-5 rounded-full hover:bg-accent-deep transition-colors shadow-lg">Talk to us →</a>
+      <a href="#honesty" class="inline-flex items-center gap-2 text-on-dark border border-white/15 text-[14px] font-bold px-8 py-5 rounded-full hover:border-accent transition-colors">Read our honesty policy</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-paper text-on-paper py-14 px-8">
+  <div class="max-w-[1180px] mx-auto">
+    <div class="flex flex-wrap justify-between gap-8">
+      <div class="max-w-[360px]">
+        <a href="#top" class="font-serif font-extrabold text-[21px] text-on-paper inline-block mb-3.5">Humanit<b class="text-accent-deep">AI</b></a>
+        <p class="text-[.88rem] text-on-paper-dim leading-relaxed">HumanitAI is a UK Community Interest Company, Bristol-based and piloting in Bath. We use public data, local knowledge and advanced AI forecasting to identify where community pressure is rising, then help direct education, support and preventive services towards the places that may need them most. In pilot. Honest about what we can and cannot yet claim.</p>
+      </div>
+      <div>
+        <h4 class="font-mono text-[11px] font-bold uppercase tracking-[.12em] text-on-paper-dim mb-3.5">Navigate</h4>
+        <a href="#how" class="block text-[.88rem] text-on-paper-dim py-1 hover:text-accent-deep transition-colors">How it works</a>
+        <a href="#data" class="block text-[.88rem] text-on-paper-dim py-1 hover:text-accent-deep transition-colors">Prototype</a>
+        <a href="#architecture" class="block text-[.88rem] text-on-paper-dim py-1 hover:text-accent-deep transition-colors">Architecture</a>
+        <a href="#honesty" class="block text-[.88rem] text-on-paper-dim py-1 hover:text-accent-deep transition-colors">Honest claims</a>
+        <a href="#join" class="block text-[.88rem] text-on-paper-dim py-1 hover:text-accent-deep transition-colors">Get involved</a>
+      </div>
+      <div>
+        <h4 class="font-mono text-[11px] font-bold uppercase tracking-[.12em] text-on-paper-dim mb-3.5">Get in</h4>
+        <a href="mailto:hello@humanitai.uk" class="block text-[.88rem] text-on-paper-dim py-1 hover:text-accent-deep transition-colors">Fund the pilot</a>
+        <a href="mailto:hello@humanitai.uk" class="block text-[.88rem] text-on-paper-dim py-1 hover:text-accent-deep transition-colors">Bring local knowledge</a>
+        <a href="mailto:hello@humanitai.uk" class="block text-[.88rem] text-on-paper-dim py-1 hover:text-accent-deep transition-colors">Book a briefing</a>
+      </div>
+    </div>
+    <div class="border-t border-paper-3 mt-7 pt-4 text-[11px] text-on-paper-dim leading-relaxed">© 2026 HumanitAI CIC. A UK Community Interest Company. Registered in England & Wales. Companies House No. <a href="https://find-and-update.company-information.service.gov.uk/company/16891121" target="_blank" rel="noopener" class="text-accent-deep font-bold">16891121</a> (Active). In pilot. Building in the open, reporting honestly. · hello@humanitai.uk</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
+<script>
+var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Lenis smooth scroll
+var lenis = null;
+if(!REDUCE && window.Lenis){
+  lenis = new Lenis({ lerp:0.09, smoothWheel:true });
+  (function lr(t){ lenis.raf(t); requestAnimationFrame(lr); })(performance.now());
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id && id.length>1 && document.querySelector(id)){ e.preventDefault(); lenis.scrollTo(document.querySelector(id),{offset:-120}); } }); });
+}
+// nav + progress
+var nav=document.getElementById('nav');
+var darkIds=['top','data','join'];
+var prog=document.getElementById('progress');
+function progState(){ if(prog){ var h=document.documentElement.scrollHeight-window.innerHeight; prog.style.width=(h>0?(window.scrollY/h*100):0)+'%'; } }
+function navState(){
+  var over=null;
+  darkIds.forEach(function(id){ var el=document.getElementById(id); if(el){ var r=el.getBoundingClientRect(); if(r.top<=window.innerHeight*0.30 && r.bottom>=window.innerHeight*0.30) over=id; } });
+  if(nav){ nav.classList.toggle('dark', !!over); nav.classList.toggle('light', !over); nav.classList.toggle('scrolled', window.scrollY>30); }
+}
+window.addEventListener('scroll',function(){ progState(); navState(); },{passive:true});
+window.addEventListener('resize',navState);
+if(lenis){ lenis.on('scroll', function(){ progState(); navState(); }); }
+progState(); navState();
+var navBtn=document.getElementById('navBtn'), navLinks=document.getElementById('navLinks');
+if(navBtn){
+  navBtn.addEventListener('click',function(){
+    var open=navLinks.classList.toggle('open');
+    navBtn.classList.toggle('open',open);
+    navBtn.setAttribute('aria-expanded',open);
+  });
+}
+// progress bar
+var prog=document.getElementById('progress');
+function progState(){ if(prog){ var h=document.documentElement.scrollHeight-window.innerHeight; prog.style.width=(h>0?(window.scrollY/h*100):0)+'%'; } }
+window.addEventListener('scroll',progState,{passive:true}); progState();
+// reveal + count-up
+function countUp(el){
+  var target=parseFloat(el.getAttribute('data-count')); if(isNaN(target)) return;
+  var suffix=el.getAttribute('data-suffix')||''; var dec=(target%1!==0)?1:0;
+  var b=el.querySelector('b')||el; var dur=1100, t0=null;
+  function fmt(v){ return (dec?v.toFixed(1):Math.round(v).toString())+suffix; }
+  function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var e=1-Math.pow(1-p,3); b.textContent=fmt(target*e); if(p<1)requestAnimationFrame(step); else b.textContent=fmt(target); }
+  if(REDUCE){ b.textContent=fmt(target); return; }
+  requestAnimationFrame(step);
+}
+var ro=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){ en.target.classList.add('in'); en.target.querySelectorAll('[data-count]').forEach(countUp); ro.unobserve(en.target); }});},{threshold:.18});
+document.querySelectorAll('.rv,.rv-rise').forEach(function(el){ro.observe(el);});
+window.addEventListener('load',function(){ document.querySelectorAll('.hero .rv').forEach(function(el,i){ setTimeout(function(){el.classList.add('in');},120+i*90); }); });
+
+// TICKER
+var TICKER_ITEMS=[
+  {tag:'HUMANITAI',cls:'bg-accent text-ink',t:'HumanitAI: predictive community intelligence with a human front door. In pilot.',u:'#how'},
+  {tag:'NHS',cls:'bg-[rgba(232,178,57,.16)] text-gold',t:'NHS waiting list stands at 7.3M. Pressure we aim to help local services see earlier',u:'https://www.england.nhs.uk/statistics'},
+  {tag:'HOMELESS',cls:'bg-[rgba(86,194,242,.18)] text-water',t:'354K homeless in England; gov.uk records 132,410 households in temporary accommodation (Jun 2025)',u:'https://www.gov.uk/government/statistics/statutory-homelessness-in-england-april-to-june-2025'},
+  {tag:'POVERTY',cls:'bg-[rgba(43,212,190,.18)] text-accent',t:'4.3M children growing up in poverty. End Child Poverty Coalition',u:'https://www.endchildpoverty.org.uk'},
+  {tag:'MENTAL',cls:'bg-[rgba(46,111,184,.18)] text-[#2E6FB8]',t:'1 in 6 adults experience a common mental health problem; isolation is the hidden driver',u:'https://www.mind.org.uk'},
+  {tag:'5TH SPACE',cls:'bg-[rgba(86,194,242,.18)] text-water',t:'The 5th Space is contrast therapy: sauna + ice bath, our proposed human front door. Not yet operating',u:'#fifth-space'},
+  {tag:'MODEL',cls:'bg-accent/20 text-accent-bright',t:'Four connected parts: community wellbeing, predictive intelligence, decision support, community response',u:'#how'},
+  {tag:'HUMANITAI',cls:'bg-accent text-ink',t:'Prototype dashboard is illustrative demo data. Not live forecasts. See our honesty policy',u:'#honesty'}
+];
+(function(){
+  var track=document.getElementById('tickerTrack'); if(!track) return;
+  function build(){ return TICKER_ITEMS.map(function(it){
+    var a=document.createElement('a'); a.href=it.u; if(it.u.indexOf('http')===0){a.target='_blank';a.rel='noopener';}
+    a.className='item flex items-center gap-2 px-6 text-on-dark'; a.innerHTML='<span class="'+it.cls+' text-[9px] font-bold px-1.5 py-0.5 rounded">'+it.tag+'</span><span>'+it.t+'</span>';
+    return a;
+  }); }
+  var set=build(), dup=build(); set.concat(dup).forEach(function(n){track.appendChild(n);});
+})();
+
+// DASHBOARD
+var DIMS=['poverty','homelessness','nhs','mental','isolation'];
+var LABEL={poverty:'Poverty',homelessness:'Homelessness',nhs:'NHS',mental:'Mental health',isolation:'Isolation'};
+var COLORS={'poverty':'#0FB7A2','homelessness':'#2BD4BE','nhs':'#56C2F2','mental':'#2E6FB8','isolation':'#E0B23C'};
+var data=[
+{id:'Birmingham',r:'West Midlands',d:{poverty:95,homelessness:70,nhs:75,mental:65,isolation:60}},
+{id:'Middlesbrough',r:'North East',d:{poverty:97,homelessness:72,nhs:78,mental:66,isolation:62}},
+{id:'Glasgow',r:'Scotland',d:{poverty:90,homelessness:80,nhs:82,mental:85,isolation:75}},
+{id:'Manchester',r:'Greater Manchester',d:{poverty:80,homelessness:95,nhs:78,mental:70,isolation:60}},
+{id:'Blackpool',r:'North West',d:{poverty:85,homelessness:75,nhs:80,mental:82,isolation:90}},
+{id:'Newham',r:'London',d:{poverty:92,homelessness:78,nhs:80,mental:68,isolation:72}},
+{id:'Bristol',r:'South West',d:{poverty:78,homelessness:68,nhs:70,mental:66,isolation:58}},
+{id:'Tower Hamlets',r:'London',d:{poverty:95,homelessness:80,nhs:82,mental:70,isolation:68}},
+{id:'Salford',r:'Greater Manchester',d:{poverty:82,homelessness:85,nhs:76,mental:72,isolation:66}},
+{id:'Liverpool',r:'North West',d:{poverty:82,homelessness:78,nhs:76,mental:74,isolation:70}}
+];
+function comp(d){var s=0;DIMS.forEach(function(k){s+=d[k];});return Math.round(s/DIMS.length);}
+function seg(d){var tot=DIMS.reduce(function(a,k){return a+d[k];},0);var raw=DIMS.map(function(k){return {key:k,v:d[k]/tot*100};});var floor=raw.map(function(o){return {key:o.key,w:Math.floor(o.v),frac:o.v-Math.floor(o.v)};});var used=floor.reduce(function(a,o){return a+o.w;},0),rem=100-used;floor.sort(function(a,b){return b.frac-a.frac;});for(var i=0;i<rem;i++){floor[i].w++;}return DIMS.map(function(k){var o=floor.filter(function(f){return f.key===k;})[0];return {key:k,w:o.w};});}
+(function(){var top=data.slice().sort(function(a,b){return comp(b.d)-comp(a.d);}).slice(0,4);document.getElementById('hpRows').innerHTML=top.map(function(r){var c=comp(r.d);return '<div class="hp-row flex justify-between items-center py-3 border-b border-white/10"><span class="hp-city font-serif text-[1.04rem] text-white font-semibold min-w-[120px]">'+r.id+'</span><span class="hp-bar flex-1 h-1.5 mx-3.5 rounded-full bg-white/10 overflow-hidden"><i class="block h-full rounded-full bg-gradient-to-r from-accent to-gold" style="width:'+c+'%"></i></span><span class="hp-sev font-mono font-bold text-[1.2rem] text-white">'+c+'</span></div>';}).join('');})();
+var vf=document.getElementById('vf');
+vf.setAttribute('role','group'); vf.setAttribute('aria-label','Re-rank towns by pressure');
+var filters=[['all','All',null]].concat(DIMS.map(function(k){return [k,LABEL[k],COLORS[k]];}));
+vf.innerHTML=filters.map(function(f,i){var chip=f[2]?'<i class="w-2.5 h-2.5 rounded-full inline-block" style="background:'+f[2]+'"></i>':'';return '<button type="button" data-f="'+f[0]+'" aria-pressed="'+(i===0?'true':'false')+'"'+(i===0?' class="active bg-accent text-ink border-accent"':' class="border border-white/15 bg-white/[.03] text-on-dark-dim hover:border-accent hover:text-white"')+' px-4 py-2.5 rounded-full text-[.82rem] font-semibold inline-flex items-center gap-2">'+chip+f[1]+'</button>';}).join('');
+var list=document.getElementById('vl'), av='all';
+list.setAttribute('aria-live','polite');
+function render(f){
+  av=f; var rows;
+  if(f==='all'){ rows=data.slice().sort(function(a,b){return comp(b.d)-comp(a.d);}); }
+  else { rows=data.slice().sort(function(a,b){return b.d[f]-a.d[f];}); }
+  list.innerHTML='';
+  rows.forEach(function(r,i){var c=comp(r.d);var segs=seg(r.d);
+    var bars=segs.map(function(s){var on=(f==='all'||s.key===f);return'<span class="block h-full rounded-sm" style="width:'+s.w+'%;background:'+COLORS[s.key]+';opacity:'+(on?1:0.2)+'"></span>';}).join('');
+    var row=document.createElement('div');row.className='viz-row rv py-5 border-b border-white/10 transition-opacity';row.style.transitionDelay=(i*0.02)+'s';
+    row.innerHTML='<div class="flex justify-between items-baseline gap-2.5"><div class="flex flex-wrap items-baseline"><span class="viz-rank font-mono font-bold text-[1rem] text-accent mr-3">'+String(i+1).padStart(2,'0')+'</span><span class="viz-city font-serif text-[1.32rem] text-white font-semibold">'+r.id+'</span><span class="viz-reg text-[.78rem] text-on-dark-dim ml-2">'+r.r+'</span></div><div class="viz-sev font-mono text-[1.9rem] text-white text-right font-bold whitespace-nowrap">'+c+'<small class="block font-mono text-[.56rem] tracking-[.1em] uppercase text-on-dark-dim">'+(c>=85?'rising':(c>=75?'holding':'watch'))+'</small></div></div><div class="hp-bar h-2.5 rounded-full bg-white/10 overflow-hidden mt-3"><i class="block h-full rounded-full bg-gradient-to-r from-accent-deep to-accent" data-w="'+c+'%" style="width:0"></i></div><div class="flex gap-0.5 h-2.5 mt-1.5">'+bars+'</div>';
+    list.appendChild(row);
+  });
+  requestAnimationFrame(function(){list.querySelectorAll('.rv').forEach(function(el,i){setTimeout(function(){el.classList.add('in');},i*26+60);});
+    list.querySelectorAll('.viz-meter i, .hp-bar i').forEach(function(m){requestAnimationFrame(function(){m.style.width=m.getAttribute('data-w')||m.style.width;});});});
+}
+vf.querySelectorAll('button').forEach(function(b){b.onclick=function(){vf.querySelectorAll('button').forEach(function(x){x.classList.remove('active','bg-accent','text-ink','border-accent');x.classList.add('border','border-white/15','bg-white/[.03]','text-on-dark-dim');x.setAttribute('aria-pressed','false');});b.classList.add('active','bg-accent','text-ink','border-accent');b.classList.remove('border','border-white/15','bg-white/[.03]','text-on-dark-dim');b.setAttribute('aria-pressed','true');render(b.dataset.f);};});
+render('all');
+
+// POSTCODE
+var PC_AREAS=[
+{pc:'BS1',name:'Central Bristol',d:{poverty:72,homelessness:70,nhs:68,mental:66,isolation:60}},
+{pc:'BS2',name:'Bristol East',d:{poverty:80,homelessness:74,nhs:72,mental:70,isolation:64}},
+{pc:'BS3',name:'Bedminster & Southville',d:{poverty:66,homelessness:62,nhs:64,mental:60,isolation:56}},
+{pc:'BS4',name:'Brislington & St Anne’s',d:{poverty:78,homelessness:72,nhs:70,mental:68,isolation:62}},
+{pc:'BS5',name:'Easton & Lawrence Hill',d:{poverty:86,homelessness:80,nhs:76,mental:74,isolation:68}},
+{pc:'BS6',name:'Redland & Cotham',d:{poverty:48,homelessness:46,nhs:52,mental:50,isolation:46}},
+{pc:'BS7',name:'Horfield & Bishopston',d:{poverty:56,homelessness:54,nhs:58,mental:56,isolation:52}},
+{pc:'BS8',name:'Clifton',d:{poverty:42,homelessness:44,nhs:50,mental:48,isolation:46}},
+{pc:'BS9',name:'Westbury-on-Trym',d:{poverty:40,homelessness:42,nhs:48,mental:46,isolation:44}},
+{pc:'BS10',name:'Southmead',d:{poverty:84,homelessness:78,nhs:78,mental:72,isolation:66}},
+{pc:'BS11',name:'Avonmouth & Shirehampton',d:{poverty:74,homelessness:70,nhs:66,mental:62,isolation:60}},
+{pc:'BS13',name:'Hartcliffe & Withywood',d:{poverty:90,homelessness:84,nhs:82,mental:78,isolation:72}},
+{pc:'BS14',name:'Stockwood & Hengrove',d:{poverty:76,homelessness:70,nhs:68,mental:64,isolation:60}},
+{pc:'BS15',name:'Kingswood',d:{poverty:70,homelessness:66,nhs:64,mental:62,isolation:58}},
+{pc:'BS16',name:'Fishponds & Staple Hill',d:{poverty:68,homelessness:64,nhs:66,mental:64,isolation:60}}
+];
+var PC_LABEL={poverty:'Poverty',homelessness:'Homelessness',nhs:'NHS access',mental:'Mental health',isolation:'Isolation'};
+var PC_COL={poverty:'#0FB7A2',homelessness:'#2BD4BE',nhs:'#56C2F2',mental:'#2E6FB8',isolation:'#E0B23C'};
+function pcMatch(v){v=(v||'').toUpperCase().replace(/\s+/g,'');var hit=null;PC_AREAS.forEach(function(a){if(v.indexOf(a.pc)===0){if(!hit||a.pc.length>hit.pc.length)hit=a;}});return hit;}
+var pcBtn=document.getElementById('pcBtn'),pcInput=document.getElementById('pcInput'),pcResult=document.getElementById('pcResult'),pcNote=document.getElementById('pcNote');
+function pcRender(area){
+  var keys=['poverty','homelessness','nhs','mental','isolation'];
+  var bars=keys.map(function(k){var v=area.d[k];return '<div class="grid grid-cols-[160px_1fr_44px] items-center gap-3.5"><span class="text-[.86rem] text-on-dark-dim">'+PC_LABEL[k]+'</span><span class="h-2.5 rounded-full bg-white/10 overflow-hidden"><i class="block h-full rounded-full" style="background:'+PC_COL[k]+';width:'+v+'%"></i></span><span class="font-mono font-bold text-[.92rem] text-white text-right">'+v+'</span></div>';}).join('');
+  var worst=keys.slice().sort(function(a,b){return area.d[b]-area.d[a];})[0];
+  pcResult.innerHTML='<div class="font-mono text-[10px] tracking-[.14em] uppercase text-on-dark-dim mb-1">'+area.name+' · Illustrative · '+area.pc+'</div>'+bars+'<p class="font-mono text-[.8rem] text-on-dark-dim mt-3">Main pressure: '+PC_LABEL[worst]+' ('+area.d[worst]+'/100, illustrative). Real postcode signals validated with Bristol partners in pilot.</p>';
+  pcResult.classList.remove('hidden'); pcResult.classList.add('block');
+  requestAnimationFrame(function(){pcResult.querySelectorAll('i').forEach(function(i){requestAnimationFrame(function(){i.style.width=i.style.width;});});});
+}
+function pcRun(){var v=pcInput.value.trim();if(!v){pcNote.textContent='Enter a postcode to try it, e.g. BS5.';return;}var area=pcMatch(v);if(area){pcRender(area);pcNote.textContent='Illustrative example for '+area.name+'. Not a live reading.';}else{pcResult.classList.add('hidden');pcResult.classList.remove('block');pcResult.innerHTML='';pcNote.textContent='“'+v+'” is not yet modelled. Piloting in Bristol only (BS1-BS16).';}}
+if(pcBtn&&pcInput){pcBtn.addEventListener('click',pcRun);pcInput.addEventListener('keydown',function(e){if(e.key==='Enter')pcRun();});}
+
+// DIRECTORY
+var DIR=[
+{name:'Bristol Food Network',type:'Food support',provides:'Emergency food, community pantries, cooking sessions',who:'Anyone in need, no referral',times:'Mon-Sat, varies',contact:'hello@bristolfoodnetwork.org',referral:'Self-referral',access:'Step-free',verified:'Illustrative · not yet verified'},
+{name:'Talking Therapies (demo)',type:'Mental health',provides:'Free NHS talking therapies',who:'Adults with a Bristol GP',times:'Mon-Fri 9-5',contact:'111 / online',referral:'Self or GP',access:'Phone & video',verified:'Illustrative · not yet verified'},
+{name:'Bristol Housing First (demo)',type:'Housing',provides:'Supported housing for complex needs',who:'Rough sleepers',times:'24/7',contact:'via council',referral:'Professional',access:'Full support',verified:'Illustrative · not yet verified'},
+{name:'Warm Welcome Spaces (demo)',type:'Community',provides:'Free warm space, tea, company',who:'All welcome',times:'Winter weekly',contact:'local venue',referral:'None',access:'Step-free',verified:'Illustrative · not yet verified'}
+];
+var dirGrid=document.getElementById('dirGrid');
+if(dirGrid){dirGrid.innerHTML=DIR.map(function(s){return '<div class="bg-ink border border-white/10 rounded-xl1 p-5.5"><h3 class="font-serif text-[1.18rem] text-white mb-1">'+s.name+'</h3><span class="font-mono text-[10px] tracking-[.12em] uppercase text-water block mb-3">'+s.type+'</span><dl class="grid grid-cols-[auto_1fr] gap-1.5 text-[.86rem]"><dt class="text-on-dark-dim font-semibold whitespace-nowrap">Provides</dt><dd class="text-on-dark">'+s.provides+'</dd><dt class="text-on-dark-dim font-semibold">Who</dt><dd class="text-on-dark">'+s.who+'</dd><dt class="text-on-dark-dim font-semibold">Times</dt><dd class="text-on-dark">'+s.times+'</dd><dt class="text-on-dark-dim font-semibold">Contact</dt><dd class="text-on-dark">'+s.contact+'</dd><dt class="text-on-dark-dim font-semibold">Referral</dt><dd class="text-on-dark">'+s.referral+'</dd><dt class="text-on-dark-dim font-semibold">Access</dt><dd class="text-on-dark">'+s.access+'</dd></dl><div class="font-mono text-[10px] tracking-[.1em] uppercase text-gold border-t border-white/10 mt-3 pt-2.5">'+s.verified+'</div></div>';}).join('');}
+
+// SIGNAL
+var sigBtn=document.getElementById('sigBtn'),sigOut=document.getElementById('sigOut');
+if(sigBtn){sigBtn.addEventListener('click',function(){sigOut.style.display='block';});}
+
+// ─── THREE.JS HERO SCENE (interactive WebGL pressure-terrain) ───
+(function(){
+  var canvas=document.getElementById('heroField');
+  if(!canvas) return;
+  if(REDUCE) return;
+  if(typeof THREE==='undefined') return;
+  var scene=new THREE.Scene();
+  var cam=new THREE.PerspectiveCamera(55,1,0.1,1000); cam.position.set(0,26,46); cam.lookAt(0,0,0);
+  var renderer;
+  try{ renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true}); }
+  catch(err){ return; }
+  if(!renderer){ return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+  // interactive wireframe terrain that warps toward the cursor like a pressure field
+  var G=64, COUNT=G*G, pos=new Float32Array(COUNT*3);
+  for(var i=0;i<G;i++){for(var j=0;j<G;j++){var idx=(i*G+j)*3; pos[idx]=(i/(G-1)-0.5)*120; pos[idx+1]=0; pos[idx+2]=(j/(G-1)-0.5)*72;}}
+  var geo=new THREE.BufferGeometry(); geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  var idxArr=[]; for(var a=0;a<G-1;a++){for(var b=0;b<G-1;b++){var v0=a*G+b,v1=a*G+b+1,v2=(a+1)*G+b,v3=(a+1)*G+b+1; idxArr.push(v0,v2,v1, v1,v2,v3);}}
+  geo.setIndex(idxArr);
+  var mat=new THREE.MeshBasicMaterial({color:0x2BD4BE,wireframe:true,transparent:true,opacity:0.28,blending:THREE.AdditiveBlending});
+  var mesh=new THREE.Mesh(geo,mat); mesh.rotation.x=-0.9; scene.add(mesh);
+  // second field, water-blue, counter-rotating, sparser
+  var G2=40, C2=G2*G2, pos2=new Float32Array(C2*3);
+  for(var i2=0;i2<G2;i2++){for(var j2=0;j2<G2;j2++){var k2=(i2*G2+j2)*3; pos2[k2]=(i2/(G2-1)-0.5)*90; pos2[k2+1]=0; pos2[k2+2]=(j2/(G2-1)-0.5)*54;}}
+  var geo2=new THREE.BufferGeometry(); geo2.setAttribute('position',new THREE.BufferAttribute(pos2,3));
+  var i2b=[]; for(var a2=0;a2<G2-1;a2++){for(var b2=0;b2<G2-1;b2++){var v0=a2*G2+b2,v1=a2*G2+b2+1,v2=(a2+1)*G2+b2,v3=(a2+1)*G2+b2+1; i2b.push(v0,v2,v1, v1,v2,v3);}}
+  geo2.setIndex(i2b);
+  var mat2=new THREE.MeshBasicMaterial({color:0x56C2F2,wireframe:true,transparent:true,opacity:0.18,blending:THREE.AdditiveBlending});
+  var mesh2=new THREE.Mesh(geo2,mat2); mesh2.rotation.x=-0.9; mesh2.position.y=2; scene.add(mesh2);
+  // interaction state
+  var mx=0,my=0, tx=0,ty=0, scrollY=0;
+  window.addEventListener('mousemove',function(e){ mx=(e.clientX/window.innerWidth-0.5)*2; my=(e.clientY/window.innerHeight-0.5)*2; });
+  window.addEventListener('scroll',function(){ scrollY=window.scrollY; },{passive:true});
+  function resize(){var w=canvas.clientWidth||window.innerWidth,h=canvas.clientHeight||window.innerHeight;if(w>0&&h>0){renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}}
+  window.addEventListener('resize',resize);
+  if(window.ResizeObserver){ new ResizeObserver(resize).observe(canvas); }
+  window.addEventListener('load',resize);
+  setTimeout(resize,60); resize();
+  var p=geo.attributes.position.array, p2=geo2.attributes.position.array, t=0;
+  function fit(){var w=canvas.clientWidth||canvas.parentElement.clientWidth||window.innerWidth,h=canvas.clientHeight||canvas.parentElement.clientHeight||window.innerHeight;var dpr=Math.min(window.devicePixelRatio||1,2);var bw=Math.round(w*dpr),bh=Math.round(h*dpr);if(bw>0&&bh>0&&(canvas.width!==bw||canvas.height!==bh)){renderer.setSize(w,h,false);canvas.width=bw;canvas.height=bh;cam.aspect=w/h;cam.updateProjectionMatrix();}}
+  (function loop(){ t+=0.01; fit();
+    tx+=(mx-tx)*0.05; ty+=(my-ty)*0.05;
+    var sc=1+Math.min(scrollY/3000,1)*0.6;
+    for(var n=0;n<COUNT;n++){ var x=p[n*3], z=p[n*3+2];
+      var d=Math.sqrt((x-tx*60)*(x-tx*60)+(z-ty*36)*(z-ty*36));
+      p[n*3+1]=Math.sin(x*0.06+t)*3.2 + Math.cos(z*0.06+t*0.8)*3.2 - 26/(d+6);
+    }
+    geo.attributes.position.needsUpdate=true;
+    for(var n2=0;n2<C2;n2++){ var x2=p2[n2*3], z2=p2[n2*3+2];
+      p2[n2*3+1]=Math.cos(x2*0.08-t)*2.4 + Math.sin(z2*0.08+t*0.6)*2.4;
+    }
+    geo2.attributes.position.needsUpdate=true;
+    mesh.rotation.z=tx*0.25; mesh2.rotation.z=-tx*0.18;
+    cam.position.y=26 - ty*8; cam.lookAt(0,0,0);
+    mesh.scale.set(sc,sc,sc); mesh2.scale.set(sc,sc,sc);
+    try{ renderer.render(scene,cam); }catch(e){ return; }
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
+</body>
+</html>
