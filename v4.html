@@ -110,17 +110,25 @@ footer{background:var(--ink);color:#cdd9e6;padding:32px 0;font-size:.84rem}
   </div>
   <div class="hero-right">
     <canvas id="water"></canvas>
-    <svg class="boat-svg" viewBox="0 0 300 150" aria-label="The Lowry canal boat, gently bobbing">
-      <defs><linearGradient id="hull" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C8632B"/><stop offset="1" stop-color="#9c4717"/></linearGradient></defs>
-      <path d="M20 110 Q150 140 280 110 L260 78 L40 78 Z" fill="url(#hull)"/>
-      <rect x="52" y="44" width="180" height="36" rx="6" fill="#F3F1EA"/>
-      <rect x="64" y="50" width="26" height="22" rx="3" fill="#2C6E9B" opacity=".85"/>
-      <rect x="100" y="50" width="26" height="22" rx="3" fill="#2C6E9B" opacity=".85"/>
-      <rect x="136" y="50" width="26" height="22" rx="3" fill="#2C6E9B" opacity=".85"/>
-      <rect x="172" y="50" width="40" height="22" rx="3" fill="#4C7A5B" opacity=".9"/>
-      <rect x="40" y="38" width="200" height="8" rx="4" fill="#15233B"/>
-      <path d="M150 38 L150 18 L186 30 Z" fill="#15233B"/>
-      <circle cx="150" cy="14" r="5" fill="#C8632B"/>
+    <svg class="boat-svg" viewBox="0 0 300 170" aria-label="The Lowry canal boat, gently bobbing">
+      <defs><linearGradient id="hull" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C8632B"/><stop offset="1" stop-color="#9c4717"/></linearGradient>
+      <linearGradient id="cab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF8F1"/><stop offset="1" stop-color="#E4DDCB"/></linearGradient></defs>
+      <ellipse cx="150" cy="150" rx="120" ry="10" fill="#0c1c2e" opacity=".5"/>
+      <path d="M18 112 Q150 144 282 112 L262 80 L40 80 Z" fill="url(#hull)"/>
+      <rect x="48" y="46" width="188" height="38" rx="7" fill="url(#cab)"/>
+      <rect x="40" y="40" width="204" height="9" rx="4" fill="#15233B"/>
+      <rect x="84" y="40" width="40" height="9" rx="4" fill="#2C6E9B"/>
+      <rect x="60" y="53" width="30" height="24" rx="3" fill="#2C6E9B" opacity=".9"/>
+      <rect x="100" y="53" width="30" height="24" rx="3" fill="#2C6E9B" opacity=".9"/>
+      <rect x="140" y="53" width="30" height="24" rx="3" fill="#2C6E9B" opacity=".9"/>
+      <rect x="180" y="53" width="44" height="24" rx="3" fill="#4C7A5B" opacity=".92"/>
+      <circle cx="75" cy="65" r="3" fill="#cfe0ec" opacity=".8"/>
+      <circle cx="115" cy="65" r="3" fill="#cfe0ec" opacity=".8"/>
+      <circle cx="155" cy="65" r="3" fill="#cfe0ec" opacity=".8"/>
+      <rect x="232" y="20" width="9" height="22" rx="2" fill="#15233B"/>
+      <path d="M236 20 L236 4 L262 14 Z" fill="#15233B"/>
+      <circle cx="249" cy="9" r="4" fill="#C8632B"/>
+      <path d="M58 84 L242 84" stroke="#7a3210" stroke-width="2" opacity=".5"/>
     </svg>
     <div class="water-label">THE LOWRY · BATH PILOT</div>
   </div>
