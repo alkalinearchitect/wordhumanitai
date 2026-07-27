@@ -27,7 +27,7 @@ print("5. POSSIBLE DRIVERS (HYPOTHESES, not facts)")
 for s in signals[:3]:
     print(f"  - {s.place} ({s.pressure}): {s.detail}  [hypothesis: structural underinvestment + cost-of-living]")
 print("6. EQUITY IMPLICATIONS")
-print("  - Child-poverty concentration (Middlesbrough 47%) shows differential exposure by place;")
+print("  - Child-poverty concentration shows differential exposure by place;")
 print("    protect small-count LSOA outputs from publication.")
 print("7. THREE ACTION OPTIONS")
 print("  A) Deploy CHW team to highest-severity ward — evidence: dashboard composite; cost: ~GBP 35-90k pilot; uncertainty: medium; stop: no improvement at 8 wks.")
