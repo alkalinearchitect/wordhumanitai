@@ -78,11 +78,10 @@ nav{position:sticky;top:0;z-index:50;background:rgba(244,247,245,.88);backdrop-f
 .hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center}
 .hero-side{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 1px 0 rgba(11,31,58,.03)}
 .hero-side .hs-ey{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);font-weight:700}
-.hero-side .hs-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
-.hero-side .hs-row:first-of-type{border-top:none}
-.hero-side .hs-dot{width:10px;height:10px;border-radius:50%;background:var(--teal);flex:0 0 auto}
-.hero-side .hs-row b{font-family:'Spectral',serif;font-size:1.02rem;color:var(--ink)}
-.hero-side .hs-row span{font-size:.82rem;color:var(--grey)}
+.hero-side .hs-row{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-top:1px solid var(--line);position:relative}
+.hero-side .hs-num{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--teal);border:1px solid var(--teal);border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;margin-top:1px}
+.hero-side .hs-body b{font-family:'Spectral',serif;font-size:1.02rem;color:var(--ink);display:block}
+.hero-side .hs-body span{font-size:.82rem;color:var(--grey)}
 @media(max-width:860px){
   .fund{grid-template-columns:1fr}.fund .ask{border-left:none;border-top:1px solid var(--line)}
   .hero-grid{grid-template-columns:1fr}.boat-grid{grid-template-columns:1fr}
@@ -132,15 +131,15 @@ footer{background:var(--ink);color:#cdd9e6;padding:32px 0;font-size:.84rem}
       <p class="lede">Most public services wait until people hit a threshold for help. We exist to change that — because the earlier a community recognises pressure building, the more lives improve and the lower the cost to society. That belief is why HumanitAI exists. The AI, the 5th Space and the boat are simply how we live it.</p>
       <div class="cta">
         <a class="btn" href="#model">See the model</a>
-        <a class="ghost" href="#fund">We're raising £15k</a>
+        <a class="ghost" href="#fund">The Bath pilot</a>
       </div>
     </div>
     <div class="hero-side">
       <div class="hs-ey">The prevention loop</div>
-      <div class="hs-row"><span class="hs-dot"></span><div><b>AI sees pressure</b><br><span>Ethically sourced public data, no surveillance</span></div></div>
-      <div class="hs-row"><span class="hs-dot"></span><div><b>The 5th Space gathers</b><br><span>A welcoming hub — no diagnosis, no referral</span></div></div>
-      <div class="hs-row"><span class="hs-dot"></span><div><b>People regulate</b><br><span>Contrast therapy, movement, community</span></div></div>
-      <div class="hs-row"><span class="hs-dot"></span><div><b>Evidence loops back</b><br><span>What works improves the model</span></div></div>
+      <div class="hs-row"><span class="hs-num">1</span><div class="hs-body"><b>AI sees pressure</b><span>Ethically sourced public data, no surveillance</span></div></div>
+      <div class="hs-row"><span class="hs-num">2</span><div class="hs-body"><b>The 5th Space gathers</b><span>A welcoming hub — no diagnosis, no referral</span></div></div>
+      <div class="hs-row"><span class="hs-num">3</span><div class="hs-body"><b>People regulate</b><span>Contrast therapy, movement, community</span></div></div>
+      <div class="hs-row"><span class="hs-num">↺</span><div class="hs-body"><b>Evidence loops back</b><span>What works improves the model — and the loop begins again</span></div></div>
     </div>
   </div>
 </div></header>
