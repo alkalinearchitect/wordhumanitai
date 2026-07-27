@@ -54,9 +54,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(244,247,245,.88);backdrop-f
 .layer ul{list-style:none;margin-top:12px}
 .layer ul li{font-size:.86rem;color:var(--grey);padding:5px 0 5px 18px;position:relative;border-top:1px dashed var(--line)}
 .layer ul li:before{content:"";position:absolute;left:0;top:12px;width:7px;height:7px;border-radius:50%;background:var(--teal)}
-.flow-line{display:flex;justify-content:center;margin:-1px 0;position:relative;z-index:2}
-.flow-line .flow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#fff;background:var(--ink);padding:8px 18px;border-radius:30px}
-/* GOLDEN CIRCLE REMOVED */
+.layer ul li:before{content:"";position:absolute;left:0;top:12px;width:7px;height:7px;border-radius:50%;background:var(--teal)}
 .prob-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:10px}
 .boat-callout{background:linear-gradient(135deg,#0B1F3A,#16314F);color:#fff;border-radius:16px;padding:26px;margin-top:6px}
 .prob-grid .pc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 14px;font-size:.92rem;color:var(--ink2)}
@@ -76,17 +74,9 @@ nav{position:sticky;top:0;z-index:50;background:rgba(244,247,245,.88);backdrop-f
 .fund .ask .big{font-family:'Spectral',serif;font-size:2.4rem;font-weight:800;color:var(--teal);line-height:1}
 .fund .ask .row{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:.9rem;color:var(--ink2)}
 .fund .ask .row b{color:var(--ink)}
-/* HERO SIDE PANEL */
-.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center}
-.hero-side{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 1px 0 rgba(11,31,58,.03)}
-.hero-side .hs-ey{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);font-weight:700}
-.hero-side .hs-row{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-top:1px solid var(--line);position:relative}
-.hero-side .hs-num{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--teal);border:1px solid var(--teal);border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;margin-top:1px}
-.hero-side .hs-body b{font-family:'Spectral',serif;font-size:1.02rem;color:var(--ink);display:block}
-.hero-side .hs-body span{font-size:.82rem;color:var(--grey)}
 @media(max-width:860px){
   .fund{grid-template-columns:1fr}.fund .ask{border-left:none;border-top:1px solid var(--line)}
-  .hero-grid{grid-template-columns:1fr}.boat-grid{grid-template-columns:1fr}
+  .boat-grid{grid-template-columns:1fr}
   .scale{flex-direction:column;align-items:flex-start;gap:4px}
   .scale .arr{transform:rotate(90deg);margin:2px 0}
 }
@@ -125,24 +115,13 @@ footer{background:var(--ink);color:#cdd9e6;padding:32px 0;font-size:.84rem}
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="hero-grid">
-    <div>
-      <span class="eyebrow">HumanitAI CIC · Why we exist</span>
-      <div class="kicker">Not an AI company. Not a wellness company. Not a charity.</div>
-      <h1>We believe pressure should be seen before it becomes a crisis.</h1>
-      <p class="lede">Most public services wait until people hit a threshold for help. We exist to change that — because the earlier a community recognises pressure building, the more lives improve and the lower the cost to society. That belief is why HumanitAI exists. The AI, the 5th Space and the boat are simply how we live it.</p>
-      <div class="cta">
-        <a class="btn" href="#model">See the model</a>
-        <a class="ghost" href="#fund">The Bath pilot</a>
-      </div>
-    </div>
-    <div class="hero-side">
-      <div class="hs-ey">The prevention loop</div>
-      <div class="hs-row"><span class="hs-num">1</span><div class="hs-body"><b>AI sees pressure</b><span>Ethically sourced public data, no surveillance</span></div></div>
-      <div class="hs-row"><span class="hs-num">2</span><div class="hs-body"><b>The 5th Space gathers</b><span>A welcoming hub — no diagnosis, no referral</span></div></div>
-      <div class="hs-row"><span class="hs-num">3</span><div class="hs-body"><b>People regulate</b><span>Contrast therapy, movement, community</span></div></div>
-      <div class="hs-row"><span class="hs-num">↺</span><div class="hs-body"><b>Evidence loops back</b><span>What works improves the model — and the loop begins again</span></div></div>
-    </div>
+  <span class="eyebrow">HumanitAI CIC · Why we exist</span>
+  <div class="kicker">Not an AI company. Not a wellness company. Not a charity.</div>
+  <h1>We believe pressure should be seen before it becomes a crisis.</h1>
+  <p class="lede">Most public services wait until people hit a threshold for help. We exist to change that — because the earlier a community recognises pressure building, the more lives improve and the lower the cost to society.</p>
+  <div class="cta">
+    <a class="btn" href="#model">See the model</a>
+    <a class="ghost" href="#fund">The Bath pilot</a>
   </div>
 </div></header>
 
@@ -166,8 +145,8 @@ footer{background:var(--ink);color:#cdd9e6;padding:32px 0;font-size:.84rem}
 <section class="section" id="model"><div class="wrap">
   <div class="sec-head">
     <span class="eyebrow">The HumanitAI Model</span>
-    <h2>Three integrated layers. Not a list of tools — a system.</h2>
-    <p>Each layer does nothing alone. Together they form a continuous learning loop where people stay at the centre and technology supports, never replaces, human judgement.</p>
+    <h2>Three layers working as one.</h2>
+    <p>Intelligence finds where pressure is building. The 5th Space brings people in. Regulation helps them steady themselves — and what we learn feeds back to sharpen the intelligence. People stay at the centre; technology supports, never replaces, human judgement.</p>
   </div>
 
   <div class="layers">
@@ -190,7 +169,6 @@ footer{background:var(--ink);color:#cdd9e6;padding:32px 0;font-size:.84rem}
       <ul><li>Contrast therapy</li><li>Movement</li><li>Breathwork</li><li>Education</li><li>Community participation</li><li>Sleep education</li><li>Nutrition guidance</li></ul>
     </div>
   </div>
-  <div class="flow-line"><span class="flow">AI detects pressure → 5th Space gathers people → regulation engages → evidence improves the model</span></div>
 </div></section>
 
 <section class="section" id="boat"><div class="wrap">
