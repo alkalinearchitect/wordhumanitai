@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HumanitAI — A working boat, not a whitepaper</title>
+<meta name="description" content="HumanitAI is prevention infrastructure: predictive intelligence, a 5th Space, and a working canal boat — measurable community outcomes you can step aboard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F1EA; --paper2:#E9E4D8; --ink:#15233B; --ink2:#3C4A5E;
+  --water:#2C6E9B; --fore:#C8632B; --moss:#4C7A5B; --line:#D8D0C2; --grey:#6E6657;
+  --container:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 28px}
+.serif{font-family:'Spectral',Georgia,serif}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+a{color:inherit;text-decoration:none}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--water);font-weight:700}
+nav{position:sticky;top:0;z-index:50;background:rgba(243,241,234,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:var(--container);margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Spectral',serif;font-weight:800;font-size:21px;letter-spacing:-.02em}
+.logo b{color:var(--water)}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:13px;font-weight:600;color:var(--grey);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.btn{background:var(--fore);color:#fff;font-weight:700;font-size:13px;padding:11px 22px;border-radius:40px;transition:background .2s;display:inline-block}
+.btn:hover{background:#a8501f}
+/* HERO — asymmetric 60/40 */
+.hero{position:relative;border-bottom:1px solid var(--line);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;min-height:560px}
+.hero-left{padding:84px 56px 64px 0;display:flex;flex-direction:column;justify-content:center}
+.kicker{font-family:'Spectral',serif;font-style:italic;font-size:1.15rem;color:var(--fore);max-width:34ch;margin:14px 0 18px}
+h1{font-family:'Spectral',serif;font-weight:800;font-size:clamp(2.3rem,4.6vw,3.9rem);line-height:1.04;letter-spacing:-.025em;max-width:16ch}
+.lede{font-size:1.08rem;color:var(--ink2);max-width:48ch;margin:22px 0 0;line-height:1.55}
+.cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-right{position:relative;background:linear-gradient(180deg,#16314F 0%,#0E2236 100%);overflow:hidden}
+#water{position:absolute;inset:0;width:100%;height:100%;display:block}
+.boat-svg{position:absolute;left:50%;bottom:18%;transform:translateX(-50%);width:74%;height:auto;animation:bob 6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0) rotate(-.6deg)}50%{transform:translateX(-50%) translateY(-8px) rotate(.6deg)}}
+.water-label{position:absolute;left:18px;bottom:14px;color:#cfe0ec;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;opacity:.7}
+/* SECTIONS */
+.section{padding:64px 0;border-bottom:1px solid var(--line)}
+.sec-head{max-width:70ch;margin-bottom:30px}
+.sec-head h2{font-family:'Spectral',serif;font-weight:700;font-size:clamp(1.7rem,3.8vw,2.6rem);line-height:1.07;letter-spacing:-.02em;margin:10px 0 12px}
+.sec-head p{color:var(--grey);font-size:1.04rem;max-width:62ch}
+.layers{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.layer{padding:26px 24px;border-right:1px solid var(--line)}
+.layer:last-child{border-right:none}
+.layer .num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--moss);letter-spacing:.1em}
+.layer h3{font-family:'Spectral',serif;font-size:1.4rem;font-weight:700;margin:12px 0 10px;line-height:1.1}
+.layer p{font-size:.93rem;color:var(--ink2);line-height:1.5}
+.boat-callout{background:linear-gradient(135deg,#16314F,#0E2236);color:#fff;border-radius:16px;padding:30px;margin-top:6px}
+.boat-callout h3{font-family:'Spectral',serif;font-size:1.3rem;font-weight:700;margin-bottom:10px}
+.boat-callout p{font-size:.98rem;color:#cfe0ec;line-height:1.55}
+.boat-callout .quote{font-family:'Spectral',serif;font-style:italic;font-size:1.5rem;color:#fff;margin:18px 0;line-height:1.3}
+.boat-callout .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.boat-callout .tags span{font-family:'JetBrains Mono',monospace;font-size:11px;background:rgba(43,212,190,.14);color:#7FD9C6;padding:6px 12px;border-radius:20px}
+.fund{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1.4fr 1fr}
+.fund .ftext{padding:30px 32px}
+.fund .ftext h2{font-family:'Spectral',serif;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.08;letter-spacing:-.02em;margin:10px 0 12px}
+.fund .ftext p{color:var(--ink2);font-size:1rem;max-width:46ch}
+.fund .ask{background:var(--paper2);padding:30px 32px;display:flex;flex-direction:column;justify-content:center}
+.fund .ask .big{font-family:'Spectral',serif;font-size:2.4rem;font-weight:800;color:var(--fore);line-height:1}
+.fund .ask .row{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:.9rem;color:var(--ink2)}
+.fund .ask .row b{color:var(--ink)}
+.scale{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:18px}
+.scale .s{background:#fff;border:1px solid var(--line);border-radius:30px;padding:8px 16px;font-size:.92rem;font-weight:600}
+.scale .arr{color:var(--water);font-weight:700}
+.meas{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px}
+.meas .m{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.92rem;color:var(--ink2)}
+.mission{background:var(--ink);color:#fff;border-radius:16px;padding:34px;margin-top:18px;font-family:'Spectral',serif;font-size:clamp(1.3rem,3vw,2rem);line-height:1.3}
+.mission b{color:#7FD9C6}
+footer{background:var(--ink);color:#cdd9e6;padding:32px 0;font-size:.84rem}
+.foot-in{max-width:1200px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.foot-in a{color:#7FD9C6;text-decoration:none}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-left{padding:60px 0 30px}.hero-right{min-height:340px}.nav-links{display:none}.fund{grid-template-columns:1fr}.fund .ask{border-top:1px solid var(--line)}.meas{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.boat-svg{animation:none}.reveal{opacity:1;transform:none;transition:none}#water{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="nav-in">
+  <div class="logo">Humanit<b>AI</b></div>
+  <div class="nav-links">
+    <a href="#model">Model</a>
+    <a href="#boat">The boat</a>
+    <a href="#fund">For funders</a>
+    <a href="#scaling">Scaling</a>
+    <a class="btn btn-outline" href="mailto:hello@humanitai.uk">Talk to us</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="hero-grid">
+  <div class="hero-left">
+    <span class="eyebrow">HumanitAI CIC · Prevention infrastructure</span>
+    <div class="kicker">Not an AI company. Not a wellness company. Not a charity.</div>
+    <h1>Pressure, seen before it becomes crisis.</h1>
+    <p class="lede">Most public services wait until people hit a threshold for help. HumanitAI exists to change that — recognising pressure early, when a community can still act, not after it has already broken. A working boat, not a whitepaper.</p>
+    <div class="cta">
+      <a class="btn" href="#model">See the model</a>
+      <a class="ghost btn-outline" href="#fund">The Bath pilot</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <canvas id="water"></canvas>
+    <svg class="boat-svg" viewBox="0 0 300 150" aria-label="The Lowry canal boat, gently bobbing">
+      <defs><linearGradient id="hull" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C8632B"/><stop offset="1" stop-color="#9c4717"/></linearGradient></defs>
+      <path d="M20 110 Q150 140 280 110 L260 78 L40 78 Z" fill="url(#hull)"/>
+      <rect x="52" y="44" width="180" height="36" rx="6" fill="#F3F1EA"/>
+      <rect x="64" y="50" width="26" height="22" rx="3" fill="#2C6E9B" opacity=".85"/>
+      <rect x="100" y="50" width="26" height="22" rx="3" fill="#2C6E9B" opacity=".85"/>
+      <rect x="136" y="50" width="26" height="22" rx="3" fill="#2C6E9B" opacity=".85"/>
+      <rect x="172" y="50" width="40" height="22" rx="3" fill="#4C7A5B" opacity=".9"/>
+      <rect x="40" y="38" width="200" height="8" rx="4" fill="#15233B"/>
+      <path d="M150 38 L150 18 L186 30 Z" fill="#15233B"/>
+      <circle cx="150" cy="14" r="5" fill="#C8632B"/>
+    </svg>
+    <div class="water-label">THE LOWRY · BATH PILOT</div>
+  </div>
+</div></header>
+
+<section class="section" id="model"><div class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow">The model</span>
+    <h2>Three layers working as one.</h2>
+    <p>Intelligence finds where pressure is building. The 5th Space brings people in. Regulation helps them steady themselves — and what we learn feeds back to sharpen the intelligence. People stay at the centre; technology supports, never replaces, human judgement.</p>
+  </div>
+  <div class="layers reveal">
+    <div class="layer"><div class="num">LAYER ONE</div><h3>Artificial Intelligence</h3><p>The intelligence layer continuously analyses ethically sourced information to understand where pressure is building. It asks "What is likely to happen next?" — prediction, prioritisation, prevention. Not surveillance. Not replacing professionals.</p></div>
+    <div class="layer"><div class="num">LAYER TWO</div><h3>The 5th Space</h3><p>People already spend life in four systems: home, work, education, healthcare. The 5th Space is everything between them — somewhere to enter without diagnosis, appointment, referral, judgement or crisis. Designed for prevention.</p></div>
+    <div class="layer"><div class="num">LAYER THREE</div><h3>Evidence-Based Regulation</h3><p>Stress changes behaviour. When people become chronically dysregulated they are less likely to seek help, connect or decide well. HumanitAI uses interventions that may help people regulate themselves.</p></div>
+  </div>
+</div></section>
+
+<section class="section" id="boat"><div class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow">The boat</span>
+    <h2>The first 5th Space moves.</h2>
+    <p>Instead of expecting communities to travel to support, support travels to communities. A canal boat becomes a hub, classroom, wellbeing centre and meeting place — reaching towns without permanent infrastructure first.</p>
+  </div>
+  <div class="boat-callout reveal">
+    <h3>A floating civic asset, not just transport.</h3>
+    <p>The boat is the most recognisable face of HumanitAI — a mobile 5th Space that brings prevention directly to the people who need it, before a single permanent wall is built.</p>
+    <div class="quote">"We sail before the silence does."</div>
+    <div class="tags"><span>Community hub</span><span>Classroom</span><span>Wellbeing centre</span><span>AI demo space</span><span>Meeting place</span><span>National symbol</span></div>
+  </div>
+</div></section>
+
+<section class="section" id="fund"><div class="wrap">
+  <div class="fund reveal">
+    <div class="ftext">
+      <span class="eyebrow">For funders</span>
+      <h2>Grant proposal: £15,000 to deliver a 12-month prevention pilot in Bath.</h2>
+      <p>HumanitAI CIC is a Bristol-based community interest company, piloting first in Bath, Somerset. The pilot turns our open-source pressure-forecast into community ownership: 12 monthly peer workshops, a free open-source toolkit, and 10 trained local volunteers.</p>
+      <p style="margin-top:12px;color:var(--grey);font-size:.92rem">Award for All (National Lottery) — rolling decision, around 16 weeks. Every pound is asset-locked to our community mission by law. We report what we measure, not what we hope for.</p>
+    </div>
+    <div class="ask">
+      <div class="big">£15,000</div>
+      <div class="row"><b>What we ask:</b> a 12-month Bath pilot grant.</div>
+      <div class="row"><b>What you get:</b> residents engaged, volunteers trained, a free toolkit the community keeps, and a published report on what works.</div>
+      <div class="row"><b>Why now:</b> early funding builds the track record to scale the model to other UK towns.</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section" id="scaling"><div class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow">Scaling</span>
+    <h2>Bath becomes the first pilot. Not because Bath needs HumanitAI most — but because every national system needs somewhere to prove itself.</h2>
+    <p>The goal is replication. The operating model stays the same while each community adapts the physical space to local needs.</p>
+  </div>
+  <div class="scale reveal">
+    <span class="s">Bath</span><span class="arr">↓</span><span class="s">Bristol</span><span class="arr">↓</span><span class="s">South West</span><span class="arr">↓</span><span class="s">England</span><span class="arr">↓</span><span class="s">Scotland</span><span class="arr">↓</span><span class="s">Wales</span><span class="arr">↓</span><span class="s">Northern Ireland</span><span class="arr">↓</span><span class="s">United Kingdom</span>
+  </div>
+</div></section>
+
+<section class="section" id="measures"><div class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow">Success measures</span>
+    <h2>Outcomes we would aim to measure.</h2>
+    <p>Longer-term impacts — such as reduced pressure on public services — would require robust evaluation, because many factors influence those outcomes.</p>
+  </div>
+  <div class="meas reveal">
+    <div class="m">Increased community participation</div>
+    <div class="m">Improved digital confidence</div>
+    <div class="m">Reduced social isolation</div>
+    <div class="m">Better self-reported wellbeing</div>
+    <div class="m">Greater uptake of local support</div>
+    <div class="m">Earlier identification of pressure</div>
+  </div>
+  <div class="mission">HumanitAI combines <b>predictive intelligence</b> with <b>welcoming community spaces</b> to help communities recognise pressure early, strengthen connection and intervene before problems become crises.</div>
+</div></section>
+
+<footer><div class="foot-in">
+  <div>HumanitAI CIC · Companies House No. 16891121 (Active) · Bristol-based, piloting in Bath · In pilot. Honest about what we can and cannot yet prove.</div>
+  <div><a href="mailto:hello@humanitai.uk">hello@humanitai.uk</a> · <a href="v4.html">This page</a> · Asset-locked community mission</div>
+</div></footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // kinetic waterline canvas
+  var cv = document.getElementById('water');
+  if(cv && !reduce){
+    var ctx = cv.getContext('2d');
+    function size(){ cv.width = cv.clientWidth; cv.height = cv.clientHeight; }
+    size(); window.addEventListener('resize', size);
+    var t = 0;
+    function draw(){
+      var w = cv.width, h = cv.height;
+      ctx.clearRect(0,0,w,h);
+      // base water fill
+      var g = ctx.createLinearGradient(0, h*0.45, 0, h);
+      g.addColorStop(0, 'rgba(44,110,155,0.10)');
+      g.addColorStop(1, 'rgba(44,110,155,0.45)');
+      ctx.fillStyle = g; ctx.fillRect(0, h*0.5, w, h*0.5);
+      // shimmer lines drifting left->right
+      ctx.strokeStyle = 'rgba(127,217,198,0.55)'; ctx.lineWidth = 1.4;
+      for(var i=0;i<5;i++){
+        var y = h*0.55 + i*(h*0.09);
+        ctx.beginPath();
+        for(var x=0;x<=w;x+=8){
+          var yy = y + Math.sin((x*0.025) + t*0.02 + i)*3.2;
+          if(x===0) ctx.moveTo(x,yy); else ctx.lineTo(x,yy);
+        }
+        ctx.stroke();
+      }
+      t += 1; requestAnimationFrame(draw);
+    }
+    draw();
+  }
+  // scroll reveals
+  var els = document.querySelectorAll('.reveal');
+  if(reduce){ els.forEach(function(e){e.classList.add('in');}); return; }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.16});
+    els.forEach(function(e){io.observe(e);});
+  } else { els.forEach(function(e){e.classList.add('in');}); }
+})();
+</script>
+</body>
+</html>
