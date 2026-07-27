@@ -46,6 +46,8 @@ h1{font-family:'Spectral',serif;font-weight:800;font-size:clamp(2.4rem,5.2vw,4.2
 .pressure .pl-cap b{font-family:'Spectral',serif;font-size:1.05rem}
 .pressure .pl-cap span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--grey)}
 .pressure svg{width:100%;height:auto;display:block}
+.pl-fill{fill:url(#plgrad);opacity:.16}
+.pl-grid{stroke:#E3EAE8;stroke-width:1}
 .pl-line{fill:none;stroke:var(--teal);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:600;stroke-dashoffset:600}
 .pl-line.flash{stroke:var(--teal-b);stroke-width:3.5}
 .pl-dot{fill:var(--teal-b);opacity:0}
@@ -127,7 +129,11 @@ footer{background:var(--ink);color:#cdd9e6;padding:32px 0;font-size:.84rem}
     <div class="pressure">
       <div class="pl-cap"><b>The pressure curve</b><span>seen early, not late</span></div>
       <svg viewBox="0 0 320 160" aria-label="A line rising to crisis, with a marker showing pressure seen early">
+        <defs><linearGradient id="plgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E7C66"/><stop offset="1" stop-color="#0E7C66" stop-opacity="0"/></linearGradient></defs>
+        <line class="pl-grid" x1="20" y1="40" x2="300" y2="40"/>
+        <line class="pl-grid" x1="20" y1="90" x2="300" y2="90"/>
         <line x1="20" y1="140" x2="300" y2="140" stroke="#DCE5E2" stroke-width="1"/>
+        <path class="pl-fill" d="M20 138 C 70 132, 110 118, 150 96 C 175 82, 185 54, 200 30 C 215 58, 240 104, 300 134 L300 140 L20 140 Z"/>
         <path id="plpath" class="pl-line" d="M20 138 C 70 132, 110 118, 150 96 C 175 82, 185 54, 200 30 C 215 58, 240 104, 300 134"/>
         <circle id="pldot" class="pl-dot" cx="150" cy="96" r="5"/>
         <text class="pl-label" x="150" y="112" text-anchor="middle">seen here</text>
