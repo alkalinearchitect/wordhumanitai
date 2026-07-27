@@ -51,6 +51,9 @@ h1{font-family:'Spectral',serif;font-weight:800;font-size:clamp(2.3rem,4.6vw,3.9
 .pl-fill{fill:url(#plg);opacity:.18}
 .pl-dot{fill:#fff;opacity:0}
 .pl-lab{font-family:'JetBrains Mono',monospace;font-size:9px;fill:#9FB4C4}
+.pl-l1{fill:#cfe0ec;font-weight:700}
+.pl-l2{fill:#2BD4BE;font-weight:700}
+.pl-l3{fill:#ffd9c8;font-weight:700}
 @keyframes drawL{to{stroke-dashoffset:0}}
 @keyframes dotP{0%,100%{opacity:.2;r:3.5}50%{opacity:1;r:6}}
 .pl-line.draw{animation:drawL 2.2s cubic-bezier(.22,1,.36,1) forwards}
@@ -96,7 +99,11 @@ footer{background:var(--ink);color:#c7d6e2;padding:32px 0;font-size:.84rem}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 @media(max-width:980px){.hero-grid{grid-template-columns:1fr}.hero-left{padding:60px 0 32px}.hero-right{min-height:380px;padding:32px}.fund{grid-template-columns:1fr}.fund .ask{border-top:1px solid var(--line)}.meas{grid-template-columns:1fr}}
-@media(max-width:560px){.hero-left{padding:46px 0 26px}.layer{padding:24px 20px}.sec-head h2{font-size:1.7rem}.scale .s{padding:7px 13px;font-size:.85rem}.boat-callout{padding:24px}}
+@media(max-width:560px){.hero-left{padding:46px 0 26px}.layer{padding:24px 20px}.sec-head h2{font-size:1.7rem}.scale .s{padding:7px 13px;font-size:.85rem}.boat-callout{padding:24px}
+.nav-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;max-width:55%}
+.nav-links a{font-size:11px}
+.ask-hook{font-size:11px;padding:7px 13px;max-width:290px;line-height:1.5}
+.ask-hook b{white-space:nowrap}}
 @media(prefers-reduced-motion:reduce){.pl-line.draw{animation:none;stroke-dashoffset:0}.pl-dot.on{animation:none;opacity:1}.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
@@ -135,8 +142,9 @@ footer{background:var(--ink);color:#c7d6e2;padding:32px 0;font-size:.84rem}
         <path class="pl-fill" d="M20 138 C 70 132, 110 118, 150 96 C 175 82, 185 54, 200 30 C 215 58, 240 104, 300 134 L300 140 L20 140 Z"/>
         <path id="plpath" class="pl-line" d="M20 138 C 70 132, 110 118, 150 96 C 175 82, 185 54, 200 30 C 215 58, 240 104, 300 134"/>
         <circle id="pldot" class="pl-dot" cx="150" cy="96" r="4"/>
-        <text class="pl-lab" x="150" y="112" text-anchor="middle">seen here</text>
-        <text class="pl-lab" x="266" y="128" text-anchor="middle">crisis</text>
+        <text class="pl-lab pl-l1" x="150" y="120" text-anchor="middle">seen here</text>
+        <text class="pl-lab pl-l2" x="150" y="30" text-anchor="middle">peak pressure</text>
+        <text class="pl-lab pl-l3" x="285" y="128" text-anchor="end">crisis</text>
       </svg>
     </div>
   </div>
