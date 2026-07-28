@@ -44,7 +44,7 @@ story.append(P("The boat is near <b>Bath / Keynsham</b>, Somerset — within <b>
 story.append(P("Verified Condition (from supplied media + owner statement)", H2))
 data = [
     ["Item", "Finding", "Source"],
-    ["Hull material", "STEEL (not wood, despite donor label). Crane-lifted by gunwales = sound shell", "crane photo"],
+    ["Hull material", "STEEL hull plating (not wood, despite donor label). Crane-lifted by gunwales, sharp welded corners, no plank seams = steel skin. Timber ribs/frames are internal (owner's '2 ribs' = those). Plate thickness below waterline PENDING SURVEY", "crane + bow + bilge photos"],
     ["Cabin siding", "Corrugated metal - rot-resistant", "side photos"],
     ["Internal timber", "Deck hole exposes soft/splintered red-painted ribs - decay present", "deck photo"],
     ["Owner statement", "Needs 'a couple of planks' + 'at least 2x ribs' replaced/repaired, plus a fresh paint job", "owner, 2026-07-28"],
