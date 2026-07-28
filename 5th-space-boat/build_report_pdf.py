@@ -41,17 +41,18 @@ story.append(P("Location", H2))
 story.append(P("The boat is near <b>Bath / Keynsham</b>, Somerset — within <b>Bath &amp; North East Somerset (B&amp;NES) Council</b> and the <b>West of England Combined Authority</b> area. This determines the local funding routes (see Funding).", BODY))
 
 # Inspection table
-story.append(P("Verified Condition (from supplied media)", H2))
+story.append(P("Verified Condition (from supplied media + owner statement)", H2))
 data = [
     ["Item", "Finding", "Source"],
     ["Hull material", "STEEL (not wood, despite donor label). Crane-lifted by gunwales = sound shell", "crane photo"],
-    ["Cabin siding", "Corrugated metal — rot-resistant", "side photos"],
-    ["Internal timber", "Deck hole exposes soft/splintered red-painted ribs — decay present", "deck photo"],
+    ["Cabin siding", "Corrugated metal - rot-resistant", "side photos"],
+    ["Internal timber", "Deck hole exposes soft/splintered red-painted ribs - decay present", "deck photo"],
+    ["Owner statement", "Needs 'a couple of planks' + 'at least 2x ribs' replaced/repaired, plus a fresh paint job", "owner, 2026-07-28"],
     ["Bilge", "Wet / standing water visible in video", "bilge frame"],
     ["Engine", "Caterpillar 3208 diesel, installed, dormant, likely serviceable", "engine photo"],
     ["Roof", "Leak at chimney flashing; debris-held moisture", "side photos"],
-    ["Rails", "Rope / low rail — fails CIC public-safety", "multiple"],
-    ["Wiring", "Exposed, tangled, near water — full rewire needed", "video + photos"],
+    ["Rails", "Rope / low rail - fails CIC public-safety", "multiple"],
+    ["Wiring", "Exposed, tangled, near water - full rewire needed", "video + photos"],
 ]
 t = Table(data, colWidths=[32*mm, 95*mm, 33*mm])
 t.setStyle(TableStyle([
@@ -62,7 +63,7 @@ t.setStyle(TableStyle([
 ]))
 story.append(t)
 story.append(Spacer(1,4))
-story.append(P("<b>Verdict:</b> Renovatable, not a wreck, not 'free'. Sound steel hull caps the downside; the cost is internal timber (deck/frames) + systems. As a <i>static</i> community vessel the engine need not run — a saving.", BODY))
+story.append(P("<b>Verdict:</b> Renovatable, not a wreck, not 'free'. Sound steel hull caps the downside; the cost is a <b>bounded</b> timber repair (a few planks + ~2 ribs per owner) + systems + paint. Owner's statement confirms the damage is localised, not structural-collapse. As a <i>static</i> community vessel the engine need not run - a saving.", BODY))
 
 # Funding strategy
 story.append(P("Funding Strategy (plain English)", H2))
