@@ -67,10 +67,10 @@ story.append(P("<b>Verdict:</b> Renovatable, not a wreck, not 'free'. Sound stee
 # Funding strategy
 story.append(P("Funding Strategy (plain English)", H2))
 steps = [
-    "<b>1. Survey first.</b> Marine surveyor probes steel + timber. ~£300–£600 (the only money we risk up front). Decides go/no-go.",
-    "<b>2. Awards for All (National Lottery).</b> £300–£20,000. Open, no deadline, CIC-eligible, decision ~16 weeks. Framed as: donated boat → community renovation + skills training + calm space.",
-    "<b>3. Reaching Communities (National Lottery).</b> £20k–£20M once piloted. Full fit-out + staffed programme.",
-    "<b>4. Local:</b> B&amp;NES Council grants + West of England Combined Authority community funds (boat is in their area).",
+    "<b>1. Survey first.</b> Marine surveyor probes steel + timber. ~£300-£600 (the only money we risk up front). Decides go/no-go.",
+    "<b>2. Awards for All (National Lottery).</b> £300-£20,000. Open, no deadline, CIC-eligible, decision ~16 weeks. Framed as: donated boat to community renovation + skills training + calm space.",
+    "<b>3. Reaching Communities (National Lottery) - VERIFIED LIVE 2026-07-28:</b> £20,001-£20,000,000, England, decision ~40 weeks, status 'Open to applications'. For full fit-out + staffed programme once piloted.",
+    "<b>4. Local (Bath/Keynsham):</b> within B&amp;NES Council + West of England Combined Authority. Specific programmes not yet verified (council sites JS/cookie-walled at scrape time) - confirm live before citing.",
     "<b>Honesty rule:</b> boat labelled 'concept / under renovation / not yet in service' everywhere. Grant funds the journey from shell to space.",
 ]
 story.append(ListFlowable([ListItem(P(s), leftIndent=6) for s in steps], bulletType="bullet", start="square"))
